@@ -1,2 +1,2 @@
 # Retro.NET
-CIL (formerly MSIL) native compiler for 6x09 / 6801 CPU's
+CIL (formerly MSIL) native compiler for MC6801 / MC6809 / HD6309 / MC68k CPU's
