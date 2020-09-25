@@ -1,0 +1,101 @@
+﻿
+	.org 20483	;tell tasm to start at 20483
+
+
+;// =============== CLASS MEMBERS DECLARATION ===================
+;
+;.class private auto ansi beforefieldinit Sample.HelloWorld
+;       extends [mscorlib]System.Object
+;{
+;  .method public hidebysig instance void 
+;          SayHello(int32 x) cil managed
+;  {
+;    // Code size       31 (0x1f)
+;    .maxstack  8
+	tsx               ; point X to parameters on stack
+;    IL_0000:  nop
+	nop
+;    IL_0001:  ldstr      "Hello, World "
+	ldx #str_001
+	pshx
+;    IL_0006:  call       void [mscorlib]System.Console::Write(string)
+	jsr System_Console$Write$string
+;    IL_000b:  nop
+	nop
+;    IL_000c:  ldarg.1
+	ldx 2,s
+;    IL_000d:  call       void [mscorlib]System.Console::Write(int32)
+;    IL_0012:  nop
+;    IL_0013:  ldstr      "!"
+;    IL_0018:  call       void [mscorlib]System.Console::WriteLine(string)
+	jsr System_Console$WriteLine_string
+;    IL_001d:  nop
+	nop
+;    IL_001e:  ret
+	txs
+	ret
+;  } // end of method HelloWorld::SayHello
+;
+;  .method public hidebysig specialname rtspecialname 
+;          instance void  .ctor() cil managed
+;  {
+;    // Code size       8 (0x8)
+;    .maxstack  8
+;    IL_0000:  ldarg.0
+;    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+;    IL_0006:  nop
+;    IL_0007:  ret
+;  } // end of method HelloWorld::.ctor
+;
+;} // end of class Sample.HelloWorld
+;
+;.class private auto ansi beforefieldinit Sample.Program
+;       extends [mscorlib]System.Object
+;{
+;  .method private hidebysig static void  Main() cil managed
+;  {
+;    .entrypoint
+;    // Code size       44 (0x2c)
+;    .maxstack  2
+;    .locals init (class Sample.HelloWorld V_0,
+;             class Sample.HelloWorld V_1,
+;             class Sample.HelloWorld V_2)
+;    IL_0000:  nop
+	nop
+	;    IL_0001:  newobj     instance void Sample.HelloWorld::.ctor()
+	jsr Sample_HelloWorld$$_ctor
+;    IL_0006:  stloc.0
+;    IL_0007:  newobj     instance void Sample.HelloWorld::.ctor()
+;    IL_000c:  stloc.1
+;    IL_000d:  newobj     instance void Sample.HelloWorld::.ctor()
+;    IL_0012:  stloc.2
+;    IL_0013:  ldloc.0
+;    IL_0014:  ldc.i4.1
+;    IL_0015:  callvirt   instance void Sample.HelloWorld::SayHello(int32)
+;    IL_001a:  nop
+;    IL_001b:  ldloc.1
+;    IL_001c:  ldc.i4.2
+;    IL_001d:  callvirt   instance void Sample.HelloWorld::SayHello(int32)
+;    IL_0022:  nop
+;    IL_0023:  ldloc.2
+;    IL_0024:  ldc.i4.3
+;    IL_0025:  callvirt   instance void Sample.HelloWorld::SayHello(int32)
+;    IL_002a:  nop
+;    IL_002b:  ret
+;  } // end of method Program::Main
+;
+;  .method public hidebysig specialname rtspecialname 
+;          instance void  .ctor() cil managed
+;  {
+;    // Code size       8 (0x8)
+;    .maxstack  8
+;    IL_0000:  ldarg.0
+;    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+;    IL_0006:  nop
+;    IL_0007:  ret
+;  } // end of method Program::.ctor
+;
+;} // end of class Sample.Program
+;
+;
+;// =============================================================
