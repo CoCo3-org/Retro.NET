@@ -15,7 +15,7 @@ namespace UnitTests
 		public void RunBeforeAnyTests()
 		{
 			StreamWriter sw = new StreamWriter(@"..\..\..\_countLog.txt", true);
-			sw.WriteLine("72120\tRetro.IDE\t" + System.DateTime.Now + "\tUnit Tests");
+			sw.WriteLine("101320\tRetro.NET\t" + System.DateTime.Now + "\tUnit Tests");
 			sw.Close();
 		}
 	}
