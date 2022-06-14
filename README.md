@@ -1,20 +1,24 @@
 # Retro.NET
-CIL (formerly MSIL) native compiler for MC6801 / MC6809 / HD6309 / MC68k CPU's
+### CIL (formerly MSIL) native Ahead-of-Time (AoT) compiler for 6x09 / 6800/1 / 6502 / Z80 / 68k CPU's
 
-There are not a lot of classes … the 4 most important ones are wrappers for the very good Mono.Cecil.
+10/13/2020 9:30 PM â€“ The 4 main classes are wrappers for the very good Mono.Cecil.
 
 ```
 MSIL.ModuleDefinition --> wraps Cecil.ModuleDefinition
 MSIL.TypeDefinition --> wraps Cecil.TypeDefinition
 MSIL.MethodDefinition --> wraps Cecil.ModuleDefinition
 MSIL.Instruction --> wraps Cecil.Cil.Instruction
+```
+Each instruction inherits from MSIL.Instruction
+```
+MSIL.Instruction
 |-- IL_add
 |-- IL_add_ovf
-... ect ... some 219 instructions 
+ect -- some 219 instructions 
+```
+Then we will have some runtime classes.
+```
 MSIL.MSILStack --> stack for runtime
-
 ```
 
-10/13/2020 9:30:20 PM – I need to document the classes. Oh gads! There are NO Tests???  NO wonder I have not made progress on this in forever.  I am becoming more and more convinced that Unit Testing is where it’s at for gauging and making progress; even though it may not seem that way short term. 
-
-10/13/2020 9:29:27 PM – Please understand this is a code dump of this project.  It’s in the early, early stages of an idea still (let’s put it that way!)
+10/13/2020 9:29 PM -- Initial source code upload.  It's in the early stages still.
