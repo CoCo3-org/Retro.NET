@@ -1,5 +1,5 @@
 
-//  Microsoft (R) .NET Framework IL Disassembler.  Version 4.7.3081.0
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 4.8.3928.0
 //  Copyright (c) Microsoft Corporation.  All rights reserved.
 
 
@@ -23,13 +23,13 @@
   .ver 0:0:0:0
 }
 .module '05-HelloWorld-In-Classes2.exe'
-// MVID: {A680ABA0-2981-4A71-A954-98F7D8707362}
+// MVID: {E37DCCD9-66F5-49FD-87C2-722BC2F7BF68}
 .imagebase 0x00400000
 .file alignment 0x00000200
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000001    //  ILONLY
-// Image base: 0x00000164A3780000
+// Image base: 0x06C40000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================

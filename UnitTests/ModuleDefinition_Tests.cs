@@ -14,6 +14,7 @@ namespace UnitTests
 		[Test]
 		public void Constructor()
 		{
+			MSIL.ModuleDefinition mod = new MSIL.ModuleDefinition(@"..\..\..\Samples\05-HelloWorld-In-Classes2.exe");
 			Assert.IsTrue(false);
 		}
 	}
