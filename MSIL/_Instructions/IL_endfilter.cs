@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "End an exception handling filter clause."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_endfilter(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_endfilter(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Multiply signed integer values. Signed result shall fit in same size"; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_mul_ovf(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_mul_ovf(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

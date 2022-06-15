@@ -24,7 +24,7 @@ namespace MSIL
 		public int Index { get; set; }
 		public int Offset { get; private set; }
 
-		public Instruction(Cecil.Cil.Instruction instruction, MethodDefinition parentMethod)
+		public Instruction(MethodDefinition parentMethod, Cecil.Cil.Instruction instruction)
 		{
 			this.CecilInstruction = instruction;
 			this.ParentMethod = parentMethod;

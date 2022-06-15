@@ -20,8 +20,8 @@ namespace MSIL
 		public string LiteralKey { get; private set; }
 		public string LiteralString { get; private set; }
 
-		public IL_ldstr(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_ldstr(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 			this.LiteralString = (string)cecilInstruction.Operand;
 

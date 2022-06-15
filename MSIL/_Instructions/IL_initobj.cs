@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Initialize the value at address dest."; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_initobj(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_initobj(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

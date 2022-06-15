@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Load the element with type native int at index onto the top of the stack as a native int."; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_ldelem_i(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_ldelem_i(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

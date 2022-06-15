@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Fetch the address of argument argNum."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_ldarga(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_ldarga(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

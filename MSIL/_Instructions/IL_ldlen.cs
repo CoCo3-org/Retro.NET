@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Push the length (of type native unsigned int) of array on the stack."; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_ldlen(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_ldlen(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

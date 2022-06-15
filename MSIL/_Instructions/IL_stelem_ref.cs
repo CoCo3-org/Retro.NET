@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Replace array element at index with the ref value on the stack."; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_stelem_ref(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_stelem_ref(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

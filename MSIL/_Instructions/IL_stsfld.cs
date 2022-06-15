@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Replace the value of the static field with val."; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_stsfld(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_stsfld(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

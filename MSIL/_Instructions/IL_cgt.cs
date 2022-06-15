@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Push 1 (of type int32) if value1 > value2, else push 0."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_cgt(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_cgt(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

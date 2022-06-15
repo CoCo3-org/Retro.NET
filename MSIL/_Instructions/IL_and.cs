@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Bitwise AND of two integral values, returns an integral value."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_and(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_and(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

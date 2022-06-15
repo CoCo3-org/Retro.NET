@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Divide two values to return a quotient or floating-point result."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_div(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_div(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

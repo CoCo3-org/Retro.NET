@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Extract a value-type from obj, its boxed representation, and push a managed pointer to it to the top of the stack"; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_unbox(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_unbox(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

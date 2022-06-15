@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Call method indicated on the stack with arguments described by callsitedescr."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_calli(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_calli(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

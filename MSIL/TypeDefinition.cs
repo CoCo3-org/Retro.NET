@@ -23,17 +23,14 @@ namespace MSIL
 		public List<MethodDefinition> MethodDefinitions { get; } = new List<MethodDefinition>();
 		public Dictionary<string, MethodDefinition> MethodDefinitionDict { get; } = new Dictionary<string, MethodDefinition>();
 
-		public TypeDefinition(Cecil.TypeDefinition cecilType, ModuleDefinition parentModule) 
+		public TypeDefinition(ModuleDefinition parentModule, Cecil.TypeDefinition cecilType) 
 		{
 			this.CecilType = cecilType;
 			this.ParentModule = parentModule;
 
-			// Console.WriteLine("=======================================");
-			// Console.WriteLine("CLASS: " + cecilType.FullName);
-
 			foreach (Cecil.MethodDefinition cecilMethodDefinition in cecilType.Methods)
 			{
-				MethodDefinition methodDefinition = new MethodDefinition(cecilMethodDefinition, this);
+				MethodDefinition methodDefinition = new MethodDefinition(this, cecilMethodDefinition);
 				this.MethodDefinitions.Add(methodDefinition);
 				this.MethodDefinitionDict.Add(methodDefinition.CecilMethodDefinition.FullName, methodDefinition);
 			}

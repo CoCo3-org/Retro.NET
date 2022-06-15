@@ -35,19 +35,32 @@ namespace MSIL
 		public ModuleDefinition(string assemblyFilePath) 
 		{
 			this.AssemblyFilePath = assemblyFilePath;
-
-			if (File.Exists(this.AssemblyFilePath))
-				this.CecilModule = Cecil.ModuleDefinition.ReadModule(this.AssemblyFilePath);
-			else
+			if (!File.Exists(this.AssemblyFilePath))
 				throw new Exception($"Assembly {this.AssemblyFilePath} does not exist!");
+		}
 
+		public void Initialize()
+		{
+			// if ??? load Cecil STUFF .... 
+		}
+
+		public void LoadCecilModule()
+		{
+			this.CecilModule = Cecil.ModuleDefinition.ReadModule(this.AssemblyFilePath);
+		}
+
+		public void LoadCecilTypeDefinitions()
+		{
 			foreach (Cecil.TypeDefinition type in this.CecilModule.Types)
 			{
-				TypeDefinition typeDefinition = new TypeDefinition(type, this);
+				TypeDefinition typeDefinition = new TypeDefinition(this, type);
 				this.TypeDefinitions.Add(typeDefinition);
 				this.TypeDefinitionDictionary.Add(type.FullName, typeDefinition);
 			}
+		}
 
+		public void LoadRunTimeTypeDefinitions()
+		{
 			Sys.TypeDefinition sysDefinition = new Sys.Console.TypeDefinition();
 			this.SysTypeDefinitionDictionary.Add(sysDefinition.FullName, sysDefinition);
 

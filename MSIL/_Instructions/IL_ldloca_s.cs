@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Load address of local variable with index indx, short form."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_ldloca_s(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_ldloca_s(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

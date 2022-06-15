@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Push address of virtual method on the stack."; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_ldvirtftn(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_ldvirtftn(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Push the size, in bytes, of a type as an unsigned int32."; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_sizeof(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_sizeof(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

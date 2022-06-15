@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Branch to target if less than (unsigned or unordered)."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_blt_un(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_blt_un(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

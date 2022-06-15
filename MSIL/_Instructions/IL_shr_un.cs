@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Shift an integer right (shift in zero), return an integer."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_shr_un(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_shr_un(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

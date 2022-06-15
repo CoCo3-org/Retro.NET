@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Convert a boxable value to its boxed form"; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_box(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_box(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 			// Console.WriteLine("IL_box: " + cecilInstruction.Operand.GetType());
 			// Cecil.TypeReference typeReference = (Cecil.TypeReference)cecilInstruction.Operand;

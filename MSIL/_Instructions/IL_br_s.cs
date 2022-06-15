@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Branch to target, short form."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_br_s(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_br_s(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

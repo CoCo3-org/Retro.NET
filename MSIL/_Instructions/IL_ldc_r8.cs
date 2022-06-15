@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Push num of type float64 onto the stack as F."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_ldc_r8(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_ldc_r8(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

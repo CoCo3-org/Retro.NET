@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Add signed integer values with overflow check."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_add_ovf(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_add_ovf(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

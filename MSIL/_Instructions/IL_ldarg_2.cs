@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Load argument 2 onto the stack."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_ldarg_2(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_ldarg_2(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

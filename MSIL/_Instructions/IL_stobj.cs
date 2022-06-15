@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Store a value of type typeTok at an address."; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_stobj(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_stobj(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

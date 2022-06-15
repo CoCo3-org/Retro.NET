@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Convert to an int32 (on the stack as int32) and throw an exception on overflow."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_conv_ovf_i4(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_conv_ovf_i4(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

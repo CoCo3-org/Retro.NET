@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Convert metadata token to its runtime representation."; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_ldtoken(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_ldtoken(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

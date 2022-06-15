@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Pop value from the stack."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_pop(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_pop(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

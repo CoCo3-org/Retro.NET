@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Push the value of field of object (or value type) obj, onto the stack."; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_ldfld(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_ldfld(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Set all bytes in a block of memory to a given byte value."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_initblk(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_initblk(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

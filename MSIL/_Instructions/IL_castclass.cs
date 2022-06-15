@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Cast obj to class."; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_castclass(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_castclass(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

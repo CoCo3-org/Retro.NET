@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Specify that the subsequent array address operation performs no type check at runtime, and that it returns a controlled-mutability managed pointer"; } }
 		public override string Category { get { return "Prefix to instruction"; } }
 
-		public IL_readonly_(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_readonly_(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

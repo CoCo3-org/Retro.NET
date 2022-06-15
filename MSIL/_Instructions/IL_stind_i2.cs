@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Store value of type int16 into memory at address"; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_stind_i2(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_stind_i2(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

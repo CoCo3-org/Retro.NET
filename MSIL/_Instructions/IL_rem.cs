@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Remainder when dividing one value by another."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_rem(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_rem(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

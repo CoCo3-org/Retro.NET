@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Indirect load value of type float32 as F on the stack."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_ldind_r4(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_ldind_r4(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 

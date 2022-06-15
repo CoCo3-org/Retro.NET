@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Load local variable 3 onto stack."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_ldloc_3(Cecil.Cil.Instruction cecilInstruction, MethodDefinition parentMethod) 
-			: base(cecilInstruction, parentMethod)
+		public IL_ldloc_3(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
+			: base(parentMethod ,cecilInstruction)
 		{
 		}
 
