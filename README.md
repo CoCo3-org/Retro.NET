@@ -1,5 +1,5 @@
 # Retro.NET
-### CIL (formerly MSIL) native Ahead-of-Time (AoT) compiler for 6x09 / 6800/1 / 6502 / Z80 / 68k CPU's
+### CIL (formerly MSIL) native Ahead-of-Time (AoT) compiler for 6x09 / 680x / 6502 / Z80 / 68k CPU's
 
 10/13/2020 9:30 PM – The 4 main classes are wrappers for the very good Mono.Cecil.
 
