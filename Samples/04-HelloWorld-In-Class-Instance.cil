@@ -10,7 +10,7 @@
   .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
   .ver 4:0:0:0
 }
-.assembly '05-HelloWorld-In-Classes2'
+.assembly '04-HelloWorld-In-Class-Instance'
 {
   .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
@@ -22,14 +22,14 @@
   .hash algorithm 0x00008004
   .ver 0:0:0:0
 }
-.module '05-HelloWorld-In-Classes2.exe'
-// MVID: {E37DCCD9-66F5-49FD-87C2-722BC2F7BF68}
+.module '04-HelloWorld-In-Class-Instance.exe'
+// MVID: {5096EE86-70D3-4C28-AF79-DAED96649FFA}
 .imagebase 0x00400000
 .file alignment 0x00000200
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000001    //  ILONLY
-// Image base: 0x06C40000
+// Image base: 0x05490000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -38,21 +38,15 @@
        extends [mscorlib]System.Object
 {
   .method public hidebysig instance void 
-          SayHello(int32 x) cil managed
+          SayHello() cil managed
   {
-    // Code size       31 (0x1f)
+    // Code size       13 (0xd)
     .maxstack  8
     IL_0000:  nop
-    IL_0001:  ldstr      "Hello, World "
-    IL_0006:  call       void [mscorlib]System.Console::Write(string)
+    IL_0001:  ldstr      "Hello, World!"
+    IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
     IL_000b:  nop
-    IL_000c:  ldarg.1
-    IL_000d:  call       void [mscorlib]System.Console::Write(int32)
-    IL_0012:  nop
-    IL_0013:  ldstr      "!"
-    IL_0018:  call       void [mscorlib]System.Console::WriteLine(string)
-    IL_001d:  nop
-    IL_001e:  ret
+    IL_000c:  ret
   } // end of method HelloWorld::SayHello
 
   .method public hidebysig specialname rtspecialname 
@@ -74,31 +68,16 @@
   .method private hidebysig static void  Main() cil managed
   {
     .entrypoint
-    // Code size       44 (0x2c)
-    .maxstack  2
-    .locals init (class Sample.HelloWorld V_0,
-             class Sample.HelloWorld V_1,
-             class Sample.HelloWorld V_2)
+    // Code size       15 (0xf)
+    .maxstack  1
+    .locals init (class Sample.HelloWorld V_0)
     IL_0000:  nop
     IL_0001:  newobj     instance void Sample.HelloWorld::.ctor()
     IL_0006:  stloc.0
-    IL_0007:  newobj     instance void Sample.HelloWorld::.ctor()
-    IL_000c:  stloc.1
-    IL_000d:  newobj     instance void Sample.HelloWorld::.ctor()
-    IL_0012:  stloc.2
-    IL_0013:  ldloc.0
-    IL_0014:  ldc.i4.1
-    IL_0015:  callvirt   instance void Sample.HelloWorld::SayHello(int32)
-    IL_001a:  nop
-    IL_001b:  ldloc.1
-    IL_001c:  ldc.i4.2
-    IL_001d:  callvirt   instance void Sample.HelloWorld::SayHello(int32)
-    IL_0022:  nop
-    IL_0023:  ldloc.2
-    IL_0024:  ldc.i4.3
-    IL_0025:  callvirt   instance void Sample.HelloWorld::SayHello(int32)
-    IL_002a:  nop
-    IL_002b:  ret
+    IL_0007:  ldloc.0
+    IL_0008:  callvirt   instance void Sample.HelloWorld::SayHello()
+    IL_000d:  nop
+    IL_000e:  ret
   } // end of method Program::Main
 
   .method public hidebysig specialname rtspecialname 
@@ -118,4 +97,4 @@
 // =============================================================
 
 // *********** DISASSEMBLY COMPLETE ***********************
-// WARNING: Created Win32 resource file 05-HelloWorld-In-Classes2.res
+// WARNING: Created Win32 resource file 04-HelloWorld-In-Class-Instance.res

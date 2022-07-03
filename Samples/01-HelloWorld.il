@@ -1,5 +1,5 @@
 
-//  Microsoft (R) .NET Framework IL Disassembler.  Version 4.7.3081.0
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 4.8.3928.0
 //  Copyright (c) Microsoft Corporation.  All rights reserved.
 
 
@@ -10,7 +10,7 @@
   .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
   .ver 4:0:0:0
 }
-.assembly '04-HelloWorld-In-Classes'
+.assembly '01-HelloWorld'
 {
   .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
   .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
@@ -22,24 +22,24 @@
   .hash algorithm 0x00008004
   .ver 0:0:0:0
 }
-.module '04-HelloWorld-In-Classes.exe'
-// MVID: {4AB2EF1C-F762-4199-82EF-0C43507AF784}
+.module '01-HelloWorld.exe'
+// MVID: {F95BABA1-847B-421B-8D63-D7FC79689CF6}
 .imagebase 0x00400000
 .file alignment 0x00000200
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000001    //  ILONLY
-// Image base: 0x000001BC4B0C0000
+// Image base: 0x00F10000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
-.class private auto ansi beforefieldinit Sample.HelloWorld
+.class private auto ansi beforefieldinit Sample.Program
        extends [mscorlib]System.Object
 {
-  .method public hidebysig instance void 
-          SayHello() cil managed
+  .method private hidebysig static void  Main(string[] args) cil managed
   {
+    .entrypoint
     // Code size       13 (0xd)
     .maxstack  8
     IL_0000:  nop
@@ -47,49 +47,6 @@
     IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
     IL_000b:  nop
     IL_000c:  ret
-  } // end of method HelloWorld::SayHello
-
-  .method public hidebysig specialname rtspecialname 
-          instance void  .ctor() cil managed
-  {
-    // Code size       8 (0x8)
-    .maxstack  8
-    IL_0000:  ldarg.0
-    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
-    IL_0006:  nop
-    IL_0007:  ret
-  } // end of method HelloWorld::.ctor
-
-} // end of class Sample.HelloWorld
-
-.class private auto ansi beforefieldinit Sample.Program
-       extends [mscorlib]System.Object
-{
-  .method private hidebysig static void  Main() cil managed
-  {
-    .entrypoint
-    // Code size       41 (0x29)
-    .maxstack  1
-    .locals init (class Sample.HelloWorld V_0,
-             class Sample.HelloWorld V_1,
-             class Sample.HelloWorld V_2)
-    IL_0000:  nop
-    IL_0001:  newobj     instance void Sample.HelloWorld::.ctor()
-    IL_0006:  stloc.0
-    IL_0007:  newobj     instance void Sample.HelloWorld::.ctor()
-    IL_000c:  stloc.1
-    IL_000d:  newobj     instance void Sample.HelloWorld::.ctor()
-    IL_0012:  stloc.2
-    IL_0013:  ldloc.0
-    IL_0014:  callvirt   instance void Sample.HelloWorld::SayHello()
-    IL_0019:  nop
-    IL_001a:  ldloc.1
-    IL_001b:  callvirt   instance void Sample.HelloWorld::SayHello()
-    IL_0020:  nop
-    IL_0021:  ldloc.2
-    IL_0022:  callvirt   instance void Sample.HelloWorld::SayHello()
-    IL_0027:  nop
-    IL_0028:  ret
   } // end of method Program::Main
 
   .method public hidebysig specialname rtspecialname 
@@ -109,4 +66,4 @@
 // =============================================================
 
 // *********** DISASSEMBLY COMPLETE ***********************
-// WARNING: Created Win32 resource file 04-HelloWorld-In-Classes.res
+// WARNING: Created Win32 resource file 01-HelloWorld.res

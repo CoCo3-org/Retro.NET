@@ -4,19 +4,17 @@ namespace Sample
 {
 	class HelloWorld
 	{
-		public void SayHello()
+		public static void SayHello()
 		{
 			Console.WriteLine("Hello, World!");
 		}
 	}
 
-
     class Program
     {
 		static void Main()
         {
-			var hello = new HelloWorld();
-			hello.SayHello();
+			HelloWorld.SayHello();
         }
     }
 }

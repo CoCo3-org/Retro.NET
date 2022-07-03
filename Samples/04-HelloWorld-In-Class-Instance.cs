@@ -10,12 +10,11 @@ namespace Sample
 		}
 	}
 
-
     class Program
     {
 		static void Main()
         {
-		 	var hello = new HelloWorld();
+			var hello = new HelloWorld();
 			hello.SayHello();
         }
     }

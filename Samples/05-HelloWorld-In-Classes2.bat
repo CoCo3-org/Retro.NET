@@ -1,2 +1,0 @@
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Msbuild\Current\Bin\Roslyn\csc.exe" 05-HelloWorld-In-Classes2.cs
-"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\ildasm.exe" 05-HelloWorld-In-Classes2.exe /NOBAR /OUT:05-HelloWorld-In-Classes2.cil
