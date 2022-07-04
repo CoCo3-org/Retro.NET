@@ -27,17 +27,26 @@ namespace MSIL
 		{
 			this.CecilType = cecilType;
 			this.ParentModule = parentModule;
+		}
 
-			foreach (Cecil.MethodDefinition cecilMethodDefinition in cecilType.Methods)
+		public void Initialize()
+		{
+			foreach (Cecil.MethodDefinition cecilMethodDefinition in this.CecilType.Methods)
 			{
 				MethodDefinition methodDefinition = new MethodDefinition(this, cecilMethodDefinition);
 				this.MethodDefinitions.Add(methodDefinition);
 				this.MethodDefinitionDict.Add(methodDefinition.CecilMethodDefinition.FullName, methodDefinition);
+			
+				methodDefinition.Initialize();
 			}
 		}
 
 		public void CilListing() 
 		{
+			if (this.CecilType.FullName == "<Module>")
+				// we don't know what this is yet so skip it for now!
+				return;
+
 			Console.WriteLine("------------------------------");
 			Console.WriteLine("TYPE: " + CecilType.FullName);
 
@@ -45,24 +54,30 @@ namespace MSIL
 				methodDefinition.CilListing();
 		}
 
-		public void MC6801_TypeDefinition(StringBuilder sb) 
+		public void MC680x_TypeDefinition(StringBuilder sb) 
 		{
-			sb.AppendLine("* =============================================================================");
-			sb.AppendLine($"* TypeDefinition: [{this.CecilType.Name}][{this.CecilType.FullName}][{this.CecilType.GetType()}]");
-			sb.AppendLine("* =============================================================================");
+			if (this.CecilType.FullName == "<Module>")
+				return;
+
+			sb.AppendLine("; =============================================================================");
+			sb.AppendLine($"; TypeDefinition: [{this.CecilType.Name}][{this.CecilType.FullName}][{this.CecilType.GetType()}]");
+			sb.AppendLine("; =============================================================================");
 
 			foreach (var methoDefinition in this.MethodDefinitions)
-				methoDefinition.MC6809_MethodDefinition(sb);
+				methoDefinition.MC680x_MethodDefinition(sb);
 		}
 
-		public void MC6809_TypeDefinition(StringBuilder sb) 
+		public void MC6x09_TypeDefinition(StringBuilder sb) 
         {
+			if (this.CecilType.FullName == "<Module>")
+				return;
+
 			sb.AppendLine("* =============================================================================");
 			sb.AppendLine($"* TypeDefinition: [{this.CecilType.Name}][{this.CecilType.FullName}][{this.CecilType.GetType()}]");
 			sb.AppendLine("* =============================================================================");
 
 			foreach (var methoDefinition in this.MethodDefinitions)
-				methoDefinition.MC6809_MethodDefinition(sb);
+				methoDefinition.MC6x09_MethodDefinition(sb);
         }
 
 		public void MC68000_TypeDefinition(StringBuilder sb)

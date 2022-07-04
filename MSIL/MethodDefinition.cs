@@ -39,13 +39,13 @@ namespace MSIL
 			this.InitCecilInstructions();
 		}
 
-		public void InitCecilLocalVariables()
+		public void InitCecilLocalVariables() 
 		{
 			for (int x = 0; x < this.CecilMethodDefinition.Body.Variables.Count; x++)
 				this.LocalVariables.Add(null);
 		}
 
-		public void InitCecilInstructions()
+		public void InitCecilInstructions() 
 		{
 			int count = 0;
 			foreach (var cecilInstruction in this.CecilMethodDefinition.Body.Instructions)
@@ -60,23 +60,25 @@ namespace MSIL
 
 		public void Execute() 
 		{
-			// Console.WriteLine("EXECUTE: " + this.CecilMethodDefinition.FullName + "!!!");
-
 			this.CurrentInstructionIndex = 0;
-			this.CurrentInstruction = this.Instructions[0];
 
-			while (true)
+			if (this.Instructions.Count > 0)
 			{
-				this.CurrentInstruction = this.Instructions[this.CurrentInstructionIndex];
+				this.CurrentInstruction = this.Instructions[0];
 
-				if (this.CurrentInstruction.GetType() == typeof(IL_ret))
-					break;
+				while (true)
+				{
+					this.CurrentInstruction = this.Instructions[this.CurrentInstructionIndex];
 
-				this.CurrentInstruction.Execute();
+					if (this.CurrentInstruction.GetType() == typeof(IL_ret))
+						break;
+
+					this.CurrentInstruction.Execute();
+				}
+
+				// it should have pushed the parameters on the stack ... pop them off...
+				this.ParentType.ParentModule.MethodStack.Pop(this.CecilMethodDefinition.Parameters.Count);
 			}
-
-			// it should have pushed the parameters on the stack ... pop them off...
-			this.ParentType.ParentModule.MethodStack.Pop(this.CecilMethodDefinition.Parameters.Count);
 		}
 
 		public void CilListing() 
@@ -84,14 +86,7 @@ namespace MSIL
 			Console.WriteLine("METHOD: " + this.CecilMethodDefinition.FullName);
 			foreach (var instruction in this.Instructions)
 				instruction.CilListing();
-			Console.WriteLine();
 		}
-
-		//public void SetCurrentInstruction(Instruction currentInstruction)
-		//{
-		//	this.CurrentInstructionIndex = currentInstruction.Index - 1;
-		//	// this.CurrentInstruction = currentInstruction;
-		//}
 
 		protected Instruction CIL_BuildInstruction(Cecil.Cil.Instruction instruction) 
 		{
@@ -1202,21 +1197,18 @@ namespace MSIL
 			return op;
 		}
 
-		public void MC6801_MethodDefinition(StringBuilder sb)
+		public void MC680x_MethodDefinition(StringBuilder sb)
 		{
-			sb.AppendLine("* -----------------------------------------------------------------------------");
-			sb.AppendLine($"* MethodDefinition: [{this.CecilMethodDefinition.Name}][{this.CecilMethodDefinition.FullName}]");
-			sb.AppendLine("* -----------------------------------------------------------------------------");
+			sb.AppendLine("; -----------------------------------------------------------------------------");
+			sb.AppendLine($"; MethodDefinition: [{this.CecilMethodDefinition.Name}][{this.CecilMethodDefinition.FullName}]");
+			sb.AppendLine("; -----------------------------------------------------------------------------");
 
-			sb.AppendLine($"{this.ParentType.CecilType.Name}_{this.CecilMethodDefinition.Name.Replace('.', '_')} equ $");
-
+			sb.AppendLine($"{this.ParentType.CecilType.Name}_{this.CecilMethodDefinition.Name.Replace('.', '_')}:");
 			foreach (var instruction in this.Instructions)
-				instruction.MC6801_UnOptimized_Code(sb);
-
-			sb.AppendLine();
+				instruction.MC680x_UnOptimized_Code(sb);
 		}
 
-		public void MC6809_MethodDefinition(StringBuilder sb)
+		public void MC6x09_MethodDefinition(StringBuilder sb)
 		{
 			sb.AppendLine("* -----------------------------------------------------------------------------");
 			sb.AppendLine($"* MethodDefinition: [{this.CecilMethodDefinition.Name}][{this.CecilMethodDefinition.FullName}]");
@@ -1225,23 +1217,7 @@ namespace MSIL
 			sb.AppendLine($"{this.ParentType.CecilType.Name}_{this.CecilMethodDefinition.Name.Replace('.', '_')} equ $");
 
 			foreach (var instruction in this.Instructions)
-				instruction.MC6809_UnOptimized_Code(sb);
-
-			sb.AppendLine();
-		}
-
-		public void MC68000_MethodDefinition(StringBuilder sb)
-		{
-			sb.AppendLine("* -----------------------------------------------------------------------------");
-			sb.AppendLine($"* MethodDefinition: [{this.CecilMethodDefinition.Name}][{this.CecilMethodDefinition.FullName}]");
-			sb.AppendLine("* -----------------------------------------------------------------------------");
-
-			sb.AppendLine($"{this.ParentType.CecilType.Name}_{this.CecilMethodDefinition.Name.Replace('.', '_')} equ $");
-
-			foreach (var instruction in this.Instructions)
-				instruction.MC68000_UnOptimized_Code(sb);
-
-			sb.AppendLine();
+				instruction.MC6x09_UnOptimized_Code(sb);
 		}
 
 		public void Z80_MethodDefinition(StringBuilder sb)
@@ -1271,5 +1247,20 @@ namespace MSIL
 
 			sb.AppendLine();
 		}
+
+		public void MC68000_MethodDefinition(StringBuilder sb)
+		{
+			sb.AppendLine("* -----------------------------------------------------------------------------");
+			sb.AppendLine($"* MethodDefinition: [{this.CecilMethodDefinition.Name}][{this.CecilMethodDefinition.FullName}]");
+			sb.AppendLine("* -----------------------------------------------------------------------------");
+
+			sb.AppendLine($"{this.ParentType.CecilType.Name}_{this.CecilMethodDefinition.Name.Replace('.', '_')} equ $");
+
+			foreach (var instruction in this.Instructions)
+				instruction.MC68000_UnOptimized_Code(sb);
+
+			sb.AppendLine();
+		}
+
 	}
 }

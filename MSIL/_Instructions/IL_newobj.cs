@@ -56,7 +56,7 @@ namespace MSIL
 			throw new Exception("Instruction [newobj] not done!");
 		}
 
-		public override void MC6801_UnOptimized_Code(StringBuilder sb) 
+		public override void MC680x_UnOptimized_Code(StringBuilder sb) 
 		{
 			this.OutputDescCategoryLine(sb);
 
@@ -64,17 +64,17 @@ namespace MSIL
 			sb.AppendLine("\tPSHX");
 		}
 
-		public override void MC6801_Optimized_Code(StringBuilder sb) 
+		public override void MC680x_Optimized_Code(StringBuilder sb) 
 		{
 			this.OutputDescCategoryLine(sb);
 		}
 
-		public override void MC6809_Simulate() 
+		public override void MC6x09_Simulate() 
 		{
 			throw new Exception("M6x09_Simulate [newobj] not done!");
 		}
 
-		public override void MC6809_UnOptimized_Code(StringBuilder sb) 
+		public override void MC6x09_UnOptimized_Code(StringBuilder sb) 
 		{
 			this.OutputDescCategoryLine(sb);
 
@@ -82,7 +82,7 @@ namespace MSIL
 			sb.AppendLine($"\tjsr ... --> [{this.Operand}][{this.Offset}]");
 		}
 
-		public override void MC6809_Optimized_Code(StringBuilder sb) 
+		public override void MC6x09_Optimized_Code(StringBuilder sb) 
 		{
 			this.OutputDescCategoryLine(sb);
 		}

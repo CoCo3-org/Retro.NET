@@ -34,7 +34,7 @@ namespace MSIL
 
 		public virtual void OutputDescCategoryLine(StringBuilder sb) 
 		{
-			sb.AppendLine("* [" + this.OpCode + "] " + this.Mnemonic + " : " + this.Description + " [" + this.Category + "]");
+			sb.AppendLine("; [" + this.OpCode + "] " + this.Mnemonic + " : " + this.Description + " [" + this.Category + "]");
 		}
 
 		public virtual void CilListing() 
@@ -49,46 +49,34 @@ namespace MSIL
 
 		// -----
 
-		public virtual void MC6800_Simulate() 
+		public virtual void MC680x_Simulate() 
 		{
-			throw new Exception("M6x09_Simulate [] not done!");
+			throw new Exception("MC680x_Simulate [] not done!");
 		}
 
-		public virtual void MC6800_UnOptimized_Code(StringBuilder sb) 
-		{
-			this.OutputDescCategoryLine(sb);
-		}
-
-		public virtual void MC6800_Optimized_Code(StringBuilder sb) 
+		public virtual void MC680x_UnOptimized_Code(StringBuilder sb) 
 		{
 			this.OutputDescCategoryLine(sb);
 		}
 
-		// -----
-
-		public virtual void MC6801_UnOptimized_Code(StringBuilder sb) 
-		{
-			this.OutputDescCategoryLine(sb);
-		}
-
-		public virtual void MC6801_Optimized_Code(StringBuilder sb) 
+		public virtual void MC680x_Optimized_Code(StringBuilder sb) 
 		{
 			this.OutputDescCategoryLine(sb);
 		}
 
 		// -----
 
-		public virtual void MC6809_Simulate() 
+		public virtual void MC6x09_Simulate() 
 		{
 			throw new Exception("M6x09_Simulate [] not done!");
 		}
 
-		public virtual void MC6809_UnOptimized_Code(StringBuilder sb) 
+		public virtual void MC6x09_UnOptimized_Code(StringBuilder sb) 
 		{
 			this.OutputDescCategoryLine(sb);
 		}
 
-		public virtual void MC6809_Optimized_Code(StringBuilder sb) 
+		public virtual void MC6x09_Optimized_Code(StringBuilder sb) 
 		{
 			this.OutputDescCategoryLine(sb);
 		}
