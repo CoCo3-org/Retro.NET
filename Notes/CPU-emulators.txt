@@ -1,0 +1,46 @@
+------------------------------------
+-- 
+------------------------------------
+
+Collection of eight-bit processor emulators (for various projects)
+https://github.com/MoleskiCoder/EightBitNet
+
+Z80 emulator in C# as a .NET Standard Class Library
+https://github.com/essenbee/z80emu
+
+A csharp emulator for the Zilog Z80 CPU
+https://github.com/sklivvz/z80
+
+A Zilog Z80 emulator written in C#
+https://github.com/dolbz/Z80Sharp
+
+Z80 CPU Emulator written in C#
+https://github.com/hightower70/Z80Emulator
+
+An emulator for the Zilog Z80 processor in C#
+https://github.com/PendleCodeMonkey/Z80Emulator
+
+very basic z80 cpu emulator built using C#
+https://github.com/Feras94/z80_emulator
+
+An emulator for the VZ200/VZ300 Z80 8-bit CPU based Computer. Written in c#
+https://github.com/PaulAnderson/VzEmulator
+
+Cycle-accurate Z80 emulator written in C#
+https://github.com/wchill/Z80Sharp
+
+------------------------------------
+-- C
+------------------------------------
+A highly portable (C) Zilog Z80 cpu emulator 
+https://github.com/GiovanniScotti/z80cpuEmulator
+
+A Zilog Z80 and Intel 8080 systems emulation
+https://github.com/udo-munk/z80pack
+
+------------------------------------
+-- 
+------------------------------------
+
+A Simple Emulator for the Zilog Z80 written in python
+https://github.com/jamespbarrett/pyz80

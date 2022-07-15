@@ -1,0 +1,6 @@
+Z80 CPU User Manual
+http://map.grauw.nl/resources/cpu/z80.pdf
+
+Z80 / R800 instruction set
+http://map.grauw.nl/resources/z80instr.php
+
