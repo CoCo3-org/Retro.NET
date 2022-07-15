@@ -1,0 +1,221 @@
+﻿<Cpu_MSIL>
+  <OpCode Op="00" Mnem="nop" Description="Do nothing (No operation)." Category="Base instruction" />
+  <OpCode Op="01" Mnem="break" Description="Inform a debugger that a breakpoint has been reached." Category="Base instruction" />
+  <OpCode Op="02" Mnem="ldarg.0" Description="Load argument 0 onto the stack." Category="Base instruction" />
+  <OpCode Op="03" Mnem="ldarg.1" Description="Load argument 1 onto the stack." Category="Base instruction" />
+  <OpCode Op="04" Mnem="ldarg.2" Description="Load argument 2 onto the stack." Category="Base instruction" />
+  <OpCode Op="05" Mnem="ldarg.3" Description="Load argument 3 onto the stack." Category="Base instruction" />
+  <OpCode Op="06" Mnem="ldloc.0" Description="Load local variable 0 onto stack." Category="Base instruction" />
+  <OpCode Op="07" Mnem="ldloc.1" Description="Load local variable 1 onto stack." Category="Base instruction" />
+  <OpCode Op="08" Mnem="ldloc.2" Description="Load local variable 2 onto stack." Category="Base instruction" />
+  <OpCode Op="09" Mnem="ldloc.3" Description="Load local variable 3 onto stack." Category="Base instruction" />
+  <OpCode Op="0A" Mnem="stloc.0" Description="Pop a value from stack into local variable 0." Category="Base instruction" />
+  <OpCode Op="0B" Mnem="stloc.1" Description="Pop a value from stack into local variable 1." Category="Base instruction" />
+  <OpCode Op="0C" Mnem="stloc.2" Description="Pop a value from stack into local variable 2." Category="Base instruction" />
+  <OpCode Op="0D" Mnem="stloc.3" Description="Pop a value from stack into local variable 3." Category="Base instruction" />
+  <OpCode Op="0E" Mnem="ldarg.s" Operand="&lt;uint8 (num)&gt;" Description="Load argument numbered num onto the stack, short form." Category="Base instruction" />
+  <OpCode Op="0F" Mnem="ldarga.s" Operand="&lt;uint8 (argNum)&gt;" Description="Fetch the address of argument argNum, short form." Category="Base instruction" />
+  <OpCode Op="10" Mnem="starg.s" Operand="&lt;uint8 (num)&gt;" Description="Store value to the argument numbered num, short form." Category="Base instruction" />
+  <OpCode Op="11" Mnem="ldloc.s" Operand="&lt;uint8 (indx)&gt;" Description="Load local variable of index indx onto stack, short form." Category="Base instruction" />
+  <OpCode Op="12" Mnem="ldloca.s" Operand="&lt;uint8 (indx)&gt;" Description="Load address of local variable with index indx, short form." Category="Base instruction" />
+  <OpCode Op="13" Mnem="stloc.s" Operand="&lt;uint8 (indx)&gt;" Description="Pop a value from stack into local variable indx, short form." Category="Base instruction" />
+  <OpCode Op="14" Mnem="ldnull" Description="Push a null reference on the stack." Category="Base instruction" />
+  <OpCode Op="15" Mnem="ldc.i4.m1" Description="Push -1 onto the stack as int32." Category="Base instruction" />
+  <OpCode Op="16" Mnem="ldc.i4.0" Description="Push 0 onto the stack as int32." Category="Base instruction" />
+  <OpCode Op="17" Mnem="ldc.i4.1" Description="Push 1 onto the stack as int32." Category="Base instruction" />
+  <OpCode Op="18" Mnem="ldc.i4.2" Description="Push 2 onto the stack as int32." Category="Base instruction" />
+  <OpCode Op="19" Mnem="ldc.i4.3" Description="Push 3 onto the stack as int32." Category="Base instruction" />
+  <OpCode Op="1A" Mnem="ldc.i4.4" Description="Push 4 onto the stack as int32." Category="Base instruction" />
+  <OpCode Op="1B" Mnem="ldc.i4.5" Description="Push 5 onto the stack as int32." Category="Base instruction" />
+  <OpCode Op="1C" Mnem="ldc.i4.6" Description="Push 6 onto the stack as int32." Category="Base instruction" />
+  <OpCode Op="1D" Mnem="ldc.i4.7" Description="Push 7 onto the stack as int32." Category="Base instruction" />
+  <OpCode Op="1E" Mnem="ldc.i4.8" Description="Push 8 onto the stack as int32." Category="Base instruction" />
+  <OpCode Op="1F" Mnem="ldc.i4.s" Operand="&lt;int8 (num)&gt;" Description="Push num onto the stack as int32, short form." Category="Base instruction" />
+  <OpCode Op="20" Mnem="ldc.i4" Operand="&lt;int32 (num)&gt;" Description="Push num of type int32 onto the stack as int32." Category="Base instruction" />
+  <OpCode Op="21" Mnem="ldc.i8" Operand="&lt;int64 (num)&gt;" Description="Push num of type int64 onto the stack as int64." Category="Base instruction" />
+  <OpCode Op="22" Mnem="ldc.r4" Operand="&lt;float32 (num)&gt;" Description="Push num of type float32 onto the stack as F." Category="Base instruction" />
+  <OpCode Op="23" Mnem="ldc.r8" Operand="&lt;float64 (num)&gt;" Description="Push num of type float64 onto the stack as F." Category="Base instruction" />
+  <OpCode Op="25" Mnem="dup" Description="Duplicate the value on the top of the stack." Category="Base instruction" />
+  <OpCode Op="26" Mnem="pop" Description="Pop value from the stack." Category="Base instruction" />
+  <OpCode Op="27" Mnem="jmp" Operand="&lt;method&gt;" Description="Exit current method and jump to the specified method." Category="Base instruction" />
+  <OpCode Op="28" Mnem="call" Operand="&lt;method&gt;" Description="Call method described by method." Category="Base instruction" />
+  <OpCode Op="29" Mnem="calli" Operand="&lt;callsitedescr&gt;" Description="Call method indicated on the stack with arguments described by callsitedescr." Category="Base instruction" />
+  <OpCode Op="2A" Mnem="ret" Description="Return from method, possibly with a value." Category="Base instruction" />
+  <OpCode Op="2B" Mnem="br.s" Operand="&lt;int8 (target)&gt;" Description="Branch to target, short form." Category="Base instruction" />
+  <OpCode Op="2C" Mnem="brfalse.s" AltMnem="brnull.s|brzero.s" Operand="&lt;int8 (target)&gt;" Description="Branch to target if value is zero (false), short form." Category="Base instruction" />
+  <OpCode Op="2D" Mnem="brtrue.s" AltMnem="brinst.s" Operand="&lt;int8 (target)&gt;" Description="Branch to target if value is non-zero (true), short form." Category="Base instruction" />
+  <OpCode Op="2E" Mnem="beq.s" Operand="&lt;int8 (target)&gt;" Description="Branch to target if equal, short form." Category="Base instruction" />
+  <OpCode Op="2F" Mnem="bge.s" Operand="&lt;int8 (target)&gt;" Description="Branch to target if greater than or equal to, short form." Category="Base instruction" />
+  <OpCode Op="30" Mnem="bgt.s" Operand="&lt;int8 (target)&gt;" Description="Branch to target if greater than, short form." Category="Base instruction" />
+  <OpCode Op="31" Mnem="ble.s" Operand="&lt;int8 (target)&gt;" Description="Branch to target if less than or equal to, short form." Category="Base instruction" />
+  <OpCode Op="32" Mnem="blt.s" Operand="&lt;int8 (target)&gt;" Description="Branch to target if less than, short form." Category="Base instruction" />
+  <OpCode Op="33" Mnem="bne.un.s" Operand="&lt;int8 (target)&gt;" Description="Branch to target if unequal or unordered, short form." Category="Base instruction" />
+  <OpCode Op="34" Mnem="bge.un.s" Operand="&lt;int8 (target)&gt;" Description="Branch to target if greater than or equal to (unsigned or unordered), short form" Category="Base instruction" />
+  <OpCode Op="35" Mnem="bgt.un.s" Operand="&lt;int8 (target)&gt;" Description="Branch to target if greater than (unsigned or unordered), short form." Category="Base instruction" />
+  <OpCode Op="36" Mnem="ble.un.s" Operand="&lt;int8 (target)&gt;" Description="Branch to target if less than or equal to (unsigned or unordered), short form" Category="Base instruction" />
+  <OpCode Op="37" Mnem="blt.un.s" Operand="&lt;int8 (target)&gt;" Description="Branch to target if less than (unsigned or unordered), short form." Category="Base instruction" />
+  <OpCode Op="38" Mnem="br" Operand="&lt;int32 (target)&gt;" Description="Branch to target." Category="Base instruction" />
+  <OpCode Op="39" Mnem="brfalse" AltMnem="brnull|brzero" Operand="&lt;int32 (target)&gt;" Description="Branch to target if value is zero (false)." Category="Base instruction" />
+  <OpCode Op="3A" Mnem="brtrue" AltMnem="brinst" Operand="&lt;int32 (target)&gt;" Description="Branch to target if value is non-zero (true)." Category="Base instruction" />
+  <OpCode Op="3B" Mnem="beq" Operand="&lt;int32 (target)&gt;" Description="Branch to target if equal." Category="Base instruction" />
+  <OpCode Op="3C" Mnem="bge" Operand="&lt;int32 (target)&gt;" Description="Branch to target if greater than or equal to." Category="Base instruction" />
+  <OpCode Op="3D" Mnem="bgt" Operand="&lt;int32 (target)&gt;" Description="Branch to target if greater than." Category="Base instruction" />
+  <OpCode Op="3E" Mnem="ble" Operand="&lt;int32 (target)&gt;" Description="Branch to target if less than or equal to." Category="Base instruction" />
+  <OpCode Op="3F" Mnem="blt" Operand="&lt;int32 (target)&gt;" Description="Branch to target if less than." Category="Base instruction" />
+  <OpCode Op="40" Mnem="bne.un" Operand="&lt;int32 (target)&gt;" Description="Branch to target if unequal or unordered." Category="Base instruction" />
+  <OpCode Op="41" Mnem="bge.un" Operand="&lt;int32 (target)&gt;" Description="Branch to target if greater than or equal to (unsigned or unordered)." Category="Base instruction" />
+  <OpCode Op="42" Mnem="bgt.un" Operand="&lt;int32 (target)&gt;" Description="Branch to target if greater than (unsigned or unordered)." Category="Base instruction" />
+  <OpCode Op="43" Mnem="ble.un" Operand="&lt;int32 (target)&gt;" Description="Branch to target if less than or equal to (unsigned or unordered)." Category="Base instruction" />
+  <OpCode Op="44" Mnem="blt.un" Operand="&lt;int32 (target)&gt;" Description="Branch to target if less than (unsigned or unordered)." Category="Base instruction" />
+  <OpCode Op="45" Mnem="switch" Operand="&lt;uint32, int32, int32 (t1..tN)&gt;" Description="Jump to one of n values." Category="Base instruction" />
+  <OpCode Op="46" Mnem="ldind.i1" Description="Indirect load value of type int8 as int32 on the stack." Category="Base instruction" />
+  <OpCode Op="47" Mnem="ldind.u1" Description="Indirect load value of type unsigned int8 as int32 on the stack" Category="Base instruction" />
+  <OpCode Op="48" Mnem="ldind.i2" Description="Indirect load value of type int16 as int32 on the stack." Category="Base instruction" />
+  <OpCode Op="49" Mnem="ldind.u2" Description="Indirect load value of type unsigned int16 as int32 on the stack" Category="Base instruction" />
+  <OpCode Op="4A" Mnem="ldind.i4" Description="Indirect load value of type int32 as int32 on the stack." Category="Base instruction" />
+  <OpCode Op="4B" Mnem="ldind.u4" Description="Indirect load value of type unsigned int32 as int32 on the stack" Category="Base instruction" />
+  <OpCode Op="4C" Mnem="ldind.i8" AltMnem="ldind.u8" Description="Indirect load value of type int64 as int64 on the stack." Category="Base instruction" />
+  <OpCode Op="4D" Mnem="ldind.i" Description="Indirect load value of type native int as native int on the stack" Category="Base instruction" />
+  <OpCode Op="4E" Mnem="ldind.r4" Description="Indirect load value of type float32 as F on the stack." Category="Base instruction" />
+  <OpCode Op="4F" Mnem="ldind.r8" Description="Indirect load value of type float64 as F on the stack." Category="Base instruction" />
+  <OpCode Op="50" Mnem="ldind.ref" Description="Indirect load value of type object ref as O on the stack." Category="Base instruction" />
+  <OpCode Op="51" Mnem="stind.ref" Description="Store value of type object ref (type O) into memory at address" Category="Base instruction" />
+  <OpCode Op="52" Mnem="stind.i1" Description="Store value of type int8 into memory at address" Category="Base instruction" />
+  <OpCode Op="53" Mnem="stind.i2" Description="Store value of type int16 into memory at address" Category="Base instruction" />
+  <OpCode Op="54" Mnem="stind.i4" Description="Store value of type int32 into memory at address" Category="Base instruction" />
+  <OpCode Op="55" Mnem="stind.i8" Description="Store value of type int64 into memory at address" Category="Base instruction" />
+  <OpCode Op="56" Mnem="stind.r4" Description="Store value of type float32 into memory at address" Category="Base instruction" />
+  <OpCode Op="57" Mnem="stind.r8" Description="Store value of type float64 into memory at address" Category="Base instruction" />
+  <OpCode Op="58" Mnem="add" Description="Add two values, returning a new value." Category="Base instruction" />
+  <OpCode Op="59" Mnem="sub" Description="Subtract value2 from value1, returning a new value." Category="Base instruction" />
+  <OpCode Op="5A" Mnem="mul" Description="Multiply values." Category="Base instruction" />
+  <OpCode Op="5B" Mnem="div" Description="Divide two values to return a quotient or floating-point result." Category="Base instruction" />
+  <OpCode Op="5C" Mnem="div.un" Description="Divide two values, unsigned, returning a quotient." Category="Base instruction" />
+  <OpCode Op="5D" Mnem="rem" Description="Remainder when dividing one value by another." Category="Base instruction" />
+  <OpCode Op="5E" Mnem="rem.un" Description="Remainder when dividing one unsigned value by another." Category="Base instruction" />
+  <OpCode Op="5F" Mnem="and" Description="Bitwise AND of two integral values, returns an integral value." Category="Base instruction" />
+  <OpCode Op="60" Mnem="or" Description="Bitwise OR of two integer values, returns an integer." Category="Base instruction" />
+  <OpCode Op="61" Mnem="xor" Description="Bitwise XOR of integer values, returns an integer." Category="Base instruction" />
+  <OpCode Op="62" Mnem="shl" Description="Shift an integer left (shifting in zeros), return an integer." Category="Base instruction" />
+  <OpCode Op="63" Mnem="shr" Description="Shift an integer right (shift in sign), return an integer." Category="Base instruction" />
+  <OpCode Op="64" Mnem="shr.un" Description="Shift an integer right (shift in zero), return an integer." Category="Base instruction" />
+  <OpCode Op="65" Mnem="neg" Description="Negate value." Category="Base instruction" />
+  <OpCode Op="66" Mnem="not" Description="Bitwise complement (logical not)." Category="Base instruction" />
+  <OpCode Op="67" Mnem="conv.i1" Description="Convert to int8, pushing int32 on stack." Category="Base instruction" />
+  <OpCode Op="68" Mnem="conv.i2" Description="Convert to int16, pushing int32 on stack." Category="Base instruction" />
+  <OpCode Op="69" Mnem="conv.i4" Description="Convert to int32, pushing int32 on stack." Category="Base instruction" />
+  <OpCode Op="6A" Mnem="conv.i8" Description="Convert to int64, pushing int64 on stack." Category="Base instruction" />
+  <OpCode Op="6B" Mnem="conv.r4" Description="Convert to float32, pushing F on stack." Category="Base instruction" />
+  <OpCode Op="6C" Mnem="conv.r8" Description="Convert to float64, pushing F on stack." Category="Base instruction" />
+  <OpCode Op="6D" Mnem="conv.u4" Description="Convert to unsigned int32, pushing int32 on stack." Category="Base instruction" />
+  <OpCode Op="6E" Mnem="conv.u8" Description="Convert to unsigned int64, pushing int64 on stack." Category="Base instruction" />
+  <OpCode Op="6F" Mnem="callvirt" Operand="&lt;method&gt;" Description="Call a method associated with an object." Category="Object model instruction" />
+  <OpCode Op="70" Mnem="cpobj" Operand="&lt;typeTok&gt;" Description="Copy a value type from src to dest." Category="Object model instruction" />
+  <OpCode Op="71" Mnem="ldobj" Operand="&lt;typeTok&gt;" Description="Copy the value stored at address src to the stack." Category="Object model instruction" />
+  <OpCode Op="72" Mnem="ldstr" Operand="&lt;string&gt;" Description="Push a string object for the literal string." Category="Object model instruction" />
+  <OpCode Op="73" Mnem="newobj" Operand="&lt;ctor&gt;" Description="Allocate an uninitialized object or value type and call ctor." Category="Object model instruction" />
+  <OpCode Op="74" Mnem="castclass" Operand="&lt;class&gt;" Description="Cast obj to class." Category="Object model instruction" />
+  <OpCode Op="75" Mnem="isinst" Operand="&lt;class&gt;" Description="Test if obj is an instance of class, returning null or an instance of that class or interface." Category="Object model instruction" />
+  <OpCode Op="76" Mnem="conv.r.un" Description="Convert unsigned integer to floating-point, pushing F on stack." Category="Base instruction" />
+  <OpCode Op="79" Mnem="unbox" Operand="&lt;valuetype&gt;" Description="Extract a value-type from obj, its boxed representation, and push a managed pointer to it to the top of the stack" Category="Object model instruction" />
+  <OpCode Op="7A" Mnem="throw" Description="Throw an exception." Category="Object model instruction" />
+  <OpCode Op="7B" Mnem="ldfld" Operand="&lt;field&gt;" Description="Push the value of field of object (or value type) obj, onto the stack." Category="Object model instruction" />
+  <OpCode Op="7C" Mnem="ldflda" Operand="&lt;field&gt;" Description="Push the address of field of object obj on the stack." Category="Object model instruction" />
+  <OpCode Op="7D" Mnem="stfld" Operand="&lt;field&gt;" Description="Replace the value of field of the object obj with value." Category="Object model instruction" />
+  <OpCode Op="7E" Mnem="ldsfld" Operand="&lt;field&gt;" Description="Push the value of the static field on the stack." Category="Object model instruction" />
+  <OpCode Op="7F" Mnem="ldsflda" Operand="&lt;field&gt;" Description="Push the address of the static field, field, on the stack." Category="Object model instruction" />
+  <OpCode Op="80" Mnem="stsfld" Operand="&lt;field&gt;" Description="Replace the value of the static field with val." Category="Object model instruction" />
+  <OpCode Op="81" Mnem="stobj" Operand="&lt;typeTok&gt;" Description="Store a value of type typeTok at an address." Category="Object model instruction" />
+  <OpCode Op="82" Mnem="conv.ovf.i1.un" Description="Convert unsigned to an int8 (on the stack as int32) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="83" Mnem="conv.ovf.i2.un" Description="Convert unsigned to an int16 (on the stack as int32) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="84" Mnem="conv.ovf.i4.un" Description="Convert unsigned to an int32 (on the stack as int32) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="85" Mnem="conv.ovf.i8.un" Description="Convert unsigned to an int64 (on the stack as int64) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="86" Mnem="conv.ovf.u1.un" Description="Convert unsigned to an unsigned int8 (on the stack as int32) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="87" Mnem="conv.ovf.u2.un" Description="Convert unsigned to an unsigned int16 (on the stack as int32) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="88" Mnem="conv.ovf.u4.un" Description="Convert unsigned to an unsigned int32 (on the stack as int32) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="89" Mnem="conv.ovf.u8.un" Description="Convert unsigned to an unsigned int64 (on the stack as int64) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="8A" Mnem="conv.ovf.i.un" Description="Convert unsigned to a native int (on the stack as native int) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="8B" Mnem="conv.ovf.u.un" Description="Convert unsigned to a native unsigned int (on the stack as native int) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="8C" Mnem="box" Operand="&lt;typeTok&gt;" Description="Convert a boxable value to its boxed form" Category="Object model instruction" />
+  <OpCode Op="8D" Mnem="newarr" Operand="&lt;etype&gt;" Description="Create a new array with elements of type etype." Category="Object model instruction" />
+  <OpCode Op="8E" Mnem="ldlen" Description="Push the length (of type native unsigned int) of array on the stack." Category="Object model instruction" />
+  <OpCode Op="8F" Mnem="ldelema" Operand="&lt;class&gt;" Description="Load the address of element at index onto the top of the stack." Category="Object model instruction" />
+  <OpCode Op="90" Mnem="ldelem.i1" Description="Load the element with type int8 at index onto the top of the stack as an int32." Category="Object model instruction" />
+  <OpCode Op="91" Mnem="ldelem.u1" Description="Load the element with type unsigned int8 at index onto the top of the stack as an int32." Category="Object model instruction" />
+  <OpCode Op="92" Mnem="ldelem.i2" Description="Load the element with type int16 at index onto the top of the stack as an int32." Category="Object model instruction" />
+  <OpCode Op="93" Mnem="ldelem.u2" Description="Load the element with type unsigned int16 at index onto the top of the stack as an int32." Category="Object model instruction" />
+  <OpCode Op="94" Mnem="ldelem.i4" Description="Load the element with type int32 at index onto the top of the stack as an int32." Category="Object model instruction" />
+  <OpCode Op="95" Mnem="ldelem.u4" Description="Load the element with type unsigned int32 at index onto the top of the stack as an int32." Category="Object model instruction" />
+  <OpCode Op="96" Mnem="ldelem.i8" AltMnem="ldelem.u8" Description="Load the element with type int64 at index onto the top of the stack as an int64." Category="Object model instruction" />
+  <OpCode Op="97" Mnem="ldelem.i" Description="Load the element with type native int at index onto the top of the stack as a native int." Category="Object model instruction" />
+  <OpCode Op="98" Mnem="ldelem.r4" Description="Load the element with type float32 at index onto the top of the stack as an F" Category="Object model instruction" />
+  <OpCode Op="99" Mnem="ldelem.r8" Description="Load the element with type float64 at index onto the top of the stack as an F." Category="Object model instruction" />
+  <OpCode Op="9A" Mnem="ldelem.ref" Description="Load the element at index onto the top of the stack as an O. The type of the O is the same as the element type of the array pushed on the CIL stack." Category="Object model instruction" />
+  <OpCode Op="9B" Mnem="stelem.i" Description="Replace array element at index with the i value on the stack." Category="Object model instruction" />
+  <OpCode Op="9C" Mnem="stelem.i1" Description="Replace array element at index with the int8 value on the stack." Category="Object model instruction" />
+  <OpCode Op="9D" Mnem="stelem.i2" Description="Replace array element at index with the int16 value on the stack." Category="Object model instruction" />
+  <OpCode Op="9E" Mnem="stelem.i4" Description="Replace array element at index with the int32 value on the stack." Category="Object model instruction" />
+  <OpCode Op="9F" Mnem="stelem.i8" Description="Replace array element at index with the int64 value on the stack." Category="Object model instruction" />
+  <OpCode Op="A0" Mnem="stelem.r4" Description="Replace array element at index with the float32 value on the stack." Category="Object model instruction" />
+  <OpCode Op="A1" Mnem="stelem.r8" Description="Replace array element at index with the float64 value on the stack." Category="Object model instruction" />
+  <OpCode Op="A2" Mnem="stelem.ref" Description="Replace array element at index with the ref value on the stack." Category="Object model instruction" />
+  <OpCode Op="A3" Mnem="ldelem" Operand="&lt;typeTok&gt;" Description="Load the element at index onto the top of the stack." Category="Object model instruction" />
+  <OpCode Op="A4" Mnem="stelem" Operand="&lt;typeTok&gt;" Description="Replace array element at index with the value on the stack" Category="Object model instruction" />
+  <OpCode Op="A5" Mnem="unbox.any" Operand="&lt;typeTok&gt;" Description="Extract a value-type from obj, its boxed representation, and copy to the top of the stack" Category="Object model instruction" />
+  <OpCode Op="B3" Mnem="conv.ovf.i1" Description="Convert to an int8 (on the stack as int32) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="B4" Mnem="conv.ovf.u1" Description="Convert to an unsigned int8 (on the stack as int32) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="B5" Mnem="conv.ovf.i2" Description="Convert to an int16 (on the stack as int32) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="B6" Mnem="conv.ovf.u2" Description="Convert to an unsigned int16 (on the stack as int32) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="B7" Mnem="conv.ovf.i4" Description="Convert to an int32 (on the stack as int32) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="B8" Mnem="conv.ovf.u4" Description="Convert to an unsigned int32 (on the stack as int32) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="B9" Mnem="conv.ovf.i8" Description="Convert to an int64 (on the stack as int64) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="BA" Mnem="conv.ovf.u8" Description="Convert to an unsigned int64 (on the stack as int64) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="C2" Mnem="refanyval" Operand="&lt;type&gt;" Description="Push the address stored in a typed reference." Category="Object model instruction" />
+  <OpCode Op="C3" Mnem="ckfinite" Description="Throw ArithmeticException if value is not a finite number." Category="Base instruction" />
+  <OpCode Op="C6" Mnem="mkrefany" Operand="&lt;class&gt;" Description="Push a typed reference to ptr of type class onto the stack." Category="Object model instruction" />
+  <OpCode Op="D0" Mnem="ldtoken" Operand="&lt;token&gt;" Description="Convert metadata token to its runtime representation." Category="Object model instruction" />
+  <OpCode Op="D1" Mnem="conv.u2" Description="Convert to unsigned int16, pushing int32 on stack." Category="Base instruction" />
+  <OpCode Op="D2" Mnem="conv.u1" Description="Convert to unsigned int8, pushing int32 on stack." Category="Base instruction" />
+  <OpCode Op="D3" Mnem="conv.i" Description="Convert to native int, pushing native int on stack." Category="Base instruction" />
+  <OpCode Op="D4" Mnem="conv.ovf.i" Description="Convert to a native int (on the stack as native int) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="D5" Mnem="conv.ovf.u" Description="Convert to a native unsigned int (on the stack as native int) and throw an exception on overflow." Category="Base instruction" />
+  <OpCode Op="D6" Mnem="add.ovf" Description="Add signed integer values with overflow check." Category="Base instruction" />
+  <OpCode Op="D7" Mnem="add.ovf.un" Description="Add unsigned integer values with overflow check." Category="Base instruction" />
+  <OpCode Op="D8" Mnem="mul.ovf" Description="Multiply signed integer values. Signed result shall fit in same size" Category="Base instruction" />
+  <OpCode Op="D9" Mnem="mul.ovf.un" Description="Multiply unsigned integer values. Unsigned result shall fit in same size" Category="Base instruction" />
+  <OpCode Op="DA" Mnem="sub.ovf" Description="Subtract native int from a native int. Signed result shall fit in same size" Category="Base instruction" />
+  <OpCode Op="DB" Mnem="sub.ovf.un" Description="Subtract native unsigned int from a native unsigned int. Unsigned result shall fit in same size." Category="Base instruction" />
+  <OpCode Op="DC" Mnem="endfinally" AltMnem="endfault" Description="End finally clause of an exception block." Category="Base instruction" />
+  <OpCode Op="DD" Mnem="leave" Operand="&lt;int32 (target)&gt;" Description="Exit a protected region of code." Category="Base instruction" />
+  <OpCode Op="DE" Mnem="leave.s" Operand="&lt;int8 (target)&gt;" Description="Exit a protected region of code, short form." Category="Base instruction" />
+  <OpCode Op="DF" Mnem="stind.i" Description="Store value of type native int into memory at address" Category="Base instruction" />
+  <OpCode Op="E0" Mnem="conv.u" Description="Convert to native unsigned int, pushing native int on stack." Category="Base instruction" />
+  <OpCode Op="FE00" Mnem="arglist" Description="Return argument list handle for the current method." Category="Base instruction" />
+  <OpCode Op="FE01" Mnem="ceq" Description="Push 1 (of type int32) if value1 equals value2, else push 0." Category="Base instruction" />
+  <OpCode Op="FE02" Mnem="cgt" Description="Push 1 (of type int32) if value1 &gt; value2, else push 0." Category="Base instruction" />
+  <OpCode Op="FE03" Mnem="cgt.un" Description="Push 1 (of type int32) if value1 &gt; value2, unsigned or unordered, else push 0." Category="Base instruction" />
+  <OpCode Op="FE04" Mnem="clt" Description="Push 1 (of type int32) if value1 &lt; value2, else push 0." Category="Base instruction" />
+  <OpCode Op="FE05" Mnem="clt.un" Description="Push 1 (of type int32) if value1 &lt; value2, unsigned or unordered, else push 0." Category="Base instruction" />
+  <OpCode Op="FE06" Mnem="ldftn" Operand="&lt;method&gt;" Description="Push a pointer to a method referenced by method, on the stack." Category="Base instruction" />
+  <OpCode Op="FE07" Mnem="ldvirtftn" Operand="&lt;method&gt;" Description="Push address of virtual method on the stack." Category="Object model instruction" />
+  <OpCode Op="FE09" Mnem="ldarg" Operand="&lt;uint16 (num)&gt;" Description="Load argument numbered num onto the stack." Category="Base instruction" />
+  <OpCode Op="FE0A" Mnem="ldarga" Operand="&lt;uint16 (argNum)&gt;" Description="Fetch the address of argument argNum." Category="Base instruction" />
+  <OpCode Op="FE0B" Mnem="starg" Operand="&lt;uint16 (num)&gt;" Description="Store value to the argument numbered num." Category="Base instruction" />
+  <OpCode Op="FE0C" Mnem="ldloc" Operand="&lt;uint16 (indx)&gt;" Description="Load local variable of index indx onto stack." Category="Base instruction" />
+  <OpCode Op="FE0D" Mnem="ldloca" Operand="&lt;uint16 (indx)&gt;" Description="Load address of local variable with index indx." Category="Base instruction" />
+  <OpCode Op="FE0E" Mnem="stloc" Operand="&lt;uint16 (indx)&gt;" Description="Pop a value from stack into local variable indx." Category="Base instruction" />
+  <OpCode Op="FE0F" Mnem="localloc" Description="Allocate space from the local memory pool." Category="Base instruction" />
+  <OpCode Op="FE11" Mnem="endfilter" Description="End an exception handling filter clause." Category="Base instruction" />
+  <OpCode Op="FE12" Mnem="unaligned." Operand="(alignment)" Description="Subsequent pointer instruction might be unaligned." Category="Prefix to instruction" />
+  <OpCode Op="FE13" Mnem="volatile." Description="Subsequent pointer reference is volatile." Category="Prefix to instruction" />
+  <OpCode Op="FE14" Mnem="tail." Description="Subsequent call terminates current method" Category="Prefix to instruction" />
+  <OpCode Op="FE15" Mnem="initobj" Operand="&lt;typeTok&gt;" Description="Initialize the value at address dest." Category="Object model instruction" />
+  <OpCode Op="FE16" Mnem="constrained." Operand="&lt;thisType&gt;" Description="Call a virtual method on a type constrained to be type T" Category="Prefix to instruction" />
+  <OpCode Op="FE17" Mnem="cpblk" Description="Copy data from memory to memory." Category="Base instruction" />
+  <OpCode Op="FE18" Mnem="initblk" Description="Set all bytes in a block of memory to a given byte value." Category="Base instruction" />
+  <OpCode Op="FE19" Mnem="no." Operand="{ typecheck, rangecheck, nullcheck }" Description="The specified fault check(s) normally performed as part of the execution of the subsequent instruction can/shall be skipped." Category="Prefix to instruction" />
+  <OpCode Op="FE1A" Mnem="rethrow" Description="Rethrow the current exception." Category="Object model instruction" />
+  <OpCode Op="FE1C" Mnem="sizeof" Operand="&lt;typeTok&gt;" Description="Push the size, in bytes, of a type as an unsigned int32." Category="Object model instruction" />
+  <OpCode Op="FE1D" Mnem="refanytype" Description="Push the type token stored in a typed reference." Category="Object model instruction" />
+  <OpCode Op="FE1E" Mnem="readonly." Description="Specify that the subsequent array address operation performs no type check at runtime, and that it returns a controlled-mutability managed pointer" Category="Prefix to instruction" />
+</Cpu_MSIL>

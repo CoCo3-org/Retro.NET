@@ -1,0 +1,438 @@
+  00          NEG        Direct          6  (5)         2  
+* 01          OIM        Direct          6              3  
+* 02          AIM        Direct          6              3  
+  03          COM        Direct          6  (5)         2  
+  04          LSR        Direct          6  (5)         2  
+* 05          EIM        Direct          6              3  
+  06          ROR        Direct          6  (5)         2  
+  07          ASR        Direct          6  (5)         2  
+  08          ASL/LSL    Direct          6  (5)         2  
+  09          ROL        Direct          6  (5)         2  
+  0A          DEC        Direct          6  (5)         2  
+* 0B          TIM        Direct          6                 
+  0C          INC        Direct          6  (5)         2  
+  0D          TST        Direct          6  (4)         2  
+  0E          JMP        Direct          3  (2)         2  
+  0F          CLR        Direct          6  (5)         2  
+  10          (PREBYTE)                                    
+  11          (PREBYTE)                                    
+  12          NOP        Inherent        2  (1)         1  
+  13          SYNC       Inherent        2  (1)         1  
+* 14          SEXW       Inherent        4              1  
+  16          LBRA       Relative        5  (4)         3  
+  17          LBSR       Relative        9  (7)         3  
+  19          DAA        Inherent        2  (1)         1  
+  1A          ORCC       Immediate       3  (2)         2  
+  1C          ANDCC      Immediate       3              2  
+  1D          SEX        Inherent        2  (1)         1  
+  1E          EXG        Immediate       8  (5)         2  
+  1F          TFR        Immediate       6  (4)         2  
+  20          BRA        Relative        3              2  
+  21          BRN        Relative        3              2  
+  22          BHI        Relative        3              2  
+  23          BLS        Relative        3              2  
+  24          BHS/BCC    Relative        3              2  
+  25          BLO/BCS    Relative        3              2  
+  26          BNE        Relative        3              2  
+  27          BEQ        Relative        3              2  
+  28          BVC        Relative        3              2  
+  29          BVS        Relative        3              2  
+  2A          BPL        Relative        3              2  
+  2B          BMI        Relative        3              2  
+  2C          BGE        Relative        3              2  
+  2D          BLT        Relative        3              2  
+  2E          BGT        Relative        3              2  
+  2F          BLE        Relative        3              2  
+  30          LEAX       Indexed         4+             2  
+  31          LEAY       Indexed         4+             2  
+  32          LEAS       Indexed         4+             2  
+  33          LEAU       Indexed         4+             2  
+  34          PSHS       Immediate       5+ (4+)        2  
+  35          PULS       Immediate       5+ (4+)        2  
+  36          PSHU       Immediate       5+ (4+)        2  
+  37          PULU       Immediate       5+ (4+)        2  
+  39          RTS        Inherent        5  (1)         1  
+  3A          ABX        Inherent        3  (1)         1  
+  3B          RTI        Inherent      6/15 (17)        1  
+  3C          CWAI       Immediate      22  (20)        2  
+  3D          MUL        Inherent       11  (10)        1  
+  3F          SWI        Inherent       19  (21)        1  
+  40          NEGA       Inherent        2  (1)         1  
+  43          COMA       Inherent        2  (1)         1  
+  44          LSRA       Inherent        2  (1)         1  
+  46          RORA       Inherent        2  (1)         1  
+  47          ASRA       Inherent        2  (1)         1  
+  48          ASLA/LSLA  Inherent        2  (1)         1  
+  49          ROLA       Inherent        2  (1)         1  
+  4A          DECA       Inherent        2  (1)         1  
+  4C          INCA       Inherent        2  (1)         1  
+  4D          TSTA       Inherent        2  (1)         1  
+  4F          CLRA       Inherent        2  (1)         1  
+  50          NEGB       Inherent        2  (1)         1  
+  53          COMB       Inherent        2  (1)         1  
+  54          LSRB       Inherent        2  (1)         1  
+  56          RORB       Inherent        2  (1)         1  
+  57          ASRB       Inherent        2  (1)         1  
+  58          ASLB/LSLB  Inherent        2  (1)         1  
+  59          ROLB       Inherent        2  (1)         1  
+  5A          DECB       Inherent        2  (1)         1  
+  5C          INCB       Inherent        2  (1)         1  
+  5D          TSTB       Inherent        2  (1)         1  
+  5F          CLRB       Inherent        2  (1)         1  
+  60          NEG        Indexed         6+             2+ 
+* 61          OIM        Indexed         6+             3+ 
+* 62          AIM        Indexed         7              3+ 
+  63          COM        Indexed         6+             2+ 
+  64          LSR        Indexed         6+             2+ 
+* 65          EIM        Indexed         7+             3+ 
+  66          ROR        Indexed         6+             2+ 
+  67          ASR        Indexed         6+             2+ 
+  68          ASL/LSL    Indexed         6+             2+ 
+  69          ROL        Indexed         6+             2+ 
+  6A          DEC        Indexed         6+             2+ 
+* 6B          TIM        Indexed         7+             3+ 
+  6C          INC        Indexed         6+             2+ 
+  6D          TST        Indexed         6+ (5+)        2+ 
+  6E          JMP        Indexed         3+             2+ 
+  6F          CLR        Indexed         6+             2+ 
+  70          NEG        Extended        7  (6)         3  
+* 71          OIM        Extended        7              4  
+* 72          AIM        Extended        7              4  
+  73          COM        Extended        7  (6)         3  
+  74          LSR        Extended        7  (6)         3  
+  76          ROR        Extended        7  (6)         3  
+* 75          EIM        Extended        7              4  
+  77          ASR        Extended        7  (6)         3  
+  78          ASL/LSL    Extended        7  (6)         3  
+  79          ROL        Extended        7  (6)         3  
+  7A          DEC        Extended        7  (6)         3  
+* 7B          TIM        Extended        7              4  
+  7C          INC        Extended        7  (6)         3  
+  7D          TST        Extended        7  (5)         3  
+  7E          JMP        Extended        4  (3)         3  
+  7F          CLR        Extended        7  (6)         3  
+  80          SUBA       Immediate       2              2  
+  81          CMPA       Immediate       2              2  
+  82          SBCA       Immediate       2              2  
+  83          SUBD       Immediate       4  (3)         3  
+  84          ANDA       Immediate       2              2  
+  85          BITA       Immediate       2              2  
+  86          LDA        Immediate       2              2  
+  88          EORA       Immediate       2              2  
+  89          ADCA       Immediate       2              2  
+  8A          ORA        Immediate       2              2  
+  8B          ADDA       Immediate       2              2  
+  8C          CMPX       Immediate       4  (3)         3  
+  8D          BSR        Relative        7  (6)         2  
+  8E          LDX        Immediate       3              3  
+  90          SUBA       Direct          4  (3)         2  
+  91          CMPA       Direct          4  (3)         2  
+  92          SBCA       Direct          4  (3)         2  
+  93          SUBD       Direct          6  (4)         2  
+  94          ANDA       Direct          4  (3)         2  
+  95          BITA       Direct          4  (3)         2  
+  96          LDA        Direct          4  (3)         2  
+  97          STA        Direct          4  (3)         2  
+  98          EORA       Direct          4  (3)         2  
+  99          ADCA       Direct          4  (3)         2  
+  9A          ORA        Direct          4  (3)         2  
+  9B          ADDA       Direct          4  (3)         2  
+  9C          CMPX       Direct          6  (4)         2  
+  9D          JSR        Direct          7  (6)         2  
+  9E          LDX        Direct          5  (4)         2  
+  9F          STX        Direct          5  (4)         2  
+  A0          SUBA       Indexed         4+             2+ 
+  A1          CMPA       Indexed         4+             2+ 
+  A2          SBCA       Indexed         4+             2+ 
+  A3          SUBD       Indexed         6+ (5+)        2+ 
+  A4          ANDA       Indexed         4+             2+ 
+  A5          BITA       Indexed         4+             2+ 
+  A6          LDA        Indexed         4+             2+ 
+  A7          STA        Indexed         4+             2+ 
+  A8          EORA       Indexed         4+             2+ 
+  A9          ADCA       Indexed         4+             2+ 
+  AA          ORA        Indexed         4+             2+ 
+  AB          ADDA       Indexed         4+             2+ 
+  AC          CMPX       Indexed         6+ (5+)        2+ 
+  AD          JSR        Indexed         7+ (6+)        2+ 
+  AE          LDX        Indexed         5+             2+ 
+  AF          STX        Indexed         5+             2+ 
+  B0          SUBA       Extended        5  (4)         3  
+  B1          CMPA       Extended        5  (4)         3  
+  B2          SBCA       Extended        5  (4)         3  
+  B3          SUBD       Extended        7  (5)         3  
+  B4          ANDA       Extended        5  (4)         3  
+  B5          BITA       Extended        5  (4)         3  
+  B6          LDA        Extended        5  (4)         3  
+  B7          STA        Extended        5  (4)         3  
+  B8          EORA       Extended        5  (4)         3  
+  B9          ADCA       Extended        5  (4)         3  
+  BA          ORA        Extended        5  (4)         3  
+  BB          ADDA       Extended        5  (4)         3  
+  BC          CMPX       Extended        7  (5)         3  
+  BD          JSR        Extended        8  (7)         3  
+  BE          LDX        Extended        6  (5)         3  
+  BF          STX        Extended        6  (5)         3  
+  C0          SUBB       Immediate       2              2  
+  C1          CMPB       Immediate       2              2  
+  C2          SBCB       Immediate       2              2  
+  C3          ADDD       Immediate       4  (3)         3  
+  C4          ANDB       Immediate       2              2  
+  C5          BITB       Immediate       2              2  
+  C6          LDB        Immediate       2              2  
+  C8          EORB       Immediate       2              2  
+  C9          ADCB       Immediate       2              2  
+  CA          ORB        Immediate       2              2  
+  CB          ADDB       Immediate       2              2  
+  CC          LDD        Immediate       3              3  
+* CD          LDQ        Immediate       5              5  
+  CE          LDU        Immediate       3              3  
+  D0          SUBB       Direct          4  (3)         2  
+  D1          CMPB       Direct          4  (3)         2  
+  D2          SBCB       Direct          4  (3)         2  
+  D3          ADDD       Direct          6  (4)         2  
+  D4          ANDB       Direct          4  (3)         2  
+  D5          BITB       Direct          4  (3)         2  
+  D6          LDB        Direct          4  (3)         2  
+  D7          STB        Direct          4  (3)         2  
+  D8          EORB       Direct          4  (3)         2  
+  D9          ADCB       Direct          4  (3)         2  
+  DA          ORB        Direct          4  (3)         2  
+  DB          ADDB       Direct          4  (3)         2  
+  DC          LDD        Direct          5  (4)         2  
+  DD          STD        Direct          5  (4)         2  
+  DE          LDU        Direct          5  (4)         2  
+  DF          STU        Direct          5  (4)         2  
+  E0          SUBB       Indexed         4+             2+ 
+  E1          CMPB       Indexed         4+             2+ 
+  E2          SBCB       Indexed         4+             2+ 
+  E3          ADDD       Indexed         6+ (5+)        2+ 
+  E4          ANDB       Indexed         4+             2+ 
+  E5          BITB       Indexed         4+             2+ 
+  E6          LDB        Indexed         4+             2+ 
+  E7          STB        Indexed         4+             2+ 
+  E8          EORB       Indexed         4+             2+ 
+  E9          ADCB       Indexed         4+             2+ 
+  EA          ORB        Indexed         4+             2+ 
+  EB          ADDB       Indexed         4+             2+ 
+  EC          LDD        Indexed         5+             2+ 
+  ED          STD        Indexed         5+             2+ 
+  EE          LDU        Indexed         5+             2+ 
+  EF          STU        Indexed         5+             2+ 
+  F0          SUBB       Extended        5  (4)         3  
+  F1          CMPB       Extended        5  (4)         3  
+  F2          SBCB       Extended        5  (4)         3  
+  F3          ADDD       Extended        7  (5)         3  
+  F4          ANDB       Extended        5  (4)         3  
+  F5          BITB       Extended        5  (4)         3  
+  F6          LDB        Extended        5  (4)         3  
+  F7          STB        Extended        5  (4)         3  
+  F8          EORB       Extended        5  (4)         3  
+  F9          ADCB       Extended        5  (4)         3  
+  FA          ORB        Extended        5  (4)         3  
+  FB          ADDB       Extended        5  (4)         3  
+  FC          LDD        Extended        6  (5)         3  
+  FD          STD        Extended        6  (5)         3  
+  FE          LDU        Extended        6  (5)         3  
+  FF          STU        Extended        6  (5)         3  
+  1021        LBRN       Reletive       5/6 ( )         4  
+  1022        LBHI       Reletive       5/6 ( )         4  
+  1023        LBLS       Reletive       5/6 ( )         4  
+  1024        LBHS/LBCC  Reletive       5/6 ( )         4  
+  1025        LBLO/LBCS  Reletive       5/6 ( )         4  
+  1026        LBNE       Reletive       5/6 ( )         4  
+  1027        LBEQ       Reletive       5/6 ( )         4  
+  1028        LBVC       Reletive       5/6 ( )         4  
+  1029        LBVS       Reletive       5/6 ( )         4  
+  102A        LBPL       Reletive       5/6 ( )         4  
+  102B        LBMI       Reletive       5/6 ( )         4  
+  102C        LBGE       Reletive       5/6 ( )         4  
+  102D        LBLT       Reletive       5/6 ( )         4  
+  102E        LBGT       Reletive       5/6 ( )         4  
+  102F        LBLE       Reletive       5/6 ( )         4  
+* 1030        ADDR       Register        4              3  
+* 1031        ADCR       Register        4              3  
+* 1032        SUBR       Register        4              3  
+* 1033        SBCR       Register        4              3  
+* 1034        ANDR       Register        4              3  
+* 1035        ORR        Register        4              3  
+* 1036        EORR       Register        4              3  
+* 1037        CMPR       Register        4              3  
+* 1038        PSHSW      Register        6              2  
+* 1039        PULSW      Register        6              2  
+* 103A        PSHUW      Register        6              2  
+* 103B        PULUW      Register        6              2  
+  103F        SWI2       Inherent        20 (22)        2  
+* 1040        NEGD       Inherent        3  (2)         2  
+* 1043        COMD       Inherent        3  (2)         2  
+* 1044        LSRD       Inherent        3  (2)         2  
+* 1046        RORD       Inherent        3  (2)         2  
+* 1047        ASRD       Inherent        3  (2)         2  
+* 1048        ASLD/LSLD  Inherent        3  (2)         2  
+* 1049        ROLD       Inherent        3  (2)         2  
+* 104A        DECD       Inherent        3  (2)         2  
+* 104C        INCD       Inherent        3  (2)         2  
+* 104D        TSTD       Inherent        3  (2)         2  
+* 104F        CLRD       Inherent        3  (2)         2  
+* 1053        COMW       Inherent        3  (2)         2  
+* 1054        LSRW       Inherent        3  (2)         2  
+* 1056        RORW       Inherent        3  (2)         2  
+* 1059        ROLW       Inherent        3  (2)         2  
+* 105A        DECW       Inherent        3  (2)         2  
+* 105C        INCW       Inherent        3  (2)         2  
+* 105D        TSTW       Inherent        3  (2)         2  
+* 105F        CLRW       Inherent        3  (2)         2  
+* 1080        SUBW       Immediate       5  (4)         4  
+* 1081        CMPW       Immediate       5  (4)         4  
+* 1082        SBCD       Immediate       5  (4)         4  
+  1083        CMPD       Immediate       5  (4)         4  
+* 1084        ANDD       Immediate       5  (4)         4  
+* 1085        BITD       Immediate       5  (4)         4  
+* 1086        LDW        Immediate       5  (4)         4  
+* 1088        EORD       Immediate       5  (4)         4  
+* 1089        ADCD       Immediate       5  (4)         4  
+* 108A        ORD        Immediate       5  (4)         4  
+* 108B        ADDW       Immediate       5  (4)         4  
+  108C        CMPY       Immediate       5  (4)         4  
+  108E        LDY        Immediate       5  (4)         4  
+* 1090        SUBW       Direct          7  (5)         3  
+* 1091        CMPW       Direct          7  (5)         3  
+* 1092        SBCD       Direct          7  (5)         3  
+  1093        CMPD       Direct          7  (5)         3  
+* 1094        ANDD       Direct          7  (5)         3  
+* 1095        BITD       Direct          7  (5)         3  
+* 1096        LDW        Direct          6  (5)         3  
+* 1097        STW        Direct          6  (5)         3  
+* 1098        EORD       Direct          7  (5)         3  
+* 1099        ADCD       Direct          7  (5)         3  
+* 109A        ORD        Direct          7  (5)         3  
+* 109B        ADDW       Direct          7  (5)         3  
+  109C        CMPY       Direct          7  (5)         3  
+  109E        LDY        Direct          6  (5)         3  
+  109F        STY        Direct          6  (5)         3  
+* 10A0        SUBW       Indexed         7+ (6+)        3+ 
+* 10A1        CMPW       Indexed         7+ (6+)        3+ 
+* 10A2        SBCD       Indexed         7+ (6+)        3+ 
+  10A3        CMPD       Indexed         7+ (6+)        3+ 
+* 10A4        ANDD       Indexed         7+ (6+)        3+ 
+* 10A5        BITD       Indexed         7+ (6+)        3+ 
+* 10A6        LDW        Indexed         6+             3+ 
+* 10A7        STW        Indexed         6+             3+ 
+* 10A8        EORD       Indexed         7+ (6+)        3+ 
+* 10A9        ADCD       Indexed         7+ (6+)        3+ 
+* 10AA        ORD        Indexed         7+ (6+)        3+ 
+* 10AB        ADDW       Indexed         7+ (6+)        3+ 
+  10AC        CMPY       Indexed         7+ (6+)        3+ 
+  10AE        LDY        Indexed         6              3+ 
+  10AF        STY        Indexed         6              3+ 
+* 10B0        SUBW       Extended        8  (6)         4  
+* 10B1        CMPW       Extended        8  (6)         4  
+* 10B2        SBCD       Extended        8  (6)         4  
+  10B3        CMPD       Extended        8  (6)         4  
+* 10B4        ANDD       Extended        8  (6)         4  
+* 10B5        BITD       Extended        8  (6)         4  
+* 10B6        LDW        Extended        7  (6)         4  
+* 10B7        STW        Extended        7  (6)         4  
+* 10B8        EORD       Extended        8  (6)         4  
+* 10B9        ADCD       Extended        8  (6)         4  
+* 10BA        ORD        Extended        8  (6)         4  
+* 10BB        ADDW       Extended        8  (6)         4  
+  10BC        CMPY       Extended        8  (6)         4  
+  10BE        LDY        Extended        7  (6)         4  
+  10BF        STY        Extended        7  (6)         4  
+  10CE        LDS        Immediate       4              4  
+* 10DC        LDQ        Direct          8  (7)         3  
+* 10DD        STQ        Direct          8  (7)         3  
+  10DE        LDS        Direct          6  (5)         3  
+  10DF        STS        Direct          6  (5)         3  
+* 10EC        LDQ        Indexed         8+             3+ 
+* 10ED        STQ        Indexed         8+             3+ 
+  10EE        LDS        Indexed         6+             3+ 
+  10EF        STS        Indexed         6+             3+ 
+* 10FC        LDQ        Extended        9  (8)         4  
+* 10FD        STQ        Extended        9  (8)         4  
+  10FE        LDS        Extended        7  (6)         4  
+  10FF        STS        Extended        7  (6)         4  
+* 1130        BAND       Memory          7  (6)         4  
+* 1131        BIAND      Memory          7  (6)         4  
+* 1132        BOR        Memory          7  (6)         4  
+* 1133        BIOR       Memory          7  (6)         4  
+* 1134        BEOR       Memory          7  (6)         4  
+* 1135        BIEOR      Memory          7  (6)         4  
+* 1136        LDBT       Memory          7  (6)         4  
+* 1137        STBT       Memory          8  (7)         4  
+* 1138        TFM R+,R+  Register        6+3n           3  
+* 1139        TFM R-,R-  Register        6+3n           3  
+* 113A        TFM R+,R   Register        6+3n           3  
+* 113B        TFM R,R+   Register        6+3n           3  
+* 113C        BITMD      Immediate       4              3  
+* 113D        LDMD       Immediate       5              5  
+  113F        SWI2       Inherent        20 ( )         2  
+* 1143        COME       Inherent        3  (2)         2  
+* 114A        DECE       Inherent        3  (2)         2  
+* 114C        INCE       Inherent        3  (2)         2  
+* 114D        TSTE       Inherent        3  (2)         2  
+* 114F        CLRE       Inherent        3  (2)         2  
+* 1153        COMF       Inherent        3  (2)         2  
+* 115A        DECF       Inherent        3  (2)         2  
+* 115C        INCF       Inherent        3  (2)         2  
+* 115D        TSTF       Inherent        3  (2)         2  
+* 115F        CLRF       Inherent        3  (2)         2  
+* 1180        SUBE       Immediate       3              3  
+* 1181        CMPE       Immediate       3              3  
+  1183        CMPU       Immediate       5  (4)         4  
+* 1186        LDE        Immediate       3              3  
+* 118B        ADDE       Immediate       3              3  
+  118C        CMPS       Immediate       5  (4)         4  
+* 118D        DIVD       Immediate       25             4  
+* 118E        DIVQ       Immediate       36             4  
+* 118F        MULD       Immediate       28             4  
+* 1190        SUBE       Direct          5  (4)         3  
+* 1191        CMPE       Direct          5  (4)         3  
+  1193        CMPU       Direct          7  (5)         3  
+* 1196        LDE        Direct          5  (4)         3  
+* 1197        STE        Direct          5  (4)         3  
+* 119B        ADDE       Direct          5  (4)         3  
+  119C        CMPS       Direct          7  (5)         3  
+* 119D        DIVD       Direct          27 (26)        3  
+* 119E        DIVQ       Direct          36 (35)        3  
+* 119F        MULD       Direct          30 (29)        3  
+* 11A0        SUBE       Indexed         5+             3+ 
+* 11A1        CMPE       Indexed         5+             3+ 
+  11A3        CMPU       Indexed         7+ (6+)        3+ 
+* 11A6        LDE        Indexed         5+             3+ 
+* 11A7        STE        Indexed         5+             3+ 
+* 11AB        ADDE       Indexed         5+             3+ 
+  11AC        CMPS       Indexed         7+ (6+)        3+ 
+* 11AD        DIVD       Indexed         27+            3+ 
+* 11AE        DIVQ       Indexed         36+            3+ 
+* 11AF        MULD       Indexed         30+            3+ 
+* 11B0        SUBE       Extended        6  (5)         4  
+* 11B1        CMPE       Extended        6  (5)         4  
+  11B3        CMPU       Extended        8  (6)         4  
+* 11B6        LDE        Extended        6  (5)         4  
+* 11B7        STE        Extended        6  (5)         4  
+* 11BB        ADDE       Extended        6  (5)         4  
+  11BC        CMPS       Extended        8  (6)         4  
+* 11BD        DIVD       Extended        28 (27)        4  
+* 11BE        DIVQ       Extended        37 (36)        4  
+* 11BF        MULD       Extended        31 (30)        4  
+* 11C0        SUBF       Immediate       3              3  
+* 11C1        CMPF       Immediate       3              3  
+* 11C6        LDF        Immediate       3              3  
+* 11CB        ADDF       Immediate       3              3  
+* 11D0        SUBF       Direct          5  (4)         3  
+* 11D1        CMPF       Direct          5  (4)         3  
+* 11D6        LDF        Direct          5  (4)         3  
+* 11D7        STF        Direct          5  (4)         3  
+* 11DB        ADDF       Direct          5  (4)         3  
+* 11E0        SUBF       Indexed         5+             3+ 
+* 11E1        CMPF       Indexed         5+             3+ 
+* 11E6        LDF        Indexed         5+             3+ 
+* 11E7        STF        Indexed         5+             3+ 
+* 11EB        ADDF       Indexed         5+             3+ 
+* 11F0        SUBF       Extended        6 (5)          4  
+* 11F1        CMPF       Extended        6 (5)          4  
+* 11F6        LDF        Extended        6 (5)          4  
+* 11F7        STF        Extended        6 (5)          4  
+* 11FB        ADDF       Extended        6 (5)          4  

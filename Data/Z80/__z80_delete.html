@@ -1,0 +1,1213 @@
+<HTML>
+<HEAD>
+  <!-- Created with AOLpress/2.0 -->
+  <TITLE>Z80 Programming Guide</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff" TEXT="#000000">
+<H1 ALIGN=Center>
+  Z80 Machine Language Quick Guide
+</H1>
+<H2 ALIGN=Center>
+  (C)1976 by Mary Bell
+</H2>
+<P ALIGN=Center>
+<P ALIGN=Left>
+I created this guide to the Z80 machine code and Assembly instruction set
+mostly for my own purposes while using a Z80 and the Radio Shack TRS-80's,
+so thought it might be of use to others when learning or editing code. The
+guide consists of a series of tables not unlike the original Zilog Z80 Reference
+Manual, with signifigant changes to make the act of coding or decoding a
+program less clumbersome. The HTML versions are a little bit cluttered, so
+I recommend the graphical representations at the end of the page to be printed
+or followed for the construction of a 3x5 table for use by hand. Use of the
+tables themselves is un-restricted for non-commercial purposes.
+<P ALIGN=Left>
+<P ALIGN=Left>
+<TABLE BORDER CELLPADDING="2">
+  <CAPTION>
+    Jumps &amp; INCs 00 to 3F
+  </CAPTION>
+  <TR>
+    <TD><P ALIGN=Center>
+      1's</TD>
+    <TD><P ALIGN=Center>
+      16's&gt;</TD>
+    <TD><P ALIGN=Center>
+      0</TD>
+    <TD><P ALIGN=Center>
+      1</TD>
+    <TD><P ALIGN=Center>
+      2</TD>
+    <TD><P ALIGN=Center>
+      3</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      0</TD>
+    <TD><P ALIGN=Center>
+      JR</TD>
+    <TD><P ALIGN=Center>
+      NOP</TD>
+    <TD><P ALIGN=Center>
+      DJNZ</TD>
+    <TD><P ALIGN=Center>
+      NZ</TD>
+    <TD>NC</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      1</TD>
+    <TD><P ALIGN=Center>
+      nn-&gt;</TD>
+    <TD><P ALIGN=Center>
+      BC</TD>
+    <TD><P ALIGN=Center>
+      DE</TD>
+    <TD><P ALIGN=Center>
+      HL</TD>
+    <TD><P ALIGN=Center>
+      SP</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      2</TD>
+    <TD><P ALIGN=Center>
+      A-&gt;</TD>
+    <TD><P ALIGN=Center>
+      (BC)</TD>
+    <TD><P ALIGN=Center>
+      (DE)</TD>
+    <TD><P ALIGN=Center>
+      (HL)</TD>
+    <TD><P ALIGN=Center>
+      (nn)</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      3</TD>
+    <TD><P ALIGN=Center>
+      INC</TD>
+    <TD><P ALIGN=Center>
+      BC</TD>
+    <TD><P ALIGN=Center>
+      DE</TD>
+    <TD><P ALIGN=Center>
+      HL</TD>
+    <TD><P ALIGN=Center>
+      SP</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      4</TD>
+    <TD><P ALIGN=Center>
+      INC</TD>
+    <TD><P ALIGN=Center>
+      B</TD>
+    <TD><P ALIGN=Center>
+      D</TD>
+    <TD><P ALIGN=Center>
+      H</TD>
+    <TD><P ALIGN=Center>
+      (HL)</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      5</TD>
+    <TD><P ALIGN=Center>
+      DEC</TD>
+    <TD><P ALIGN=Center>
+      B</TD>
+    <TD><P ALIGN=Center>
+      D</TD>
+    <TD><P ALIGN=Center>
+      H</TD>
+    <TD><P ALIGN=Center>
+      (HL)</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      6</TD>
+    <TD><P ALIGN=Center>
+      n-&gt;</TD>
+    <TD><P ALIGN=Center>
+      B</TD>
+    <TD><P ALIGN=Center>
+      D</TD>
+    <TD><P ALIGN=Center>
+      H</TD>
+    <TD><P ALIGN=Center>
+      (HL)</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      7</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      RLCA</TD>
+    <TD><P ALIGN=Center>
+      RLA</TD>
+    <TD><P ALIGN=Center>
+      DAA</TD>
+    <TD><P ALIGN=Center>
+      SCF</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      8</TD>
+    <TD><P ALIGN=Center>
+      JR</TD>
+    <TD><P ALIGN=Center>
+      AF&lt;-&gt;AF'</TD>
+    <TD><P ALIGN=Center>
+      UNC</TD>
+    <TD><P ALIGN=Center>
+      Z</TD>
+    <TD><P ALIGN=Center>
+      C</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      9</TD>
+    <TD><P ALIGN=Center>
+      HL+</TD>
+    <TD><P ALIGN=Center>
+      BC</TD>
+    <TD><P ALIGN=Center>
+      DE</TD>
+    <TD><P ALIGN=Center>
+      HL</TD>
+    <TD><P ALIGN=Center>
+      SP</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      A</TD>
+    <TD><P ALIGN=Center>
+      -&gt;A</TD>
+    <TD><P ALIGN=Center>
+      (BC)</TD>
+    <TD><P ALIGN=Center>
+      (DE)</TD>
+    <TD><P ALIGN=Center>
+      (nn)-&gt;(HL)</TD>
+    <TD><P ALIGN=Center>
+      (nn)</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      B</TD>
+    <TD><P ALIGN=Center>
+      DEC</TD>
+    <TD><P ALIGN=Center>
+      BC</TD>
+    <TD><P ALIGN=Center>
+      DE</TD>
+    <TD><P ALIGN=Center>
+      HL</TD>
+    <TD><P ALIGN=Center>
+      SP</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      C</TD>
+    <TD><P ALIGN=Center>
+      INC</TD>
+    <TD><P ALIGN=Center>
+      C</TD>
+    <TD><P ALIGN=Center>
+      E</TD>
+    <TD><P ALIGN=Center>
+      L</TD>
+    <TD><P ALIGN=Center>
+      A</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      D</TD>
+    <TD><P ALIGN=Center>
+      DEC</TD>
+    <TD><P ALIGN=Center>
+      C</TD>
+    <TD><P ALIGN=Center>
+      E</TD>
+    <TD><P ALIGN=Center>
+      L</TD>
+    <TD><P ALIGN=Center>
+      A</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      E</TD>
+    <TD><P ALIGN=Center>
+      n-&gt;</TD>
+    <TD><P ALIGN=Center>
+      C</TD>
+    <TD><P ALIGN=Center>
+      E</TD>
+    <TD><P ALIGN=Center>
+      L</TD>
+    <TD><P ALIGN=Center>
+      A</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      F</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      RRCA</TD>
+    <TD><P ALIGN=Center>
+      RRA</TD>
+    <TD><P ALIGN=Center>
+      CPL</TD>
+    <TD><P ALIGN=Center>
+      CCF</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      1's</TD>
+    <TD><P ALIGN=Center>
+      16's&gt;</TD>
+    <TD><P ALIGN=Center>
+      0</TD>
+    <TD><P ALIGN=Center>
+      1</TD>
+    <TD><P ALIGN=Center>
+      2</TD>
+    <TD><P ALIGN=Center>
+      3</TD>
+  </TR>
+</TABLE>
+<P ALIGN=Left>
+<P ALIGN=Left>
+<TABLE BORDER CELLPADDING="2">
+  <CAPTION>
+    Call &amp; Pushes C0 to FF
+  </CAPTION>
+  <TR>
+    <TD><P ALIGN=Center>
+      1's</TD>
+    <TD><P ALIGN=Center>
+      16's&gt;</TD>
+    <TD><P ALIGN=Center>
+      C</TD>
+    <TD><P ALIGN=Center>
+      D</TD>
+    <TD><P ALIGN=Center>
+      E</TD>
+    <TD><P ALIGN=Center>
+      F</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      0</TD>
+    <TD><P ALIGN=Center>
+      RTN</TD>
+    <TD><P ALIGN=Center>
+      NZ</TD>
+    <TD><P ALIGN=Center>
+      NC</TD>
+    <TD><P ALIGN=Center>
+      PO</TD>
+    <TD><P ALIGN=Center>
+      NM</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      1</TD>
+    <TD><P ALIGN=Center>
+      POP</TD>
+    <TD><P ALIGN=Center>
+      BC</TD>
+    <TD><P ALIGN=Center>
+      DE</TD>
+    <TD><P ALIGN=Center>
+      HL</TD>
+    <TD><P ALIGN=Center>
+      AF</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      2</TD>
+    <TD><P ALIGN=Center>
+      JMP (nn)</TD>
+    <TD><P ALIGN=Center>
+      NZ</TD>
+    <TD><P ALIGN=Center>
+      NC</TD>
+    <TD><P ALIGN=Center>
+      PO</TD>
+    <TD><P ALIGN=Center>
+      NM</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      3</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      JMP (nn)</TD>
+    <TD><P ALIGN=Center>
+      OUT (n)</TD>
+    <TD><P ALIGN=Center>
+      HL&lt;-&gt;(SP)</TD>
+    <TD><P ALIGN=Center>
+      DIS INT</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      4</TD>
+    <TD><P ALIGN=Center>
+      CALL (nn)</TD>
+    <TD><P ALIGN=Center>
+      NZ</TD>
+    <TD><P ALIGN=Center>
+      NC</TD>
+    <TD><P ALIGN=Center>
+      PO</TD>
+    <TD><P ALIGN=Center>
+      NM</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      5</TD>
+    <TD><P ALIGN=Center>
+      PUSH</TD>
+    <TD><P ALIGN=Center>
+      BC</TD>
+    <TD><P ALIGN=Center>
+      DE</TD>
+    <TD><P ALIGN=Center>
+      HL</TD>
+    <TD><P ALIGN=Center>
+      AF</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      6</TD>
+    <TD><P ALIGN=Center>
+      A/n</TD>
+    <TD><P ALIGN=Center>
+      +</TD>
+    <TD><P ALIGN=Center>
+      -</TD>
+    <TD><P ALIGN=Center>
+      AND</TD>
+    <TD><P ALIGN=Center>
+      OR</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      7</TD>
+    <TD><P ALIGN=Center>
+      RST</TD>
+    <TD><P ALIGN=Center>
+      00h</TD>
+    <TD><P ALIGN=Center>
+      10h</TD>
+    <TD><P ALIGN=Center>
+      20h</TD>
+    <TD><P ALIGN=Center>
+      30h</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      8</TD>
+    <TD><P ALIGN=Center>
+      RTN</TD>
+    <TD><P ALIGN=Center>
+      Z</TD>
+    <TD><P ALIGN=Center>
+      C</TD>
+    <TD><P ALIGN=Center>
+      PE</TD>
+    <TD><P ALIGN=Center>
+      M</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      9</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      RTN</TD>
+    <TD><P ALIGN=Center>
+      EXX</TD>
+    <TD><P ALIGN=Center>
+      JMP (HL)</TD>
+    <TD><P ALIGN=Center>
+      HL-&gt;SP</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      A</TD>
+    <TD><P ALIGN=Center>
+      JMP (nn)</TD>
+    <TD><P ALIGN=Center>
+      Z</TD>
+    <TD><P ALIGN=Center>
+      C</TD>
+    <TD><P ALIGN=Center>
+      PE</TD>
+    <TD><P ALIGN=Center>
+      M</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      B</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      CNTL BITS</TD>
+    <TD><P ALIGN=Center>
+      IN (n)</TD>
+    <TD><P ALIGN=Center>
+      HL&lt;-&gt;DE</TD>
+    <TD><P ALIGN=Center>
+      ENA INT</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      C</TD>
+    <TD><P ALIGN=Center>
+      CALL (nn)</TD>
+    <TD><P ALIGN=Center>
+      Z</TD>
+    <TD><P ALIGN=Center>
+      C</TD>
+    <TD><P ALIGN=Center>
+      PE</TD>
+    <TD><P ALIGN=Center>
+      M</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      D</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      CALL (nn)</TD>
+    <TD><P ALIGN=Center>
+      IX for HL</TD>
+    <TD><P ALIGN=Center>
+      Ext Ins</TD>
+    <TD><P ALIGN=Center>
+      IY for HL</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      E</TD>
+    <TD><P ALIGN=Center>
+      A/n</TD>
+    <TD><P ALIGN=Center>
+      +/cy</TD>
+    <TD><P ALIGN=Center>
+      -/cy</TD>
+    <TD><P ALIGN=Center>
+      XOR</TD>
+    <TD><P ALIGN=Center>
+      CP</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      F</TD>
+    <TD><P ALIGN=Center>
+      RST</TD>
+    <TD><P ALIGN=Center>
+      08h</TD>
+    <TD><P ALIGN=Center>
+      18h</TD>
+    <TD><P ALIGN=Center>
+      28h</TD>
+    <TD><P ALIGN=Center>
+      38h</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      1's</TD>
+    <TD><P ALIGN=Center>
+      16's&gt;</TD>
+    <TD><P ALIGN=Center>
+      C</TD>
+    <TD><P ALIGN=Center>
+      D</TD>
+    <TD><P ALIGN=Center>
+      E</TD>
+    <TD><P ALIGN=Center>
+      F</TD>
+  </TR>
+</TABLE>
+<P>
+<P>
+<TABLE BORDER CELLPADDING="2">
+  <CAPTION>
+    Extended Instructions ED+n
+  </CAPTION>
+  <TR>
+    <TD><P ALIGN=Center>
+      1's</TD>
+    <TD><P ALIGN=Center>
+      16's&gt;</TD>
+    <TD><P ALIGN=Center>
+      4</TD>
+    <TD><P ALIGN=Center>
+      5</TD>
+    <TD><P ALIGN=Center>
+      6</TD>
+    <TD><P ALIGN=Center>
+      7</TD>
+    <TD><P ALIGN=Center>
+      A</TD>
+    <TD><P ALIGN=Center>
+      B</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      0</TD>
+    <TD><P ALIGN=Center>
+      IN(c)</TD>
+    <TD><P ALIGN=Center>
+      B</TD>
+    <TD><P ALIGN=Center>
+      D</TD>
+    <TD><P ALIGN=Center>
+      H</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      LDI</TD>
+    <TD><P ALIGN=Center>
+      LDIR</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      1</TD>
+    <TD><P ALIGN=Center>
+      OUT(c)</TD>
+    <TD><P ALIGN=Center>
+      B</TD>
+    <TD><P ALIGN=Center>
+      D</TD>
+    <TD><P ALIGN=Center>
+      H</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      CPI</TD>
+    <TD><P ALIGN=Center>
+      CPIR</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      2</TD>
+    <TD><P ALIGN=Center>
+      HL-/cy</TD>
+    <TD><P ALIGN=Center>
+      BC</TD>
+    <TD><P ALIGN=Center>
+      DE</TD>
+    <TD><P ALIGN=Center>
+      HL</TD>
+    <TD><P ALIGN=Center>
+      SP</TD>
+    <TD><P ALIGN=Center>
+      INI</TD>
+    <TD><P ALIGN=Center>
+      INIR</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      3</TD>
+    <TD><P ALIGN=Center>
+      -&gt;(nn)</TD>
+    <TD><P ALIGN=Center>
+      BC</TD>
+    <TD><P ALIGN=Center>
+      DE</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      SP</TD>
+    <TD><P ALIGN=Center>
+      OUTI</TD>
+    <TD><P ALIGN=Center>
+      OUTIR</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      4</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      NEG</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      5</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      RET NMI</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      6</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      IM0</TD>
+    <TD><P ALIGN=Center>
+      IM2</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      7</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      A-&gt;I</TD>
+    <TD><P ALIGN=Center>
+      I-&gt;A</TD>
+    <TD><P ALIGN=Center>
+      RRD</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      8</TD>
+    <TD><P ALIGN=Center>
+      IN(c)</TD>
+    <TD><P ALIGN=Center>
+      C</TD>
+    <TD><P ALIGN=Center>
+      E</TD>
+    <TD><P ALIGN=Center>
+      L</TD>
+    <TD><P ALIGN=Center>
+      A</TD>
+    <TD><P ALIGN=Center>
+      LDD</TD>
+    <TD><P ALIGN=Center>
+      LDDR</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      9</TD>
+    <TD><P ALIGN=Center>
+      OUT(c)</TD>
+    <TD><P ALIGN=Center>
+      C</TD>
+    <TD><P ALIGN=Center>
+      E</TD>
+    <TD><P ALIGN=Center>
+      L</TD>
+    <TD><P ALIGN=Center>
+      A</TD>
+    <TD><P ALIGN=Center>
+      CPD</TD>
+    <TD><P ALIGN=Center>
+      CPDR</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      A</TD>
+    <TD><P ALIGN=Center>
+      HL+/cy</TD>
+    <TD><P ALIGN=Center>
+      BC</TD>
+    <TD><P ALIGN=Center>
+      DE</TD>
+    <TD><P ALIGN=Center>
+      HL</TD>
+    <TD><P ALIGN=Center>
+      SP</TD>
+    <TD><P ALIGN=Center>
+      IND</TD>
+    <TD><P ALIGN=Center>
+      INDR</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      B</TD>
+    <TD><P ALIGN=Center>
+      (nn)-&gt;</TD>
+    <TD><P ALIGN=Center>
+      BC</TD>
+    <TD><P ALIGN=Center>
+      DE</TD>
+    <TD><P ALIGN=Center>
+      HL</TD>
+    <TD><P ALIGN=Center>
+      SP</TD>
+    <TD><P ALIGN=Center>
+      OUTD</TD>
+    <TD><P ALIGN=Center>
+      OUTDR</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      C</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      D</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      RET MI</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      E</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      IM2</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      F</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      A-&gt;R</TD>
+    <TD><P ALIGN=Center>
+      R-&gt;A</TD>
+    <TD><P ALIGN=Center>
+      RLD</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+    </TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      1's</TD>
+    <TD><P ALIGN=Center>
+      16's&gt;</TD>
+    <TD><P ALIGN=Center>
+      4</TD>
+    <TD><P ALIGN=Center>
+      5</TD>
+    <TD><P ALIGN=Center>
+      6</TD>
+    <TD><P ALIGN=Center>
+      7</TD>
+    <TD><P ALIGN=Center>
+      A</TD>
+    <TD><P ALIGN=Center>
+      B</TD>
+  </TR>
+</TABLE>
+<P>
+<P>
+<TABLE BORDER CELLPADDING="2">
+  <CAPTION>
+    Register Ops 40 to 7F
+  </CAPTION>
+  <TR>
+    <TD COLSPAN=9><P ALIGN=Center>
+    </TD>
+    <TD COLSPAN=8><P ALIGN=Center>
+      source reg</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD COLSPAN=4><P ALIGN=Center>
+      operations w/A</TD>
+    <TD COLSPAN=4><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      B</TD>
+    <TD><P ALIGN=Center>
+      C</TD>
+    <TD><P ALIGN=Center>
+      D</TD>
+    <TD><P ALIGN=Center>
+      E</TD>
+    <TD><P ALIGN=Center>
+      H</TD>
+    <TD><P ALIGN=Center>
+      L</TD>
+    <TD><P ALIGN=Center>
+      (HL)</TD>
+    <TD><P ALIGN=Center>
+      A</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      +/cy</TD>
+    <TD><P ALIGN=Center>
+      -/cy</TD>
+    <TD><P ALIGN=Center>
+      XOR</TD>
+    <TD><P ALIGN=Center>
+      CP</TD>
+    <TD><P ALIGN=Center>
+      C</TD>
+    <TD><P ALIGN=Center>
+      E</TD>
+    <TD><P ALIGN=Center>
+      L</TD>
+    <TD><P ALIGN=Center>
+      A</TD>
+    <TD><P ALIGN=Center>
+      8</TD>
+    <TD><P ALIGN=Center>
+      9</TD>
+    <TD><P ALIGN=Center>
+      A</TD>
+    <TD><P ALIGN=Center>
+      B</TD>
+    <TD><P ALIGN=Center>
+      C</TD>
+    <TD><P ALIGN=Center>
+      D</TD>
+    <TD><P ALIGN=Center>
+      E</TD>
+    <TD><P ALIGN=Center>
+      F</TD>
+    <TD><P ALIGN=Center>
+      &lt;1's</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      +</TD>
+    <TD><P ALIGN=Center>
+      -</TD>
+    <TD><P ALIGN=Center>
+      AND</TD>
+    <TD><P ALIGN=Center>
+      OR</TD>
+    <TD><P ALIGN=Center>
+      B</TD>
+    <TD><P ALIGN=Center>
+      D</TD>
+    <TD><P ALIGN=Center>
+      H</TD>
+    <TD><P ALIGN=Center>
+      (HL)</TD>
+    <TD><P ALIGN=Center>
+      0</TD>
+    <TD><P ALIGN=Center>
+      1</TD>
+    <TD><P ALIGN=Center>
+      2</TD>
+    <TD><P ALIGN=Center>
+      3</TD>
+    <TD><P ALIGN=Center>
+      4</TD>
+    <TD><P ALIGN=Center>
+      5</TD>
+    <TD><P ALIGN=Center>
+      6</TD>
+    <TD><P ALIGN=Center>
+      7</TD>
+    <TD><P ALIGN=Center>
+      &lt;1's</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      16's&gt;</TD>
+    <TD><P ALIGN=Center>
+      8</TD>
+    <TD><P ALIGN=Center>
+      9</TD>
+    <TD><P ALIGN=Center>
+      A</TD>
+    <TD><P ALIGN=Center>
+      B</TD>
+    <TD><P ALIGN=Center>
+      4</TD>
+    <TD><P ALIGN=Center>
+      5</TD>
+    <TD><P ALIGN=Center>
+      6</TD>
+    <TD><P ALIGN=Center>
+      7</TD>
+    <TD COLSPAN=9><P ALIGN=Center>
+    </TD>
+  </TR>
+  <TR>
+    <TD COLSPAN=5><P ALIGN=Center>
+      Ex: 9A=SBC A,D</TD>
+    <TD COLSPAN=4><P ALIGN=Center>
+      move destination</TD>
+    <TD COLSPAN=9><P ALIGN=Center>
+      Note: 76=HALT</TD>
+  </TR>
+</TABLE>
+<P>
+<P>
+<TABLE BORDER CELLPADDING="2">
+  <CAPTION>
+    Control Bits CB+ 00-FF
+  </CAPTION>
+  <TR>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD COLSPAN=8><P ALIGN=Center>
+      Source Reg</TD>
+    <TD COLSPAN=9><P ALIGN=Center>
+      Ex: CB 5A=TEST BIT 3,D</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      B</TD>
+    <TD><P ALIGN=Center>
+      C</TD>
+    <TD><P ALIGN=Center>
+      D</TD>
+    <TD><P ALIGN=Center>
+      E</TD>
+    <TD><P ALIGN=Center>
+      H</TD>
+    <TD><P ALIGN=Center>
+      L</TD>
+    <TD><P ALIGN=Center>
+      (HL)</TD>
+    <TD><P ALIGN=Center>
+      A</TD>
+    <TD COLSPAN=4><P ALIGN=Center>
+      BIT#</TD>
+    <TD COLSPAN=5><P ALIGN=Center>
+    </TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      1's&gt;</TD>
+    <TD><P ALIGN=Center>
+      8</TD>
+    <TD><P ALIGN=Center>
+      9</TD>
+    <TD><P ALIGN=Center>
+      A</TD>
+    <TD><P ALIGN=Center>
+      B</TD>
+    <TD><P ALIGN=Center>
+      C</TD>
+    <TD><P ALIGN=Center>
+      D</TD>
+    <TD><P ALIGN=Center>
+      E</TD>
+    <TD><P ALIGN=Center>
+      F</TD>
+    <TD><P ALIGN=Center>
+      1</TD>
+    <TD><P ALIGN=Center>
+      3</TD>
+    <TD><P ALIGN=Center>
+      5</TD>
+    <TD><P ALIGN=Center>
+      7</TD>
+    <TD><P ALIGN=Center>
+      RRC</TD>
+    <TD><P ALIGN=Center>
+      RR</TD>
+    <TD><P ALIGN=Center>
+      SRA</TD>
+    <TD><P ALIGN=Center>
+      SRL</TD>
+    <TD><P ALIGN=Center>
+      &lt;ops</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      1's&gt;</TD>
+    <TD><P ALIGN=Center>
+      0</TD>
+    <TD><P ALIGN=Center>
+      1</TD>
+    <TD><P ALIGN=Center>
+      2</TD>
+    <TD><P ALIGN=Center>
+      3</TD>
+    <TD><P ALIGN=Center>
+      4</TD>
+    <TD><P ALIGN=Center>
+      5</TD>
+    <TD><P ALIGN=Center>
+      6</TD>
+    <TD><P ALIGN=Center>
+      7</TD>
+    <TD><P ALIGN=Center>
+      0</TD>
+    <TD><P ALIGN=Center>
+      2</TD>
+    <TD><P ALIGN=Center>
+      4</TD>
+    <TD><P ALIGN=Center>
+      6</TD>
+    <TD><P ALIGN=Center>
+      RLC</TD>
+    <TD><P ALIGN=Center>
+      RL</TD>
+    <TD><P ALIGN=Center>
+      SLA</TD>
+    <TD><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      &lt;ops</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      16's&gt;</TD>
+    <TD COLSPAN=7><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      SET&gt;</TD>
+    <TD><P ALIGN=Center>
+      C</TD>
+    <TD><P ALIGN=Center>
+      D</TD>
+    <TD><P ALIGN=Center>
+      E</TD>
+    <TD><P ALIGN=Center>
+      F</TD>
+    <TD><P ALIGN=Center>
+      0</TD>
+    <TD><P ALIGN=Center>
+      1</TD>
+    <TD><P ALIGN=Center>
+      2</TD>
+    <TD><P ALIGN=Center>
+      3</TD>
+    <TD><P ALIGN=Center>
+      &lt;16's</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      16's&gt;</TD>
+    <TD COLSPAN=7><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      RESET&gt;</TD>
+    <TD><P ALIGN=Center>
+      8</TD>
+    <TD><P ALIGN=Center>
+      9</TD>
+    <TD><P ALIGN=Center>
+      A</TD>
+    <TD><P ALIGN=Center>
+      B</TD>
+    <TD COLSPAN=4><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      &lt;16's</TD>
+  </TR>
+  <TR>
+    <TD><P ALIGN=Center>
+      16's&gt;</TD>
+    <TD COLSPAN=7><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      TEST&gt;</TD>
+    <TD><P ALIGN=Center>
+      4</TD>
+    <TD><P ALIGN=Center>
+      5</TD>
+    <TD><P ALIGN=Center>
+      6</TD>
+    <TD><P ALIGN=Center>
+      7</TD>
+    <TD COLSPAN=4><P ALIGN=Center>
+    </TD>
+    <TD><P ALIGN=Center>
+      &lt;16's</TD>
+  </TR>
+</TABLE>
+<P>
+<P>
+<H1>
+  Graphics Version
+</H1>
+<P>
+You might want to print this out full page and then cut it apart and paste
+to 3 by 5 cards for a home-made handy reference.
+<P>
+<P>
+<IMG SRC="Z80.gif" WIDTH="1425" HEIGHT="1700">
+<P>
+<P>
+</BODY></HTML>

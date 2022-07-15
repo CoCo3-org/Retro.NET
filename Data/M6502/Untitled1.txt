@@ -1,0 +1,55 @@
+ADC	add memory to accumulator with carry		61	71	6D	7D	69	79	65	75
+AND	AND memory with accumulator		21	31	2D	3D	29	39	25	35
+ASL	shift left one bit (memory or accumulator)	0A							06	16
+BCC	branch on carry clear	90								
+BCS	branch on carry set	B0								
+BEQ	branch on result zero	F0								
+BIT	test bits in memory with accumulator				2C				24	
+BMI	branch on result minus	30								
+BNE	branch on result not zero	D0								
+BPL	branch on result plus	10								
+BVC	branch on overflow clear	50								
+BVS	branch on overflow set	70								
+CLC	clear carry flag	18								
+CLD	clear decimal mode	D8								
+CLI	clear interrupt disable bit	58								
+CLV	clear overflow flag	B8								
+CMP	compare memory and accumulator		C1	D1	CD	DD	C9	D9	C5	D5
+CPX	compare memory and X register				EC		E0		E4	
+CPY	compare memory and Y register				CC		C0		C4	
+DEC	decrement memory				CE	DE			C6	D6
+DEX	decrement X register	CA								
+DEY	decrement Y register	88								
+EOR	EXCLUSIVE OR memory with accumulator		41	51	4D	5D	49	59	45	55
+INC	increment memory				EE	FE			E6	F6
+INX	increment X register	E8								
+INY	increment Y register	C8								
+JMP	jump to new location	6C			4C					
+JSR	jump to new location saving return address	20								
+LDA	load accumulator with memory		A1	B1	AD	BD	A9	B9	A5	B5
+LDX	load X register with memory				AE		A2	BE	A6	B6
+LDY	load Y register with memory				AC	BC	A0		A4	B4
+LSR	shift right one bit (memory or accumulator)	4A			4E	5E			46	
+NOP	no operation	EA								
+ORA	OR memory with accumulator		01	11	0D	1D	09	19	05	15
+PHA	push accumulator on stack	48								
+PHP	push processor status on stack	08								
+PLA	pull accumulator from from stack	68								
+PLP	pull processor status from stack	28								
+ROL	rotate one bit left (memory or accumulator)	2A			2E				26	36
+ROR	rotate one bit right (memory or accumulator)	6A			6E	7E			66	76
+RTI	return from interrupt	40								
+RTS	return from subroutine	60								
+SBC	subtract memory from accumulator with borrow		E1	F1	ED	FD	E9	F9	E5	F5
+SEC	set carry flag	38								
+SED	set decimal mode	F8								
+SEI	set interrupt disable bit	78								
+STA	store accumulator in memory		81	91	8D	9D		99	85	95
+STX	store X register in memory				8E				86	96
+STY	store Y register in memory				8C				84	94
+TAX	transfer accumulator to X register	AA								
+TAY	transfer accumulator to Y register	A8								
+TSX	transfer stack pointer to X register	BA								
+TXA	transfer X register to accumulator	8A								
+TXS	transfer X register to stack pointer	9A								
+TYA	transfer Y register to accumulator	98								

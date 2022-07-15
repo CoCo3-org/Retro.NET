@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Document</title>
+ </head>
+ <body>
+
+<table border="1" cellpadding="0" cellspacing="0" >
+
+<tbody>
+<tr >
+<td>
+<p>Instruction</p>
+</td>
+<td width="135">
+<p>Syntax</p>
+</td>
+<td width="357">
+<p>Description</p>
+</td></tr>
+<tr>
+<td rowspan="8" valign="top" width="76">
+<p>ADC</p>
+</td>
+<td width="135">
+<p>ADC HL,ss</p>
+</td>
+<td width="357">
+<p>Add with carry register pair ss to HL.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>ADC A,s</p>
+</td>
+<td width="357">
+<p>Add with carry operand s to accumulator.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>ADD A,n</p>
+</td>
+<td width="357">
+<p>Add value n to accumulator.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>ADD A,r</p>
+</td>
+<td width="357">
+<p>Add register r to accumulator.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>ADD A,(HL)</p>
+</td>
+<td width="357">
+<p>Add location (HL) to acccumulator.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>ADD A,(IX/IY+d)</p>
+</td>
+<td width="357">
+<p>Add location (IX or IY +d) to accumulator.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>ADD HL,ss</p>
+</td>
+<td width="357">
+<p>Add register pair ss to HL.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>ADD IX,pp</p>
+</td>
+<td width="357">
+<p>Test bit b of location (IX+d).</p>
+</td></tr>
+<tr>
+<td rowspan="2" valign="top" width="76">
+<p>BIT</p>
+<p></p>
+</td>
+<td width="135">
+<p>BIT b,(IY+d)</p>
+</td>
+<td width="357">
+<p>Test bit b of location (IY+d).</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>BIT b,r</p>
+</td>
+<td width="357">
+<p>Test bit b of register r.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>CALL</p>
+</td>
+<td width="135">
+<p>CALL cc,nn</p>
+</td>
+<td width="357">
+<p>Call subroutine at location nn if condition CC is true.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>CCF</p>
+</td>
+<td width="135">
+<p>CCF</p>
+</td>
+<td width="357">
+<p>Complement carry flag.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>CP</p>
+</td>
+<td width="135">
+<p>CP s</p>
+</td>
+<td width="357">
+<p>Compare operand s with accumulator.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>CPD</p>
+</td>
+<td width="135">
+<p>CPD</p>
+</td>
+<td width="357">
+<p>Compare location (HL) and acc., decrement HL and BC</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>CPDR</p>
+</td>
+<td width="135">
+<p>CPDR</p>
+</td>
+<td width="357">
+<p>Perform a CPD and repeat until BC=0.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>CPI</p>
+</td>
+<td width="135">
+<p>CPI</p>
+</td>
+<td width="357">
+<p>Compare location (HL) and acc., incr HL, decr BC.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>CPIR</p>
+</td>
+<td width="135">
+<p>CPIR</p>
+</td>
+<td width="357">
+<p>Perform a CPI and repeat until BC=0.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>CPL</p>
+</td>
+<td width="135">
+<p>CPL</p>
+</td>
+<td width="357">
+<p>Complement accumulator (1's complement).</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>DAA</p>
+</td>
+<td width="135">
+<p>DAA</p>
+</td>
+<td width="357">
+<p>Decimal adjust accumulator.</p>
+</td></tr>
+
+<tr>
+	<td rowspan="3" valign="top" width="76">
+		<p>DEC</p>
+	</td>
+	<td width="135">
+		<p>DEC m</p>
+	</td>
+	<td width="357">
+		<p>Decrement operand m.</p>
+	</td>
+</tr>
+
+<tr>
+	<td width="135">
+		<p>DEC IX/IY</p>
+	</td>
+	<td width="357">
+		<p>Decrement IX/IY</p>
+	</td>
+</tr>
+
+<tr>
+	<td width="135">
+		<p>DEC ss</p>
+	</td>
+	<td width="357">
+		<p>Decrement register pair ss.</p>
+	</td>
+</tr>
+
+<tr>
+<td width="76">
+<p>DI</p>
+</td>
+<td width="135">
+<p>DI</p>
+</td>
+<td width="357">
+<p>Disable interrupts.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>DJNZ</p>
+</td>
+<td width="135">
+<p>DJNZ e</p>
+</td>
+<td width="357">
+<p>Decrement B and jump relative if B=0.</p>
+<p>
+</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>EI</p>
+</td>
+<td width="135">
+<p>EI</p>
+</td>
+<td width="357">
+<p>Enable interrupts.</p>
+</td></tr>
+
+<tr>
+	<td rowspan="4" valign="top" width="76">
+		<p>EX</p>
+	</td>
+	<td width="135">
+		<p>EX (SP),HL</p>
+	</td>
+	<td width="357">
+		<p>Exchange the location (SP) and HL.</p>
+	</td>
+</tr>
+
+<tr>
+	<td width="135">
+		<p>EX (SP),IX/IY</p>
+	</td>
+	<td width="357">
+		<p>Exchange the location (SP) and IX/IY</p>
+	</td>
+</tr>
+
+<tr>
+	<td width="135">
+		<p>EX AF,AF'</p>
+	</td>
+	<td width="357">
+		<p>Exchange the contents of AF and AF'.</p>
+	</td>
+</tr>
+
+<tr>
+	<td width="135">
+		<p>EX DE,HL</p>
+	</td>
+	<td width="357">
+		<p>Exchange the contents of DE and HL.</p>
+	</td>
+</tr>
+
+<tr>
+<td width="76">
+<p>EXX</p>
+</td>
+<td width="135">
+<p>EXX</p>
+</td>
+<td width="357">
+<p>Exchange the contents of BC,DE,HL with BC',DE',HL'.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>HALT</p>
+</td>
+<td width="135">
+<p>HALT</p>
+</td>
+<td width="357">
+<p>Halt computer and wait for interrupt.</p>
+</td></tr>
+<tr>
+<td rowspan="3" valign="top" width="76">
+<p>IM</p>
+</td>
+<td width="135">
+<p>IM 0</p>
+</td>
+<td width="357">
+<p>Set interrupt mode 0.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>IM 1</p>
+</td>
+<td width="357">
+<p>Set interrupt mode 1.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>IM 2</p>
+</td>
+<td width="357">
+<p>Set interrupt mode 2.</p>
+</td></tr>
+<tr>
+<td rowspan="3" valign="top" width="76">
+<p>IN</p>
+</td>
+<td width="135">
+<p>IN A,(n)</p>
+</td>
+<td width="357">
+<p class="PreformattedText"><span >Load the accumulator with input from device n.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>IN r,(c)</p>
+</td>
+<td width="357">
+<p>Load the register r with input from device (C).</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>IN (HL)</p>
+</td>
+<td width="357">
+<p><span lang="FR" style="font-size:10.0pt;font-family:Arial;mso-ansi-language:FR">Increment location (HL).</p>
+</td></tr>
+<tr>
+<td rowspan="4" valign="top" width="76">
+<p>INC</p>
+</td>
+<td width="135">
+<p>INC IX/IY</p>
+</td>
+<td width="357">
+<p><span lang="FR" style="font-size:10.0pt;font-family:Arial;mso-ansi-language:FR">Increment IX./IY</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>INC (IX/IY+d)</p>
+</td>
+<td width="357">
+<p><span lang="FR" style="font-size:10.0pt;font-family:Arial;mso-ansi-language:FR">Increment location (IX/IY+d).</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>INC r</p>
+</td>
+<td width="357">
+<p>Increment register r.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>INC ss</p>
+</td>
+<td width="357">
+<p>Increment register pair ss.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>IND</p>
+</td>
+<td width="135">
+<p>IND</p>
+</td>
+<td width="357">
+<p>(HL)=Input from port (C). Decrement HL and B.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>INDR</p>
+</td>
+<td width="135">
+<p>INDR</p>
+</td>
+<td width="357">
+<p>Perform an IND and repeat until B=0.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>INI</p>
+</td>
+<td width="135">
+<p>INI</p>
+</td>
+<td width="357">
+<p class="PreformattedText"><span >(HL)=Input from port (C). HL=HL+1. B=B-1.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>INIR</p>
+</td>
+<td width="135">
+<p>INIR</p>
+</td>
+<td width="357">
+<p>Perform an INI and repeat until B=0.</p>
+</td></tr>
+<tr>
+<td rowspan="4" valign="top" width="76">
+<p>JP</p>
+</td>
+<td width="135">
+<p>JP (HL)</p>
+</td>
+<td width="357">
+<p>Unconditional jump to location (HL).</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>JP (IX)</p>
+</td>
+<td width="357">
+<p class="PreformattedText"><span >Unconditional jump to location (IX).</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>JP (IY)</p>
+</td>
+<td width="357">
+<p>Jump to location nn if condition cc is true.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>JP cc,nn</p>
+</td>
+<td width="357">
+<p>Jump to location nn if condition cc is true.</p>
+</td></tr>
+<tr>
+<td rowspan="4" valign="top" width="76">
+<p>JR</p>
+</td>
+<td width="135">
+<p>JR e</p>
+</td>
+<td width="357">
+<p class="PreformattedText"><span >Unconditional jump relative to PC+e.</p>
+<p>
+</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>JR NC,e</p>
+</td>
+<td width="357">
+<p>Jump relative to PC+e if carry=0.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>JR NZ,e</p>
+</td>
+<td width="357">
+<p>Jump relative to PC+e if non zero (Z=0).</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>JR Z,e</p>
+</td>
+<td width="357">
+<p>Jump relative to PC+e if zero (Z=1).</p>
+</td></tr>
+<tr>
+<td rowspan="22" valign="top" width="76">
+<p>LD</p>
+</td>
+<td width="135">
+<p>LD A,(BC)</p>
+</td>
+<td width="357">
+<p>Load accumulator with location (BC).</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD A,(DE)</p>
+</td>
+<td width="357">
+<p>Load accumulator with location (DE).</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD A,I</p>
+</td>
+<td width="357">
+<p>Load accumulator with I</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD A,(nn)</p>
+</td>
+<td width="357">
+<p>Load accumulator with location (nn)</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD A,R</p>
+</td>
+<td width="357">
+<p>Load accumulator with R.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD (dd),A</p>
+</td>
+<td width="357">
+<p>Load location register pair with accumulator.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD dd, nn</p>
+</td>
+<td width="357">
+<p>Load register pair dd with nn.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD dd,(nn)</p>
+</td>
+<td width="357">
+<p>Load register pair dd with location (nn).</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD HL,(nn)</p>
+</td>
+<td width="357">
+<p>Load HL with location (nn).</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD (HL),r</p>
+</td>
+<td width="357">
+<p>Load location (HL) with register r.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD I,A</p>
+</td>
+<td width="357">
+<p>Load I with accumulator.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD IX/IY,nn</p>
+</td>
+<td width="357">
+<p>Load IX/IY with value nn.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD IX/IY,(nn)</p>
+</td>
+<td width="357">
+<p>Load IX/IY with location (nn).</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD (IX/IY+d),n</p>
+</td>
+<td width="357">
+<p>Load location (IX/IY+d) with n.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD (IX/IY+d),r</p>
+</td>
+<td width="357">
+<p>Load location (IX/IY+d) with register r.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD (nn),A</p>
+</td>
+<td width="357">
+<p>Load location (nn) with accumulator.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD (nn),dd</p>
+</td>
+<td width="357">
+<p>Load location (nn) with register pair dd.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD (nn),IX/IY</p>
+</td>
+<td width="357">
+<p>Load register r with location (IX/IY+d).</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD r,n</p>
+</td>
+<td width="357">
+<p>Load register r with value n.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD r,r'</p>
+</td>
+<td width="357">
+<p>Load register r with register r'.</p>
+</td></tr>
+<tr >
+<td width="135">
+<p>LD SP,HL</p>
+</td>
+<td width="357">
+<p>Load SP with HL.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>LD SP,IX/IY</p>
+</td>
+<td width="357">
+<p>Load SP with IX.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>LDD</p>
+</td>
+<td width="135">
+<p>LDD</p>
+</td>
+<td width="357">
+<p>Load location (DE) with location (HL), decrement DE,HL,BC.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>LDIR</p>
+</td>
+<td width="135">
+<p>LDIR</p>
+</td>
+<td width="357">
+<p>Perform an LDI and repeat until BC=0.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>NEG</p>
+</td>
+<td width="135">
+<p>NEG</p>
+</td>
+<td width="357">
+<p>Negate accumulator (2's complement).</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>NOP</p>
+</td>
+<td width="135">
+<p>NOP</p>
+</td>
+<td width="357">
+<p>No operation.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>OR</p>
+</td>
+<td width="135">
+<p>OR s</p>
+</td>
+<td width="357">
+<p class="PreformattedText"><span >Logical OR of operand s and accumulator.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>OTDR</p>
+</td>
+<td width="135">
+<p>OTDR</p>
+</td>
+<td width="357">
+<p>Perform an OUTD and repeat until B=0.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>OTIR</p>
+</td>
+<td width="135">
+<p>OTIR</p>
+</td>
+<td width="357">
+<p>Perform an OTI and repeat until B=0.</p>
+</td></tr>
+<tr>
+<td rowspan="2" valign="top" width="76">
+<p>OUT</p>
+</td>
+<td width="135">
+<p>OUT (C),r</p>
+</td>
+<td width="357">
+<p>Load output port (C) with register r.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>OUT (n),A</p>
+</td>
+<td width="357">
+<p>Load output port (n) with accumulator.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>OUTD</p>
+</td>
+<td width="135">
+<p>OUTD</p>
+</td>
+<td width="357">
+<p class="PreformattedText"><span >Load output port (C) with (HL), decrement HL and B.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>OUTI</p>
+</td>
+<td width="135">
+<p>OUTI</p>
+</td>
+<td width="357">
+<p>Load output port (C) with (HL), incr HL, decr B.</p>
+</td></tr>
+<tr>
+<td rowspan="2" valign="top" width="76">
+<p>POP</p>
+</td>
+<td width="135">
+<p>POP IX/IY</p>
+</td>
+<td width="357">
+<p>Load IX/IY with top of stack.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>POP qq</p>
+</td>
+<td width="357">
+<p>Load register pair qq with top of stack.</p>
+</td></tr>
+<tr>
+<td rowspan="2" valign="top" width="76">
+<p>PUSH</p>
+</td>
+<td width="135">
+<p>PUSH IX/IY</p>
+</td>
+<td width="357">
+<p>Load IX/IY onto stack.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>PUSH qq</p>
+</td>
+<td width="357">
+<p>Load register pair qq onto stack.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>RES</p>
+</td>
+<td width="135">
+<p>RES b,m</p>
+</td>
+<td width="357">
+<p>Reset bit b of operand m.</p>
+</td></tr>
+<tr>
+<td rowspan="2" valign="top" width="76">
+<p>RET</p>
+<p></p>
+</td>
+<td width="135">
+<p>RET</p>
+</td>
+<td width="357">
+<p>Return from subroutine.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>RET cc</p>
+</td>
+<td width="357">
+<p>Return from subroutine if condition cc is true.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>RETI</p>
+</td>
+<td width="135">
+<p>RETI</p>
+</td>
+<td width="357">
+<p>Return from interrupt.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>RETN</p>
+</td>
+<td width="135">
+<p>RETN</p>
+</td>
+<td width="357">
+<p class="PreformattedText">Return from non-maskable interrupt.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>
+</p>
+</td>
+<td width="135">
+<p>RL m</p>
+</td>
+<td width="357">
+<p>Rotate left through operand m.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>RLA</p>
+</td>
+<td width="135">
+<p>RLA</p>
+</td>
+<td width="357">
+<p>Rotate left accumulator through carry.</p>
+</td></tr>
+<tr>
+<td rowspan="3" valign="top" width="76">
+<p>RLC</p>
+</td>
+<td width="135">
+<p>RLC (HL)</p>
+</td>
+<td width="357">
+<p>Rotate location (HL) left circular.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>RLC (IX/IY+d)</p>
+</td>
+<td width="357">
+<p>Rotate location (IX/IY+d) left circular.</p>
+</td></tr>
+<tr>
+<td width="135">
+<p>RLC r</p>
+</td>
+<td width="357">
+<p>Rotate register r left circular.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>RLCA</p>
+</td>
+<td width="135">
+<p>RLCA</p>
+</td>
+<td width="357">
+<p class="PreformattedText"><span >Rotate left circular accumulator.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>RLD</p>
+</td>
+<td width="135">
+<p>RLD</p>
+</td>
+<td width="357">
+<p>Rotate digit left and right between accumulator and (HL).</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>RR</p>
+</td>
+<td width="135">
+<p>RR m</p>
+</td>
+<td width="357">
+<p class="PreformattedText"><span >Rotate right through carry operand m.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>RRA</p>
+</td>
+<td width="135">
+<p>RRA</p>
+</td>
+<td width="357">
+<p>Rotate right accumulator through carry.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>RRC m</p>
+</td>
+<td width="135">
+<p>RRC m</p>
+</td>
+<td width="357">
+<p>Rotate operand m right circular.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>RRCA</p>
+</td>
+<td width="135">
+<p>RRCA</p>
+</td>
+<td width="357">
+<p>Rotate right circular accumulator.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>RRD</p>
+</td>
+<td width="135">
+<p>RRD</p>
+</td>
+<td width="357">
+<p class="PreformattedText"><span >Rotate digit right and left between accumulator and (HL).</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>RST</p>
+</td>
+<td width="135">
+<p>RST p</p>
+</td>
+<td width="357">
+<p>Restart to location p.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>
+</p>
+</td>
+<td width="135">
+<p>SBC A,s</p>
+</td>
+<td width="357">
+<p class="PreformattedText"><span >Subtract operand s from accumulator with carry.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>
+</p>
+</td>
+<td width="135">
+<p>SBC HL,ss</p>
+</td>
+<td width="357">
+<p>Subtract register pair ss from HL with carry.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>SCF</p>
+</td>
+<td width="135">
+<p>SCF</p>
+</td>
+<td width="357">
+<p>Set carry flag (C=1).</p>
+</td></tr>
+
+<tr>
+	<td rowspan="3" valign="top" width="76">
+		<p>SET</p>
+	</td>
+	<td width="135">
+		<p>SET b,(HL)</p>
+	</td>
+	<td width="357">
+		<p>Set bit b of location (HL).</p>
+	</td>
+</tr>
+
+<tr>
+	<td width="135">
+		<p>SET b,(IX/IY+d)</p>
+	</td>
+	<td width="357">
+		<p>Set bit b of location (IX/IY+d).</p>
+	</td>
+</tr>
+
+<tr>
+	<td width="135">
+		<p>SET b,R</p>
+	</td>
+	<td width="357">
+		<p>Set bit b of register r.</p>
+	</td>
+</tr>
+
+<tr>
+<td width="76">
+<p>SLA</p>
+</td>
+<td width="135">
+<p>SLA m</p>
+</td>
+<td width="357">
+<p>Shift operand m left arithmetic.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>SRA</p>
+</td>
+<td width="135">
+<p>SRA m</p>
+</td>
+<td width="357">
+<p>Shift operand m right arithmetic.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>SRL</p>
+</td>
+<td width="135">
+<p>SRL m</p>
+</td>
+<td width="357">
+<p>Shift operand m right logical.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>SUB</p>
+</td>
+<td width="135">
+<p>SUB s</p>
+</td>
+<td width="357">
+<p>Subtract operand s from accumulator.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>XOR</p>
+</td>
+<td width="135">
+<p>XOR s</p>
+</td>
+<td width="357">
+<p>Exclusive OR operand s and accumulator.</p>
+</td></tr>
+<tr>
+<td width="76">
+<p>
+</p>
+</td>
+<td width="135">
+<p>
+</p>
+</td>
+<td width="357">
+<p>
+</p>
+</td></tr></tbody></table>
+
+
+ </body>
+</html>

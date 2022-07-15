@@ -1,0 +1,34 @@
+	0 / 8			1 / 9			2 / A			3 / B			4 / C			5 / D			6 / E			7 / F	
+0-	NOP	4		LD BC,nn	10		LD (BC),A	7		INC BC	6		INC B	4		DEC B	4		LD B,n	7		RLCA	4
+0+	EX AF,AF'	4		ADD HL,BC	11		LD A,(BC)	7		DEC BC	6		INC C	4		DEC C	4		LD C,n	7		RRCA	4
+1-	DJNZ d	13	8	LD DE,nn	10		LD (DE),A	7		INC DE	6		INC D	4		DEC D	4		LD D,n	7		RLA	4
+1+	JR d	12		ADD HL,DE	11		LD A,(DE)	7		DEC DE	6		INC E	4		DEC E	4		LD E,n	7		RRA	4
+2-	JR NZ,d	12	7	LD HL,nn	10		LD (nn),HL	16		INC HL	6		INC H	4		DEC H	4		LD H,n	7		DAA	4
+2+	JR Z,d	12	7	ADD HL,HL	11		LD HL,(nn)	16		DEC HL	6		INC L	4		DEC L	4		LD L,n	7		CPL	4
+3-	JR NC,d	12	7	LD SP,nn	10		LD (nn),A	13		INC SP	6		INC (HL)	7		DEC (HL)	7		LD (HL),n	10		SCF	4
+3+	JR C,d	12	7	ADD HL,SP	11		LD A,(nn)	13		DEC SP	6		INC A	4		DEC A	4		LD A,n	7		CCF	4
+4-	LD B,B	4		LD B,C	4		LD B,D	4		LD B,E	4		LD B,H	4		LD B,L	4		LD B,(HL)	7		LD B,A	4
+4+	LD C,B	4		LD C,C	4		LD C,D	4		LD C,E	4		LD C,H	4		LD C,L	4		LD C,(HL)	7		LD C,A	4
+5-	LD D,B	4		LD D,C	4		LD D,D	4		LD D,E	4		LD D,H	4		LD D,L	4		LD D,(HL)	7		LD D,A	4
+5+	LD E,B	4		LD E,C	4		LD E,D	4		LD E,E	4		LD E,H	4		LD E,L	4		LD E,(HL)	7		LD E,A	4
+6-	LD H,B	4		LD H,C	4		LD H,D	4		LD H,E	4		LD H,H	4		LD H,L	4		LD H,(HL)	7		LD H,A	4
+6+	LD L,B	4		LD L,C	4		LD L,D	4		LD L,E	4		LD L,H	4		LD L,L	4		LD L,(HL)	7		LD L,A	4
+7-	LD (HL),B	7		LD (HL),C	7		LD (HL),D	7		LD (HL),E	7		LD (HL),H	7		LD (HL),L	7		HALT	4		LD (HL),A	7
+7+	LD A,B	4		LD A,C	4		LD A,D	4		LD A,E	4		LD A,H	4		LD A,L	4		LD A,(HL)	7		LD A,A	4
+8-	ADD A,B	4		ADD A,C	4		ADD A,D	4		ADD A,E	4		ADD A,H	4		ADD A,L	4		ADD A,(HL)	7		ADD A,A	4
+8+	ADC A,B	4		ADC A,C	4		ADC A,D	4		ADC A,E	4		ADC A,H	4		ADC A,L	4		ADC A,(HL)	7		ADC A,A	4
+9-	SUB B	4		SUB C	4		SUB D	4		SUB E	4		SUB H	4		SUB L	4		SUB (HL)	7		SUB A	4
+9+	SBC A,B	4		SBC A,C	4		SBC A,D	4		SBC A,E	4		SBC A,H	4		SBC A,L	4		SBC A,(HL)	7		SBC A,A	4
+A-	AND B	4		AND C	4		AND D	4		AND E	4		AND H	4		AND L	4		AND (HL)	7		AND A	4
+A+	XOR B	4		XOR C	4		XOR D	4		XOR E	4		XOR H	4		XOR L	4		XOR (HL)	7		XOR A	4
+B-	OR B	4		OR C	4		OR D	4		OR E	4		OR H	4		OR L	4		OR (HL)	7		OR A	4
+B+	CP B	4		CP C	4		CP D	4		CP E	4		CP H	4		CP L	4		CP (HL)	7		CP A	4
+C-	RET NZ	11	5	POP BC	10		JP NZ,nn	10		JP nn	10		CALL NZ,nn	17	10	PUSH BC	11		ADD A,n	7		RST 00	11
+C+	RET Z	11	5	RET	10		JP Z,nn	10		--- CB ---			CALL Z,nn	17	10	CALL nn	17		ADC A,n	7		RST 08	11
+D-	RET NC	11	5	POP DE	10		JP NC,nn	10		OUT (n),A	11		CALL NC,nn	17	10	PUSH DE	11		SUB n	7		RST 10	11
+D+	RET C	11	5	EXX	4		JP C,nn	10		IN A,(n)	11		CALL C,nn	17	10	--- DD ---			SBC A,n	7		RST 18	11
+E-	RET PO	11	5	POP HL	10		JP PO,nn	10		EX (SP),HL	19		CALL PO,nn	17	10	PUSH HL	11		AND n	7		RST 20	11
+E+	RET PE	11	5	JP (HL)	4		JP PE,nn	10		EX DE,HL	4		CALL PE,nn	17	10	--- ED ---			XOR n	7		RST 28	11
+F-	RET P	11	5	POP AF	10		JP P,nn	10		DI	4		CALL P,nn	17	10	PUSH AF	11		OR n	7		RST 30	11
+F+	RET M	11	5	LD SP,HL	6		JP M,nn	10		EI	4		CALL M,nn	17	10	--- FD ---			CP n	7		RST 38	11
+-------------------

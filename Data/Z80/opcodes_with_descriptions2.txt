@@ -1,0 +1,148 @@
+Add with carry register pair ss to HL.
+Add with carry operand s to accumulator.
+Add value n to accumulator.
+Add register r to accumulator.
+Add location (HL) to acccumulator.
+Add location (IX+d) to accumulator.
+Add location (IY+d) to accumulator.
+Add register pair ss to HL.
+Add register pair pp to IX.
+Add register pair rr to IY.
+Logical AND of operand s to accumulator.
+Test bit b of location (HL).
+Test bit b of location (IX+d).
+Test bit b of location (IY+d).
+Test bit b of register r.
+Call subroutine at location nn if condition CC is true.
+Complement carry flag.
+Compare operand s with accumulator.
+Comapre location (HL) and acc., decrement HL and BC,
+Perform a CPD and repeat until BC=0.
+Compare location (HL) and acc., incr HL, decr BC.
+Perform a CPI and repeat until BC=0.
+Complement accumulator (1's complement).
+Decimal adjust accumulator.
+Decrement operand m.
+Decrement IX.
+Decrement IY.
+Decrement register pair ss.
+Disable interrupts.
+Decrement B and jump relative if B=0.
+Enable interrupts.
+EX    (SP),HL     Exchange the location (SP) and HL.
+EX    (SP),IX     Exchange the location (SP) and IX.
+EX    (SP),IY     Exchange the location (SP) and IY.
+EX    AF,AF'      Exchange the contents of AF and AF'.
+EX    DE,HL       Exchange the contents of DE and HL.
+EXX               Exchange the contents of BC,DE,HL with BC',DE',HL'.
+HALT              Halt computer and wait for interrupt.
+IM    0           Set interrupt mode 0.
+IM    1           Set interrupt mode 1.
+IM    2           Set interrupt mode 2.
+IN    A,(n)       Load the accumulator with input from device n.
+IN    r,(c)       Load the register r with input from device (C).
+INC   (HL)        Increment location (HL).
+INC   IX          Increment IX.
+INC   (IX+d)      Increment location (IX+d).
+INC   IY          Increment IY.
+INC   (IY+d)      Increment location (IY+d).
+INC   r           Increment register r.
+INC   ss          Increment register pair ss.
+IND               (HL)=Input from port (C). Decrement HL and B.
+INDR              Perform an IND and repeat until B=0.
+INI               (HL)=Input from port (C). HL=HL+1. B=B-1.
+INIR              Perform an INI and repeat until B=0.
+JP    (HL)        Unconditional jump to location (HL).
+JP    (IX)        Unconditional jump to location (IX).
+JP    (IY)        Unconditional jump to location (IY).
+JP    cc,nn       Jump to location nn if condition cc is true.
+JR    C,e         Jump relative to PC+e if carry=1.
+JR    e           Unconditional jump relative to PC+e.
+JR    NC,e        Jump relative to PC+e if carry=0.
+JR    NZ,e        Jump relative to PC+e if non zero (Z=0).
+JR    Z,e         Jump relative to PC+e if zero (Z=1).
+LD    A,(BC)      Load accumulator with location (BC).
+LD    A,(DE)      Load accumulator with location (DE).
+LD    A,I         Load accumulator with I.
+LD    A,(nn)      Load accumulator with location nn.
+LD    A,R         Load accumulator with R.
+LD    (BC),A      Load location (BC) with accumulator.
+LD    (DE),A      Load location (DE) with accumulator.
+LD    (HL),A      Load location (HL) with accumulator.
+LD    dd,nn       Load register pair dd with nn.
+LD    dd,(nn)     Load register pair dd with location (nn).
+LD    HL,(nn)     Load HL with location (nn).
+LD    (HL),r      Load location (HL) with register r.
+LD    I,A         Load I with accumulator.
+LD    IX,nn       Load IX with value nn.
+LD    IX,(nn)     Load IX with location (nn).
+LD    (IX+d),n    Load location (IX+d) with n.
+LD    (IX+d),r    Load location (IX+d) with register r.
+LD    IY,nn       Load IY with value nn.
+LD    IY,(nn)     Load IY with location (nn).
+LD    (IY+d),n    Load location (IY+d) with value n.
+LD    (IY+d),r    Load location (IY+d) with register r.
+LD    (nn),A      Load location (nn) with accumulator.
+LD    (nn),dd     Load location (nn) with register pair dd.
+LD    (nn),HL     Load location (nn) with HL.
+LD    (nn),IX     Load location (nn) with IX.
+LD    (nn),IY     Load location (nn) with IY.
+LD    R,A         Load R with accumulator.
+LD    r,(HL)      Load register r with location (HL).
+LD    r,(IX+d)    Load register r with location (IX+d).
+LD    r,(IY+d)    Load register r with location (IY+d).
+LD    r,n         Load register r with value n.
+LD    r,r'        Load register r with register r'.
+LD    SP,HL       Load SP with HL.
+LD    SP,IX       Load SP with IX.
+LD    SP,IY       Load SP with IY.
+LDD               Load location (DE) with location (HL), decrement DE,HL,BC.
+LDDR              Perform an LDD and repeat until BC=0.
+LDI               Load location (DE) with location (HL), incr DE,HL; decr BC.
+LDIR              Perform an LDI and repeat until BC=0.
+NEG               Negate accumulator (2's complement).
+NOP               No operation.
+OR    s           Logical OR of operand s and accumulator.
+OTDR              Perform an OUTD and repeat until B=0.
+OTIR              Perform an OTI and repeat until B=0.
+OUT   (C),r       Load output port (C) with register r.
+OUT   (n),A       Load output port (n) with accumulator.
+OUTD              Load output port (C) with (HL), decrement HL and B.
+OUTI              Load output port (C) with (HL), incr HL, decr B.
+POP   IX          Load IX with top of stack.
+POP   IY          Load IY with top of stack.
+POP   qq          Load register pair qq with top of stack.
+PUSH  IX          Load IX onto stack.
+PUSH  IY          Load IY onto stack.
+PUSH  qq          Load register pair qq onto stack.
+RES   b,m         Reset bit b of operand m.
+RET               Return from subroutine.
+RET   cc          Return from subroutine if condition cc is true.
+RETI              Return from interrupt.
+RETN              Return from non-maskable interrupt.
+RL    m           Rotate left through operand m.
+RLA               Rotate left accumulator through carry.
+RLC   (HL)        Rotate location (HL) left circular.
+RLC   (IX+d)      Rotate location (IX+d) left circular.
+RLC   (IY+d)      Rotate location (IY+d) left circular.
+RLC   r           Rotate register r left circular.
+RLCA              Rotate left circular accumulator.
+RLD               Rotate digit left and right between accumulator and (HL).
+RR    m           Rotate right through carry operand m.
+RRA               Rotate right accumulator through carry.
+RRC   m           Rotate operand m right circular.
+RRCA              Rotate right circular accumulator.
+RRD               Rotate digit right and left between accumulator and (HL).
+RST   p           Restart to location p.
+SBC   A,s         Subtract operand s from accumulator with carry.
+SBC   HL,ss       Subtract register pair ss from HL with carry.
+SCF               Set carry flag (C=1).
+SET   b,(HL)      Set bit b of location (HL).
+SET   b,(IX+d)    Set bit b of location (IX+d).
+SET   b,(IY+d)    Set bit b of location (IY+d).
+SET   b,R         Set bit b of register r.
+SLA   m           Shift operand m left arithmetic.
+SRA   m           Shift operand m right arithmetic.
+SRL   m           Shift operand m right logical.
+SUB   s           Subtract operand s from accumulator.
+XOR   s           Exclusive OR operand s and accumulator.
