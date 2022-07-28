@@ -49,11 +49,6 @@ namespace MSIL
 
 		// -----
 
-		public virtual void MC680x_Simulate() 
-		{
-			throw new Exception("MC680x_Simulate [] not done!");
-		}
-
 		public virtual void MC680x_UnOptimized_Code(StringBuilder sb) 
 		{
 			this.OutputDescCategoryLine(sb);
@@ -65,11 +60,6 @@ namespace MSIL
 		}
 
 		// -----
-
-		public virtual void MC6x09_Simulate() 
-		{
-			throw new Exception("M6x09_Simulate [] not done!");
-		}
 
 		public virtual void MC6x09_UnOptimized_Code(StringBuilder sb) 
 		{

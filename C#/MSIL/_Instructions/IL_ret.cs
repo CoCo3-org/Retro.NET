@@ -42,11 +42,6 @@ namespace MSIL
 			sb.AppendLine("\trts");
 		}
 
-		public override void MC6x09_Simulate() 
-		{
-			throw new Exception("M6x09_Simulate [ret] not done!");
-		}
-
         //public override void M6x09_UnOptimized_Code(StringBuilder sb) 
         //{
         //	this.OutputDescCategoryLine(sb);

@@ -39,11 +39,6 @@ namespace MSIL
 			this.OutputDescCategoryLine(sb);
 		}
 
-		public override void MC6x09_Simulate() 
-		{
-			throw new Exception("M6x09_Simulate [ldloc.0] not done!");
-		}
-
 		public override void MC6x09_UnOptimized_Code(StringBuilder sb) 
 		{
 			this.OutputDescCategoryLine(sb);

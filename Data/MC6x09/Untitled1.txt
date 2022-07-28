@@ -1,0 +1,163 @@
+ABX
+
+ADC <td rowspan="2">ADC</td>
+ADCA*
+ADCB*
+
+ADD <td rowspan="3">ADD</td>
+ADDA*
+ADDB*
+ADDD*
+
+AND <td rowspan="3">AND</td>
+ANDA*
+ANDB*
+ANDCC*
+
+ASL <td rowspan="3">ASL</td>
+ASLA*
+ASLB*
+ASL*
+
+ASR <td rowspan="3">ASR</td>
+ASRA*
+ASRB*
+ASR*
+
+BIT <td rowspan="2">BIT</td>
+BITA*
+BITB*
+
+CLR <td rowspan="3">CLR</td>
+CLRA*
+CLRB*
+CLR*
+
+CMP <td rowspan="7">CMP</td>
+CMPA*
+CMPB*
+CMPD*
+CMPS*
+CMPU*
+CMPX*
+CMPY*
+
+COM <td rowspan="3">COM</td>
+COMA*
+COMB*
+COM*
+
+CWAI
+DAA
+
+DEC <td rowspan="3">DEC</td>
+DECA*
+DECB*
+DEC*
+
+EOR <td rowspan="2">EOR</td>
+EORA*
+EORB*
+
+EXG
+
+INC <td rowspan="3">INC</td>
+INCA*
+INCB*
+INC*
+
+JMP
+JSR
+
+LD <td rowspan="7">LD</td>
+LDA*
+LDB*
+LDD*
+LDS*
+LDU*
+LDX*
+LDY*
+
+LEA <td rowspan="4">LEA</td>
+LEAS*
+LEAU*
+LEAX*
+LEAY*
+
+LSL <td rowspan="3">LSL</td>
+LSLA*
+LSLB*
+LSL*
+
+LSR <td rowspan="3">LSR</td>
+LSRA*
+LSRB*
+LSR*
+
+MUL
+
+NEG <td rowspan="3">NEG</td>
+NEGA*
+NEGB*
+NEG*
+
+NOP
+
+OR <td rowspan="3">OR</td>
+ORA*
+ORB*
+ORCC*
+
+PSH <td rowspan="2">PSH</td>
+PSHS*
+PSHU*
+
+PUL <td rowspan="2">PUL</td>
+PULS*
+PULU*
+
+ROL <td rowspan="3">ROL</td>
+ROLA*
+ROLB*
+ROL*
+
+ROR <td rowspan="3">ROR</td>
+RORA*
+RORB*
+ROR*
+
+RTI
+RTS
+
+SBC <td rowspan="2">SBC</td>
+SBCA*
+SBCB*
+
+SEX
+
+ST <td rowspan="7">ST</td>
+STA*
+STB*
+STD*
+STS*
+STU*
+STX*
+STY*
+
+SUB <td rowspan="3">SUB</td>
+SUBA*
+SUBB*
+SUBD*
+
+SWI <td rowspan="3">SWI</td>
+SWI*
+SWI2*
+SWI3*
+
+SYNC
+TFR
+
+TST <td rowspan="3">TST</td>
+TSTA*
+TSTB*
+TST*

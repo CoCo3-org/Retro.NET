@@ -6,7 +6,7 @@ namespace Sample
 	{
 		static void Main()
 		{
-			Console.Write("Hello, World ");
+			Console.Write("The number is: ");
 			Console.Write(19);
 			Console.WriteLine("!");
 		}

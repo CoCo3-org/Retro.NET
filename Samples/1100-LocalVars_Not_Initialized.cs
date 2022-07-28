@@ -4,9 +4,12 @@ namespace Sample
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello, World!");
+			bool flag;
+			byte bval;
+			int ival;
+			string str;
         }
     }
 }

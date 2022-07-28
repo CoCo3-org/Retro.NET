@@ -1,377 +1,377 @@
-<CpuGen Name="MC680x">
-	<Mnemonic Mnem="ABA" />
-	<Mnemonic Mnem="ABX" MC6801="True" />
-	<Mnemonic Mnem="ADCA" />
-	<Mnemonic Mnem="ADCB" />
-	<Mnemonic Mnem="ADDA" />
-	<Mnemonic Mnem="ADDB" />
-	<Mnemonic Mnem="ADDD" MC6801="True" />
-	<Mnemonic Mnem="ANDA" />
-	<Mnemonic Mnem="ANDB" />
-	<Mnemonic Mnem="ASL" />
-	<Mnemonic Mnem="ASLA" />
-	<Mnemonic Mnem="ASLB" />
-	<Mnemonic Mnem="ASLD" MC6801="True" />
-	<Mnemonic Mnem="ASR" />
-	<Mnemonic Mnem="ASRA" />
-	<Mnemonic Mnem="ASRB" />
-	<Mnemonic Mnem="BCC" />
-	<Mnemonic Mnem="BCS" />
-	<Mnemonic Mnem="BEQ" />
-	<Mnemonic Mnem="BGE" />
-	<Mnemonic Mnem="BGT" />
-	<Mnemonic Mnem="BHI" />
-	<Mnemonic Mnem="BITA" />
-	<Mnemonic Mnem="BITB" />
-	<Mnemonic Mnem="BLE" />
-	<Mnemonic Mnem="BLS" />
-	<Mnemonic Mnem="BLT" />
-	<Mnemonic Mnem="BMI" />
-	<Mnemonic Mnem="BNE" />
-	<Mnemonic Mnem="BPL" />
-	<Mnemonic Mnem="BRA" />
-	<Mnemonic Mnem="BRN" MC6801="True" />
-	<Mnemonic Mnem="BSR" />
-	<Mnemonic Mnem="BVC" />
-	<Mnemonic Mnem="BVS" />
-	<Mnemonic Mnem="CBA" />
-	<Mnemonic Mnem="CLC" />
-	<Mnemonic Mnem="CLI" />
-	<Mnemonic Mnem="CLR" />
-	<Mnemonic Mnem="CLRA" />
-	<Mnemonic Mnem="CLRB" />
-	<Mnemonic Mnem="CLV" />
-	<Mnemonic Mnem="CMPA" />
-	<Mnemonic Mnem="CMPB" />
-	<Mnemonic Mnem="COM" />
-	<Mnemonic Mnem="COMA" />
-	<Mnemonic Mnem="COMB" />
-	<Mnemonic Mnem="CPX" />
-	<Mnemonic Mnem="DAA" />
-	<Mnemonic Mnem="DEC" />
-	<Mnemonic Mnem="DECA" />
-	<Mnemonic Mnem="DECB" />
-	<Mnemonic Mnem="DES" />
-	<Mnemonic Mnem="DEX" />
-	<Mnemonic Mnem="EORA" />
-	<Mnemonic Mnem="EORB" />
-	<Mnemonic Mnem="INC" />
-	<Mnemonic Mnem="INCA" />
-	<Mnemonic Mnem="INCB" />
-	<Mnemonic Mnem="INS" />
-	<Mnemonic Mnem="INX" />
-	<Mnemonic Mnem="JMP" />
-	<Mnemonic Mnem="JSR" />
-	<Mnemonic Mnem="LDAA" />
-	<Mnemonic Mnem="LDAB" />
-	<Mnemonic Mnem="LDD" MC6801="True" />
-	<Mnemonic Mnem="LDS" />
-	<Mnemonic Mnem="LDX" />
-	<Mnemonic Mnem="LSL" />
-	<Mnemonic Mnem="LSR" />
-	<Mnemonic Mnem="LSRA" />
-	<Mnemonic Mnem="LSRB" />
-	<Mnemonic Mnem="LSRD" MC6801="True" />
-	<Mnemonic Mnem="MUL" MC6801="True" />
-	<Mnemonic Mnem="NEG" />
-	<Mnemonic Mnem="NEGA" />
-	<Mnemonic Mnem="NEGB" />
-	<Mnemonic Mnem="NOP" />
-	<Mnemonic Mnem="ORAA" />
-	<Mnemonic Mnem="ORAB" />
-	<Mnemonic Mnem="PSHA" />
-	<Mnemonic Mnem="PSHB" />
-	<Mnemonic Mnem="PSHX" MC6801="True" />
-	<Mnemonic Mnem="PULA" />
-	<Mnemonic Mnem="PULB" />
-	<Mnemonic Mnem="PULX" MC6801="True" />
-	<Mnemonic Mnem="ROL" />
-	<Mnemonic Mnem="ROLA" />
-	<Mnemonic Mnem="ROLB" />
-	<Mnemonic Mnem="ROR" />
-	<Mnemonic Mnem="RORA" />
-	<Mnemonic Mnem="RORB" />
-	<Mnemonic Mnem="RTI" />
-	<Mnemonic Mnem="RTS" />
-	<Mnemonic Mnem="SBA" />
-	<Mnemonic Mnem="SBCA" />
-	<Mnemonic Mnem="SBCB" />
-	<Mnemonic Mnem="SEC" />
-	<Mnemonic Mnem="SEI" />
-	<Mnemonic Mnem="SEV" />
-	<Mnemonic Mnem="STAA" />
-	<Mnemonic Mnem="STAB" />
-	<Mnemonic Mnem="STD" MC6801="True" />
-	<Mnemonic Mnem="STS" />
-	<Mnemonic Mnem="STX" />
-	<Mnemonic Mnem="SUBA" />
-	<Mnemonic Mnem="SUBB" />
-	<Mnemonic Mnem="SUBD" MC6801="True" />
-	<Mnemonic Mnem="SWI" />
-	<Mnemonic Mnem="TAB" />
-	<Mnemonic Mnem="TAP" />
-	<Mnemonic Mnem="TBA" />
-	<Mnemonic Mnem="TPA" />
-	<Mnemonic Mnem="TST" />
-	<Mnemonic Mnem="TSTA" />
-	<Mnemonic Mnem="TSTB" />
-	<Mnemonic Mnem="TSX" />
-	<Mnemonic Mnem="TXS" />
-	<Mnemonic Mnem="WAI" />
-	<OpCode Op="00" Mnem="*" />
-	<OpCode Op="01" Mnem="NOP" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="02" Mnem="*" />
-	<OpCode Op="03" Mnem="*" />
-	<OpCode Op="04" Mnem="LSRD" Mode="Inherent" NBytes="1" NCycles="3" MC6801="True" />
-	<OpCode Op="05" Mnem="ASLD" Mode="Inherent" NBytes="1" NCycles="3" MC6801="True" />
-	<OpCode Op="06" Mnem="TAP" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="07" Mnem="TPA" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="08" Mnem="INX" Mode="Inherent" NBytes="1" NCycles="3" />
-	<OpCode Op="09" Mnem="DEX" Mode="Inherent" NBytes="1" NCycles="3" />
-	<OpCode Op="0A" Mnem="CLV" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="0B" Mnem="SEV" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="0C" Mnem="CLC" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="0D" Mnem="SEC" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="0E" Mnem="CLI" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="0F" Mnem="SEI" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="10" Mnem="SBA" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="11" Mnem="CBA" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="12" Mnem="*" />
-	<OpCode Op="13" Mnem="*" />
-	<OpCode Op="14" Mnem="*" />
-	<OpCode Op="15" Mnem="*" />
-	<OpCode Op="16" Mnem="TAB" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="17" Mnem="TBA" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="18" Mnem="*" />
-	<OpCode Op="19" Mnem="DAA" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="1A" Mnem="*" />
-	<OpCode Op="1B" Mnem="ABA" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="1C" Mnem="*" />
-	<OpCode Op="1D" Mnem="*" />
-	<OpCode Op="1E" Mnem="*" />
-	<OpCode Op="1F" Mnem="*" />
-	<OpCode Op="20" Mnem="BRA" Mode="Relative" NBytes="2" NCycles="3" />
-	<OpCode Op="21" Mnem="BRN" Mode="Relative" NBytes="2" NCycles="3" MC6801="True" />
-	<OpCode Op="22" Mnem="BHI" Mode="Relative" NBytes="2" NCycles="3" />
-	<OpCode Op="23" Mnem="BLS" Mode="Relative" NBytes="2" NCycles="3" />
-	<OpCode Op="24" Mnem="BCC" Mode="Relative" NBytes="2" NCycles="3" />
-	<OpCode Op="25" Mnem="BCS" Mode="Relative" NBytes="2" NCycles="3" />
-	<OpCode Op="26" Mnem="BNE" Mode="Relative" NBytes="2" NCycles="3" />
-	<OpCode Op="27" Mnem="BEQ" Mode="Relative" NBytes="2" NCycles="3" />
-	<OpCode Op="28" Mnem="BVC" Mode="Relative" NBytes="2" NCycles="3" />
-	<OpCode Op="29" Mnem="BVS" Mode="Relative" NBytes="2" NCycles="3" />
-	<OpCode Op="2A" Mnem="BPL" Mode="Relative" NBytes="2" NCycles="3" />
-	<OpCode Op="2B" Mnem="BMI" Mode="Relative" NBytes="2" NCycles="3" />
-	<OpCode Op="2C" Mnem="BGE" Mode="Relative" NBytes="2" NCycles="3" />
-	<OpCode Op="2D" Mnem="BLT" Mode="Relative" NBytes="2" NCycles="3" />
-	<OpCode Op="2E" Mnem="BGT" Mode="Relative" NBytes="2" NCycles="3" />
-	<OpCode Op="2F" Mnem="BLE" Mode="Relative" NBytes="2" NCycles="3" />
-	<OpCode Op="30" Mnem="TSX" Mode="Inherent" NBytes="1" NCycles="3" />
-	<OpCode Op="31" Mnem="INS" Mode="Inherent" NBytes="1" NCycles="3" />
-	<OpCode Op="32" Mnem="PULA" Mode="Inherent" NBytes="1" NCycles="4" />
-	<OpCode Op="33" Mnem="PULB" Mode="Inherent" NBytes="1" NCycles="4" />
-	<OpCode Op="34" Mnem="DES" Mode="Inherent" NBytes="1" NCycles="3" />
-	<OpCode Op="35" Mnem="TXS" Mode="Inherent" NBytes="1" NCycles="3" />
-	<OpCode Op="36" Mnem="PSHA" Mode="Inherent" NBytes="1" NCycles="3" />
-	<OpCode Op="37" Mnem="PSHB" Mode="Inherent" NBytes="1" NCycles="3" />
-	<OpCode Op="38" Mnem="PULX" Mode="Inherent" NBytes="1" NCycles="5" MC6801="True" />
-	<OpCode Op="39" Mnem="RTS" Mode="Inherent" NBytes="1" NCycles="5" />
-	<OpCode Op="3A" Mnem="ABX" Mode="Inherent" NBytes="1" NCycles="3" MC6801="True" />
-	<OpCode Op="3B" Mnem="RTI" Mode="Inherent" NBytes="1" NCycles="10" />
-	<OpCode Op="3C" Mnem="PSHX" Mode="Inherent" NBytes="1" NCycles="4" MC6801="True" />
-	<OpCode Op="3D" Mnem="MUL" Mode="Inherent" NBytes="1" NCycles="10" MC6801="True" />
-	<OpCode Op="3E" Mnem="WAI" Mode="Inherent" NBytes="1" NCycles="9" />
-	<OpCode Op="3F" Mnem="SWI" Mode="Inherent" NBytes="1" NCycles="12" />
-	<OpCode Op="40" Mnem="NEGA" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="41" Mnem="*" />
-	<OpCode Op="42" Mnem="*" />
-	<OpCode Op="43" Mnem="COMA" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="44" Mnem="LSRA" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="45" Mnem="*" />
-	<OpCode Op="46" Mnem="RORA" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="47" Mnem="ASRA" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="48" Mnem="ASLA" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="49" Mnem="ROLA" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="4A" Mnem="DECA" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="4B" Mnem="*" />
-	<OpCode Op="4C" Mnem="INCA" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="4D" Mnem="TSTA" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="4E" Mnem="*" />
-	<OpCode Op="4F" Mnem="CLRA" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="50" Mnem="NEGB" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="51" Mnem="*" />
-	<OpCode Op="52" Mnem="*" />
-	<OpCode Op="53" Mnem="COMB" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="54" Mnem="LSRB" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="55" Mnem="*" />
-	<OpCode Op="56" Mnem="RORB" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="57" Mnem="ASRB" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="58" Mnem="ASLB" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="59" Mnem="ROLB" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="5A" Mnem="DECB" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="5B" Mnem="*" />
-	<OpCode Op="5C" Mnem="INCB" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="5D" Mnem="TSTB" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="5E" Mnem="*" />
-	<OpCode Op="5F" Mnem="CLRB" Mode="Inherent" NBytes="1" NCycles="2" />
-	<OpCode Op="60" Mnem="NEG" Mode="Indexed" NBytes="2" NCycles="6" />
-	<OpCode Op="61" Mnem="*" />
-	<OpCode Op="62" Mnem="*" />
-	<OpCode Op="63" Mnem="COM" Mode="Indexed" NBytes="2" NCycles="6" />
-	<OpCode Op="64" Mnem="LSR" Mode="Indexed" NBytes="2" NCycles="6" />
-	<OpCode Op="65" Mnem="*" />
-	<OpCode Op="66" Mnem="ROR" Mode="Indexed" NBytes="2" NCycles="6" />
-	<OpCode Op="67" Mnem="ASR" Mode="Indexed" NBytes="2" NCycles="6" />
-	<OpCode Op="68" Mnem="ASL" Mode="Indexed" NBytes="2" NCycles="6" />
-	<OpCode Op="69" Mnem="ROL" Mode="Indexed" NBytes="2" NCycles="6" />
-	<OpCode Op="6A" Mnem="DEC" Mode="Indexed" NBytes="2" NCycles="6" />
-	<OpCode Op="6B" Mnem="*" />
-	<OpCode Op="6C" Mnem="INC" Mode="Indexed" NBytes="2" NCycles="6" />
-	<OpCode Op="6D" Mnem="TST" Mode="Indexed" NBytes="2" NCycles="6" />
-	<OpCode Op="6E" Mnem="JMP" Mode="Indexed" NBytes="2" NCycles="3" />
-	<OpCode Op="6F" Mnem="CLR" Mode="Indexed" NBytes="2" NCycles="6" />
-	<OpCode Op="70" Mnem="NEG" Mode="Extended" NBytes="3" NCycles="6" />
-	<OpCode Op="71" Mnem="*" />
-	<OpCode Op="72" Mnem="*" />
-	<OpCode Op="73" Mnem="COM" Mode="Extended" NBytes="3" NCycles="6" />
-	<OpCode Op="74" Mnem="LSR" Mode="Extended" NBytes="3" NCycles="6" />
-	<OpCode Op="75" Mnem="*" />
-	<OpCode Op="76" Mnem="ROR" Mode="Extended" NBytes="3" NCycles="6" />
-	<OpCode Op="77" Mnem="ASR" Mode="Extended" NBytes="3" NCycles="6" />
-	<OpCode Op="78" Mnem="LSL" Mode="Extended" NBytes="3" NCycles="6" />
-	<OpCode Op="79" Mnem="ROL" Mode="Extended" NBytes="3" NCycles="6" />
-	<OpCode Op="7A" Mnem="DEC" Mode="Extended" NBytes="3" NCycles="6" />
-	<OpCode Op="7B" Mnem="*" />
-	<OpCode Op="7C" Mnem="INC" Mode="Extended" NBytes="3" NCycles="6" />
-	<OpCode Op="7D" Mnem="TST" Mode="Extended" NBytes="3" NCycles="6" />
-	<OpCode Op="7E" Mnem="JMP" Mode="Extended" NBytes="3" NCycles="3" />
-	<OpCode Op="7F" Mnem="CLR" Mode="Extended" NBytes="3" NCycles="6" />
-	<OpCode Op="80" Mnem="SUBA" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="81" Mnem="CMPA" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="82" Mnem="SBCA" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="83" Mnem="SUBD" Mode="Immediate" NBytes="3" NCycles="4" MC6801="True" />
-	<OpCode Op="84" Mnem="ANDA" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="85" Mnem="BITA" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="86" Mnem="LDAA" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="87" Mnem="*" />
-	<OpCode Op="88" Mnem="EORA" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="89" Mnem="ADCA" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="8A" Mnem="ORAA" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="8B" Mnem="ADDA" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="8C" Mnem="CPX" Mode="Immediate" NBytes="3" NCycles="4" />
-	<OpCode Op="8D" Mnem="BSR" Mode="Relative" NBytes="2" NCycles="6" />
-	<OpCode Op="8E" Mnem="LDS" Mode="Immediate" NBytes="3" NCycles="3" />
-	<OpCode Op="8F" Mnem="*" />
-	<OpCode Op="90" Mnem="SUBA" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="91" Mnem="CMPA" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="92" Mnem="SBCA" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="93" Mnem="SUBD" Mode="Direct" NBytes="2" NCycles="5" MC6801="True" />
-	<OpCode Op="94" Mnem="ANDA" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="95" Mnem="BITA" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="96" Mnem="LDAA" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="97" Mnem="STAA" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="98" Mnem="EORA" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="99" Mnem="ADCA" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="9A" Mnem="ORAA" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="9B" Mnem="ADDA" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="9C" Mnem="CPX" Mode="Direct" NBytes="2" NCycles="5" />
-	<OpCode Op="9D" Mnem="JSR" Mode="Direct" NBytes="2" NCycles="5" MC6801="True" />
-	<OpCode Op="9E" Mnem="LDS" Mode="Direct" NBytes="2" NCycles="4" />
-	<OpCode Op="9F" Mnem="STS" Mode="Direct" NBytes="2" NCycles="4" />
-	<OpCode Op="A0" Mnem="SUBA" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="A1" Mnem="CMPA" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="A2" Mnem="SBCA" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="A3" Mnem="SUBD" Mode="Indexed" NBytes="2" NCycles="6" MC6801="True" />
-	<OpCode Op="A4" Mnem="ANDA" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="A5" Mnem="BITA" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="A6" Mnem="LDAA" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="A7" Mnem="STAA" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="A8" Mnem="EORA" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="A9" Mnem="ADCA" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="AA" Mnem="ORAA" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="AB" Mnem="ADDA" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="AC" Mnem="CPX" Mode="Indexed" NBytes="2" NCycles="6" />
-	<OpCode Op="AD" Mnem="JSR" Mode="Indexed" NBytes="2" NCycles="6" />
-	<OpCode Op="AE" Mnem="LDS" Mode="Indexed" NBytes="2" NCycles="5" />
-	<OpCode Op="AF" Mnem="STS" Mode="Indexed" NBytes="2" NCycles="5" />
-	<OpCode Op="B0" Mnem="SUBA" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="B1" Mnem="CMPA" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="B2" Mnem="SBCA" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="B3" Mnem="SUBD" Mode="Extended" NBytes="3" NCycles="6" MC6801="True" />
-	<OpCode Op="B4" Mnem="ANDA" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="B5" Mnem="BITA" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="B6" Mnem="LDAA" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="B7" Mnem="STAA" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="B8" Mnem="EORA" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="B9" Mnem="ADCA" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="BA" Mnem="ORAA" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="BB" Mnem="ADDA" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="BC" Mnem="CPX" Mode="Extended" NBytes="3" NCycles="6" />
-	<OpCode Op="BD" Mnem="JSR" Mode="Extended" NBytes="3" NCycles="6" />
-	<OpCode Op="BE" Mnem="LDS" Mode="Extended" NBytes="3" NCycles="5" />
-	<OpCode Op="BF" Mnem="STS" Mode="Extended" NBytes="3" NCycles="5" />
-	<OpCode Op="C0" Mnem="SUBB" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="C1" Mnem="CMPB" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="C2" Mnem="SBCB" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="C3" Mnem="ADDD" Mode="Immediate" NBytes="3" NCycles="4" MC6801="True" />
-	<OpCode Op="C4" Mnem="ANDB" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="C5" Mnem="BITB" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="C6" Mnem="LDAB" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="C7" Mnem="*" />
-	<OpCode Op="C8" Mnem="EORB" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="C9" Mnem="ADCB" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="CA" Mnem="ORAB" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="CB" Mnem="ADDB" Mode="Immediate" NBytes="2" NCycles="2" />
-	<OpCode Op="CC" Mnem="LDD" Mode="Immediate" NBytes="3" NCycles="3" MC6801="True" />
-	<OpCode Op="CD" Mnem="*" />
-	<OpCode Op="CE" Mnem="LDX" Mode="Immediate" NBytes="3" NCycles="3" />
-	<OpCode Op="CF" Mnem="*" />
-	<OpCode Op="D0" Mnem="SUBB" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="D1" Mnem="CMPB" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="D2" Mnem="SBCB" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="D3" Mnem="ADDD" Mode="Direct" NBytes="2" NCycles="5" MC6801="True" />
-	<OpCode Op="D4" Mnem="ANDB" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="D5" Mnem="BITB" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="D6" Mnem="LDAB" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="D7" Mnem="STAB" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="D8" Mnem="EORB" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="D9" Mnem="ADCB" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="DA" Mnem="ORAB" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="DB" Mnem="ADDB" Mode="Direct" NBytes="2" NCycles="3" />
-	<OpCode Op="DC" Mnem="LDD" Mode="Direct" NBytes="2" NCycles="4" MC6801="True" />
-	<OpCode Op="DD" Mnem="STD" Mode="Direct" NBytes="2" NCycles="4" MC6801="True" />
-	<OpCode Op="DE" Mnem="LDX" Mode="Direct" NBytes="2" NCycles="4" />
-	<OpCode Op="DF" Mnem="STX" Mode="Direct" NBytes="2" NCycles="4" />
-	<OpCode Op="E0" Mnem="SUBB" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="E1" Mnem="CMPB" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="E2" Mnem="SBCB" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="E3" Mnem="ADDD" Mode="Indexed" NBytes="2" NCycles="6" MC6801="True" />
-	<OpCode Op="E4" Mnem="ANDB" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="E5" Mnem="BITB" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="E6" Mnem="LDAB" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="E7" Mnem="STAB" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="E8" Mnem="EORB" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="E9" Mnem="ADCB" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="EA" Mnem="ORAB" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="EB" Mnem="ADDB" Mode="Indexed" NBytes="2" NCycles="4" />
-	<OpCode Op="EC" Mnem="LDD" Mode="Indexed" NBytes="2" NCycles="5" MC6801="True" />
-	<OpCode Op="ED" Mnem="STD" Mode="Indexed" NBytes="2" NCycles="5" MC6801="True" />
-	<OpCode Op="EE" Mnem="LDX" Mode="Indexed" NBytes="2" NCycles="5" />
-	<OpCode Op="EF" Mnem="STX" Mode="Indexed" NBytes="2" NCycles="5" />
-	<OpCode Op="F0" Mnem="SUBB" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="F1" Mnem="CMPB" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="F2" Mnem="SBCB" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="F3" Mnem="ADDD" Mode="Extended" NBytes="3" NCycles="6" MC6801="True" />
-	<OpCode Op="F4" Mnem="ANDB" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="F5" Mnem="BITB" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="F6" Mnem="LDAB" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="F7" Mnem="STAB" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="F8" Mnem="EORB" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="F9" Mnem="ADCB" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="FA" Mnem="ORAB" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="FB" Mnem="ADDB" Mode="Extended" NBytes="3" NCycles="4" />
-	<OpCode Op="FC" Mnem="LDD" Mode="Extended" NBytes="3" NCycles="5" MC6801="True" />
-	<OpCode Op="FD" Mnem="STD" Mode="Extended" NBytes="3" NCycles="5" MC6801="True" />
-	<OpCode Op="FE" Mnem="LDX" Mode="Extended" NBytes="3" NCycles="5" />
-	<OpCode Op="FF" Mnem="STX" Mode="Extended" NBytes="3" NCycles="5" />
-</CpuGen>
+<MC680x>
+  <Mnemonic Mnem="ABA" />
+  <Mnemonic Mnem="ABX" MC6801="True" />
+  <Mnemonic Mnem="ADCA" />
+  <Mnemonic Mnem="ADCB" />
+  <Mnemonic Mnem="ADDA" />
+  <Mnemonic Mnem="ADDB" />
+  <Mnemonic Mnem="ADDD" MC6801="True" />
+  <Mnemonic Mnem="ANDA" />
+  <Mnemonic Mnem="ANDB" />
+  <Mnemonic Mnem="ASL" />
+  <Mnemonic Mnem="ASLA" />
+  <Mnemonic Mnem="ASLB" />
+  <Mnemonic Mnem="ASLD" MC6801="True" />
+  <Mnemonic Mnem="ASR" />
+  <Mnemonic Mnem="ASRA" />
+  <Mnemonic Mnem="ASRB" />
+  <Mnemonic Mnem="BCC" />
+  <Mnemonic Mnem="BCS" />
+  <Mnemonic Mnem="BEQ" />
+  <Mnemonic Mnem="BGE" />
+  <Mnemonic Mnem="BGT" />
+  <Mnemonic Mnem="BHI" />
+  <Mnemonic Mnem="BITA" />
+  <Mnemonic Mnem="BITB" />
+  <Mnemonic Mnem="BLE" />
+  <Mnemonic Mnem="BLS" />
+  <Mnemonic Mnem="BLT" />
+  <Mnemonic Mnem="BMI" />
+  <Mnemonic Mnem="BNE" />
+  <Mnemonic Mnem="BPL" />
+  <Mnemonic Mnem="BRA" />
+  <Mnemonic Mnem="BRN" MC6801="True" />
+  <Mnemonic Mnem="BSR" />
+  <Mnemonic Mnem="BVC" />
+  <Mnemonic Mnem="BVS" />
+  <Mnemonic Mnem="CBA" />
+  <Mnemonic Mnem="CLC" />
+  <Mnemonic Mnem="CLI" />
+  <Mnemonic Mnem="CLR" />
+  <Mnemonic Mnem="CLRA" />
+  <Mnemonic Mnem="CLRB" />
+  <Mnemonic Mnem="CLV" />
+  <Mnemonic Mnem="CMPA" />
+  <Mnemonic Mnem="CMPB" />
+  <Mnemonic Mnem="COM" />
+  <Mnemonic Mnem="COMA" />
+  <Mnemonic Mnem="COMB" />
+  <Mnemonic Mnem="CPX" />
+  <Mnemonic Mnem="DAA" />
+  <Mnemonic Mnem="DEC" />
+  <Mnemonic Mnem="DECA" />
+  <Mnemonic Mnem="DECB" />
+  <Mnemonic Mnem="DES" />
+  <Mnemonic Mnem="DEX" />
+  <Mnemonic Mnem="EORA" />
+  <Mnemonic Mnem="EORB" />
+  <Mnemonic Mnem="INC" />
+  <Mnemonic Mnem="INCA" />
+  <Mnemonic Mnem="INCB" />
+  <Mnemonic Mnem="INS" />
+  <Mnemonic Mnem="INX" />
+  <Mnemonic Mnem="JMP" />
+  <Mnemonic Mnem="JSR" />
+  <Mnemonic Mnem="LDAA" />
+  <Mnemonic Mnem="LDAB" />
+  <Mnemonic Mnem="LDD" MC6801="True" />
+  <Mnemonic Mnem="LDS" />
+  <Mnemonic Mnem="LDX" />
+  <Mnemonic Mnem="LSL" />
+  <Mnemonic Mnem="LSR" />
+  <Mnemonic Mnem="LSRA" />
+  <Mnemonic Mnem="LSRB" />
+  <Mnemonic Mnem="LSRD" MC6801="True" />
+  <Mnemonic Mnem="MUL" MC6801="True" />
+  <Mnemonic Mnem="NEG" />
+  <Mnemonic Mnem="NEGA" />
+  <Mnemonic Mnem="NEGB" />
+  <Mnemonic Mnem="NOP" />
+  <Mnemonic Mnem="ORAA" />
+  <Mnemonic Mnem="ORAB" />
+  <Mnemonic Mnem="PSHA" />
+  <Mnemonic Mnem="PSHB" />
+  <Mnemonic Mnem="PSHX" MC6801="True" />
+  <Mnemonic Mnem="PULA" />
+  <Mnemonic Mnem="PULB" />
+  <Mnemonic Mnem="PULX" MC6801="True" />
+  <Mnemonic Mnem="ROL" />
+  <Mnemonic Mnem="ROLA" />
+  <Mnemonic Mnem="ROLB" />
+  <Mnemonic Mnem="ROR" />
+  <Mnemonic Mnem="RORA" />
+  <Mnemonic Mnem="RORB" />
+  <Mnemonic Mnem="RTI" />
+  <Mnemonic Mnem="RTS" />
+  <Mnemonic Mnem="SBA" />
+  <Mnemonic Mnem="SBCA" />
+  <Mnemonic Mnem="SBCB" />
+  <Mnemonic Mnem="SEC" />
+  <Mnemonic Mnem="SEI" />
+  <Mnemonic Mnem="SEV" />
+  <Mnemonic Mnem="STAA" />
+  <Mnemonic Mnem="STAB" />
+  <Mnemonic Mnem="STD" MC6801="True" />
+  <Mnemonic Mnem="STS" />
+  <Mnemonic Mnem="STX" />
+  <Mnemonic Mnem="SUBA" />
+  <Mnemonic Mnem="SUBB" />
+  <Mnemonic Mnem="SUBD" MC6801="True" />
+  <Mnemonic Mnem="SWI" />
+  <Mnemonic Mnem="TAB" />
+  <Mnemonic Mnem="TAP" />
+  <Mnemonic Mnem="TBA" />
+  <Mnemonic Mnem="TPA" />
+  <Mnemonic Mnem="TST" />
+  <Mnemonic Mnem="TSTA" />
+  <Mnemonic Mnem="TSTB" />
+  <Mnemonic Mnem="TSX" />
+  <Mnemonic Mnem="TXS" />
+  <Mnemonic Mnem="WAI" />
+  <OpCode Op="00" Mnem="*" />
+  <OpCode Op="01" Mnem="NOP" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="02" Mnem="*" />
+  <OpCode Op="03" Mnem="*" />
+  <OpCode Op="04" Mnem="LSRD" Mode="Inherent" NBytes="1" NCycles="3" MC6801="True" />
+  <OpCode Op="05" Mnem="ASLD" Mode="Inherent" NBytes="1" NCycles="3" MC6801="True" />
+  <OpCode Op="06" Mnem="TAP" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="07" Mnem="TPA" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="08" Mnem="INX" Mode="Inherent" NBytes="1" NCycles="3" />
+  <OpCode Op="09" Mnem="DEX" Mode="Inherent" NBytes="1" NCycles="3" />
+  <OpCode Op="0A" Mnem="CLV" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="0B" Mnem="SEV" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="0C" Mnem="CLC" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="0D" Mnem="SEC" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="0E" Mnem="CLI" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="0F" Mnem="SEI" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="10" Mnem="SBA" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="11" Mnem="CBA" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="12" Mnem="*" />
+  <OpCode Op="13" Mnem="*" />
+  <OpCode Op="14" Mnem="*" />
+  <OpCode Op="15" Mnem="*" />
+  <OpCode Op="16" Mnem="TAB" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="17" Mnem="TBA" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="18" Mnem="*" />
+  <OpCode Op="19" Mnem="DAA" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="1A" Mnem="*" />
+  <OpCode Op="1B" Mnem="ABA" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="1C" Mnem="*" />
+  <OpCode Op="1D" Mnem="*" />
+  <OpCode Op="1E" Mnem="*" />
+  <OpCode Op="1F" Mnem="*" />
+  <OpCode Op="20" Mnem="BRA" Mode="Relative" NBytes="2" NCycles="3" />
+  <OpCode Op="21" Mnem="BRN" Mode="Relative" NBytes="2" NCycles="3" MC6801="True" />
+  <OpCode Op="22" Mnem="BHI" Mode="Relative" NBytes="2" NCycles="3" />
+  <OpCode Op="23" Mnem="BLS" Mode="Relative" NBytes="2" NCycles="3" />
+  <OpCode Op="24" Mnem="BCC" Mode="Relative" NBytes="2" NCycles="3" />
+  <OpCode Op="25" Mnem="BCS" Mode="Relative" NBytes="2" NCycles="3" />
+  <OpCode Op="26" Mnem="BNE" Mode="Relative" NBytes="2" NCycles="3" />
+  <OpCode Op="27" Mnem="BEQ" Mode="Relative" NBytes="2" NCycles="3" />
+  <OpCode Op="28" Mnem="BVC" Mode="Relative" NBytes="2" NCycles="3" />
+  <OpCode Op="29" Mnem="BVS" Mode="Relative" NBytes="2" NCycles="3" />
+  <OpCode Op="2A" Mnem="BPL" Mode="Relative" NBytes="2" NCycles="3" />
+  <OpCode Op="2B" Mnem="BMI" Mode="Relative" NBytes="2" NCycles="3" />
+  <OpCode Op="2C" Mnem="BGE" Mode="Relative" NBytes="2" NCycles="3" />
+  <OpCode Op="2D" Mnem="BLT" Mode="Relative" NBytes="2" NCycles="3" />
+  <OpCode Op="2E" Mnem="BGT" Mode="Relative" NBytes="2" NCycles="3" />
+  <OpCode Op="2F" Mnem="BLE" Mode="Relative" NBytes="2" NCycles="3" />
+  <OpCode Op="30" Mnem="TSX" Mode="Inherent" NBytes="1" NCycles="3" />
+  <OpCode Op="31" Mnem="INS" Mode="Inherent" NBytes="1" NCycles="3" />
+  <OpCode Op="32" Mnem="PULA" Mode="Inherent" NBytes="1" NCycles="4" />
+  <OpCode Op="33" Mnem="PULB" Mode="Inherent" NBytes="1" NCycles="4" />
+  <OpCode Op="34" Mnem="DES" Mode="Inherent" NBytes="1" NCycles="3" />
+  <OpCode Op="35" Mnem="TXS" Mode="Inherent" NBytes="1" NCycles="3" />
+  <OpCode Op="36" Mnem="PSHA" Mode="Inherent" NBytes="1" NCycles="3" />
+  <OpCode Op="37" Mnem="PSHB" Mode="Inherent" NBytes="1" NCycles="3" />
+  <OpCode Op="38" Mnem="PULX" Mode="Inherent" NBytes="1" NCycles="5" MC6801="True" />
+  <OpCode Op="39" Mnem="RTS" Mode="Inherent" NBytes="1" NCycles="5" />
+  <OpCode Op="3A" Mnem="ABX" Mode="Inherent" NBytes="1" NCycles="3" MC6801="True" />
+  <OpCode Op="3B" Mnem="RTI" Mode="Inherent" NBytes="1" NCycles="10" />
+  <OpCode Op="3C" Mnem="PSHX" Mode="Inherent" NBytes="1" NCycles="4" MC6801="True" />
+  <OpCode Op="3D" Mnem="MUL" Mode="Inherent" NBytes="1" NCycles="10" MC6801="True" />
+  <OpCode Op="3E" Mnem="WAI" Mode="Inherent" NBytes="1" NCycles="9" />
+  <OpCode Op="3F" Mnem="SWI" Mode="Inherent" NBytes="1" NCycles="12" />
+  <OpCode Op="40" Mnem="NEGA" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="41" Mnem="*" />
+  <OpCode Op="42" Mnem="*" />
+  <OpCode Op="43" Mnem="COMA" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="44" Mnem="LSRA" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="45" Mnem="*" />
+  <OpCode Op="46" Mnem="RORA" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="47" Mnem="ASRA" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="48" Mnem="ASLA" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="49" Mnem="ROLA" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="4A" Mnem="DECA" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="4B" Mnem="*" />
+  <OpCode Op="4C" Mnem="INCA" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="4D" Mnem="TSTA" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="4E" Mnem="*" />
+  <OpCode Op="4F" Mnem="CLRA" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="50" Mnem="NEGB" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="51" Mnem="*" />
+  <OpCode Op="52" Mnem="*" />
+  <OpCode Op="53" Mnem="COMB" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="54" Mnem="LSRB" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="55" Mnem="*" />
+  <OpCode Op="56" Mnem="RORB" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="57" Mnem="ASRB" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="58" Mnem="ASLB" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="59" Mnem="ROLB" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="5A" Mnem="DECB" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="5B" Mnem="*" />
+  <OpCode Op="5C" Mnem="INCB" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="5D" Mnem="TSTB" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="5E" Mnem="*" />
+  <OpCode Op="5F" Mnem="CLRB" Mode="Inherent" NBytes="1" NCycles="2" />
+  <OpCode Op="60" Mnem="NEG" Mode="Indexed" NBytes="2" NCycles="6" />
+  <OpCode Op="61" Mnem="*" />
+  <OpCode Op="62" Mnem="*" />
+  <OpCode Op="63" Mnem="COM" Mode="Indexed" NBytes="2" NCycles="6" />
+  <OpCode Op="64" Mnem="LSR" Mode="Indexed" NBytes="2" NCycles="6" />
+  <OpCode Op="65" Mnem="*" />
+  <OpCode Op="66" Mnem="ROR" Mode="Indexed" NBytes="2" NCycles="6" />
+  <OpCode Op="67" Mnem="ASR" Mode="Indexed" NBytes="2" NCycles="6" />
+  <OpCode Op="68" Mnem="ASL" Mode="Indexed" NBytes="2" NCycles="6" />
+  <OpCode Op="69" Mnem="ROL" Mode="Indexed" NBytes="2" NCycles="6" />
+  <OpCode Op="6A" Mnem="DEC" Mode="Indexed" NBytes="2" NCycles="6" />
+  <OpCode Op="6B" Mnem="*" />
+  <OpCode Op="6C" Mnem="INC" Mode="Indexed" NBytes="2" NCycles="6" />
+  <OpCode Op="6D" Mnem="TST" Mode="Indexed" NBytes="2" NCycles="6" />
+  <OpCode Op="6E" Mnem="JMP" Mode="Indexed" NBytes="2" NCycles="3" />
+  <OpCode Op="6F" Mnem="CLR" Mode="Indexed" NBytes="2" NCycles="6" />
+  <OpCode Op="70" Mnem="NEG" Mode="Extended" NBytes="3" NCycles="6" />
+  <OpCode Op="71" Mnem="*" />
+  <OpCode Op="72" Mnem="*" />
+  <OpCode Op="73" Mnem="COM" Mode="Extended" NBytes="3" NCycles="6" />
+  <OpCode Op="74" Mnem="LSR" Mode="Extended" NBytes="3" NCycles="6" />
+  <OpCode Op="75" Mnem="*" />
+  <OpCode Op="76" Mnem="ROR" Mode="Extended" NBytes="3" NCycles="6" />
+  <OpCode Op="77" Mnem="ASR" Mode="Extended" NBytes="3" NCycles="6" />
+  <OpCode Op="78" Mnem="LSL" Mode="Extended" NBytes="3" NCycles="6" />
+  <OpCode Op="79" Mnem="ROL" Mode="Extended" NBytes="3" NCycles="6" />
+  <OpCode Op="7A" Mnem="DEC" Mode="Extended" NBytes="3" NCycles="6" />
+  <OpCode Op="7B" Mnem="*" />
+  <OpCode Op="7C" Mnem="INC" Mode="Extended" NBytes="3" NCycles="6" />
+  <OpCode Op="7D" Mnem="TST" Mode="Extended" NBytes="3" NCycles="6" />
+  <OpCode Op="7E" Mnem="JMP" Mode="Extended" NBytes="3" NCycles="3" />
+  <OpCode Op="7F" Mnem="CLR" Mode="Extended" NBytes="3" NCycles="6" />
+  <OpCode Op="80" Mnem="SUBA" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="81" Mnem="CMPA" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="82" Mnem="SBCA" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="83" Mnem="SUBD" Mode="Immediate" NBytes="3" NCycles="4" MC6801="True" />
+  <OpCode Op="84" Mnem="ANDA" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="85" Mnem="BITA" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="86" Mnem="LDAA" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="87" Mnem="*" />
+  <OpCode Op="88" Mnem="EORA" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="89" Mnem="ADCA" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="8A" Mnem="ORAA" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="8B" Mnem="ADDA" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="8C" Mnem="CPX" Mode="Immediate" NBytes="3" NCycles="4" />
+  <OpCode Op="8D" Mnem="BSR" Mode="Relative" NBytes="2" NCycles="6" />
+  <OpCode Op="8E" Mnem="LDS" Mode="Immediate" NBytes="3" NCycles="3" />
+  <OpCode Op="8F" Mnem="*" />
+  <OpCode Op="90" Mnem="SUBA" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="91" Mnem="CMPA" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="92" Mnem="SBCA" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="93" Mnem="SUBD" Mode="Direct" NBytes="2" NCycles="5" MC6801="True" />
+  <OpCode Op="94" Mnem="ANDA" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="95" Mnem="BITA" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="96" Mnem="LDAA" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="97" Mnem="STAA" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="98" Mnem="EORA" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="99" Mnem="ADCA" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="9A" Mnem="ORAA" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="9B" Mnem="ADDA" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="9C" Mnem="CPX" Mode="Direct" NBytes="2" NCycles="5" />
+  <OpCode Op="9D" Mnem="JSR" Mode="Direct" NBytes="2" NCycles="5" MC6801="True" />
+  <OpCode Op="9E" Mnem="LDS" Mode="Direct" NBytes="2" NCycles="4" />
+  <OpCode Op="9F" Mnem="STS" Mode="Direct" NBytes="2" NCycles="4" />
+  <OpCode Op="A0" Mnem="SUBA" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="A1" Mnem="CMPA" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="A2" Mnem="SBCA" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="A3" Mnem="SUBD" Mode="Indexed" NBytes="2" NCycles="6" MC6801="True" />
+  <OpCode Op="A4" Mnem="ANDA" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="A5" Mnem="BITA" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="A6" Mnem="LDAA" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="A7" Mnem="STAA" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="A8" Mnem="EORA" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="A9" Mnem="ADCA" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="AA" Mnem="ORAA" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="AB" Mnem="ADDA" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="AC" Mnem="CPX" Mode="Indexed" NBytes="2" NCycles="6" />
+  <OpCode Op="AD" Mnem="JSR" Mode="Indexed" NBytes="2" NCycles="6" />
+  <OpCode Op="AE" Mnem="LDS" Mode="Indexed" NBytes="2" NCycles="5" />
+  <OpCode Op="AF" Mnem="STS" Mode="Indexed" NBytes="2" NCycles="5" />
+  <OpCode Op="B0" Mnem="SUBA" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="B1" Mnem="CMPA" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="B2" Mnem="SBCA" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="B3" Mnem="SUBD" Mode="Extended" NBytes="3" NCycles="6" MC6801="True" />
+  <OpCode Op="B4" Mnem="ANDA" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="B5" Mnem="BITA" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="B6" Mnem="LDAA" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="B7" Mnem="STAA" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="B8" Mnem="EORA" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="B9" Mnem="ADCA" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="BA" Mnem="ORAA" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="BB" Mnem="ADDA" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="BC" Mnem="CPX" Mode="Extended" NBytes="3" NCycles="6" />
+  <OpCode Op="BD" Mnem="JSR" Mode="Extended" NBytes="3" NCycles="6" />
+  <OpCode Op="BE" Mnem="LDS" Mode="Extended" NBytes="3" NCycles="5" />
+  <OpCode Op="BF" Mnem="STS" Mode="Extended" NBytes="3" NCycles="5" />
+  <OpCode Op="C0" Mnem="SUBB" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="C1" Mnem="CMPB" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="C2" Mnem="SBCB" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="C3" Mnem="ADDD" Mode="Immediate" NBytes="3" NCycles="4" MC6801="True" />
+  <OpCode Op="C4" Mnem="ANDB" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="C5" Mnem="BITB" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="C6" Mnem="LDAB" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="C7" Mnem="*" />
+  <OpCode Op="C8" Mnem="EORB" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="C9" Mnem="ADCB" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="CA" Mnem="ORAB" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="CB" Mnem="ADDB" Mode="Immediate" NBytes="2" NCycles="2" />
+  <OpCode Op="CC" Mnem="LDD" Mode="Immediate" NBytes="3" NCycles="3" MC6801="True" />
+  <OpCode Op="CD" Mnem="*" />
+  <OpCode Op="CE" Mnem="LDX" Mode="Immediate" NBytes="3" NCycles="3" />
+  <OpCode Op="CF" Mnem="*" />
+  <OpCode Op="D0" Mnem="SUBB" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="D1" Mnem="CMPB" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="D2" Mnem="SBCB" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="D3" Mnem="ADDD" Mode="Direct" NBytes="2" NCycles="5" MC6801="True" />
+  <OpCode Op="D4" Mnem="ANDB" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="D5" Mnem="BITB" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="D6" Mnem="LDAB" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="D7" Mnem="STAB" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="D8" Mnem="EORB" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="D9" Mnem="ADCB" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="DA" Mnem="ORAB" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="DB" Mnem="ADDB" Mode="Direct" NBytes="2" NCycles="3" />
+  <OpCode Op="DC" Mnem="LDD" Mode="Direct" NBytes="2" NCycles="4" MC6801="True" />
+  <OpCode Op="DD" Mnem="STD" Mode="Direct" NBytes="2" NCycles="4" MC6801="True" />
+  <OpCode Op="DE" Mnem="LDX" Mode="Direct" NBytes="2" NCycles="4" />
+  <OpCode Op="DF" Mnem="STX" Mode="Direct" NBytes="2" NCycles="4" />
+  <OpCode Op="E0" Mnem="SUBB" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="E1" Mnem="CMPB" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="E2" Mnem="SBCB" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="E3" Mnem="ADDD" Mode="Indexed" NBytes="2" NCycles="6" MC6801="True" />
+  <OpCode Op="E4" Mnem="ANDB" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="E5" Mnem="BITB" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="E6" Mnem="LDAB" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="E7" Mnem="STAB" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="E8" Mnem="EORB" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="E9" Mnem="ADCB" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="EA" Mnem="ORAB" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="EB" Mnem="ADDB" Mode="Indexed" NBytes="2" NCycles="4" />
+  <OpCode Op="EC" Mnem="LDD" Mode="Indexed" NBytes="2" NCycles="5" MC6801="True" />
+  <OpCode Op="ED" Mnem="STD" Mode="Indexed" NBytes="2" NCycles="5" MC6801="True" />
+  <OpCode Op="EE" Mnem="LDX" Mode="Indexed" NBytes="2" NCycles="5" />
+  <OpCode Op="EF" Mnem="STX" Mode="Indexed" NBytes="2" NCycles="5" />
+  <OpCode Op="F0" Mnem="SUBB" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="F1" Mnem="CMPB" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="F2" Mnem="SBCB" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="F3" Mnem="ADDD" Mode="Extended" NBytes="3" NCycles="6" MC6801="True" />
+  <OpCode Op="F4" Mnem="ANDB" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="F5" Mnem="BITB" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="F6" Mnem="LDAB" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="F7" Mnem="STAB" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="F8" Mnem="EORB" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="F9" Mnem="ADCB" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="FA" Mnem="ORAB" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="FB" Mnem="ADDB" Mode="Extended" NBytes="3" NCycles="4" />
+  <OpCode Op="FC" Mnem="LDD" Mode="Extended" NBytes="3" NCycles="5" MC6801="True" />
+  <OpCode Op="FD" Mnem="STD" Mode="Extended" NBytes="3" NCycles="5" MC6801="True" />
+  <OpCode Op="FE" Mnem="LDX" Mode="Extended" NBytes="3" NCycles="5" />
+  <OpCode Op="FF" Mnem="STX" Mode="Extended" NBytes="3" NCycles="5" />
+</MC680x>
