@@ -1,246 +1,355 @@
 ﻿<MC6x09>
-  <Instruction Mnem="ADC" />
-  <Instruction Mnem="ADD" />
-  <Instruction Mnem="AND" />
-  <Instruction Mnem="ASL" />
-  <Instruction Mnem="ASR" />
-  <Instruction Mnem="BIT" />
-  <Instruction Mnem="CLR" />
-  <Instruction Mnem="CMP" />
-  <Instruction Mnem="COM" />
-  <Instruction Mnem="DEC" />
-  <Instruction Mnem="EOR" />
-  <Instruction Mnem="INC" />
-  <Instruction Mnem="LD" />
-  <Instruction Mnem="LEA" />
-  <Instruction Mnem="LSL" />
-  <Instruction Mnem="LSR" />
-  <Instruction Mnem="NEG" />
-  <Instruction Mnem="OR" />
-  <Instruction Mnem="PSH" />
-  <Instruction Mnem="PUL" />
-  <Instruction Mnem="ROL" />
-  <Instruction Mnem="ROR" />
-  <Instruction Mnem="SBC" />
-  <Instruction Mnem="ST" />
-  <Instruction Mnem="SUB" />
-  <Instruction Mnem="SWI" />
-  <Instruction Mnem="TST" />
-  <Mnemonic Mnem="ABX" Desc="Add Accumulator B to Index Register X" />
-  <Mnemonic Mnem="ADCA" BaseInstruction="ADC" />
-  <Mnemonic Mnem="ADCB" BaseInstruction="ADC" />
-  <Mnemonic Mnem="ADCD" BaseInstruction="ADC" />
-  <Mnemonic Mnem="ADCR" BaseInstruction="ADC" />
-  <Mnemonic Mnem="ADDA" BaseInstruction="ADD" />
-  <Mnemonic Mnem="ADDB" BaseInstruction="ADD" />
-  <Mnemonic Mnem="ADDD" BaseInstruction="ADD" />
-  <Mnemonic Mnem="ADDE" BaseInstruction="ADD" HD6309="True" />
-  <Mnemonic Mnem="ADDF" BaseInstruction="ADD" HD6309="True" />
-  <Mnemonic Mnem="ADDR" BaseInstruction="ADD" HD6309="True" />
-  <Mnemonic Mnem="ADDW" BaseInstruction="ADD" HD6309="True" />
-  <Mnemonic Mnem="AIM" />
-  <Mnemonic Mnem="ANDA" BaseInstruction="AND" />
-  <Mnemonic Mnem="ANDB" BaseInstruction="AND" />
-  <Mnemonic Mnem="ANDCC" BaseInstruction="AND" />
-  <Mnemonic Mnem="ANDD" BaseInstruction="AND" />
-  <Mnemonic Mnem="ANDR" BaseInstruction="AND" />
-  <Mnemonic Mnem="ASR" BaseInstruction="ASR" />
-  <Mnemonic Mnem="ASRA" BaseInstruction="ASR" />
-  <Mnemonic Mnem="ASRB" BaseInstruction="ASR" />
-  <Mnemonic Mnem="ASRD" BaseInstruction="ASR" />
-  <Mnemonic Mnem="BAND" />
-  <Mnemonic Mnem="BCC" BaseInstruction="BRA" AltMnem="BHS" />
-  <Mnemonic Mnem="BCS" BaseInstruction="BRA" AltMnem="BLO" />
-  <Mnemonic Mnem="BEOR" />
-  <Mnemonic Mnem="BEQ" BaseInstruction="BRA" />
-  <Mnemonic Mnem="BGE" BaseInstruction="BRA" />
-  <Mnemonic Mnem="BGT" BaseInstruction="BRA" />
-  <Mnemonic Mnem="BHI" BaseInstruction="BRA" />
-  <Mnemonic Mnem="BIAND" />
-  <Mnemonic Mnem="BIEOR" />
-  <Mnemonic Mnem="BIOR" />
-  <Mnemonic Mnem="BITA" BaseInstruction="BIT" />
-  <Mnemonic Mnem="BITB" BaseInstruction="BIT" />
-  <Mnemonic Mnem="BITD" BaseInstruction="BIT" />
-  <Mnemonic Mnem="BITMD" BaseInstruction="BIT" />
-  <Mnemonic Mnem="BLE" BaseInstruction="BRA" />
-  <Mnemonic Mnem="BLS" BaseInstruction="BRA" />
-  <Mnemonic Mnem="BLT" BaseInstruction="BRA" />
-  <Mnemonic Mnem="BMI" BaseInstruction="BRA" />
-  <Mnemonic Mnem="BNE" BaseInstruction="BRA" />
-  <Mnemonic Mnem="BOR" BaseInstruction="BRA" />
-  <Mnemonic Mnem="BPL" BaseInstruction="BRA" />
-  <Mnemonic Mnem="BRA" BaseInstruction="BRA" />
-  <Mnemonic Mnem="BRN" BaseInstruction="BRA" />
-  <Mnemonic Mnem="BSR" BaseInstruction="BRA" />
-  <Mnemonic Mnem="BVC" BaseInstruction="BRA" />
-  <Mnemonic Mnem="BVS" BaseInstruction="BRA" />
-  <Mnemonic Mnem="CLR" BaseInstruction="CLR" />
-  <Mnemonic Mnem="CLRA" BaseInstruction="CLR" />
-  <Mnemonic Mnem="CLRB" BaseInstruction="CLR" />
-  <Mnemonic Mnem="CLRD" BaseInstruction="CLR" />
-  <Mnemonic Mnem="CLRE" BaseInstruction="CLR" />
-  <Mnemonic Mnem="CLRF" BaseInstruction="CLR" />
-  <Mnemonic Mnem="CLRW" BaseInstruction="CLR" />
-  <Mnemonic Mnem="CMPA" BaseInstruction="CMP" />
-  <Mnemonic Mnem="CMPB" BaseInstruction="CMP" />
-  <Mnemonic Mnem="CMPD" BaseInstruction="CMP" />
-  <Mnemonic Mnem="CMPE" BaseInstruction="CMP" />
-  <Mnemonic Mnem="CMPF" BaseInstruction="CMP" />
-  <Mnemonic Mnem="CMPR" BaseInstruction="CMP" />
-  <Mnemonic Mnem="CMPS" BaseInstruction="CMP" />
-  <Mnemonic Mnem="CMPU" BaseInstruction="CMP" />
-  <Mnemonic Mnem="CMPW" BaseInstruction="CMP" />
-  <Mnemonic Mnem="CMPX" BaseInstruction="CMP" />
-  <Mnemonic Mnem="CMPY" BaseInstruction="CMP" />
-  <Mnemonic Mnem="COM" BaseInstruction="COM" />
-  <Mnemonic Mnem="COMA" BaseInstruction="COM" />
-  <Mnemonic Mnem="COMB" BaseInstruction="COM" />
-  <Mnemonic Mnem="COMD" BaseInstruction="COM" />
-  <Mnemonic Mnem="COME" BaseInstruction="COM" />
-  <Mnemonic Mnem="COMF" BaseInstruction="COM" />
-  <Mnemonic Mnem="COMW" BaseInstruction="COM" />
-  <Mnemonic Mnem="CWAI" />
-  <Mnemonic Mnem="DAA" />
-  <Mnemonic Mnem="DEC" BaseInstruction="DEC" />
-  <Mnemonic Mnem="DECA" BaseInstruction="DEC" />
-  <Mnemonic Mnem="DECB" BaseInstruction="DEC" />
-  <Mnemonic Mnem="DECD" BaseInstruction="DEC" />
-  <Mnemonic Mnem="DECE" BaseInstruction="DEC" />
-  <Mnemonic Mnem="DECF" BaseInstruction="DEC" />
-  <Mnemonic Mnem="DECW" BaseInstruction="DEC" />
-  <Mnemonic Mnem="DIVD" BaseInstruction="DIV" />
-  <Mnemonic Mnem="DIVQ" BaseInstruction="DIV" />
-  <Mnemonic Mnem="EIM" />
-  <Mnemonic Mnem="EORA" BaseInstruction="EOR" />
-  <Mnemonic Mnem="EORB" BaseInstruction="EOR" />
-  <Mnemonic Mnem="EORD" BaseInstruction="EOR" />
-  <Mnemonic Mnem="EORR" BaseInstruction="EOR" />
-  <Mnemonic Mnem="EXG" />
-  <Mnemonic Mnem="INC" BaseInstruction="INC" />
-  <Mnemonic Mnem="INCA" BaseInstruction="INC" />
-  <Mnemonic Mnem="INCB" BaseInstruction="INC" />
-  <Mnemonic Mnem="INCD" BaseInstruction="INC" />
-  <Mnemonic Mnem="INCE" BaseInstruction="INC" />
-  <Mnemonic Mnem="INCF" BaseInstruction="INC" />
-  <Mnemonic Mnem="INCW" BaseInstruction="INC" />
-  <Mnemonic Mnem="JMP" />
-  <Mnemonic Mnem="JSR" />
-  <Mnemonic Mnem="LBCC" BaseInstruction="LBRA" AltMnem="LBHS" />
-  <Mnemonic Mnem="LBCS" BaseInstruction="LBRA" AltMnem="LBLO" />
-  <Mnemonic Mnem="LBEQ" BaseInstruction="LBRA" />
-  <Mnemonic Mnem="LBGE" BaseInstruction="LBRA" />
-  <Mnemonic Mnem="LBGT" BaseInstruction="LBRA" />
-  <Mnemonic Mnem="LBHI" BaseInstruction="LBRA" />
-  <Mnemonic Mnem="LBLE" BaseInstruction="LBRA" />
-  <Mnemonic Mnem="LBLS" BaseInstruction="LBRA" />
-  <Mnemonic Mnem="LBLT" BaseInstruction="LBRA" />
-  <Mnemonic Mnem="LBMI" BaseInstruction="LBRA" />
-  <Mnemonic Mnem="LBNE" BaseInstruction="LBRA" />
-  <Mnemonic Mnem="LBPL" BaseInstruction="LBRA" />
-  <Mnemonic Mnem="LBRA" BaseInstruction="LBRA" />
-  <Mnemonic Mnem="LBRN" BaseInstruction="LBRA" />
-  <Mnemonic Mnem="LBSR" BaseInstruction="LBRA" />
-  <Mnemonic Mnem="LBVC" BaseInstruction="LBRA" />
-  <Mnemonic Mnem="LBVS" BaseInstruction="LBRA" />
-  <Mnemonic Mnem="LDA" BaseInstruction="LD" />
-  <Mnemonic Mnem="LDB" BaseInstruction="LD" />
-  <Mnemonic Mnem="LDBT" />
-  <Mnemonic Mnem="LDD" BaseInstruction="LD" />
-  <Mnemonic Mnem="LDE" BaseInstruction="LD" />
-  <Mnemonic Mnem="LDF" BaseInstruction="LD" />
-  <Mnemonic Mnem="LDMD" />
-  <Mnemonic Mnem="LDQ" BaseInstruction="LD" />
-  <Mnemonic Mnem="LDS" BaseInstruction="LD" />
-  <Mnemonic Mnem="LDU" BaseInstruction="LD" />
-  <Mnemonic Mnem="LDW" BaseInstruction="LD" />
-  <Mnemonic Mnem="LDX" BaseInstruction="LD" />
-  <Mnemonic Mnem="LDY" BaseInstruction="LD" />
-  <Mnemonic Mnem="LEAS" BaseInstruction="LEA" />
-  <Mnemonic Mnem="LEAU" BaseInstruction="LEA" />
-  <Mnemonic Mnem="LEAX" BaseInstruction="LEA" />
-  <Mnemonic Mnem="LEAY" BaseInstruction="LEA" />
-  <Mnemonic Mnem="LSL" BaseInstruction="LSL" AltMnem="ASL" />
-  <Mnemonic Mnem="LSLA" BaseInstruction="LSL" AltMnem="ASLA" />
-  <Mnemonic Mnem="LSLB" BaseInstruction="LSL" AltMnem="ASLB" />
-  <Mnemonic Mnem="LSLD" BaseInstruction="LSL" AltMnem="ASLD" />
-  <Mnemonic Mnem="LSR" BaseInstruction="LSR" />
-  <Mnemonic Mnem="LSRA" BaseInstruction="LSR" />
-  <Mnemonic Mnem="LSRB" BaseInstruction="LSR" />
-  <Mnemonic Mnem="LSRD" BaseInstruction="LSR" />
-  <Mnemonic Mnem="LSRW" BaseInstruction="LSR" />
-  <Mnemonic Mnem="MUL" BaseInstruction="MUL" />
-  <Mnemonic Mnem="MULD" BaseInstruction="MUL" />
-  <Mnemonic Mnem="NEG" BaseInstruction="NEG" />
-  <Mnemonic Mnem="NEGA" BaseInstruction="NEG" />
-  <Mnemonic Mnem="NEGB" BaseInstruction="NEG" />
-  <Mnemonic Mnem="NEGD" BaseInstruction="NEG" />
-  <Mnemonic Mnem="NOP" />
-  <Mnemonic Mnem="OIM" />
-  <Mnemonic Mnem="ORA" BaseInstruction="OR" />
-  <Mnemonic Mnem="ORB" BaseInstruction="OR" />
-  <Mnemonic Mnem="ORCC" BaseInstruction="OR" />
-  <Mnemonic Mnem="ORD" BaseInstruction="OR" />
-  <Mnemonic Mnem="ORR" BaseInstruction="OR" />
-  <Mnemonic Mnem="PSHS" BaseInstruction="PSH" />
-  <Mnemonic Mnem="PSHSW" BaseInstruction="PSH" />
-  <Mnemonic Mnem="PSHU" BaseInstruction="PSH" />
-  <Mnemonic Mnem="PSHUW" BaseInstruction="PSH" />
-  <Mnemonic Mnem="PULS" BaseInstruction="PUL" />
-  <Mnemonic Mnem="PULSW" BaseInstruction="PUL" />
-  <Mnemonic Mnem="PULU" BaseInstruction="PUL" />
-  <Mnemonic Mnem="PULUW" BaseInstruction="PUL" />
-  <Mnemonic Mnem="ROL" BaseInstruction="ROL" />
-  <Mnemonic Mnem="ROLA" BaseInstruction="ROL" />
-  <Mnemonic Mnem="ROLB" BaseInstruction="ROL" />
-  <Mnemonic Mnem="ROLD" BaseInstruction="ROL" />
-  <Mnemonic Mnem="ROLW" BaseInstruction="ROL" />
-  <Mnemonic Mnem="ROR" BaseInstruction="ROR" />
-  <Mnemonic Mnem="RORA" BaseInstruction="ROR" />
-  <Mnemonic Mnem="RORB" BaseInstruction="ROR" />
-  <Mnemonic Mnem="RORD" BaseInstruction="ROR" />
-  <Mnemonic Mnem="RORW" BaseInstruction="ROR" />
-  <Mnemonic Mnem="RTI" />
-  <Mnemonic Mnem="RTS" />
-  <Mnemonic Mnem="SBCA" BaseInstruction="SBC" />
-  <Mnemonic Mnem="SBCB" BaseInstruction="SBC" />
-  <Mnemonic Mnem="SBCD" BaseInstruction="SBC" />
-  <Mnemonic Mnem="SBCR" BaseInstruction="SBC" />
-  <Mnemonic Mnem="SEX" />
-  <Mnemonic Mnem="SEXW" />
-  <Mnemonic Mnem="STA" BaseInstruction="ST" />
-  <Mnemonic Mnem="STB" BaseInstruction="ST" />
-  <Mnemonic Mnem="STBT" />
-  <Mnemonic Mnem="STD" BaseInstruction="ST" />
-  <Mnemonic Mnem="STE" BaseInstruction="ST" />
-  <Mnemonic Mnem="STF" BaseInstruction="ST" />
-  <Mnemonic Mnem="STQ" BaseInstruction="ST" />
-  <Mnemonic Mnem="STS" BaseInstruction="ST" />
-  <Mnemonic Mnem="STU" BaseInstruction="ST" />
-  <Mnemonic Mnem="STW" BaseInstruction="ST" />
-  <Mnemonic Mnem="STX" BaseInstruction="ST" />
-  <Mnemonic Mnem="STY" BaseInstruction="ST" />
-  <Mnemonic Mnem="SUBA" BaseInstruction="SUB" />
-  <Mnemonic Mnem="SUBB" BaseInstruction="SUB" />
-  <Mnemonic Mnem="SUBD" BaseInstruction="SUB" />
-  <Mnemonic Mnem="SUBE" BaseInstruction="SUB" />
-  <Mnemonic Mnem="SUBF" BaseInstruction="SUB" />
-  <Mnemonic Mnem="SUBR" BaseInstruction="SUB" />
-  <Mnemonic Mnem="SUBW" BaseInstruction="SUB" />
-  <Mnemonic Mnem="SWI" BaseInstruction="SWI" />
-  <Mnemonic Mnem="SWI2" BaseInstruction="SWI" />
-  <Mnemonic Mnem="SWI3" BaseInstruction="SWI" />
-  <Mnemonic Mnem="SYNC" />
-  <Mnemonic Mnem="TFM" />
-  <Mnemonic Mnem="TFR" />
-  <Mnemonic Mnem="TIM" />
-  <Mnemonic Mnem="TST" BaseInstruction="TST" />
-  <Mnemonic Mnem="TSTA" BaseInstruction="TST" />
-  <Mnemonic Mnem="TSTB" BaseInstruction="TST" />
-  <Mnemonic Mnem="TSTD" BaseInstruction="TST" />
-  <Mnemonic Mnem="TSTE" BaseInstruction="TST" />
-  <Mnemonic Mnem="TSTF" BaseInstruction="TST" />
-  <Mnemonic Mnem="TSTW" BaseInstruction="TST" />
+  <Mnemonic Mnem="ABX" Operation="X &lt;= X + ACCB" Desc="Add Accumulator B to Index Register X" />
+  <MnemonicGroup Mnem="ADC">
+    <MnemonicGroup Mnem="8 Bit" Operation="r &lt;= r + (M) + C" Desc="Add Memory Byte plus Carry with Accumulator A or B">
+      <Mnemonic Mnem="ADCA" />
+      <Mnemonic Mnem="ADCB" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="ADCD" Operation="ACCD &lt;= ACCD + (M:M+1) + C" Desc="Add Memory Word plus Carry with Accumulator D" />
+    <Mnemonic Mnem="ADCR" Operation="r1 &lt;= r1 + r0 + C" Desc="Add Source Register plus Carry to Destination Register" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="ADD">
+    <MnemonicGroup Mnem="(8 Bit)" Operation="r &lt;= r + (M)" Desc="Add Memory Byte to 8-Bit Accumulator">
+      <Mnemonic Mnem="ADDA" />
+      <Mnemonic Mnem="ADDB" />
+      <Mnemonic Mnem="ADDE" HD6309="True" />
+      <Mnemonic Mnem="ADDF" HD6309="True" />
+    </MnemonicGroup>
+    <MnemonicGroup Mnem="(16 Bit)" Operation="r &lt;= r + (M:M+1)" Desc="Add Memory Word to 16-Bit Accumulator">
+      <Mnemonic Mnem="ADDD" />
+      <Mnemonic Mnem="ADDW" HD6309="True" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="ADDR" Operation="r1 &lt;= r1 + r0" Desc="Add Source Register to Destination Register" HD6309="True" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="AND">
+    <MnemonicGroup Mnem="8 Bit" Operation="r &lt;= r AND (M)" Desc="Logically AND Memory Byte with Accumulator A or B">
+      <Mnemonic Mnem="ANDA" />
+      <Mnemonic Mnem="ANDB" />
+      <Mnemonic Mnem="AIM" Operation="M &lt;= (M) AND IMM" Desc="Logical AND of Immediate Value with Memory Byte" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="ANDCC" Operation="CC &lt;= CC AND IMM" Desc="Logically AND Immediate Value with the CC Register" />
+    <Mnemonic Mnem="ANDD" Operation="ACCD &lt;= ACCD AND (M:M+1)" Desc="Logically AND Memory Word with Accumulator D" />
+    <Mnemonic Mnem="ANDR" Operation="r1 &lt;= r1 AND r0" Desc="Logically AND Source Register with Destination Register" HD6309="True" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="ASL">
+    <MnemonicGroup Mnem="8 Bit" Operation="---" Desc="Arithmetic Shift Left of 8-Bit Accumulator or Memory Byte">
+      <Mnemonic Mnem="ASL" />
+      <Mnemonic Mnem="ASLA" />
+      <Mnemonic Mnem="ASLB" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="ASLD" Operation="---" Desc="Arithmetic Shift Left of Accumulator D" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="ASR">
+    <MnemonicGroup Mnem="8 Bit" Operation="---" Desc="Arithmetic Shift Right of 8-Bit Accumulator or Memory Byte">
+      <Mnemonic Mnem="ASR" />
+      <Mnemonic Mnem="ASRA" />
+      <Mnemonic Mnem="ASRB" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="ASRD" Operation="---" Desc="Arithmetic Shift Right of Accumulator D" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="BitOps">
+    <Mnemonic Mnem="BAND" Operation="r.dstBit &lt;= r.dstBit AND (DPM).srcBit" Desc="Logically AND Register Bit with Memory Bit" />
+    <Mnemonic Mnem="BEOR" Operation="---" Desc="Exclusive-OR Register Bit with Memory Bit" />
+    <Mnemonic Mnem="BIAND" Operation="r.dstBit &lt;= r.dstBit AND (DPM).srcBit" Desc="Logically AND Register Bit with Inverted Memory Bit" />
+    <Mnemonic Mnem="BIEOR" Operation="r.dstBit &lt;= r.dstBit ^ (DPM).srcBit" Desc="Exclusively-OR Register Bit with Inverted Memory Bit" />
+    <Mnemonic Mnem="BIOR" Operation="r.dstBit &lt;= r.dstBit OR (DPM).srcBit" Desc="Logically OR Register Bit with Inverted Memory Bit" />
+    <Mnemonic Mnem="BOR" Operation="r.dstBit &lt;= r.dstBit OR (DPM).srcBit" Desc="Logically OR Memory Bit with Register Bit" />
+    <Mnemonic Mnem="LDBT" Operation="r.dstBit &lt;= (DPM).srcBit" Desc="Load Memory Bit into Register Bit" />
+    <Mnemonic Mnem="STBT" Operation="(DPM).dstBit &lt;= r.srcBit" Desc="Store value of a Register Bit into Memory" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="BIT">
+    <MnemonicGroup Mnem="8 Bit" Operation="TEMP &lt;= r AND (M)" Desc="Bit Test Accumulator A or B with Memory Byte Value">
+      <Mnemonic Mnem="BITA" />
+      <Mnemonic Mnem="BITB" />
+      <Mnemonic Mnem="TIM" Operation="TEMP &lt;= (M) AND IMM8" Desc="Bit Test Immediate Value with Memory Byte" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="BITD" Operation="TEMP &lt;= ACCD AND (M:M+1)" Desc="Bit Test Accumulator D with Memory Word Value" />
+    <Mnemonic Mnem="BITMD" Operation="CC.Z &lt;= (MD.IL AND IMM.6 = 0) AND (MD./0 AND IMM.7 = 0); MD.IL &lt;= MD.IL AND IMM.6; MD./0 &lt;= MD./0 AND IMM.7" Desc="Bit Test the MD Register with an Immediate Value" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="Branch">
+    <Mnemonic Mnem="BCC" Operation="IF CC.C = 0 then PC &lt;= PC + IMM" Desc="Branch If Carry Clear" />
+    <Mnemonic Mnem="BCS" Operation="IF CC.C != 0 then PC &lt;= PC + IMM" Desc="Branch If Carry Set" />
+    <Mnemonic Mnem="BEQ" Operation="IF CC.Z != 0 then PC &lt;= PC + IMM" Desc="Branch If Equal to Zero" />
+    <Mnemonic Mnem="BGE" Operation="IF CC.N = CC.V then PC &lt;= PC + IMM" Desc="Branch If Greater than or Equal to Zero" />
+    <Mnemonic Mnem="BGT" Operation="IF (CC.N = CC.V) AND (CC.Z = 0) then PC &lt;= PC + IMM" Desc="Branch If Greater Than Zero" />
+    <Mnemonic Mnem="BHI" Operation="IF (CC.Z = 0) AND (CC.C = 0) then PC &lt;= PC + IMM" Desc="Branch If Higher" />
+    <Mnemonic Mnem="BHS" Operation="IF CC.C = 0 then PC &lt;= PC + IMM" Desc="Branch If Higher or Same" />
+    <Mnemonic Mnem="BLE" Operation="IF (CC.N != CC.V) OR (CC.Z = 1) then PC &lt;= PC + IMM" Desc="Branch If Less than or Equal to Zero" />
+    <Mnemonic Mnem="BLO" Operation="IF CC.C != 0 then PC &lt;= PC + IMM" Desc="Branch If Lower" />
+    <Mnemonic Mnem="BLS" Operation="IF (CC.Z != 0) OR (CC.C != 0) then PC &lt;= PC + IMM" Desc="Branch If Lower or Same" />
+    <Mnemonic Mnem="BLT" Operation="IF CC.N != CC.V then PC &lt;= PC + IMM" Desc="Branch If Less Than Zero" />
+    <Mnemonic Mnem="BMI" Operation="IF CC.N != 0 then PC &lt;= PC + IMM" Desc="Branch If Minus" />
+    <Mnemonic Mnem="BNE" Operation="IF CC.Z = 0 then PC &lt;= PC + IMM" Desc="Branch If Not Equal to Zero" />
+    <Mnemonic Mnem="BPL" Operation="IF CC.N = 0 then PC &lt;= PC + IMM" Desc="Branch If Plus" />
+    <Mnemonic Mnem="BRA" Operation="PC &lt;= PC + IMM" Desc="Branch Always" />
+    <Mnemonic Mnem="BRN" Operation="---" Desc="Branch Never" />
+    <Mnemonic Mnem="BSR" Operation="S &lt;= S - 2; (S:S+1) &lt;= PC; PC &lt;= PC + IMM" Desc="Branch to Subroutine" />
+    <Mnemonic Mnem="BVS" Operation="IF CC.V != 0 then PC &lt;= PC + IMM" Desc="Branch If Overflow Set" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="CLR">
+    <MnemonicGroup Mnem="accumulator" Operation="r &lt;= 0" Desc="Load Zero into Accumulator">
+      <Mnemonic Mnem="CLRA" />
+      <Mnemonic Mnem="CLRB" />
+      <Mnemonic Mnem="CLRD" HD6309="True" />
+      <Mnemonic Mnem="CLRE" HD6309="True" />
+      <Mnemonic Mnem="CLRF" HD6309="True" />
+      <Mnemonic Mnem="CLRW" HD6309="True" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="CLR" Operation="(M) &lt;= 0" Desc="Store Zero into a Memory Byte" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="CMP">
+    <MnemonicGroup Mnem="8 Bit" Operation="TEMP &lt;= r - (M)" Desc="Compare Memory Byte from 8-Bit Accumulator">
+      <Mnemonic Mnem="CMPA" />
+      <Mnemonic Mnem="CMPB" />
+      <Mnemonic Mnem="CMPE" HD6309="True" />
+      <Mnemonic Mnem="CMPF" HD6309="True" />
+    </MnemonicGroup>
+    <MnemonicGroup Mnem="16 Bit" Operation="TEMP &lt;= r - (M:M+1)" Desc="Compare Memory Word from 16-Bit Register">
+      <Mnemonic Mnem="CMPD" />
+      <Mnemonic Mnem="CMPS" />
+      <Mnemonic Mnem="CMPU" />
+      <Mnemonic Mnem="CMPW" HD6309="True" />
+      <Mnemonic Mnem="CMPX" />
+      <Mnemonic Mnem="CMPY" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="CMPR" Operation="TEMP &lt;= r1 - r0" Desc="Compare Source Register from Destination Register" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="COM">
+    <MnemonicGroup Mnem="accumulator" Operation="r &lt;= r" Desc="Complement Accumulator">
+      <Mnemonic Mnem="COMA" />
+      <Mnemonic Mnem="COMB" />
+      <Mnemonic Mnem="COMD" HD6309="True" />
+      <Mnemonic Mnem="COME" HD6309="True" />
+      <Mnemonic Mnem="COMF" HD6309="True" />
+      <Mnemonic Mnem="COMW" HD6309="True" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="COM" Operation="(M) &lt;= !(M)" Desc="Complement a Byte in Memory" />
+  </MnemonicGroup>
+  <Mnemonic Mnem="CWAI" Operation="CC &lt;= CC AND IMM; CC &lt;= CC OR 8016 (E flag); Push Onto S Stack: PC,U,Y,X,DP,[WIf NM = 1],D,CC; Halt Execution and Wait for Unmasked Interrupt" Desc="Clear Condition Code Bits and Wait for Interrupt" />
+  <Mnemonic Mnem="DAA" Operation="A[4..7] &lt;= A[4..7] + 6 IF:; CC.C = 1; OR: A[4..7] &gt; 9; OR: A[4..7] &gt; 8 AND A[0..3] &gt; 9; A[0..3] &lt;= A[0..3] + 6 IF:; CC.H = 1; OR: A[0..3] &gt; 9" Desc="Decimal Addition Adjust" />
+  <MnemonicGroup Mnem="DEC">
+    <MnemonicGroup Mnem="accumulator" Operation="r &lt;= r - 1" Desc="Decrement Accumulator">
+      <Mnemonic Mnem="DECA" />
+      <Mnemonic Mnem="DECB" />
+      <Mnemonic Mnem="DECD" HD6309="True" />
+      <Mnemonic Mnem="DECE" HD6309="True" />
+      <Mnemonic Mnem="DECF" HD6309="True" />
+      <Mnemonic Mnem="DECW" HD6309="True" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="DEC" Operation="(M) &lt;= (M) - 1" Desc="Decrement a Byte in Memory" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="DIV">
+    <Mnemonic Mnem="DIVD" Operation="ACCB &lt;= ACCD / (M); ACCA &lt;= ACCD MOD (M)" Desc="Signed Divide of Accumulator D by 8-bit value in Memory" />
+    <Mnemonic Mnem="DIVQ" Operation="ACCW &lt;= ACCQ / (M:M+1); ACCD &lt;= ACCQ MOD (M:M+1)" Desc="Signed Divide of Accumulator Q by 16-bit value in Memory" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="EOR">
+    <MnemonicGroup Mnem="8 Bit" Operation="r &lt;= r ^ (M)" Desc="Exclusively-OR Memory Byte with Accumulator A or B">
+      <Mnemonic Mnem="EORA" />
+      <Mnemonic Mnem="EORB" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="EIM" Operation="(M) &lt;= (M) ^ IMM" Desc="Exclusive-OR of Immediate Value with Memory Byte" />
+    <Mnemonic Mnem="EORD" Operation="ACCD &lt;= ACCD ^ (M:M+1)" Desc="Exclusively-OR Memory Word with Accumulator D" />
+    <Mnemonic Mnem="EORR" Operation="r1 &lt;= r1 ^ r0" Desc="Exclusively-OR Source Register with Destination Register" />
+  </MnemonicGroup>
+  <Mnemonic Mnem="EXG" Operation="r0 &lt;=&gt; r1" Desc="Exchange Registers" />
+  <MnemonicGroup Mnem="INC">
+    <MnemonicGroup Mnem="accumulator" Operation="r &lt;= r + 1" Desc="Increment Accumulator">
+      <Mnemonic Mnem="INCA" />
+      <Mnemonic Mnem="INCB" />
+      <Mnemonic Mnem="INCD" HD6309="True" />
+      <Mnemonic Mnem="INCE" HD6309="True" />
+      <Mnemonic Mnem="INCF" HD6309="True" />
+      <Mnemonic Mnem="INCW" HD6309="True" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="INC" Operation="(M) &lt;= (M) + 1" Desc="Increment a Byte in Memory" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="Jump">
+    <Mnemonic Mnem="JMP" Operation="PC &lt;= EA" Desc="Unconditional Jump" />
+    <Mnemonic Mnem="JSR" Operation="S &lt;= S - 2; (S:S+1) &lt;= PC; PC &lt;= EA" Desc="Unconditional Jump to Subroutine" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="LongBranch">
+    <Mnemonic Mnem="LBCC" Operation="IF CC.C = 0 then PC &lt;= PC + IMM" Desc="Long Branch If Carry Clear" />
+    <Mnemonic Mnem="LBCS" Operation="IF CC.C != 0 then PC &lt;= PC + IMM" Desc="Long Branch If Carry Set" />
+    <Mnemonic Mnem="LBEQ" Operation="IF CC.Z != 0 then PC &lt;= PC + IMM" Desc="Long Branch If Equal to Zero" />
+    <Mnemonic Mnem="LBGE" Operation="IF CC.N = CC.V then PC &lt;= PC + IMM" Desc="Long Branch If Greater than or Equal to Zero" />
+    <Mnemonic Mnem="LBGT" Operation="IF (CC.N = CC.V) AND (CC.Z = 0) then PC &lt;= PC + IMM" Desc="Long Branch If Greater Than Zero" />
+    <Mnemonic Mnem="LBHI" Operation="IF (CC.Z = 0) AND (CC.C = 0) then PC &lt;= PC + IMM" Desc="Long Branch If Higher" />
+    <Mnemonic Mnem="LBHS" Operation="IF CC.C = 0 then PC &lt;= PC + IMM" Desc="Long Branch If Higher or Same" />
+    <Mnemonic Mnem="LBLE" Operation="IF (CC.N != CC.V) OR (CC.Z = 1) then PC &lt;= PC + IMM" Desc="Long Branch If Less than or Equal to Zero" />
+    <Mnemonic Mnem="LBLO" Operation="IF CC.C != 0 then PC &lt;= PC + IMM" Desc="Long Branch If Lower" />
+    <Mnemonic Mnem="LBLS" Operation="IF (CC.Z != 0) OR (CC.C != 0) then PC &lt;= PC + IMM" Desc="Long Branch If Lower or Same" />
+    <Mnemonic Mnem="LBLT" Operation="IF CC.N != CC.V then PC &lt;= PC + IMM" Desc="Long Branch If Less Than Zero" />
+    <Mnemonic Mnem="LBMI" Operation="IF CC.N != 0 then PC &lt;= PC + IMM" Desc="Long Branch If Minus" />
+    <Mnemonic Mnem="LBNE" Operation="IF CC.Z = 0 then PC &lt;= PC + IMM" Desc="Long Branch If Not Equal to Zero" />
+    <Mnemonic Mnem="LBPL" Operation="IF CC.N = 0 then PC &lt;= PC + IMM" Desc="Long Branch If Plus" />
+    <Mnemonic Mnem="LBRA" Operation="PC &lt;= PC + IMM" Desc="Long Branch Always" />
+    <Mnemonic Mnem="LBRN" Operation="---" Desc="Long Branch Never" />
+    <Mnemonic Mnem="LBSR" Operation="S &lt;= S - 2; (S:S+1) &lt;= PC; PC &lt;= PC + IMM" Desc="Long Branch to Subroutine" />
+    <Mnemonic Mnem="LBVC" Operation="IF CC.V = 0 then PC &lt;= PC + IMM" Desc="Long Branch If Overflow Clear" />
+    <Mnemonic Mnem="LBVS" Operation="IF CC.V != 0 then PC &lt;= PC + IMM" Desc="Long Branch If Overflow Set" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="LD">
+    <MnemonicGroup Mnem="8 Bit" Operation="r &lt;= IMM8|(M)" Desc="Load Data into 8-Bit Accumulator">
+      <Mnemonic Mnem="LDA" />
+      <Mnemonic Mnem="LDB" />
+      <Mnemonic Mnem="LDE" HD6309="True" />
+      <Mnemonic Mnem="LDF" HD6309="True" />
+    </MnemonicGroup>
+    <MnemonicGroup Mnem="16 Bit" Operation="r &lt;= IMM16|(M:M+1)" Desc="Load Data into 16-Bit Register">
+      <Mnemonic Mnem="LDD" />
+      <Mnemonic Mnem="LDS" />
+      <Mnemonic Mnem="LDU" />
+      <Mnemonic Mnem="LDW" HD6309="True" />
+      <Mnemonic Mnem="LDX" />
+      <Mnemonic Mnem="LDY" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="LDMD" Operation="MD.NM &lt;= IMM.0; MD.FM &lt;= IMM.1" Desc="Load an Immediate Value into the MD Register" />
+    <Mnemonic Mnem="LDQ" Operation="Q &lt;= IMM32|(M:M+3)" Desc="Load 32-bit Data into Accumulator Q" />
+    <Mnemonic Mnem="LEA" Operation="r &lt;= EA" Desc="Load Effective Address" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="LSL">
+    <MnemonicGroup Mnem="8 Bit" Operation="---" Desc="Logical Shift Left of 8-Bit Accumulator or Memory Byte">
+      <Mnemonic Mnem="LSL" />
+      <Mnemonic Mnem="LSLA" />
+      <Mnemonic Mnem="LSLB" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="LSLD" Operation="---" Desc="Logical Shift Left of Accumulator D" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="LSR">
+    <MnemonicGroup Mnem="8 Bit" Operation="---" Desc="Logical Shift Right of 8-Bit Accumulator or Memory Byte">
+      <Mnemonic Mnem="LSR" />
+      <Mnemonic Mnem="LSRA" />
+      <Mnemonic Mnem="LSRB" />
+    </MnemonicGroup>
+    <MnemonicGroup Mnem="16 Bit" Operation="---" Desc="Logical Shift Right of 16-Bit Accumulator">
+      <Mnemonic Mnem="LSRD" HD6309="True" />
+      <Mnemonic Mnem="LSRW" HD6309="True" />
+    </MnemonicGroup>
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="MUL">
+    <Mnemonic Mnem="MUL" Operation="ACCD &lt;= ACCA * ACCB" Desc="Unsigned Multiply of Accumulator A and Accumulator B" />
+    <Mnemonic Mnem="MULD" Operation="ACCQ &lt;= ACCD x IMM16|(M:M+1)" Desc="Signed Multiply of Accumulator D and Memory Word" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="NEG">
+    <MnemonicGroup Mnem="accumulator" Operation="r &lt;= 0 - r" Desc="Negation (Twos-Complement) of Accumulator">
+      <Mnemonic Mnem="NEGA" />
+      <Mnemonic Mnem="NEGB" />
+      <Mnemonic Mnem="NEGD" HD6309="True" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="NEG" Operation="(M) &lt;= 0 - (M)" Desc="Negate (Twos Complement) a Byte in Memory" />
+  </MnemonicGroup>
+  <Mnemonic Mnem="NOP" Operation="---" Desc="No Operation" />
+  <MnemonicGroup Mnem="OR">
+    <Mnemonic Mnem="OIM" Operation="(M) &lt;= (M) OR IMM" Desc="Logical OR of Immediate Value with Memory Byte" />
+    <MnemonicGroup Mnem="8 Bit" Operation="r &lt;= r OR IMM8|(M)" Desc="Logically OR Accumulator with a Byte from Memory">
+      <Mnemonic Mnem="ORA" />
+      <Mnemonic Mnem="ORB" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="ORCC" Operation="CC &lt;= CC OR IMM8" Desc="Logically OR the CC Register with an Immediate Value" />
+    <Mnemonic Mnem="ORD" Operation="ACCD &lt;= ACCD OR (M:M+1)" Desc="Logically OR Accumulator D with Word from Memory" />
+    <Mnemonic Mnem="ORR" Operation="r1 &lt;= r1 OR r0" Desc="Logically OR Source Register with Destination Register" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="Push">
+    <MnemonicGroup Mnem="PSH" Operation="---" Desc="Push Registers onto a Stack">
+      <Mnemonic Mnem="PSHS" />
+      <Mnemonic Mnem="PSHU" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="PSHSW" Operation="S &lt;= S - 2; (S:S+1) &lt;= ACCW" Desc="Push Accumulator W onto the Hardware Stack" />
+    <Mnemonic Mnem="PSHUW" Operation="U &lt;= U - 2; (U:U+1) &lt;= ACCW" Desc="Push Accumulator W onto the User Stack" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="Pull">
+    <MnemonicGroup Mnem="PUL" Operation="---" Desc="Pull Registers from Stack">
+      <Mnemonic Mnem="PULS" />
+      <Mnemonic Mnem="PULU" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="PULSW" Operation="ACCW &lt;= (S:S+1); S &lt;= S + 2" Desc="Pull Accumulator W from the Hardware Stack" />
+    <Mnemonic Mnem="PULUW" Operation="ACCW &lt;= (U:U+1); U &lt;= U + 2" Desc="Pull Accumulator W from the User Stack" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="ROL">
+    <MnemonicGroup Mnem="8 Bit" Operation="---" Desc="Rotate 8-Bit Accumulator or Memory Byte Left through Carry">
+      <Mnemonic Mnem="ROL" />
+      <Mnemonic Mnem="ROLA" />
+      <Mnemonic Mnem="ROLB" />
+    </MnemonicGroup>
+    <MnemonicGroup Mnem="16 Bit" Operation="---" Desc="Rotate 16-Bit Accumulator Left through Carry">
+      <Mnemonic Mnem="ROLD" />
+      <Mnemonic Mnem="ROLW" />
+    </MnemonicGroup>
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="ROR">
+    <MnemonicGroup Mnem="8 Bit" Operation="---" Desc="Rotate 8-Bit Accumulator or Memory Byte Right through Carry">
+      <Mnemonic Mnem="ROR" />
+      <Mnemonic Mnem="RORA" />
+      <Mnemonic Mnem="RORB" />
+    </MnemonicGroup>
+    <MnemonicGroup Mnem="16 Bit" Operation="---" Desc="Rotate 16-Bit Accumulator Right through Carry">
+      <Mnemonic Mnem="RORD" />
+      <Mnemonic Mnem="RORW" />
+    </MnemonicGroup>
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="Return">
+    <Mnemonic Mnem="RTI" Operation="---" Desc="Return from Interrupt" />
+    <Mnemonic Mnem="RTS" Operation="PC &lt;= (S:S+1); S &lt;= S + 2" Desc="Return from Subroutine" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="SBC">
+    <MnemonicGroup Mnem="8 Bit" Operation="r &lt;= r - IMM8|(M) - C" Desc="Subtract Memory Byte and Carry from Accumulator A or B">
+      <Mnemonic Mnem="SBCA" />
+      <Mnemonic Mnem="SBCB" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="SBCD" Operation="ACCD &lt;= ACCD - IMM16|(M:M+1) - C" Desc="Subtract Memory Word and Carry from Accumulator D" />
+    <Mnemonic Mnem="SBCR" Operation="r1 &lt;= r1 - r0 - C" Desc="Subtract Source Register and Carry from Destination Register" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="SEX">
+    <Mnemonic Mnem="SEX" Operation="---" Desc="Sign Extend the 8-bit Value in B to a 16-bit Value in D" />
+    <Mnemonic Mnem="SEXW" Operation="---" Desc="Sign Extend a 16-bit Value in W to a 32-bit Value in Q" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="ST">
+    <MnemonicGroup Mnem="8 Bit" Operation="(M) &lt;= r" Desc="Store 8-Bit Accumulator to Memory">
+      <Mnemonic Mnem="STA" />
+      <Mnemonic Mnem="STB" />
+      <Mnemonic Mnem="STE" HD6309="True" />
+      <Mnemonic Mnem="STF" HD6309="True" />
+    </MnemonicGroup>
+    <MnemonicGroup Mnem="16 Bit" Operation="(M:M+1) &lt;= r" Desc="Store 16-Bit Register to Memory">
+      <Mnemonic Mnem="STD" />
+      <Mnemonic Mnem="STS" />
+      <Mnemonic Mnem="STU" />
+      <Mnemonic Mnem="STW" HD6309="True" />
+      <Mnemonic Mnem="STX" />
+      <Mnemonic Mnem="STY" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="STQ" Operation="(M:M+3) &lt;= Q" Desc="Store Contents of Accumulator Q to Memory" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="SUB">
+    <MnemonicGroup Mnem="8 Bit" Operation="r &lt;= r - IMM8|(M)" Desc="Subtract from value in 8-Bit Accumulator">
+      <Mnemonic Mnem="SUBA" />
+      <Mnemonic Mnem="SUBB" />
+      <Mnemonic Mnem="SUBE" HD6309="True" />
+      <Mnemonic Mnem="SUBF" HD6309="True" />
+    </MnemonicGroup>
+    <MnemonicGroup Mnem="16 Bit" Operation="r &lt;= r - IMM16|(M:M+1)" Desc="Subtract from value in 16-Bit Accumulator">
+      <Mnemonic Mnem="SUBD" />
+      <Mnemonic Mnem="SUBW" HD6309="True" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="SUBR" Operation="r1 &lt;= r1 - r0" Desc="Subtract Source Register from Destination Register" />
+  </MnemonicGroup>
+  <Mnemonic Mnem="SWI" Operation="---" Desc="Software Interrupt" />
+  <Mnemonic Mnem="SYNC" Operation="---" Desc="Synchronize with Interrupt" />
+  <MnemonicGroup Mnem="Transfer">
+    <Mnemonic Mnem="TFM" Operation="---" Desc="Transfer Memory" />
+    <Mnemonic Mnem="TFR" Operation="r0 =&gt; r1" Desc="Transfer Register to Register" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="TST">
+    <MnemonicGroup Mnem="accumulator" Operation="TEMP &lt;= r" Desc="Test Value in Accumulator">
+      <Mnemonic Mnem="TSTA" />
+      <Mnemonic Mnem="TSTB" />
+      <Mnemonic Mnem="TSTD" HD6309="True" />
+      <Mnemonic Mnem="TSTE" HD6309="True" />
+      <Mnemonic Mnem="TSTF" HD6309="True" />
+      <Mnemonic Mnem="TSTW" HD6309="True" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="TST" Operation="TEMP &lt;= (M)" Desc="Test Value in Memory Byte" />
+  </MnemonicGroup>
   <OpCode Op="00" Mnem="NEG" Mode="Direct" NBytes="2" NCycles="6" NHCycles="5" />
   <OpCode Op="01" Mnem="OIM" Mode="Direct" NBytes="3" NCycles="6" HD6309="True" />
   <OpCode Op="02" Mnem="AIM" Mode="Direct" NBytes="3" NCycles="6" HD6309="True" />
