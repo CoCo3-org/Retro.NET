@@ -26,3 +26,8 @@ obj
 # SORT folder
 # ---------------------------
 __SORT__
+
+# ---------------------------
+# temporary files for processing
+# ---------------------------
+Data/MC6x09/MC6x09b.xml
