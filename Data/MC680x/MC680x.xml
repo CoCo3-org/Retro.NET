@@ -1,28 +1,37 @@
 <MC680x>
   <Mnemonic Mnem="ABA" />
   <Mnemonic Mnem="ABX" MC6801="True" />
-  <Mnemonic Mnem="ADCA" />
-  <Mnemonic Mnem="ADCB" />
+  
+  <MnemonicGroup Mnem="ADC" Operation="r &lt;= r + (M) + C" Desc="Add Memory Byte plus Carry with Accumulator A or B">
+  <Mnemonic Mnem="ADCA" Desc="Add Memory Byte plus Carry with Accumulator A" />
+  <Mnemonic Mnem="ADCB" Desc="Add Memory Byte plus Carry with Accumulator B" />
+  </MnemonicGroup>
+  
   <Mnemonic Mnem="ADDA" />
   <Mnemonic Mnem="ADDB" />
   <Mnemonic Mnem="ADDD" MC6801="True" />
+  
   <Mnemonic Mnem="ANDA" />
   <Mnemonic Mnem="ANDB" />
+  
   <Mnemonic Mnem="ASL" />
   <Mnemonic Mnem="ASLA" />
   <Mnemonic Mnem="ASLB" />
   <Mnemonic Mnem="ASLD" MC6801="True" />
+  
   <Mnemonic Mnem="ASR" />
   <Mnemonic Mnem="ASRA" />
   <Mnemonic Mnem="ASRB" />
+
+  <Mnemonic Mnem="BITA" />
+  <Mnemonic Mnem="BITB" />
+
   <Mnemonic Mnem="BCC" />
   <Mnemonic Mnem="BCS" />
   <Mnemonic Mnem="BEQ" />
   <Mnemonic Mnem="BGE" />
   <Mnemonic Mnem="BGT" />
   <Mnemonic Mnem="BHI" />
-  <Mnemonic Mnem="BITA" />
-  <Mnemonic Mnem="BITB" />
   <Mnemonic Mnem="BLE" />
   <Mnemonic Mnem="BLS" />
   <Mnemonic Mnem="BLT" />
@@ -34,90 +43,121 @@
   <Mnemonic Mnem="BSR" />
   <Mnemonic Mnem="BVC" />
   <Mnemonic Mnem="BVS" />
+
   <Mnemonic Mnem="CBA" />
   <Mnemonic Mnem="CLC" />
   <Mnemonic Mnem="CLI" />
+  
   <Mnemonic Mnem="CLR" />
   <Mnemonic Mnem="CLRA" />
   <Mnemonic Mnem="CLRB" />
+  
   <Mnemonic Mnem="CLV" />
+  
   <Mnemonic Mnem="CMPA" />
   <Mnemonic Mnem="CMPB" />
+  
   <Mnemonic Mnem="COM" />
   <Mnemonic Mnem="COMA" />
   <Mnemonic Mnem="COMB" />
+  
   <Mnemonic Mnem="CPX" />
   <Mnemonic Mnem="DAA" />
+  
   <Mnemonic Mnem="DEC" />
   <Mnemonic Mnem="DECA" />
   <Mnemonic Mnem="DECB" />
   <Mnemonic Mnem="DES" />
   <Mnemonic Mnem="DEX" />
+  
   <Mnemonic Mnem="EORA" />
   <Mnemonic Mnem="EORB" />
+  
   <Mnemonic Mnem="INC" />
   <Mnemonic Mnem="INCA" />
   <Mnemonic Mnem="INCB" />
   <Mnemonic Mnem="INS" />
   <Mnemonic Mnem="INX" />
+  
   <Mnemonic Mnem="JMP" />
   <Mnemonic Mnem="JSR" />
+
   <Mnemonic Mnem="LDAA" />
   <Mnemonic Mnem="LDAB" />
   <Mnemonic Mnem="LDD" MC6801="True" />
   <Mnemonic Mnem="LDS" />
   <Mnemonic Mnem="LDX" />
+
   <Mnemonic Mnem="LSL" />
   <Mnemonic Mnem="LSR" />
   <Mnemonic Mnem="LSRA" />
   <Mnemonic Mnem="LSRB" />
   <Mnemonic Mnem="LSRD" MC6801="True" />
+  
   <Mnemonic Mnem="MUL" MC6801="True" />
+  
   <Mnemonic Mnem="NEG" />
   <Mnemonic Mnem="NEGA" />
   <Mnemonic Mnem="NEGB" />
+  
   <Mnemonic Mnem="NOP" />
+  
   <Mnemonic Mnem="ORAA" />
   <Mnemonic Mnem="ORAB" />
+  
   <Mnemonic Mnem="PSHA" />
   <Mnemonic Mnem="PSHB" />
   <Mnemonic Mnem="PSHX" MC6801="True" />
+  
   <Mnemonic Mnem="PULA" />
   <Mnemonic Mnem="PULB" />
   <Mnemonic Mnem="PULX" MC6801="True" />
+  
   <Mnemonic Mnem="ROL" />
   <Mnemonic Mnem="ROLA" />
   <Mnemonic Mnem="ROLB" />
+  
   <Mnemonic Mnem="ROR" />
   <Mnemonic Mnem="RORA" />
   <Mnemonic Mnem="RORB" />
+  
   <Mnemonic Mnem="RTI" />
   <Mnemonic Mnem="RTS" />
+  
   <Mnemonic Mnem="SBA" />
   <Mnemonic Mnem="SBCA" />
   <Mnemonic Mnem="SBCB" />
+  
   <Mnemonic Mnem="SEC" />
   <Mnemonic Mnem="SEI" />
   <Mnemonic Mnem="SEV" />
+  
   <Mnemonic Mnem="STAA" />
   <Mnemonic Mnem="STAB" />
   <Mnemonic Mnem="STD" MC6801="True" />
   <Mnemonic Mnem="STS" />
   <Mnemonic Mnem="STX" />
+
   <Mnemonic Mnem="SUBA" />
   <Mnemonic Mnem="SUBB" />
   <Mnemonic Mnem="SUBD" MC6801="True" />
+  
   <Mnemonic Mnem="SWI" />
+  
   <Mnemonic Mnem="TAB" />
   <Mnemonic Mnem="TAP" />
   <Mnemonic Mnem="TBA" />
   <Mnemonic Mnem="TPA" />
+  
   <Mnemonic Mnem="TST" />
   <Mnemonic Mnem="TSTA" />
   <Mnemonic Mnem="TSTB" />
+  
   <Mnemonic Mnem="TSX" />
   <Mnemonic Mnem="TXS" />
+  
   <Mnemonic Mnem="WAI" />
+  
   <OpCode Op="00" Mnem="*" />
   <OpCode Op="01" Mnem="NOP" Mode="Inherent" NBytes="1" NCycles="2" />
   <OpCode Op="02" Mnem="*" />
