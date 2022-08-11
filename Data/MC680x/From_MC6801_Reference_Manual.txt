@@ -1,0 +1,92 @@
+ABA	Add Accumulator B to Accumulator A
+ABX	Add Accumulator B to Index Register
+ADC	Add with Carry
+ADD	Add Without Carry 
+ADDD	Add Double Accumulator
+AND	Logical AND
+ASL	Arithmetic Shift Left 
+ASLD	Arithmetic Shift Left Double Accumulator
+ASR	Arithmetic Shift Right
+BCC	Branch if Carry Clear 
+BCS	Branch if Carry Set
+BEQ	Brancb if Equal
+BGE	Branch if Greater Than or Equal to Zero 
+BGT	Branch if Greater than Zero
+DRI	Branch if Higher
+BHS	Branch if Higher or Same 
+BIT	Bit Test
+BLE	Branch if Less than or Equal to Zero
+BLO	Branch if Lower
+BLS	Branch if Lower or Same
+BLT	Brancb if Less tban Zero
+BMI	Branch if Minus
+BNE	Branch if Not Equal
+BPL	Branch if Plus 
+BRA	Branch Always 
+BRN	Branch Never
+BSR	Branch to Subroutine
+BVC	Branch if Overflow Clear
+BVS	Branch if Overflow Set
+CBA	Compare Accumulators
+CLC	Clear Carry
+CLI	Clear Interrupt Mask 
+CLR	Clear
+CLV	Clear Two's Complement Overflow Bit 
+CMP	Compare 
+COM	Complement 
+CPX	Compare Index Register
+DAA	Decimal Adjust ACCA
+DEC	Decrement
+DES	Decrement Stack Pointer 
+DEX	Decrement Index Register
+EOR	Exclusive OR
+INC	Increment 
+INS	Increment Stack Pointer 
+INX	Increment Index Register 
+JMP	Jump
+JSR	Jump to Subroutine
+LDA	Load Accumulator
+LDD	Load Double Accumulator
+LDS	Load Stack Pointer
+LDX	Load Index Register
+LSL	Logical Shift Left
+LSLD	Logical Shift Left Double 
+LSR	Logical Shift Right
+LSRD	Logical Shift Right Double Accumulator 
+MUL	Multiply Unsigned
+NEG	Negate
+NOP	No Operation
+ORA	Inclusive OR
+PSH	Push Data Onto Stack
+PSHX	Push X-Register Onto Stack
+PUL	Pull Data from Stack 
+PULX	Pull X-Register From Stack
+ROL	Rotate Left
+ROR	Rotate Right 
+RTI	Return from Interrupt
+RTS	Return from Subroutine
+SBA	Subtract Accumulators
+SBC	Subtract with Carry
+SEC	Set Carry
+SEI	Set Interrupt Mask
+SEV	Set Two's Complement Overflow Bit
+STA	Store Accumulator
+STD	Store Double Accumulator 
+STS	Store Stack Pointer
+STX	Store Index Register
+SUB	Subtract
+SUBD	Subtract Double Accumulator
+SWI	Software Interrupt 
+TAB	Transfer from Accumulator A to Accumulator B 
+TAP	Transfer from Accumulator A to Condition Code Register
+TBA	Transfer from Accumulator B to Accumulator A 
+TPA	Transfer from Condition Code Register to Accumulator A
+TST	Test
+TSX	Transfer from Stack Pointer to Index Register
+TXS	Transfer from Index Register to Stack Pointer
+WAI	Wait for Interrupt
+----------------------------------------------------------------
+pdf 268
+APPENDIX A 
+DEFINITION OF THE 
+EXECUTABLE INSTRUCTIONS 

@@ -1,146 +1,214 @@
 <MC680x>
-  <Mnemonic Mnem="ABA" />
-  <Mnemonic Mnem="ABX" MC6801="True" />
-  
-  <MnemonicGroup Mnem="ADC" Operation="r &lt;= r + (M) + C" Desc="Add Memory Byte plus Carry with Accumulator A or B">
-  <Mnemonic Mnem="ADCA" Desc="Add Memory Byte plus Carry with Accumulator A" />
-  <Mnemonic Mnem="ADCB" Desc="Add Memory Byte plus Carry with Accumulator B" />
+  <Mnemonic Mnem="ABA" Operation="A := A + B" Desc="Add Accumulator B to A" />
+  <Mnemonic Mnem="ABX" Operation="X := X + B" Desc="Add Accumulator B to Register X" MC6801="True" />
+  <MnemonicGroup Mnem="ADC" Operation="r := r + M + C" Desc="Add Memory Byte plus Carry with Accumulator A or B">
+    <Mnemonic Mnem="ADCA" Operation="A := A + M + C" Desc="Add Memory Byte plus Carry with Accumulator A" />
+    <Mnemonic Mnem="ADCB" Operation="B := B + M + C" Desc="Add Memory Byte plus Carry with Accumulator B" />
   </MnemonicGroup>
-  
-  <Mnemonic Mnem="ADDA" />
-  <Mnemonic Mnem="ADDB" />
-  <Mnemonic Mnem="ADDD" MC6801="True" />
-  
-  <Mnemonic Mnem="ANDA" />
-  <Mnemonic Mnem="ANDB" />
-  
-  <Mnemonic Mnem="ASL" />
-  <Mnemonic Mnem="ASLA" />
-  <Mnemonic Mnem="ASLB" />
-  <Mnemonic Mnem="ASLD" MC6801="True" />
-  
-  <Mnemonic Mnem="ASR" />
-  <Mnemonic Mnem="ASRA" />
-  <Mnemonic Mnem="ASRB" />
-
-  <Mnemonic Mnem="BITA" />
-  <Mnemonic Mnem="BITB" />
-
-  <Mnemonic Mnem="BCC" />
-  <Mnemonic Mnem="BCS" />
-  <Mnemonic Mnem="BEQ" />
-  <Mnemonic Mnem="BGE" />
-  <Mnemonic Mnem="BGT" />
-  <Mnemonic Mnem="BHI" />
-  <Mnemonic Mnem="BLE" />
-  <Mnemonic Mnem="BLS" />
-  <Mnemonic Mnem="BLT" />
-  <Mnemonic Mnem="BMI" />
-  <Mnemonic Mnem="BNE" />
-  <Mnemonic Mnem="BPL" />
-  <Mnemonic Mnem="BRA" />
-  <Mnemonic Mnem="BRN" MC6801="True" />
-  <Mnemonic Mnem="BSR" />
-  <Mnemonic Mnem="BVC" />
-  <Mnemonic Mnem="BVS" />
+  <MnemonicGroup Mnem="ADD" Desc="Add two Values">
+    <MnemonicGroup Mnem="8 Bit" Operation="r := r + M" Desc="Add Memory Byte to 8-Bit Accumulator">
+      <Mnemonic Mnem="ADDA" Operation="A := A + M" Desc="Add Memory Byte to Accumulator A" />
+      <Mnemonic Mnem="ADDB" Operation="B := B + M" Desc="Add Memory Byte to Accumulator B" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="ADDD" Operation="D := D + M:M+1" Desc="Add Memory Word to Register D" MC6801="True" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="AND" Desc="And two Values">
+    <Mnemonic Mnem="ANDA" Operation="A := A &amp; M" Desc="Logically AND Memory Byte with Accumulator A" />
+    <Mnemonic Mnem="ANDB" Operation="B := B &amp; M" Desc="Logically AND Memory Byte with Accumulator B" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="ASL" Desc="Arithmetic Shift Left Value">
+    <MnemonicGroup Mnem="8 Bit" Operation="---" Desc="Arithmetic Shift Left of 8-Bit Accumulator or Memory Byte">
+      <Mnemonic Mnem="ASL" Desc="Arithmetic Shift Left of Memory Byte" />
+      <Mnemonic Mnem="ASLA" Desc="Arithmetic Shift Left of Accumulator A" />
+      <Mnemonic Mnem="ASLB" Desc="Arithmetic Shift Left of Accumulator B" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="ASLD" Desc="Arithmetic Shift Left of Register D" MC6801="True" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="ASR" Desc="Arithmetic Shift Right Value">
+    <Mnemonic Mnem="ASR" Desc="Arithmetic Shift Right of Memory Byte" />
+    <Mnemonic Mnem="ASRA" Desc="Arithmetic Shift Right of Accumulator A" />
+    <Mnemonic Mnem="ASRB" Desc="Arithmetic Shift Right of Accumulator B" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="BIT" Desc="Bit Test two Values">
+    <Mnemonic Mnem="BITA" Desc="Bit Test Accumulator A with Memory Byte Value" />
+    <Mnemonic Mnem="BITB" Desc="Bit Test Accumulator B with Memory Byte Value" />
+  </MnemonicGroup>
+  <MnemonicGroup Mnem="Branch" Desc="Branch Instructions">
+    <Mnemonic Mnem="BCC" />
+    <Mnemonic Mnem="BCS" />
+    <Mnemonic Mnem="BEQ" />
+    <Mnemonic Mnem="BGE" />
+    <Mnemonic Mnem="BGT" />
+    <Mnemonic Mnem="BHI" />
+    <Mnemonic Mnem="BLE" />
+    <Mnemonic Mnem="BLS" />
+    <Mnemonic Mnem="BLT" />
+    <Mnemonic Mnem="BMI" />
+    <Mnemonic Mnem="BNE" />
+    <Mnemonic Mnem="BPL" />
+    <Mnemonic Mnem="BRA" />
+    <Mnemonic Mnem="BRN" MC6801="True" />
+    <Mnemonic Mnem="BSR" />
+    <Mnemonic Mnem="BVC" />
+    <Mnemonic Mnem="BVS" />
+  </MnemonicGroup>
 
   <Mnemonic Mnem="CBA" />
   <Mnemonic Mnem="CLC" />
   <Mnemonic Mnem="CLI" />
   
-  <Mnemonic Mnem="CLR" />
-  <Mnemonic Mnem="CLRA" />
-  <Mnemonic Mnem="CLRB" />
+  <MnemonicGroup Mnem="CLR" Desc="Load Zero Value">
+    <MnemonicGroup Mnem="accumulator" Operation="r := 0" Desc="Load Zero into Accumulator">
+      <Mnemonic Mnem="CLRA" Desc="Load Zero into Accumulator A" />
+      <Mnemonic Mnem="CLRB" Desc="Load Zero into Accumulator B" />
+    </MnemonicGroup>
+    <Mnemonic Mnem="CLR" Operation="M := 0" Desc="Store Zero into a Memory Byte" />
+  </MnemonicGroup>
   
   <Mnemonic Mnem="CLV" />
   
-  <Mnemonic Mnem="CMPA" />
-  <Mnemonic Mnem="CMPB" />
+  <MnemonicGroup Mnem="CMP" Operation="TEMP := r - (M)" Desc="Compare Memory Byte from 8-Bit Accumulator">
+    <Mnemonic Mnem="CMPA" />
+    <Mnemonic Mnem="CMPB" />
+  </MnemonicGroup>
   
-  <Mnemonic Mnem="COM" />
-  <Mnemonic Mnem="COMA" />
-  <Mnemonic Mnem="COMB" />
+  <MnemonicGroup Mnem="COM" Operation="r := r" Desc="Complement Accumulator">
+    <Mnemonic Mnem="COM" />
+    <Mnemonic Mnem="COMA" />
+    <Mnemonic Mnem="COMB" />
+  </MnemonicGroup>
   
   <Mnemonic Mnem="CPX" />
   <Mnemonic Mnem="DAA" />
   
-  <Mnemonic Mnem="DEC" />
-  <Mnemonic Mnem="DECA" />
-  <Mnemonic Mnem="DECB" />
+  <MnemonicGroup Mnem="DEC" Operation="r := r - 1" Desc="Decrement Accumulator">
+    <Mnemonic Mnem="DEC" />
+    <Mnemonic Mnem="DECA" />
+    <Mnemonic Mnem="DECB" />
+  </MnemonicGroup>
+
   <Mnemonic Mnem="DES" />
   <Mnemonic Mnem="DEX" />
   
-  <Mnemonic Mnem="EORA" />
-  <Mnemonic Mnem="EORB" />
+  <MnemonicGroup Mnem="EOR" Operation="r := r ^ (M)" Desc="Exclusively-OR Memory Byte with Accumulator A or B">
+    <Mnemonic Mnem="EORA" />
+    <Mnemonic Mnem="EORB" />
+  </MnemonicGroup>
   
-  <Mnemonic Mnem="INC" />
-  <Mnemonic Mnem="INCA" />
-  <Mnemonic Mnem="INCB" />
+  <MnemonicGroup Mnem="INC" Operation="r := r + 1" Desc="Increment Accumulator">
+    <Mnemonic Mnem="INC" />
+    <Mnemonic Mnem="INCA" />
+    <Mnemonic Mnem="INCB" />
+  </MnemonicGroup>
+
   <Mnemonic Mnem="INS" />
   <Mnemonic Mnem="INX" />
   
-  <Mnemonic Mnem="JMP" />
-  <Mnemonic Mnem="JSR" />
+  <MnemonicGroup Mnem="Jump" Desc="Jump Instructions">
+    <Mnemonic Mnem="JMP" />
+    <Mnemonic Mnem="JSR" />
+  </MnemonicGroup>
 
-  <Mnemonic Mnem="LDAA" />
-  <Mnemonic Mnem="LDAB" />
-  <Mnemonic Mnem="LDD" MC6801="True" />
-  <Mnemonic Mnem="LDS" />
-  <Mnemonic Mnem="LDX" />
+  <MnemonicGroup Mnem="LD" Desc="Load Value">
+    <MnemonicGroup Mnem="8 Bit" Operation="r := IMM8|(M)" Desc="Load Data into 8-Bit Accumulator">
+      <Mnemonic Mnem="LDAA" />
+      <Mnemonic Mnem="LDAB" />
+    </MnemonicGroup>
+    <MnemonicGroup Mnem="16 Bit" Operation="r := IMM16|(M:M+1)" Desc="Load Data into 16-Bit Register">
+      <Mnemonic Mnem="LDD" MC6801="True" />
+      <Mnemonic Mnem="LDS" />
+      <Mnemonic Mnem="LDX" />
+    </MnemonicGroup>
+  </MnemonicGroup>
 
-  <Mnemonic Mnem="LSL" />
-  <Mnemonic Mnem="LSR" />
-  <Mnemonic Mnem="LSRA" />
-  <Mnemonic Mnem="LSRB" />
-  <Mnemonic Mnem="LSRD" MC6801="True" />
+  <MnemonicGroup Mnem="LSL" Operation="---" Desc="Logical Shift Left of 8-Bit Accumulator or Memory Byte">
+    <Mnemonic Mnem="LSL" />
+  </MnemonicGroup>
+
+  <MnemonicGroup Mnem="LSR" Desc="Logical Shift Right Value">
+    <MnemonicGroup Mnem="8 Bit" Operation="---" Desc="Logical Shift Right of 8-Bit Accumulator or Memory Byte">
+      <Mnemonic Mnem="LSR" />
+      <Mnemonic Mnem="LSRA" />
+      <Mnemonic Mnem="LSRB" />
+    </MnemonicGroup>
+    <MnemonicGroup Mnem="16 Bit" Operation="---" Desc="Logical Shift Right of 16-Bit Register">
+      <Mnemonic Mnem="LSRD" MC6801="True" />
+    </MnemonicGroup>
+  </MnemonicGroup>
   
   <Mnemonic Mnem="MUL" MC6801="True" />
   
-  <Mnemonic Mnem="NEG" />
-  <Mnemonic Mnem="NEGA" />
-  <Mnemonic Mnem="NEGB" />
+  <MnemonicGroup Mnem="NEG" Operation="r := 0 - r" Desc="Negation (Twos-Complement) of Accumulator">
+    <Mnemonic Mnem="NEG" />
+    <Mnemonic Mnem="NEGA" />
+    <Mnemonic Mnem="NEGB" />
+  </MnemonicGroup>
   
   <Mnemonic Mnem="NOP" />
   
-  <Mnemonic Mnem="ORAA" />
-  <Mnemonic Mnem="ORAB" />
+  <MnemonicGroup Mnem="ORA" Operation="r := r OR IMM8|(M)" Desc="Logically OR Accumulator with a Byte from Memory">
+    <Mnemonic Mnem="ORAA" />
+    <Mnemonic Mnem="ORAB" />
+  </MnemonicGroup>
   
-  <Mnemonic Mnem="PSHA" />
-  <Mnemonic Mnem="PSHB" />
-  <Mnemonic Mnem="PSHX" MC6801="True" />
+  <MnemonicGroup Mnem="PSH" Operation="---" Desc="Push Registers onto a Stack">
+    <Mnemonic Mnem="PSHA" />
+    <Mnemonic Mnem="PSHB" />
+    <Mnemonic Mnem="PSHX" MC6801="True" />
+  </MnemonicGroup>
   
-  <Mnemonic Mnem="PULA" />
-  <Mnemonic Mnem="PULB" />
-  <Mnemonic Mnem="PULX" MC6801="True" />
+  <MnemonicGroup Mnem="PUL" Operation="---" Desc="Pull Registers from Stack">
+    <Mnemonic Mnem="PULA" />
+    <Mnemonic Mnem="PULB" />
+    <Mnemonic Mnem="PULX" MC6801="True" />
+  </MnemonicGroup>
   
-  <Mnemonic Mnem="ROL" />
-  <Mnemonic Mnem="ROLA" />
-  <Mnemonic Mnem="ROLB" />
+  <MnemonicGroup Mnem="ROL" Operation="---" Desc="Rotate 8-Bit Accumulator or Memory Byte Left through Carry">
+    <Mnemonic Mnem="ROL" />
+    <Mnemonic Mnem="ROLA" />
+    <Mnemonic Mnem="ROLB" />
+  </MnemonicGroup>
   
-  <Mnemonic Mnem="ROR" />
-  <Mnemonic Mnem="RORA" />
-  <Mnemonic Mnem="RORB" />
+  <MnemonicGroup Mnem="ROR" Operation="---" Desc="Rotate 8-Bit Accumulator or Memory Byte Right through Carry">
+    <Mnemonic Mnem="ROR" />
+    <Mnemonic Mnem="RORA" />
+    <Mnemonic Mnem="RORB" />
+  </MnemonicGroup>
   
   <Mnemonic Mnem="RTI" />
   <Mnemonic Mnem="RTS" />
   
-  <Mnemonic Mnem="SBA" />
-  <Mnemonic Mnem="SBCA" />
-  <Mnemonic Mnem="SBCB" />
+  <MnemonicGroup Mnem="SBC" Operation="r := r - IMM8|(M) - C" Desc="Subtract Memory Byte and Carry from Accumulator A or B">
+    <Mnemonic Mnem="SBCA" />
+    <Mnemonic Mnem="SBCB" />
+  </MnemonicGroup>
   
   <Mnemonic Mnem="SEC" />
   <Mnemonic Mnem="SEI" />
   <Mnemonic Mnem="SEV" />
   
-  <Mnemonic Mnem="STAA" />
-  <Mnemonic Mnem="STAB" />
-  <Mnemonic Mnem="STD" MC6801="True" />
-  <Mnemonic Mnem="STS" />
-  <Mnemonic Mnem="STX" />
+  <MnemonicGroup Mnem="ST" Desc="Store Value">
+    <MnemonicGroup Mnem="8 Bit" Operation="(M) := r" Desc="Store 8-Bit Accumulator to Memory">
+      <Mnemonic Mnem="STAA" />
+      <Mnemonic Mnem="STAB" />
+    </MnemonicGroup>
+    <MnemonicGroup Mnem="16 Bit" Operation="(M:M+1) := r" Desc="Store 16-Bit Register to Memory">
+      <Mnemonic Mnem="STD" MC6801="True" />
+      <Mnemonic Mnem="STS" />
+      <Mnemonic Mnem="STX" />
+    </MnemonicGroup>
+  </MnemonicGroup>
 
-  <Mnemonic Mnem="SUBA" />
-  <Mnemonic Mnem="SUBB" />
-  <Mnemonic Mnem="SUBD" MC6801="True" />
+  <MnemonicGroup Mnem="SUB" Desc="Subtract two Values">
+    <MnemonicGroup Mnem="8 Bit" Operation="r := r - IMM8|(M)" Desc="Subtract from value in 8-Bit Accumulator">
+      <Mnemonic Mnem="SBA" />
+      <Mnemonic Mnem="SUBA" />
+      <Mnemonic Mnem="SUBB" />
+    </MnemonicGroup>
+    <MnemonicGroup Mnem="16 Bit" Operation="r := r - IMM16|(M:M+1)" Desc="Subtract from value in 16-Bit Accumulator">
+      <Mnemonic Mnem="SUBD" MC6801="True" />
+    </MnemonicGroup>
+  </MnemonicGroup>
   
   <Mnemonic Mnem="SWI" />
   
@@ -149,9 +217,11 @@
   <Mnemonic Mnem="TBA" />
   <Mnemonic Mnem="TPA" />
   
-  <Mnemonic Mnem="TST" />
-  <Mnemonic Mnem="TSTA" />
-  <Mnemonic Mnem="TSTB" />
+  <MnemonicGroup Mnem="TST" Operation="TEMP := r" Desc="Test Value in Accumulator">
+    <Mnemonic Mnem="TST" />
+    <Mnemonic Mnem="TSTA" />
+    <Mnemonic Mnem="TSTB" />
+  </MnemonicGroup>
   
   <Mnemonic Mnem="TSX" />
   <Mnemonic Mnem="TXS" />
