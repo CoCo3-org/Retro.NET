@@ -6,8 +6,8 @@ namespace CPU
 {
 	public class Instruction : CodeLine
 	{
-		public virtual int PreOp { get { return -1; } }
-		public virtual int OpCode { get { return -1; } } 
+		public virtual byte? PreByte { get { return null; } }
+		public virtual byte OpCode { get { throw new NotImplementedException("Type: " + this.GetType()); } } 
 
 		public virtual string Desc { get { return null; } }
 		public virtual string Category { get { return null; } }
