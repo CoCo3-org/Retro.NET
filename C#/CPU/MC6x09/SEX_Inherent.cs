@@ -6,6 +6,11 @@ namespace CPU.MC6x09
 {
 	public class SEX_Inherent : Instruction, IInherent 
 	{
+		public SEX_Inherent(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override byte OpCode { get { return 0x1D; } }
 
 		public override string Mnemonic { get { return "SEX"; } }

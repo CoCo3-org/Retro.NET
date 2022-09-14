@@ -6,6 +6,11 @@ namespace CPU.MC6x09
 {
 	public class LEAY_Indexed : Instruction, IIndexed 
 	{
+		public LEAY_Indexed(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override byte OpCode { get { return 0x31; } }
 
 		public override string Mnemonic { get { return "LEAY"; } }

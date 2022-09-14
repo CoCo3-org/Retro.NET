@@ -1,7 +1,7 @@
 ﻿<MC6x09>
   <Mnemonic Mnem="ABX" Operation="X &lt;= X + ACCB" Desc="Add Accumulator B to Index Register X" />
   <MnemonicGroup Mnem="ADC" Desc="Add two Values plus Carry">
-    <MnemonicGroup Mnem="8 Bit" Operation="r &lt;= r + (M) + C" Desc="Add Memory Byte plus Carry with Accumulator A or B">
+    <MnemonicGroup Mnem="8Bit" Operation="r &lt;= r + (M) + C" Desc="Add Memory Byte plus Carry with Accumulator A or B">
       <Mnemonic Mnem="ADCA" Desc="Add Memory Byte plus Carry with Accumulator A" />
       <Mnemonic Mnem="ADCB" Desc="Add Memory Byte plus Carry with Accumulator B" />
     </MnemonicGroup>
@@ -9,20 +9,20 @@
     <Mnemonic Mnem="ADCR" Operation="r1 &lt;= r1 + r0 + C" Desc="Add Source Register plus Carry to Destination Register" />
   </MnemonicGroup>
   <MnemonicGroup Mnem="ADD" Desc="Add two Values">
-    <MnemonicGroup Mnem="8 Bit" Operation="r &lt;= r + (M)" Desc="Add Memory Byte to 8-Bit Accumulator">
+    <MnemonicGroup Mnem="8Bit" Operation="r &lt;= r + (M)" Desc="Add Memory Byte to 8-Bit Accumulator">
       <Mnemonic Mnem="ADDA" Desc="Add Memory Byte to Accumulator A" />
       <Mnemonic Mnem="ADDB" Desc="Add Memory Byte to Accumulator B" />
       <Mnemonic Mnem="ADDE" Desc="Add Memory Byte to Accumulator E" HD6309="True" />
       <Mnemonic Mnem="ADDF" Desc="Add Memory Byte to Accumulator F" HD6309="True" />
     </MnemonicGroup>
-    <MnemonicGroup Mnem="16 Bit" Operation="r &lt;= r + (M:M+1)" Desc="Add Memory Word to 16-Bit Accumulator">
+    <MnemonicGroup Mnem="16Bit" Operation="r &lt;= r + (M:M+1)" Desc="Add Memory Word to 16-Bit Accumulator">
       <Mnemonic Mnem="ADDD" Desc="Add Memory Word to Register D" />
       <Mnemonic Mnem="ADDW" Desc="Add Memory Word to Register W" HD6309="True" />
     </MnemonicGroup>
     <Mnemonic Mnem="ADDR" Operation="r1 &lt;= r1 + r0" Desc="Add Source Register to Destination Register" HD6309="True" />
   </MnemonicGroup>
   <MnemonicGroup Mnem="AND" Desc="And two Values">
-    <MnemonicGroup Mnem="8 Bit" Operation="r &lt;= r AND (M)" Desc="Logically AND Memory Byte with Accumulator A or B">
+    <MnemonicGroup Mnem="8Bit" Operation="r &lt;= r AND (M)" Desc="Logically AND Memory Byte with Accumulator A or B">
       <Mnemonic Mnem="ANDA" Desc="Logically AND Memory Byte with Accumulator A" />
       <Mnemonic Mnem="ANDB" Desc="Logically AND Memory Byte with Accumulator B" />
       <Mnemonic Mnem="AIM" Operation="M &lt;= (M) AND IMM" Desc="Logical AND of Immediate Value with Memory Byte" />
@@ -32,7 +32,7 @@
     <Mnemonic Mnem="ANDR" Operation="r1 &lt;= r1 AND r0" Desc="Logically AND Source Register with Destination Register" HD6309="True" />
   </MnemonicGroup>
   <MnemonicGroup Mnem="ASL" Desc="Arithmetic Shift Left Value">
-    <MnemonicGroup Mnem="8 Bit" Operation="---" Desc="Arithmetic Shift Left of 8-Bit Accumulator or Memory Byte">
+    <MnemonicGroup Mnem="8Bit" Operation="---" Desc="Arithmetic Shift Left of 8-Bit Accumulator or Memory Byte">
       <Mnemonic Mnem="ASLA" Desc="Arithmetic Shift Left of Accumulator A" />
       <Mnemonic Mnem="ASLB" Desc="Arithmetic Shift Left of Accumulator B" />
       <Mnemonic Mnem="ASL" Desc="Arithmetic Shift Left of Memory Byte" />
@@ -40,7 +40,7 @@
     <Mnemonic Mnem="ASLD" Operation="---" Desc="Arithmetic Shift Left of Register D" />
   </MnemonicGroup>
   <MnemonicGroup Mnem="ASR" Desc="Arithmetic Shift Right Value">
-    <MnemonicGroup Mnem="8 Bit" Operation="---" Desc="Arithmetic Shift Right of 8-Bit Accumulator or Memory Byte">
+    <MnemonicGroup Mnem="8Bit" Operation="---" Desc="Arithmetic Shift Right of 8-Bit Accumulator or Memory Byte">
       <Mnemonic Mnem="ASRA" Desc="Arithmetic Shift Right of Accumulator A" />
       <Mnemonic Mnem="ASRB" Desc="Arithmetic Shift Right of Accumulator B" />
       <Mnemonic Mnem="ASR" Desc="Arithmetic Shift Right of Memory Byte" />
@@ -58,7 +58,7 @@
     <Mnemonic Mnem="STBT" Operation="(DPM).dstBit &lt;= r.srcBit" Desc="Store value of a Register Bit into Memory" />
   </MnemonicGroup>
   <MnemonicGroup Mnem="BIT" Desc="Bit Test two Values">
-    <MnemonicGroup Mnem="8 Bit" Operation="TEMP &lt;= r AND (M)" Desc="Bit Test Byte Value with Memory Byte Value">
+    <MnemonicGroup Mnem="8Bit" Operation="TEMP &lt;= r AND (M)" Desc="Bit Test Byte Value with Memory Byte Value">
       <Mnemonic Mnem="BITA" Desc="Bit Test Accumulator A with Memory Byte Value" />
       <Mnemonic Mnem="BITB" Desc="Bit Test Accumulator B with Memory Byte Value" />
       <Mnemonic Mnem="TIM" Operation="TEMP &lt;= (M) AND IMM8" Desc="Bit Test Immediate Value with Memory Byte" />
@@ -87,7 +87,7 @@
     <Mnemonic Mnem="BVS" Operation="IF CC.V != 0 then PC &lt;= PC + IMM" Desc="Branch If Overflow Set" />
   </MnemonicGroup>
   <MnemonicGroup Mnem="CLR" Desc="Load Zero Value">
-    <MnemonicGroup Mnem="accumulator" Operation="r &lt;= 0" Desc="Load Zero into Accumulator">
+    <MnemonicGroup Mnem="Accumulator" Operation="r &lt;= 0" Desc="Load Zero into Accumulator">
       <Mnemonic Mnem="CLRA" Desc="Load Zero into Accumulator A" />
       <Mnemonic Mnem="CLRB" Desc="Load Zero into Accumulator B" />
       <Mnemonic Mnem="CLRD" Desc="Load Zero into Register D" HD6309="True" />
@@ -98,13 +98,13 @@
     <Mnemonic Mnem="CLR" Operation="(M) &lt;= 0" Desc="Store Zero into a Memory Byte" />
   </MnemonicGroup>
   <MnemonicGroup Mnem="CMP" Desc="Compare two Values">
-    <MnemonicGroup Mnem="8 Bit" Operation="TEMP &lt;= r - (M)" Desc="Compare Memory Byte from 8-Bit Accumulator">
+    <MnemonicGroup Mnem="8Bit" Operation="TEMP &lt;= r - (M)" Desc="Compare Memory Byte from 8-Bit Accumulator">
       <Mnemonic Mnem="CMPA" Desc="Compare Memory Byte from Accumulator A" />
       <Mnemonic Mnem="CMPB" Desc="Compare Memory Byte from Accumulator B" />
       <Mnemonic Mnem="CMPE" Desc="Compare Memory Byte from Accumulator E" HD6309="True" />
       <Mnemonic Mnem="CMPF" Desc="Compare Memory Byte from Accumulator F" HD6309="True" />
     </MnemonicGroup>
-    <MnemonicGroup Mnem="16 Bit" Operation="TEMP &lt;= r - (M:M+1)" Desc="Compare Memory Word from 16-Bit Register">
+    <MnemonicGroup Mnem="16Bit" Operation="TEMP &lt;= r - (M:M+1)" Desc="Compare Memory Word from 16-Bit Register">
       <Mnemonic Mnem="CMPD" Desc="Compare Memory Word from Register D" />
       <Mnemonic Mnem="CMPS" Desc="Compare Memory Word from Register S" />
       <Mnemonic Mnem="CMPU" Desc="Compare Memory Word from Register U" />
@@ -115,7 +115,7 @@
     <Mnemonic Mnem="CMPR" Operation="TEMP &lt;= r1 - r0" Desc="Compare Source Register from Destination Register" />
   </MnemonicGroup>
   <MnemonicGroup Mnem="COM" Desc="Complement Value">
-    <MnemonicGroup Mnem="accumulator" Operation="r &lt;= r" Desc="Complement Accumulator">
+    <MnemonicGroup Mnem="Accumulator" Operation="r &lt;= r" Desc="Complement Accumulator">
       <Mnemonic Mnem="COMA" Desc="Complement Accumulator A" />
       <Mnemonic Mnem="COMB" Desc="Complement Accumulator B" />
       <Mnemonic Mnem="COMD" Desc="Complement Register D" HD6309="True" />
@@ -128,7 +128,7 @@
   <Mnemonic Mnem="CWAI" Operation="CC &lt;= CC AND IMM; CC &lt;= CC OR 8016 (E flag); Push Onto S Stack: PC,U,Y,X,DP,[WIf NM = 1],D,CC; Halt Execution and Wait for Unmasked Interrupt" Desc="Clear Condition Code Bits and Wait for Interrupt" />
   <Mnemonic Mnem="DAA" Operation="A[4..7] &lt;= A[4..7] + 6 IF:; CC.C = 1; OR: A[4..7] &gt; 9; OR: A[4..7] &gt; 8 AND A[0..3] &gt; 9; A[0..3] &lt;= A[0..3] + 6 IF:; CC.H = 1; OR: A[0..3] &gt; 9" Desc="Decimal Addition Adjust" />
   <MnemonicGroup Mnem="DEC" Desc="Decrement Value">
-    <MnemonicGroup Mnem="accumulator" Operation="r &lt;= r - 1" Desc="Decrement Accumulator">
+    <MnemonicGroup Mnem="Accumulator" Operation="r &lt;= r - 1" Desc="Decrement Accumulator">
       <Mnemonic Mnem="DECA" Desc="Decrement Accumulator A" />
       <Mnemonic Mnem="DECB" Desc="Decrement Accumulator B" />
       <Mnemonic Mnem="DECD" Desc="Decrement Register D" HD6309="True" />
@@ -143,7 +143,7 @@
     <Mnemonic Mnem="DIVQ" Operation="ACCW &lt;= ACCQ / (M:M+1); ACCD &lt;= ACCQ MOD (M:M+1)" Desc="Signed Divide of Accumulator Q by 16-bit value in Memory" />
   </MnemonicGroup>
   <MnemonicGroup Mnem="EOR" Desc="Exclusive OR two Values">
-    <MnemonicGroup Mnem="8 Bit" Operation="r &lt;= r ^ (M)" Desc="Exclusively-OR Memory Byte with Accumulator A or B">
+    <MnemonicGroup Mnem="8Bit" Operation="r &lt;= r ^ (M)" Desc="Exclusively-OR Memory Byte with Accumulator A or B">
       <Mnemonic Mnem="EORA" Desc="Exclusively-OR Memory Byte with Accumulator A" />
       <Mnemonic Mnem="EORB" Desc="Exclusively-OR Memory Byte with Accumulator B" />
     </MnemonicGroup>
@@ -153,7 +153,7 @@
   </MnemonicGroup>
   <Mnemonic Mnem="EXG" Operation="r0 &lt;=&gt; r1" Desc="Exchange Registers" />
   <MnemonicGroup Mnem="INC" Desc="Increment Value">
-    <MnemonicGroup Mnem="accumulator" Operation="r &lt;= r + 1" Desc="Increment Accumulator">
+    <MnemonicGroup Mnem="Accumulator" Operation="r &lt;= r + 1" Desc="Increment Accumulator">
       <Mnemonic Mnem="INCA" Desc="Increment Accumulator A" />
       <Mnemonic Mnem="INCB" Desc="Increment Accumulator B" />
       <Mnemonic Mnem="INCD" Desc="Increment Rgister D" HD6309="True" />
@@ -189,13 +189,13 @@
     <Mnemonic Mnem="LBVS" Operation="IF CC.V != 0 then PC &lt;= PC + IMM" Desc="Long Branch If Overflow Set" />
   </MnemonicGroup>
   <MnemonicGroup Mnem="LD" Desc="Load Value">
-    <MnemonicGroup Mnem="8 Bit" Operation="r &lt;= IMM8|(M)" Desc="Load Data into 8-Bit Accumulator">
+    <MnemonicGroup Mnem="8Bit" Operation="r &lt;= IMM8|(M)" Desc="Load Data into 8-Bit Accumulator">
       <Mnemonic Mnem="LDA" Desc="Load Data into Accumulator A" />
       <Mnemonic Mnem="LDB" Desc="Load Data into Accumulator B" />
       <Mnemonic Mnem="LDE" Desc="Load Data into Accumulator E" HD6309="True" />
       <Mnemonic Mnem="LDF" Desc="Load Data into Accumulator F" HD6309="True" />
     </MnemonicGroup>
-    <MnemonicGroup Mnem="16 Bit" Operation="r &lt;= IMM16|(M:M+1)" Desc="Load Data into 16-Bit Register">
+    <MnemonicGroup Mnem="16Bit" Operation="r &lt;= IMM16|(M:M+1)" Desc="Load Data into 16-Bit Register">
       <Mnemonic Mnem="LDD" Desc="Load Data into Register D" />
       <Mnemonic Mnem="LDS" Desc="Load Data into Register S" />
       <Mnemonic Mnem="LDU" Desc="Load Data into Register U" />
@@ -208,7 +208,7 @@
     <Mnemonic Mnem="LEA" Operation="r &lt;= EA" Desc="Load Effective Address" />
   </MnemonicGroup>
   <MnemonicGroup Mnem="LSL" Desc="Logical Shift Left Value">
-    <MnemonicGroup Mnem="8 Bit" Operation="---" Desc="Logical Shift Left of 8-Bit Accumulator or Memory Byte">
+    <MnemonicGroup Mnem="8Bit" Operation="---" Desc="Logical Shift Left of 8-Bit Accumulator or Memory Byte">
       <Mnemonic Mnem="LSLA" Desc="Logical Shift Left of Accumulator A" />
       <Mnemonic Mnem="LSLB" Desc="Logical Shift Left of Accumulator B" />
       <Mnemonic Mnem="LSL" Desc="Logical Shift Left of Memory Byte" />
@@ -216,12 +216,12 @@
     <Mnemonic Mnem="LSLD" Operation="---" Desc="Logical Shift Left of Register D" />
   </MnemonicGroup>
   <MnemonicGroup Mnem="LSR" Desc="Logical Shift Right Value">
-    <MnemonicGroup Mnem="8 Bit" Operation="---" Desc="Logical Shift Right of 8-Bit Accumulator or Memory Byte">
+    <MnemonicGroup Mnem="8Bit" Operation="---" Desc="Logical Shift Right of 8-Bit Accumulator or Memory Byte">
       <Mnemonic Mnem="LSRA" Desc="Logical Shift Right of Accumulator A" />
       <Mnemonic Mnem="LSRB" Desc="Logical Shift Right of Accumulator B" />
       <Mnemonic Mnem="LSR" Desc="Logical Shift Right of Memory Byte" />
     </MnemonicGroup>
-    <MnemonicGroup Mnem="16 Bit" Operation="---" Desc="Logical Shift Right of 16-Bit Register">
+    <MnemonicGroup Mnem="16Bit" Operation="---" Desc="Logical Shift Right of 16-Bit Register">
       <Mnemonic Mnem="LSRD" Desc="Logical Shift Right of Register D" HD6309="True" />
       <Mnemonic Mnem="LSRW" Desc="Logical Shift Right of Register W" HD6309="True" />
     </MnemonicGroup>
@@ -231,7 +231,7 @@
     <Mnemonic Mnem="MULD" Operation="ACCQ &lt;= ACCD x IMM16|(M:M+1)" Desc="Signed Multiply of Register D and Memory Word" />
   </MnemonicGroup>
   <MnemonicGroup Mnem="NEG" Desc="Negate Value">
-    <MnemonicGroup Mnem="accumulator" Operation="r &lt;= 0 - r" Desc="Negation (Twos-Complement) of Accumulator">
+    <MnemonicGroup Mnem="Accumulator" Operation="r &lt;= 0 - r" Desc="Negation (Twos-Complement) of Accumulator">
       <Mnemonic Mnem="NEGA" Desc="Negation (Twos-Complement) of Accumulator A" />
       <Mnemonic Mnem="NEGB" Desc="Negation (Twos-Complement) of Accumulator B" />
       <Mnemonic Mnem="NEGD" Desc="Negation (Twos-Complement) of Register D" HD6309="True" />
@@ -241,7 +241,7 @@
   <Mnemonic Mnem="NOP" Operation="---" Desc="No Operation" />
   <MnemonicGroup Mnem="OR" Desc="Or two Values">
     <Mnemonic Mnem="OIM" Operation="(M) &lt;= (M) OR IMM" Desc="Logical OR of Immediate Value with Memory Byte" />
-    <MnemonicGroup Mnem="8 Bit" Operation="r &lt;= r OR IMM8|(M)" Desc="Logically OR Accumulator with a Byte from Memory">
+    <MnemonicGroup Mnem="8Bit" Operation="r &lt;= r OR IMM8|(M)" Desc="Logically OR Accumulator with a Byte from Memory">
       <Mnemonic Mnem="ORA" Desc="Logically OR Accumulator A with a Byte from Memory" />
       <Mnemonic Mnem="ORB" Desc="Logically OR Accumulator B with a Byte from Memory" />
     </MnemonicGroup>
@@ -266,23 +266,23 @@
     <Mnemonic Mnem="PULUW" Operation="ACCW &lt;= (U:U+1); U &lt;= U + 2" Desc="Pull Register W from the User Stack" />
   </MnemonicGroup>
   <MnemonicGroup Mnem="ROL" Desc="Rotate Value Left">
-    <MnemonicGroup Mnem="8 Bit" Operation="---" Desc="Rotate 8-Bit Accumulator or Memory Byte Left through Carry">
+    <MnemonicGroup Mnem="8Bit" Operation="---" Desc="Rotate 8-Bit Accumulator or Memory Byte Left through Carry">
       <Mnemonic Mnem="ROL" Desc="Rotate Memory Byte Left through Carry" />
       <Mnemonic Mnem="ROLA" Desc="Rotate Accumulator A Left through Carry" />
       <Mnemonic Mnem="ROLB" Desc="Rotate Accumulator B Left through Carry" />
     </MnemonicGroup>
-    <MnemonicGroup Mnem="16 Bit" Operation="---" Desc="Rotate 16-Bit Accumulator Left through Carry">
+    <MnemonicGroup Mnem="16Bit" Operation="---" Desc="Rotate 16-Bit Accumulator Left through Carry">
       <Mnemonic Mnem="ROLD" Desc="Rotate Register D Left through Carry" />
       <Mnemonic Mnem="ROLW" Desc="Rotate Register W Left through Carry" />
     </MnemonicGroup>
   </MnemonicGroup>
   <MnemonicGroup Mnem="ROR" Desc="Rotate Value Right">
-    <MnemonicGroup Mnem="8 Bit" Operation="---" Desc="Rotate 8-Bit Accumulator or Memory Byte Right through Carry">
+    <MnemonicGroup Mnem="8Bit" Operation="---" Desc="Rotate 8-Bit Accumulator or Memory Byte Right through Carry">
       <Mnemonic Mnem="ROR" Desc="Rotate Memory Byte Right through Carry" />
       <Mnemonic Mnem="RORA" Desc="Rotate Accumulator A Right through Carry" />
       <Mnemonic Mnem="RORB" Desc="Rotate Accumulator B Right through Carry" />
     </MnemonicGroup>
-    <MnemonicGroup Mnem="16 Bit" Operation="---" Desc="Rotate 16-Bit Accumulator Right through Carry">
+    <MnemonicGroup Mnem="16Bit" Operation="---" Desc="Rotate 16-Bit Accumulator Right through Carry">
       <Mnemonic Mnem="RORD" Desc="Rotate Register D Right through Carry" />
       <Mnemonic Mnem="RORW" Desc="Rotate Register W Right through Carry" />
     </MnemonicGroup>
@@ -292,7 +292,7 @@
     <Mnemonic Mnem="RTS" Operation="PC &lt;= (S:S+1); S &lt;= S + 2" Desc="Return from Subroutine" />
   </MnemonicGroup>
   <MnemonicGroup Mnem="SBC" Desc="Subtract two Values and Carry">
-    <MnemonicGroup Mnem="8 Bit" Operation="r &lt;= r - IMM8|(M) - C" Desc="Subtract Memory Byte and Carry from Accumulator A or B">
+    <MnemonicGroup Mnem="8Bit" Operation="r &lt;= r - IMM8|(M) - C" Desc="Subtract Memory Byte and Carry from Accumulator A or B">
       <Mnemonic Mnem="SBCA" Desc="Subtract Memory Byte and Carry from Accumulator A" />
       <Mnemonic Mnem="SBCB" Desc="Subtract Memory Byte and Carry from Accumulator B" />
     </MnemonicGroup>
@@ -304,13 +304,13 @@
     <Mnemonic Mnem="SEXW" Operation="---" Desc="Sign Extend a 16-bit Value in W to a 32-bit Value in Q" />
   </MnemonicGroup>
   <MnemonicGroup Mnem="ST" Desc="Store Value">
-    <MnemonicGroup Mnem="8 Bit" Operation="(M) &lt;= r" Desc="Store 8-Bit Accumulator to Memory">
+    <MnemonicGroup Mnem="8Bit" Operation="(M) &lt;= r" Desc="Store 8-Bit Accumulator to Memory">
       <Mnemonic Mnem="STA" Desc="Store Accumulator A to Memory" />
       <Mnemonic Mnem="STB" Desc="Store Accumulator B to Memory" />
       <Mnemonic Mnem="STE" Desc="Store Accumulator E to Memory" HD6309="True" />
       <Mnemonic Mnem="STF" Desc="Store Accumulator F to Memory" HD6309="True" />
     </MnemonicGroup>
-    <MnemonicGroup Mnem="16 Bit" Operation="(M:M+1) &lt;= r" Desc="Store 16-Bit Register to Memory">
+    <MnemonicGroup Mnem="16Bit" Operation="(M:M+1) &lt;= r" Desc="Store 16-Bit Register to Memory">
       <Mnemonic Mnem="STD" Desc="Store Register D to Memory" />
       <Mnemonic Mnem="STS" Desc="Store Register S to Memory" />
       <Mnemonic Mnem="STU" Desc="Store Register U to Memory" />
@@ -321,13 +321,13 @@
     <Mnemonic Mnem="STQ" Operation="(M:M+3) &lt;= Q" Desc="Store Contents of Accumulator Q to Memory" />
   </MnemonicGroup>
   <MnemonicGroup Mnem="SUB" Desc="Subtract two Values">
-    <MnemonicGroup Mnem="8 Bit" Operation="r &lt;= r - IMM8|(M)" Desc="Subtract from value in 8-Bit Accumulator">
+    <MnemonicGroup Mnem="8Bit" Operation="r &lt;= r - IMM8|(M)" Desc="Subtract from value in 8-Bit Accumulator">
       <Mnemonic Mnem="SUBA" Desc="Subtract from value in Accumulator A" />
       <Mnemonic Mnem="SUBB" Desc="Subtract from value in Accumulator B" />
       <Mnemonic Mnem="SUBE" Desc="Subtract from value in Accumulator E" HD6309="True" />
       <Mnemonic Mnem="SUBF" Desc="Subtract from value in Accumulator F" HD6309="True" />
     </MnemonicGroup>
-    <MnemonicGroup Mnem="16 Bit" Operation="r &lt;= r - IMM16|(M:M+1)" Desc="Subtract from value in 16-Bit Accumulator">
+    <MnemonicGroup Mnem="16Bit" Operation="r &lt;= r - IMM16|(M:M+1)" Desc="Subtract from value in 16-Bit Accumulator">
       <Mnemonic Mnem="SUBD" Desc="Subtract from value in Register D" />
       <Mnemonic Mnem="SUBW" Desc="Subtract from value in Register W" HD6309="True" />
     </MnemonicGroup>
@@ -340,7 +340,7 @@
     <Mnemonic Mnem="TFR" Operation="r0 =&gt; r1" Desc="Transfer Register to Register" />
   </MnemonicGroup>
   <MnemonicGroup Mnem="TST" Desc="Test Value">
-    <MnemonicGroup Mnem="accumulator" Operation="TEMP &lt;= r" Desc="Test Value in Accumulator">
+    <MnemonicGroup Mnem="Accumulator" Operation="TEMP &lt;= r" Desc="Test Value in Accumulator">
       <Mnemonic Mnem="TSTA" Desc="Test Value in Accumulator A" />
       <Mnemonic Mnem="TSTB" Desc="Test Value in Accumulator B" />
       <Mnemonic Mnem="TSTD" Desc="Test Value in Register D" HD6309="True" />

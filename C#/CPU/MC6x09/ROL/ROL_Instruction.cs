@@ -6,6 +6,11 @@ namespace CPU.MC6x09
 {
 	public class ROL_Instruction : Instruction 
 	{
+		public ROL_Instruction(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override string Mnemonic { get { return "ROL"; } }
 	}
 }

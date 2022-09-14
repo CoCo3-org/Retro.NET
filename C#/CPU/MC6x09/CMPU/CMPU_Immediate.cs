@@ -6,6 +6,11 @@ namespace CPU.MC6x09
 {
 	public class CMPU_Immediate : CMPU_Instruction, IImmediate 
 	{
+		public CMPU_Immediate(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override byte? PreByte { get { return 0x11; } }
 		public override byte OpCode { get { return 0x83; } }
 	}

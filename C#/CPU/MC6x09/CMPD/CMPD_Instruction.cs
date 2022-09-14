@@ -6,6 +6,11 @@ namespace CPU.MC6x09
 {
 	public class CMPD_Instruction : Instruction 
 	{
+		public CMPD_Instruction(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override string Mnemonic { get { return "CMPD"; } }
 	}
 }

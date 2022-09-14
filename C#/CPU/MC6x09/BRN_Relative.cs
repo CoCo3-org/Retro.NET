@@ -6,6 +6,11 @@ namespace CPU.MC6x09
 {
 	public class BRN_Relative : Instruction, IRelative 
 	{
+		public BRN_Relative(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override byte OpCode { get { return 0x21; } }
 
 		public override string Mnemonic { get { return "BRN"; } }

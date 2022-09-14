@@ -6,6 +6,11 @@ namespace CPU.MC6x09
 {
 	public class BITD_Immediate : BITD_Instruction, IImmediate 
 	{
+		public BITD_Immediate(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override byte? PreByte { get { return 0x10; } }
 		public override byte OpCode { get { return 0x85; } }
 	}

@@ -6,6 +6,11 @@ namespace CPU.MC6x09
 {
 	public class STD_Instruction : Instruction 
 	{
+		public STD_Instruction(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override string Mnemonic { get { return "STD"; } }
 	}
 }

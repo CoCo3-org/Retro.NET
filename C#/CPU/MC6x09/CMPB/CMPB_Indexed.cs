@@ -6,6 +6,11 @@ namespace CPU.MC6x09
 {
 	public class CMPB_Indexed : CMPB_Instruction, IIndexed 
 	{
+		public CMPB_Indexed(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override byte OpCode { get { return 0xE1; } }
 	}
 }

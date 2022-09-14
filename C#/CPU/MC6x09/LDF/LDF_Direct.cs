@@ -6,6 +6,11 @@ namespace CPU.MC6x09
 {
 	public class LDF_Direct : LDF_Instruction, IDirect 
 	{
+		public LDF_Direct(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override byte? PreByte { get { return 0x11; } }
 		public override byte OpCode { get { return 0xD6; } }
 	}

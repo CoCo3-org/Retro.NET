@@ -6,6 +6,11 @@ namespace CPU.MC680x
 {
 	public class NEG_Indexed : NEG_Instruction, IIndexed
 	{
+		public NEG_Indexed(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override byte OpCode { get { return 0x60; } }
 	}
 }

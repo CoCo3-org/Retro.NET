@@ -6,6 +6,11 @@ namespace CPU.MC680x
 {
 	public class LDS_Direct : LDS_Instruction, IDirect
 	{
+		public LDS_Direct(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override byte OpCode { get { return 0x9E; } }
 	}
 }

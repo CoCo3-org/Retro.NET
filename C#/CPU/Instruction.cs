@@ -6,6 +6,12 @@ namespace CPU
 {
 	public class Instruction : CodeLine
 	{
+		public Instruction(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+
+		}
+
 		public virtual byte? PreByte { get { return null; } }
 		public virtual byte OpCode { get { throw new NotImplementedException("Type: " + this.GetType()); } } 
 

@@ -1,43 +1,112 @@
 ------------------------------------
--- 
+-- 6809 JS
 ------------------------------------
 
+Motorola 6809 emulator in JavaScript
+https://github.com/maly/6809js
+
+
+------------------------------------
+-- 6502 C#
+------------------------------------
+
+6502 Emulator in C#
+https://github.com/aaronmell/6502Net
+6502Net-master.zip
+Jun 12, 2018
+
+A simple MOS6502 interpreter implementation in C#
+https://github.com/Omnicrash/EMU6502
+EMU6502-master.zip
+Oct 13, 2016
+
+6502 emulator written in C# as a portable class library
+https://github.com/JamesRandall/6502-Emulator
+6502-Emulator-master.zip
+Apr 4, 2014
+
+MOS 6502 Emulator in C#
 https://github.com/joeyrobert/6502.NET
-
+6502.NET-master.zip
+Oct 27, 2009
 
 ------------------------------------
--- 
+-- 6502 JS
 ------------------------------------
 
-Collection of eight-bit processor emulators (for various projects)
-https://github.com/MoleskiCoder/EightBitNet
+A JavaScript 6502 assembler and simulator
+https://github.com/skilldrick/6502js
+Apr 27, 2020
 
-Z80 emulator in C# as a .NET Standard Class Library
-https://github.com/essenbee/z80emu
+A JavaScript NES emulator (JSNES)
+https://github.com/bfirsh/jsnes
+jsnes-master.zip
+Dec 9, 2021
 
-A csharp emulator for the Zilog Z80 CPU
-https://github.com/sklivvz/z80
+A browser UI for JSNES, a JavaScript NES emulator
+https://github.com/bfirsh/jsnes-web
+jsnes-web-master.zip
+Aug 24, 2021
 
-A Zilog Z80 emulator written in C#
-https://github.com/dolbz/Z80Sharp
+Javascript 6502 emulator
+https://github.com/6502/js6502
+Nov 15, 2020
 
-Z80 CPU Emulator written in C#
-https://github.com/hightower70/Z80Emulator
+Cycle-accurate 6502 emulator in Javascript
+https://github.com/Torlus/6502.js
+Apr 25, 2019
 
-An emulator for the Zilog Z80 processor in C#
-https://github.com/PendleCodeMonkey/Z80Emulator
-
-very basic z80 cpu emulator built using C#
-https://github.com/Feras94/z80_emulator
+------------------------------------
+-- Z80 C# 
+------------------------------------
 
 An emulator for the VZ200/VZ300 Z80 8-bit CPU based Computer. Written in c#
 https://github.com/PaulAnderson/VzEmulator
+VzEmulator-master.zip
+Aug 2, 2022
+
+An emulator for the Zilog Z80 processor in C#
+https://github.com/PendleCodeMonkey/Z80Emulator
+Z80Emulator-main.zip
+Oct 21, 2021
+
+A Zilog Z80 emulator written in C#
+https://github.com/dolbz/Z80Sharp
+Z80Sharp-main.zip
+Mar 6, 2021
+
+Collection of eight-bit processor emulators (for various projects)
+https://github.com/MoleskiCoder/EightBitNet
+EightBitNet-master.zip
+Jul 14, 2020
+
+Z80 emulator in C# as a .NET Standard Class Library
+https://github.com/essenbee/z80emu
+z80emu-master.zip
+Jun 25, 2020
+
+A csharp emulator for the Zilog Z80 CPU
+https://github.com/sklivvz/z80
+z80-master.zip
+Jan 31, 2020
 
 Cycle-accurate Z80 emulator written in C#
 https://github.com/wchill/Z80Sharp
+Z80Sharp-master.zip
+May 22, 2019
+
+Z80 CPU Emulator written in C#
+https://github.com/hightower70/Z80Emulator
+Z80Emulator-master.zip
+Apr 6, 2019
+
+very basic z80 cpu emulator built using C#
+https://github.com/Feras94/z80_emulator
+z80_emulator-master.zip
+Apr 23, 2016
 
 ------------------------------------
--- C
+-- Z80 C 
 ------------------------------------
 A highly portable (C) Zilog Z80 cpu emulator 
 https://github.com/GiovanniScotti/z80cpuEmulator
@@ -46,7 +115,7 @@ A Zilog Z80 and Intel 8080 systems emulation
 https://github.com/udo-munk/z80pack
 
 ------------------------------------
--- 
+-- Z80 Python
 ------------------------------------
 
 A Simple Emulator for the Zilog Z80 written in python

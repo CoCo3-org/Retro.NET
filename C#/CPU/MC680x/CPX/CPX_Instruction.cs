@@ -6,6 +6,11 @@ namespace CPU.MC680x
 {
 	public class CPX_Instruction : Instruction
 	{
+		public CPX_Instruction(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override string Mnemonic { get { return "CPX"; } }
 	}
 }

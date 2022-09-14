@@ -6,6 +6,11 @@ namespace CPU.MC6x09
 {
 	public class DIVQ_Immediate : DIVQ_Instruction, IImmediate 
 	{
+		public DIVQ_Immediate(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override byte? PreByte { get { return 0x11; } }
 		public override byte OpCode { get { return 0x8E; } }
 	}

@@ -6,6 +6,11 @@ namespace CPU.MC6x09
 {
 	public class CMPW_Direct : CMPW_Instruction, IDirect 
 	{
+		public CMPW_Direct(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override byte? PreByte { get { return 0x10; } }
 		public override byte OpCode { get { return 0x91; } }
 	}

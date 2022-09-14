@@ -6,6 +6,11 @@ namespace CPU.MC6x09
 {
 	public class TST_Direct : TST_Instruction, IDirect 
 	{
+		public TST_Direct(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override byte OpCode { get { return 0x0D; } }
 	}
 }

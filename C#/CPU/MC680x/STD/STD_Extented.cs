@@ -6,6 +6,11 @@ namespace CPU.MC680x
 {
 	public class STD_Extended : STD_Instruction, IExtended
 	{
+		public STD_Extended(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override byte OpCode { get { return 0xFD; } }
 	}
 }

@@ -6,6 +6,11 @@ namespace CPU.MC6x09
 {
 	public class SUBE_Extended : SUBE_Instruction, IExtended 
 	{
+		public SUBE_Extended(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override byte? PreByte { get { return 0x11; } }
 		public override byte OpCode { get { return 0xB0; } }
 	}

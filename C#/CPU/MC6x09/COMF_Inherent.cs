@@ -6,6 +6,11 @@ namespace CPU.MC6x09
 {
 	public class COMF_Inherent : Instruction, IInherent 
 	{
+		public COMF_Inherent(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override byte? PreByte { get { return 0x11; } }
 		public override byte OpCode { get { return 0x53; } }
 

@@ -6,6 +6,11 @@ namespace CPU.MC6x09
 {
 	public class STX_Direct : STX_Instruction, IDirect 
 	{
+		public STX_Direct(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override byte OpCode { get { return 0x9F; } }
 	}
 }

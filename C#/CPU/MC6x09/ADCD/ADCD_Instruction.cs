@@ -6,6 +6,11 @@ namespace CPU.MC6x09
 {
 	public class ADCD_Instruction : Instruction 
 	{
+		public ADCD_Instruction(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override string Mnemonic { get { return "ADCD"; } }
 	}
 }

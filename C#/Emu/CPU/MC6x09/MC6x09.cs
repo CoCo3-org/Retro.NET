@@ -59,12 +59,12 @@ namespace Emu.CPU.MC6x09
             this.Init_Instructionst11();
         }
 
-        private int makeSignedByte(int x) 
+        private int MakeSignedByte(int x) 
         {
             return x << 24 >> 24;
         }
 
-        private int makeSignedWord(int x) 
+        private int MakeSignedWord(int x) 
         {
             return x << 16 >> 16;
         }
@@ -81,8 +81,8 @@ namespace Emu.CPU.MC6x09
             return (((a ^ b ^ r ^ (r >> 1)) & 0x8000) >> 14);
         }
 
-        private bool debug = false;
-        private string hex(int v, int width) 
+        private bool _debug = false;
+        private string Hex(int v, int width) 
         {
             // JAR_NOTE: check ... 
             var s = v.ToString("X4");
@@ -94,39 +94,39 @@ namespace Emu.CPU.MC6x09
             return s;
         }
 
-        private void dumpmem(int addr, int count) 
+        private void Dumpmem(int addr, int count) 
         {
             for (var a = addr; a < addr + count; a++)
             {
-                Console.WriteLine(a.ToString("X4") + " " + this.hex(this.M6809ReadByte(a), 2));
+                Console.WriteLine(a.ToString("X4") + " " + this.Hex(this.M6809ReadByte(a), 2));
             }
         }
 
-        private void dumpstack(int count) 
+        private void Dumpstack(int count) 
         {
             var addr = this.regS;
             for (var i = 0; i < count; i++)
             {
-                Console.WriteLine(this.hex(this.M6809ReadWord(addr), 4));
+                Console.WriteLine(this.Hex(this.M6809ReadWord(addr), 4));
                 addr += 2;
             }
         }
 
-        private string stateToString() 
+        private string StateToString() 
         {
-            return "pc:" + this.hex(this.regPC, 4) +
-                " s:" + this.hex(this.regS, 4) +
-                " u:" + this.hex(this.regU, 4) +
-                " x:" + this.hex(this.regX, 4) +
-                " y:" + this.hex(this.regY, 4) +
-                " a:" + this.hex(this.regA, 2) +
-                " b:" + this.hex(this.regB, 2) +
-                " d:" + this.hex(this.getRegD(), 4) +
-                " dp:" + this.hex(this.regDP, 2) +
-                " cc:" + this.flagsToString();
+            return "pc:" + this.Hex(this.regPC, 4) +
+                " s:" + this.Hex(this.regS, 4) +
+                " u:" + this.Hex(this.regU, 4) +
+                " x:" + this.Hex(this.regX, 4) +
+                " y:" + this.Hex(this.regY, 4) +
+                " a:" + this.Hex(this.regA, 2) +
+                " b:" + this.Hex(this.regB, 2) +
+                " d:" + this.Hex(this.getRegD(), 4) +
+                " dp:" + this.Hex(this.regDP, 2) +
+                " cc:" + this.FlagsToString();
         }
 
-        private string nextOp() 
+        private string NextOp() 
         {
             var pc = this.regPC;
 
@@ -146,7 +146,7 @@ namespace Emu.CPU.MC6x09
             return mn[nextop];
         }
 
-        private string state() 
+        private string State() 
         {
             var pc = this.regPC;
 
@@ -164,27 +164,27 @@ namespace Emu.CPU.MC6x09
                 nextop = this.M6809ReadByte(++pc);
             }
 
-            var ret = this.hex(pc, 4) + " " +
+            var ret = this.Hex(pc, 4) + " " +
                 mn[nextop] + " " +
-                this.hex(this.readByteROM(pc + 1), 2) + " " +
-                this.hex(this.readByteROM(pc + 2), 2) + " ";
+                this.Hex(this.ReadByteROM(pc + 1), 2) + " " +
+                this.Hex(this.ReadByteROM(pc + 2), 2) + " ";
 
             ret +=
-            " s:" + this.hex(this.regS, 4) +
-            " u:" + this.hex(this.regU, 4) +
-            " x:" + this.hex(this.regX, 4) +
-            " y:" + this.hex(this.regY, 4) +
-            " a:" + this.hex(this.regA, 2) +
-            " b:" + this.hex(this.regB, 2) +
-            " d:" + this.hex(this.getRegD(), 4) +
-            " dp:" + this.hex(this.regDP, 2) +
-            " cc:" + this.flagsToString() +
+            " s:" + this.Hex(this.regS, 4) +
+            " u:" + this.Hex(this.regU, 4) +
+            " x:" + this.Hex(this.regX, 4) +
+            " y:" + this.Hex(this.regY, 4) +
+            " a:" + this.Hex(this.regA, 2) +
+            " b:" + this.Hex(this.regB, 2) +
+            " d:" + this.Hex(this.getRegD(), 4) +
+            " dp:" + this.Hex(this.regDP, 2) +
+            " cc:" + this.FlagsToString() +
             "  [" + this.pcCount + "]";
 
             return ret;
         }
 
-        private string flagsToString() 
+        private string FlagsToString() 
         {
             return (((this.regCC & (int)F.NEGATIVE) != 0) ? "N" : "-") +
                 (((this.regCC & (int)F.ZERO) != 0) ? "Z" : "-") +
@@ -196,7 +196,7 @@ namespace Emu.CPU.MC6x09
                 (((this.regCC & (int)F.ENTIRE) != 0) ? "E" : "-");
         }
 
-        private void execute(int iClocks, int interruptRequest, int breakpoint) 
+        private void Execute(int iClocks, int interruptRequest, int breakpoint) 
         {
             this.iClocks = iClocks;
             if ((breakpoint != 0))
@@ -214,9 +214,9 @@ namespace Emu.CPU.MC6x09
                     break;
                 }
 
-                interruptRequest = this.handleIRQ(interruptRequest);
+                interruptRequest = this.HandleIRQ(interruptRequest);
 
-                var mn = this.nextOp();
+                var mn = this.NextOp();
                 // JAR_NOTE: fix 
                 //if (this.counts.hasOwnProperty(mn))
                 //{
@@ -230,7 +230,7 @@ namespace Emu.CPU.MC6x09
 
                 var ucOpcode = this.NextPCByte();
                 this.iClocks -= _mc6809Cycles[ucOpcode]; /* Subtract execution time */
-                if (this.debug)
+                if (this._debug)
                     Console.WriteLine((this.regPC - 1).ToString("X4") + ": " + this._mnemonics[ucOpcode]);
 
                 var instruction = this._instructions[ucOpcode];
@@ -247,7 +247,7 @@ namespace Emu.CPU.MC6x09
             }
         }
 
-        private int readByteROM(int addr) 
+        private int ReadByteROM(int addr) 
         {
             // JAR_NOTE: Finish!! 
             // var ucByte = this.mem[MEM_ROM + addr];
@@ -269,7 +269,7 @@ namespace Emu.CPU.MC6x09
             this.regDP = 0;
             this.regCC = (int)(F.FIRQMASK | F.IRQMASK);
             this.regPC = 0;
-            this._goto((this.readByteROM(0xFFFF) << 8) | this.readByteROM(0xFFFF));
+            this._goto((this.ReadByteROM(0xFFFF) << 8) | this.ReadByteROM(0xFFFF));
         }
 
         private void SetStackAddress(int addr)
@@ -277,12 +277,12 @@ namespace Emu.CPU.MC6x09
             this.stackAddress = addr;
         }
 
-        private void loadMemory(byte[] bytes, int addr)
+        private void LoadMemory(byte[] bytes, int addr)
         {
             // JAR_NOTE: Finish!! 
         }
 
-        private void setMemoryMap(byte[] map)
+        private void SetMemoryMap(byte[] map)
         {
             // JAR_NOTE: Finish!! 
         }
@@ -356,7 +356,7 @@ namespace Emu.CPU.MC6x09
             this.M6809WriteByte(addr + 1, usWord);
         }
 
-        private void pushByte(int ucByte, bool user) 
+        private void PushByte(int ucByte, bool user) 
         {
             var addr = user ? --this.regU : --this.regS;
             this.M6809WriteByte(addr, ucByte);
@@ -364,12 +364,12 @@ namespace Emu.CPU.MC6x09
 
         private void M6809PUSHBU(int ucByte) 
         {
-            this.pushByte(ucByte, true);
+            this.PushByte(ucByte, true);
         }
 
         private void M6809PUSHB(int ucByte) 
         {
-            this.pushByte(ucByte, false);
+            this.PushByte(ucByte, false);
         }
 
         private void M6809PUSHW(int usWord) 
@@ -386,7 +386,7 @@ namespace Emu.CPU.MC6x09
             this.M6809PUSHBU(usWord >> 8);
         }
 
-        private int pullByte(bool user) 
+        private int PullByte(bool user) 
         {
             var addr = user ? this.regU : this.regS;
             var val = this.M6809ReadByte(addr);
@@ -397,12 +397,12 @@ namespace Emu.CPU.MC6x09
 
         private int M6809PULLB() 
         {
-            return this.pullByte(false);
+            return this.PullByte(false);
         }
 
         private int M6809PULLBU() 
         {
-            return this.pullByte(true);
+            return this.PullByte(true);
         }
 
         private int M6809PULLW() 
@@ -419,13 +419,13 @@ namespace Emu.CPU.MC6x09
             return hi << 8 | lo;
         }
 
-        private int get_pReg(string pReg) 
+        private int Get_pReg(string pReg) 
         {
             // JAR_NOTE: FINISH!!!
             return -1;
         }
 
-        private void set_pReg(string pReg, int val) 
+        private void Set_pReg(string pReg, int val) 
         {
             // JAR_NOTE: FINISH!!!
             // return -1;
@@ -460,40 +460,40 @@ namespace Emu.CPU.MC6x09
                 if (sByte > 15) /* Two's complement 5-bit value */
                     sByte -= 32;
                 this.iClocks -= 1;
-                return get_pReg(pReg) + sByte;
+                return Get_pReg(pReg) + sByte;
             }
 
             switch (ucPostByte & 0xf)
             {
                 case 0: /* EA = ,reg+ */
-                    usAddr = get_pReg(pReg);
-                    set_pReg(pReg, get_pReg(pReg) + 1);
+                    usAddr = Get_pReg(pReg);
+                    Set_pReg(pReg, Get_pReg(pReg) + 1);
                     this.iClocks -= 2;
                     break;
                 case 1: /* EA = ,reg++ */
-                    usAddr = get_pReg(pReg);
-                    set_pReg(pReg, get_pReg(pReg) + 2);
+                    usAddr = Get_pReg(pReg);
+                    Set_pReg(pReg, Get_pReg(pReg) + 2);
                     this.iClocks -= 3;
                     break;
                 case 2: /* EA = ,-reg */
-                    set_pReg(pReg, get_pReg(pReg) - 1);
-                    usAddr = get_pReg(pReg);
+                    Set_pReg(pReg, Get_pReg(pReg) - 1);
+                    usAddr = Get_pReg(pReg);
                     this.iClocks -= 2;
                     break;
                 case 3: /* EA = ,--reg */
-                    set_pReg(pReg, get_pReg(pReg) - 2);
-                    usAddr = get_pReg(pReg);
+                    Set_pReg(pReg, Get_pReg(pReg) - 2);
+                    usAddr = Get_pReg(pReg);
                     this.iClocks -= 3;
                     break;
                 case 4: /* EA = ,reg */
-                    usAddr = get_pReg(pReg);
+                    usAddr = Get_pReg(pReg);
                     break;
                 case 5: /* EA = ,reg + B */
-                    usAddr = get_pReg(pReg) + makeSignedByte(this.regB);
+                    usAddr = Get_pReg(pReg) + MakeSignedByte(this.regB);
                     this.iClocks -= 1;
                     break;
                 case 6: /* EA = ,reg + A */
-                    usAddr = get_pReg(pReg) + makeSignedByte(this.regA);
+                    usAddr = Get_pReg(pReg) + MakeSignedByte(this.regA);
                     this.iClocks -= 1;
                     break;
                 case 7: /* illegal */
@@ -502,11 +502,11 @@ namespace Emu.CPU.MC6x09
                     usAddr = 0;
                     break;
                 case 8: /* EA = ,reg + 8-bit offset */
-                    usAddr = get_pReg(pReg) + makeSignedByte(this.NextPCByte());
+                    usAddr = Get_pReg(pReg) + MakeSignedByte(this.NextPCByte());
                     this.iClocks -= 1;
                     break;
                 case 9: /* EA = ,reg + 16-bit offset */
-                    usAddr = get_pReg(pReg) + makeSignedWord(this.NextPCWord());
+                    usAddr = Get_pReg(pReg) + MakeSignedWord(this.NextPCWord());
                     this.iClocks -= 4;
                     break;
                 case 0xA: /* illegal */
@@ -516,15 +516,15 @@ namespace Emu.CPU.MC6x09
                     break;
                 case 0xB: /* EA = ,reg + D */
                     this.iClocks -= 4;
-                    usAddr = get_pReg(pReg) + this.getRegD();
+                    usAddr = Get_pReg(pReg) + this.getRegD();
                     break;
                 case 0xC: /* EA = PC + 8-bit offset */
-                    sTemp = makeSignedByte(this.NextPCByte());
+                    sTemp = MakeSignedByte(this.NextPCByte());
                     usAddr = this.regPC + sTemp;
                     this.iClocks -= 1;
                     break;
                 case 0xD: /* EA = PC + 16-bit offset */
-                    sTemp = makeSignedWord(this.NextPCWord());
+                    sTemp = MakeSignedWord(this.NextPCWord());
                     usAddr = this.regPC + sTemp;
                     this.iClocks -= 5;
                     break;
@@ -733,7 +733,7 @@ namespace Emu.CPU.MC6x09
             this.iClocks -= i; /* Add extra clock cycles (1 per byte) */
         }
 
-        private int handleIRQ(int interruptRequest) 
+        private int HandleIRQ(int interruptRequest) 
         {
             /* NMI is highest priority */
             if ((interruptRequest & INT_NMI) != 0)
@@ -752,7 +752,7 @@ namespace Emu.CPU.MC6x09
                 this.iClocks -= 19;
                 this._goto(this.M6809ReadWord(0xFFFC));
                 interruptRequest &= ~INT_NMI; /* clear this bit */
-                Console.WriteLine(this.state());
+                Console.WriteLine(this.State());
                 return interruptRequest;
             }
             /* Fast IRQ is next priority */
@@ -766,7 +766,7 @@ namespace Emu.CPU.MC6x09
                 this.regCC |= (int)(F.FIRQMASK | F.IRQMASK); /* Mask interrupts during service routine */
                 this.iClocks -= 10;
                 this._goto(this.M6809ReadWord(0xFFF6));
-                Console.WriteLine(this.state());
+                Console.WriteLine(this.State());
                 return interruptRequest;
             }
             /* IRQ is lowest priority */
@@ -786,7 +786,7 @@ namespace Emu.CPU.MC6x09
                 this._goto(this.M6809ReadWord(0xFFF8));
                 interruptRequest &= ~INT_IRQ; /* clear this bit */
                 this.iClocks -= 19;
-                Console.WriteLine(this.state());
+                Console.WriteLine(this.State());
                 return interruptRequest;
             }
             return interruptRequest;
@@ -794,8 +794,8 @@ namespace Emu.CPU.MC6x09
 
         private void ToggleDebug() 
         {
-            this.debug = !this.debug;
-            Console.WriteLine("debug " + this.debug);
+            this._debug = !this._debug;
+            Console.WriteLine("debug " + this._debug);
         }
 
         private void _goto(int usAddr) 
@@ -1062,106 +1062,106 @@ namespace Emu.CPU.MC6x09
             return sTemp & 0xFF;
         }
 
-        private int dpAddr()
+        private int DpAddr()
         {
             return (this.regDP << 8) + this.NextPCByte();
         }
 
-        private void dpOp() // func: (val: int) => int
+        private void DpOp() // func: (val: int) => int
         {
         }
 
         /* direct page addressing */
         private void NEG_Direct() // 0x00: /* NEG - direct */
         {
-            var addr = this.dpAddr();
+            var addr = this.DpAddr();
             var val = this.M6809ReadByte(addr);
             this.M6809WriteByte(addr, this._neg(val));
         }
 
         private void COM_Direct() // 0x03: /* COM - direct */
         {
-            var addr = this.dpAddr();
+            var addr = this.DpAddr();
             var val = this.M6809ReadByte(addr);
             this.M6809WriteByte(addr, this._com(val));
         }
 
         private void LSR_Direct() // 0x04: /* LSR - direct */
         {
-            var addr = this.dpAddr();
+            var addr = this.DpAddr();
             var val = this.M6809ReadByte(addr);
             this.M6809WriteByte(addr, this._lsr(val));
         }
 
         private void ROR_Direct() // 0x06: /* ROR - direct */
         {
-            var addr = this.dpAddr();
+            var addr = this.DpAddr();
             var val = this.M6809ReadByte(addr);
             this.M6809WriteByte(addr, this._ror(val));
         }
 
         private void ASR_Direct() // 0x07: /* ASR - direct */
         {
-            var addr = this.dpAddr();
+            var addr = this.DpAddr();
             var val = this.M6809ReadByte(addr);
             this.M6809WriteByte(addr, this._asr(val));
         }
 
         private void ASL_Direct() // 0x08: /* ASL/LSL - direct */
         {
-            var addr = this.dpAddr();
+            var addr = this.DpAddr();
             var val = this.M6809ReadByte(addr);
             this.M6809WriteByte(addr, this._asl(val));
         }
 
         private void ROL_Direct() // 0x09: /* ROL - direct */
         {
-            var addr = this.dpAddr();
+            var addr = this.DpAddr();
             var val = this.M6809ReadByte(addr);
             this.M6809WriteByte(addr, this._rol(val));
         }
 
         private void DEC_Direct() // 0x0A: /* DEC - direct */
         {
-            var addr = this.dpAddr();
+            var addr = this.DpAddr();
             var val = this.M6809ReadByte(addr);
             this.M6809WriteByte(addr, this._dec(val));
         }
 
         private void INC_Direct() // 0x0C: /* INC - direct */
         {
-            var addr = this.dpAddr();
+            var addr = this.DpAddr();
             var val = this.M6809ReadByte(addr);
             this.M6809WriteByte(addr, this._inc(val));
         }
 
         private void TST_Direct() // 0x0D: /* TST - direct */
         {
-            var addr = this.dpAddr();
+            var addr = this.DpAddr();
             var val = this.M6809ReadByte(addr);
             this.M6809WriteByte(addr, this._tst(val));
         }
 
         private void JMP_Direct() // 0x0E: /* JMP - direct */
         {
-            this._goto(this.dpAddr());
+            this._goto(this.DpAddr());
         }
 
         private void CLR_Direct() // 0x0F: /* CLR - direct */
         {
-            this._clr(this.dpAddr());
+            this._clr(this.DpAddr());
         }
 
         /* P10  extended Op codes */
 
-        private void lbrn() // 0x1021: /* LBRN - Relative */
+        private void LBRN_Relative() // 0x1021: /* LBRN - relative */
         {
             this.regPC += 2;
         }
 
-        private void lbhi() // 0x1022: /* LBHI - Relative */
+        private void LBHI_Relative() // 0x1022: /* LBHI - relative */
         {
-            var sTemp = makeSignedWord(this.NextPCWord());
+            var sTemp = MakeSignedWord(this.NextPCWord());
             if (!((this.regCC & (int)(F.CARRY | F.ZERO)) != 0))
             {
                 this.iClocks -= 1; /* Extra clock if branch taken */
@@ -1169,9 +1169,9 @@ namespace Emu.CPU.MC6x09
             }
         }
 
-        private void lbls() // 0x1023: /* LBLS */
+        private void LBLS_Relative() // 0x1023: /* LBLS - relative */
         {
-            var sTemp = makeSignedWord(this.NextPCWord());
+            var sTemp = MakeSignedWord(this.NextPCWord());
             if ((this.regCC & (int)(F.CARRY | F.ZERO)) != 0)
             {
                 this.iClocks -= 1; /* Extra clock if branch taken */
@@ -1179,9 +1179,9 @@ namespace Emu.CPU.MC6x09
             }
         }
 
-        private void lbcc() // 0x1024: /* LBHS/LBCC */
+        private void LBCC_Relative() // 0x1024: /* LBHS/LBCC - relative */
         {
-            var sTemp = makeSignedWord(this.NextPCWord());
+            var sTemp = MakeSignedWord(this.NextPCWord());
             if (!((this.regCC & (int)F.CARRY) != 0))
             {
                 this.iClocks -= 1; /* Extra clock if branch taken */
@@ -1189,9 +1189,9 @@ namespace Emu.CPU.MC6x09
             }
         }
 
-        private void lbcs() // 0x1025: /* LBLO/LBCS */
+        private void LBCS_Relative() // 0x1025: /* LBLO/LBCS - relative */
         {
-            var sTemp = makeSignedWord(this.NextPCWord());
+            var sTemp = MakeSignedWord(this.NextPCWord());
             if ((this.regCC & (int)F.CARRY) != 0)
             {
                 this.iClocks -= 1; /* Extra clock if branch taken */
@@ -1199,9 +1199,9 @@ namespace Emu.CPU.MC6x09
             }
         }
 
-        private void lbne() // 0x1026: /* LBNE */
+        private void LBNE_Relative() // 0x1026: /* LBNE - relative */
         {
-            var sTemp = makeSignedWord(this.NextPCWord());
+            var sTemp = MakeSignedWord(this.NextPCWord());
             if (!((this.regCC & (int)F.ZERO) != 0))
             {
                 this.iClocks -= 1; /* Extra clock if branch taken */
@@ -1209,9 +1209,9 @@ namespace Emu.CPU.MC6x09
             }
         }
 
-        private void lbeq() // 0x1027: /* LBEQ */
+        private void LBEQ_Relative() // 0x1027: /* LBEQ - relative */
         {
-            var sTemp = makeSignedWord(this.NextPCWord());
+            var sTemp = MakeSignedWord(this.NextPCWord());
             if ((this.regCC & (int)F.ZERO) != 0)
             {
                 this.iClocks -= 1; /* Extra clock if branch taken */
@@ -1219,9 +1219,9 @@ namespace Emu.CPU.MC6x09
             }
         }
 
-        private void lbvc() // 0x1028: /* LBVC */
+        private void LBVC_Relative() // 0x1028: /* LBVC - relative */
         {
-            var sTemp = makeSignedWord(this.NextPCWord());
+            var sTemp = MakeSignedWord(this.NextPCWord());
             if (!((this.regCC & (int)F.OVERFLOW) != 0))
             {
                 this.iClocks -= 1; /* Extra clock if branch taken */
@@ -1229,9 +1229,9 @@ namespace Emu.CPU.MC6x09
             }
         }
 
-        private void lbvs() // 0x1029: /* LBVS */
+        private void LBVS_Relative() // 0x1029: /* LBVS - relative */
         {
-            var sTemp = makeSignedWord(this.NextPCWord());
+            var sTemp = MakeSignedWord(this.NextPCWord());
             if ((this.regCC & (int)F.OVERFLOW) != 0)
             {
                 this.iClocks -= 1; /* Extra clock if branch taken */
@@ -1239,9 +1239,9 @@ namespace Emu.CPU.MC6x09
             }
         }
 
-        private void lbpl() // 0x102A: /* LBPL */
+        private void LBPL_Relative() // 0x102A: /* LBPL - relative */
         {
-            var sTemp = makeSignedWord(this.NextPCWord());
+            var sTemp = MakeSignedWord(this.NextPCWord());
             if (!((this.regCC & (int)F.NEGATIVE) != 0))
             {
                 this.iClocks -= 1; /* Extra clock if branch taken */
@@ -1249,9 +1249,9 @@ namespace Emu.CPU.MC6x09
             }
         }
 
-        private void lbmi() // 0x102B: /* LBMI */
+        private void LBMI_Relative() // 0x102B: /* LBMI - relative */
         {
-            var sTemp = makeSignedWord(this.NextPCWord());
+            var sTemp = MakeSignedWord(this.NextPCWord());
             if ((this.regCC & (int)F.NEGATIVE) != 0)
             {
                 this.iClocks -= 1; /* Extra clock if branch taken */
@@ -1259,9 +1259,9 @@ namespace Emu.CPU.MC6x09
             }
         }
 
-        private void lbge() // 0x102C: /* LBGE */
+        private void LBGE_Relative() // 0x102C: /* LBGE - relative */
         {
-            var sTemp = makeSignedWord(this.NextPCWord());
+            var sTemp = MakeSignedWord(this.NextPCWord());
             if (!(((this.regCC & (int)F.NEGATIVE) ^ (this.regCC & (int)F.OVERFLOW) << 2) != 0))
             {
                 this.iClocks -= 1; /* Extra clock if branch taken */
@@ -1269,9 +1269,9 @@ namespace Emu.CPU.MC6x09
             }
         }
 
-        private void lblt() // 0x102D: /* LBLT */
+        private void LBLT_Relative() // 0x102D: /* LBLT - relative */
         {
-            var sTemp = makeSignedWord(this.NextPCWord());
+            var sTemp = MakeSignedWord(this.NextPCWord());
             if (((this.regCC & (int)F.NEGATIVE) ^ (this.regCC & (int)F.OVERFLOW) << 2) != 0)
             {
                 this.iClocks -= 1; /* Extra clock if branch taken */
@@ -1279,9 +1279,9 @@ namespace Emu.CPU.MC6x09
             }
         }
 
-        private void lbgt() // 0x102E: /* LBGT */
+        private void LBGT_Relative() // 0x102E: /* LBGT - relative */
         {
-            var sTemp = makeSignedWord(this.NextPCWord());
+            var sTemp = MakeSignedWord(this.NextPCWord());
             if (!(((this.regCC & (int)F.NEGATIVE) ^ (this.regCC & (int)F.OVERFLOW) << 2) != 0 || (this.regCC & (int)F.ZERO) != 0))
             {
                 this.iClocks -= 1; /* Extra clock if branch taken */
@@ -1289,9 +1289,9 @@ namespace Emu.CPU.MC6x09
             }
         }
 
-        private void lble() // 0x102F: /* LBLE */
+        private void LBLE_Relative() // 0x102F: /* LBLE - relative */
         {
-            var sTemp = makeSignedWord(this.NextPCWord());
+            var sTemp = MakeSignedWord(this.NextPCWord());
             if (((this.regCC & (int)F.NEGATIVE) ^ (this.regCC & (int)F.OVERFLOW) << 2) != 0 || (this.regCC & (int)F.ZERO) != 0)
             {
                 this.iClocks -= 1; /* Extra clock if branch taken */
@@ -1299,7 +1299,7 @@ namespace Emu.CPU.MC6x09
             }
         }
 
-        private void swi2() // 0x103F: /* SWI2 */
+        private void SWI2_Inherent() // 0x103F: /* SWI2 - inherent */
         {
             this.regCC |= 0x80; /* Entire machine state stacked */
             this.M6809PUSHW(this.regPC);
@@ -1313,7 +1313,7 @@ namespace Emu.CPU.MC6x09
             this._goto(this.M6809ReadWord(0xFFF4));
         }
 
-        private void cmpd() // 0x1083: /* CMPD - immediate*/
+        private void Cmpd() // 0x1083: /* CMPD - immediate*/
         {
             var usTemp = this.NextPCWord();
             this._cmp16(this.getRegD(), usTemp);
@@ -1477,7 +1477,7 @@ namespace Emu.CPU.MC6x09
             this.regCC &= ~(int)F.OVERFLOW;
         }
 
-        private void swi3() // 0x113F: /* SWI3 */
+        private void SWI3_Inherent() // 0x113F: /* SWI3 - inherent */
         {
             this.regCC |= 0x80; /* Set entire flag to indicate whole machine state on stack */
             this.M6809PUSHW(this.regPC);
@@ -1545,26 +1545,26 @@ namespace Emu.CPU.MC6x09
             this._cmp16(this.regS, usTemp);
         }
 
-        private void nop() { }
+        private void nop() { } // 0x12: /* NOP - inherent */
 
-        private void sync() { }
+        private void sync() { } // 0x13: /* SYNC - inherent */
 
-        private void lbra()
+        private void lbra() // 0x16: /* LBRA - relative */
         {
             /* LBRA - relative jump */
-            var sTemp = makeSignedWord(this.NextPCWord());
+            var sTemp = MakeSignedWord(this.NextPCWord());
             this.regPC += sTemp;
         }
 
-        private void lbsr()
+        private void lbsr() // 0x17: /* LBSR - relative */
         {
             /* LBSR - relative call */
-            var sTemp = makeSignedWord(this.NextPCWord());
+            var sTemp = MakeSignedWord(this.NextPCWord());
             this.M6809PUSHW(this.regPC);
             this.regPC += sTemp;
         }
 
-        private void daa()
+        private void daa() // 0x19: /* DAA - inherent */
         {
             int cf = 0;
             int msn = this.regA & 0xf0;
@@ -1580,17 +1580,17 @@ namespace Emu.CPU.MC6x09
             this._flagnz(this.regA);
         }
 
-        private void orcc()
+        private void orcc() // 0x1A: /* ORCC - immediate */
         {
             this.regCC |= this.NextPCByte();
         }
 
-        private void andcc()
+        private void andcc() // 0x1C: /* ANDCC - immediate */
         {
             this.regCC &= this.NextPCByte();
         }
 
-        private void sex()
+        private void sex() // 0x1D: /* SEX - inherent */
         {
             this.regA = ((this.regB & 0x80) != 0) ? 0xFF : 0x00;
             this.regCC &= ~(int)(F.ZERO | F.NEGATIVE);
@@ -1759,46 +1759,46 @@ namespace Emu.CPU.MC6x09
             }
         }
 
-        private void exg()
+        private void exg() // 0x1E: /* EXG - immediate */
         {
             var ucTemp = this.NextPCByte(); /* Get postbyte */
             this.M6809TFREXG(ucTemp, true);
         }
 
-        private void tfr()
+        private void tfr() // 0x1F: /* TFR - immediate */
         {
             var ucTemp = this.NextPCByte(); /* Get postbyte */
             this.M6809TFREXG(ucTemp, false);
         }
 
-        private void bra()
+        private void bra() // 0x20: /* BRA - relative */
         {
-            var offset = makeSignedByte(this.NextPCByte());
+            var offset = MakeSignedByte(this.NextPCByte());
             this.regPC += offset;
         }
 
-        private void brn()
+        private void brn() // 0x21: /* BRN - relative */
         {
             this.regPC++; // never.
         }
 
-        private void bhi()
+        private void bhi() // 0x22: /* BHI - relative */
         {
-            var offset = makeSignedByte(this.NextPCByte());
+            var offset = MakeSignedByte(this.NextPCByte());
             if (!((this.regCC & (int)(F.CARRY | F.ZERO)) != 0))
                 this.regPC += offset;
         }
 
-        private void bls()
+        private void bls() // 0x23: /* BLS - relative */
         {
-            var offset = makeSignedByte(this.NextPCByte());
+            var offset = MakeSignedByte(this.NextPCByte());
             if ((this.regCC & (int)(F.CARRY | F.ZERO)) != 0)
                 this.regPC += offset;
         }
 
         private void branchIf(bool go)
         {
-            var offset = makeSignedByte(this.NextPCByte());
+            var offset = MakeSignedByte(this.NextPCByte());
             if (go)
                 this.regPC += offset;
         }
@@ -1808,73 +1808,73 @@ namespace Emu.CPU.MC6x09
             this.branchIf((this.regCC & flag) == (ifSet ? flag : 0));
         }
 
-        private void bcc()
+        private void bcc() // 0x24: /* BCC - relative */
         {
             this.branch((int)F.CARRY, false);
         }
 
-        private void bcs()
+        private void bcs() // 0x25: /* BCS - relative */
         {
             this.branch((int)F.CARRY, true);
         }
 
-        private void bne()
+        private void bne() // 0x26: /* BNE - relative */
         {
             this.branch((int)F.ZERO, false);
         }
 
-        private void beq()
+        private void beq() // 0x27: /* BEQ - relative */
         {
             this.branch((int)F.ZERO, true);
         }
 
-        private void bvc()
+        private void bvc() // 0x28: /* BVC - relative */
         {
             this.branch((int)F.OVERFLOW, false);
         }
 
-        private void bvs()
+        private void bvs() // 0x29: /* BVS - relative */
         {
             this.branch((int)F.OVERFLOW, true);
         }
 
-        private void bpl()
+        private void bpl() // 0x2A: /* BPL - relative */
         {
             this.branch((int)F.NEGATIVE, false);
         }
 
-        private void bmi()
+        private void bmi() // 0x2B: /* BMI - relative */
         {
             this.branch((int)F.NEGATIVE, true);
         }
 
-        private void bge()
+        private void bge() // 0x2C: /* BGE - relative */
         {
             var go = !(((this.regCC & (int)F.NEGATIVE) ^ (this.regCC & (int)F.OVERFLOW) << 2) == 0);
             this.branchIf(go);
         }
 
-        private void blt()
+        private void blt() // 0x2D: /* BLT - relative */
         {
             var go = (this.regCC & (int)F.NEGATIVE) ^ (this.regCC & (int)F.OVERFLOW) << 2;
             this.branchIf(go != 0);
         }
 
-        private void bgt()
+        private void bgt() // 0x2E: /* BGT - relative */
         {
             var bit = (this.regCC & (int)F.NEGATIVE) ^ (this.regCC & (int)F.OVERFLOW) << 2;
             var go = bit == 0 || (this.regCC & (int)F.ZERO) != 0;
             this.branchIf(go);
         }
 
-        private void ble()
+        private void ble() // 0x2F: /* BLE - relative */
         {
             var bit = (this.regCC & (int)F.NEGATIVE) ^ (this.regCC & (int)F.OVERFLOW) << 2;
             var go = bit != 0 || (this.regCC & (int)F.ZERO) != 0;
             this.branchIf(go);
         }
 
-        private void leax()
+        private void leax() // 0x30: /* LEAX - indexed */
         {
             this.regX = this.M6809PostByte();
             this.regCC &= ~(int)F.ZERO;
@@ -1882,7 +1882,7 @@ namespace Emu.CPU.MC6x09
                 this.regCC |= (int)F.ZERO;
         }
 
-        private void leay()
+        private void leay() // 0x31: /* LEAY - indexed */
         {
             this.regY = this.M6809PostByte();
             this.regCC &= ~(int)F.ZERO;
@@ -1890,51 +1890,51 @@ namespace Emu.CPU.MC6x09
                 this.regCC |= (int)F.ZERO;
         }
 
-        private void leas()
+        private void leas() // 0x32: /* LEAS - indexed */
         {
             this.regS = this.M6809PostByte();
         }
 
-        private void leau()
+        private void leau() // 0x33: /* LEAU - indexed */
         {
             this.regU = this.M6809PostByte();
         }
 
-        private void pshs()
+        private void pshs() // 0x34: /* PSHS - immediate */
         {
             var ucTemp = this.NextPCByte(); /* Get the flags byte */
             this.M6809PSHS(ucTemp);
         }
 
-        private void puls()
+        private void puls() // 0x35: /* PULS - immediate */
         {
             var ucTemp = this.NextPCByte(); /* Get the flags byte */
             this.M6809PULS(ucTemp);
         }
 
-        private void pshu()
+        private void pshu() // 0x36: /* PSHU - immediate */
         {
             var ucTemp = this.NextPCByte(); /* Get the flags byte */
             this.M6809PSHU(ucTemp);
         }
 
-        private void pulu()
+        private void pulu() // 0x37: /* PULU - immediate */
         {
             var ucTemp = this.NextPCByte(); /* Get the flags byte */
             this.M6809PULU(ucTemp);
         }
 
-        private void rts()
+        private void rts() // 0x39: /* RTS - inherent */
         {
             this._goto(this.M6809PULLW());
         }
 
-        private void abx()
+        private void abx() // 0x3A: /* ABX - inherent */
         {
             this.regX += this.regB;
         }
 
-        private void rti()
+        private void rti() // 0x3B: /* RTI - inherent */
         {
             this.regCC = this.M6809PULLB();
             if ((this.regCC & 0x80) != 0) /* Entire machine state stacked? */
@@ -1950,12 +1950,12 @@ namespace Emu.CPU.MC6x09
             this._goto(this.M6809PULLW());
         }
 
-        private void cwai()
+        private void cwai() // 0x3C: /* CWAI - immediate */
         {
             this.regCC &= this.NextPCByte();
         }
 
-        private void mul()
+        private void mul() // 0x3D: /* MUL - inherent */
         {
             var usTemp = this.regA * this.regB;
             if (usTemp != 0)
@@ -1969,7 +1969,7 @@ namespace Emu.CPU.MC6x09
             this.setRegD(usTemp);
         }
 
-        private void swi()
+        private void swi() // 0x3F: /* SWI - inherent */
         {
             this.regCC |= 0x80; /* Indicate whole machine state is stacked */
             this.M6809PUSHW(this.regPC);
@@ -1984,116 +1984,116 @@ namespace Emu.CPU.MC6x09
             this._goto(this.M6809ReadWord(0xFFFA));
         }
 
-        private void nega()
+        private void nega() // 0x40: /* NEGA - inherent */
         {
             this.regA = this._neg(this.regA);
         }
 
-        private void coma()
+        private void coma() // 0x43: /* COMA - inherent */
         {
             this.regA = this._com(this.regA);
         }
 
-        private void lsra()
+        private void lsra() // 0x44: /* LSRA - inherent */
         {
             this.regA = this._lsr(this.regA);
         }
 
-        private void rora()
+        private void rora() // 0x46: /* RORA - inherent */
         {
             this.regA = this._ror(this.regA);
         }
 
-        private void asra()
+        private void asra() // 0x47: /* ASRA - inherent */
         {
             this.regA = this._asr(this.regA);
         }
 
-        private void asla()
+        private void asla() // 0x48: /* ASLA - inherent */
         {
             this.regA = this._asl(this.regA);
         }
 
-        private void rola()
+        private void rola() // 0x49: /* ROLA - inherent */
         {
             this.regA = this._rol(this.regA);
         }
 
-        private void deca()
+        private void deca() // 0x4A: /* DECA - inherent */
         {
             this.regA = this._dec(this.regA);
         }
 
-        private void inca()
+        private void inca() // 0x4C: /* INCA - inherent */
         {
             this.regA = this._inc(this.regA);
         }
 
-        private void tsta()
+        private void tsta() // 0x4D: /* TSTA - inherent */
         {
             this.regCC &= ~(int)(F.ZERO | F.NEGATIVE | F.OVERFLOW);
             this._flagnz(this.regA);
         }
 
-        private void clra()
+        private void clra() // 0x4F: /* CLRA - inherent */
         {
             this.regA = 0;
             this.regCC &= ~(int)(F.NEGATIVE | F.OVERFLOW | F.CARRY);
             this.regCC |= (int)F.ZERO;
         }
 
-        private void negb()
+        private void negb() // 0x50: /* NEGA - inherent */
         {
             this.regB = this._neg(this.regB);
         }
 
-        private void comb()
+        private void comb() // 0x53: /* COMB - inherent */
         {
             this.regB = this._com(this.regB);
         }
 
-        private void lsrb()
+        private void lsrb() // 0x54: /* LSRB - inherent */
         {
             this.regB = this._lsr(this.regB);
         }
 
-        private void rorb()
+        private void rorb() // 0x56: /* RORB - inherent */
         {
             this.regB = this._ror(this.regB);
         }
 
-        private void asrb()
+        private void asrb() // 0x57: /* ASRB - inherent */
         {
             this.regB = this._asr(this.regB);
         }
 
-        private void aslb()
+        private void aslb() // 0x58: /* ASLB - inherent */
         {
             this.regB = this._asl(this.regB);
         }
 
-        private void rolb()
+        private void rolb() // 0x59: /* ROLB - inherent */
         {
             this.regB = this._rol(this.regB);
         }
 
-        private void decb()
+        private void decb() // 0x5A: /* DECB - inherent */
         {
             this.regB = this._dec(this.regB);
         }
 
-        private void incb()
+        private void incb() // 0x5C: /* INCB - inherent */
         {
             this.regB = this._inc(this.regB);
         }
 
-        private void tstb()
+        private void tstb() // 0x5D: /* TSTB - inherent */
         {
             this.regCC &= ~(int)(F.ZERO | F.NEGATIVE | F.OVERFLOW);
             this._flagnz(this.regB);
         }
 
-        private void clrb()
+        private void clrb() // 0x5F: /* CLRB - inherent */
         {
             this.regB = 0;
             this.regCC &= ~(int)(F.NEGATIVE | F.OVERFLOW | F.CARRY);
@@ -2184,31 +2184,31 @@ namespace Emu.CPU.MC6x09
             this.regCC |= (int)F.ZERO;
         }
 
-        private void nege() // 0x70: /* NEG - extended */
+        private void NEG_Extended() // 0x70: /* NEG - extended */
         {
             var usAddr = this.NextPCWord();
             this.M6809WriteByte(usAddr, this._neg(this.M6809ReadByte(usAddr)));
         }
 
-        private void come() // 0x73: /* COM - extended */
+        private void COM_Extended() // 0x73: /* COM - extended */
         {
             var usAddr = this.NextPCWord();
             this.M6809WriteByte(usAddr, this._com(this.M6809ReadByte(usAddr)));
         }
 
-        private void lsre() // 0x74: /* LSR - extended */
+        private void LSR_Extended() // 0x74: /* LSR - extended */
         {
             var usAddr = this.NextPCWord();
             this.M6809WriteByte(usAddr, this._lsr(this.M6809ReadByte(usAddr)));
         }
 
-        private void rore() // 0x76: /* ROR - extended */
+        private void ROR_Extended() // 0x76: /* ROR - extended */
         {
             var usAddr = this.NextPCWord();
             this.M6809WriteByte(usAddr, this._ror(this.M6809ReadByte(usAddr)));
         }
 
-        private void asre() // 0x77: /* ASR - extended */
+        private void ASR_Extended() // 0x77: /* ASR - extended */
         {
             var usAddr = this.NextPCWord();
             this.M6809WriteByte(usAddr, this._asr(this.M6809ReadByte(usAddr)));
@@ -2259,73 +2259,73 @@ namespace Emu.CPU.MC6x09
             this.regCC |= (int)F.ZERO;
         }
 
-        private void suba() // 0x80: /* SUBA - immediate */
+        private void SUBA_Immediate() // 0x80: /* SUBA - immediate */
         {
             this.regA = this._sub(this.regA, this.NextPCByte());
         }
 
-        private void cmpa() // 0x81: /* CMPA - immediate */
+        private void CMPA_Immediate() // 0x81: /* CMPA - immediate */
         {
             var ucTemp = this.NextPCByte();
             this._cmp(this.regA, ucTemp);
         }
 
-        private void sbca() // 0x82: /* SBCA - immediate */
+        private void SBCA_Immediate() // 0x82: /* SBCA - immediate */
         {
             var ucTemp = this.NextPCByte();
             this.regA = this._sbc(this.regA, ucTemp);
         }
 
-        private void subd() // 0x83: /* SUBD - immediate */
+        private void SUBD_Immediate() // 0x83: /* SUBD - immediate */
         {
             var usTemp = this.NextPCWord();
             this.setRegD(this._sub16(this.getRegD(), usTemp));
         }
 
-        private void anda() // 0x84: /* ANDA - immediate */
+        private void ANDA_Immediate() // 0x84: /* ANDA - immediate */
         {
             var ucTemp = this.NextPCByte();
             this.regA = this._and(this.regA, ucTemp);
         }
 
-        private void bita() // 0x85: /* BITA - immediate */
+        private void BITA_Immediate() // 0x85: /* BITA - immediate */
         {
             var ucTemp = this.NextPCByte();
             this._and(this.regA, ucTemp);
         }
 
-        private void lda() // 0x86: /* LDA - immediate */
+        private void LDA_Immediate() // 0x86: /* LDA - immediate */
         {
             this.regA = this.NextPCByte();
             this.regCC &= ~(int)(F.ZERO | F.NEGATIVE | F.OVERFLOW);
             this._flagnz(this.regA);
         }
 
-        private void eora() // 0x88: /* EORA - immediate */
+        private void EORA_Immediate() // 0x88: /* EORA - immediate */
         {
             var ucTemp = this.NextPCByte();
             this.regA = this._eor(this.regA, ucTemp);
         }
 
-        private void adca() // 0x89: /* ADCA - immediate */
+        private void ADCA_Immediate() // 0x89: /* ADCA - immediate */
         {
             var ucTemp = this.NextPCByte();
             this.regA = this._adc(this.regA, ucTemp);
         }
 
-        private void ora() // 0x8A: /* ORA - immediate */
+        private void ORA_Immediate() // 0x8A: /* ORA - immediate */
         {
             var ucTemp = this.NextPCByte();
             this.regA = this._or(this.regA, ucTemp);
         }
 
-        private void adda() // 0x8B: /* ADDA - immediate */
+        private void ADDA_Immediate() // 0x8B: /* ADDA - immediate */
         {
             var ucTemp = this.NextPCByte();
             this.regA = this._add(this.regA, ucTemp);
         }
 
-        private void cmpx() // 0x8C: /* CMPX - immediate */
+        private void CMPX_Immediate() // 0x8C: /* CMPX - immediate */
         {
             var usTemp = this.NextPCWord();
             this._cmp16(this.regX, usTemp);
@@ -2333,12 +2333,12 @@ namespace Emu.CPU.MC6x09
 
         private void bsr() // 0x8D: /* BSR */
         {
-            var sTemp = makeSignedByte(this.NextPCByte());
+            var sTemp = MakeSignedByte(this.NextPCByte());
             this.M6809PUSHW(this.regPC);
             this.regPC += sTemp;
         }
 
-        private void ldx() // 0x8E: /* LDX - immediate */
+        private void LDX_Immediate() // 0x8E: /* LDX - immediate */
         {
             var usTemp = this.NextPCWord();
             this.regX = usTemp;
@@ -2346,49 +2346,49 @@ namespace Emu.CPU.MC6x09
             this.regCC &= ~(int)F.OVERFLOW;
         }
 
-        private void subad() // 0x90: /* SUBA - direct */
+        private void SUBA_Direct() // 0x90: /* SUBA - direct */
         {
             var usAddr = this.regDP * 256 + this.NextPCByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regA = this._sub(this.regA, ucTemp);
         }
 
-        private void cmpad() // 0x91: /* CMPA - direct */
+        private void CMPA_Direct() // 0x91: /* CMPA - direct */
         {
             var usAddr = this.regDP * 256 + this.NextPCByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this._cmp(this.regA, ucTemp);
         }
 
-        private void sbcad() // 0x92: /* SBCA - direct */
+        private void SBCA_Direct() // 0x92: /* SBCA - direct */
         {
             var usAddr = this.regDP * 256 + this.NextPCByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regA = this._sbc(this.regA, ucTemp);
         }
 
-        private void subdd() // 0x93: /* SUBD - direct */
+        private void SUBD_Direct() // 0x93: /* SUBD - direct */
         {
             var usAddr = this.regDP * 256 + this.NextPCByte();
             var usTemp = this.M6809ReadWord(usAddr);
             this.setRegD(this._sub16(this.getRegD(), usTemp));
         }
 
-        private void andad() // 0x94: /* ANDA - direct */
+        private void ANDA_Direct() // 0x94: /* ANDA - direct */
         {
             var usAddr = this.regDP * 256 + this.NextPCByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regA = this._and(this.regA, ucTemp);
         }
 
-        private void bitad() // 0x95: /* BITA - direct */
+        private void BITA_Direct() // 0x95: /* BITA - direct */
         {
             var usAddr = this.regDP * 256 + this.NextPCByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this._and(this.regA, ucTemp);
         }
 
-        private void ldad() // 0x96: /* LDA - direct */
+        private void LDA_Direct() // 0x96: /* LDA - direct */
         {
             var usAddr = this.regDP * 256 + this.NextPCByte();
             this.regA = this.M6809ReadByte(usAddr);
@@ -2396,7 +2396,7 @@ namespace Emu.CPU.MC6x09
             this._flagnz(this.regA);
         }
 
-        private void stad() // 0x97: /* STA - direct */
+        private void STA_Direct() // 0x97: /* STA - direct */
         {
             var usAddr = this.regDP * 256 + this.NextPCByte();
             this.M6809WriteByte(usAddr, this.regA);
@@ -2404,49 +2404,49 @@ namespace Emu.CPU.MC6x09
             this._flagnz(this.regA);
         }
 
-        private void eorad() // 0x98: /* EORA - direct */
+        private void EORA_Direct() // 0x98: /* EORA - direct */
         {
             var usAddr = this.regDP * 256 + this.NextPCByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regA = this._eor(this.regA, ucTemp);
         }
 
-        private void adcad() // 0x99: /* ADCA - direct */
+        private void ADCA_Direct() // 0x99: /* ADCA - direct */
         {
             var usAddr = this.regDP * 256 + this.NextPCByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regA = this._or(this.regA, ucTemp);
         }
 
-        private void orad() // 0x9A: /* ORA - direct */
+        private void ORA_Direct() // 0x9A: /* ORA - direct */
         {
             var usAddr = this.regDP * 256 + this.NextPCByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regA = this._or(this.regA, ucTemp);
         }
 
-        private void addad() // 0x9B: /* ADDA - direct */
+        private void ADDA_Direct() // 0x9B: /* ADDA - direct */
         {
             var usAddr = this.regDP * 256 + this.NextPCByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regA = this._add(this.regA, ucTemp);
         }
 
-        private void cmpxd() // 0x9C: /* CMPX - direct */
+        private void CMPX_Direct() // 0x9C: /* CMPX - direct */
         {
             var usAddr = this.regDP * 256 + this.NextPCByte();
             var usTemp = this.M6809ReadWord(usAddr);
             this._cmp16(this.regX, usTemp);
         }
 
-        private void jsrd() // 0x9D: /* JSR - direct */
+        private void JSR_Direct() // 0x9D: /* JSR - direct */
         {
             var usAddr = this.regDP * 256 + this.NextPCByte();
             this.M6809PUSHW(this.regPC);
             this._goto(usAddr);
         }
 
-        private void ldxd() // 0x9E: /* LDX - direct */
+        private void LDX_Direct() // 0x9E: /* LDX - direct */
         {
             var usAddr = this.regDP * 256 + this.NextPCByte();
             this.regX = this.M6809ReadWord(usAddr);
@@ -2454,7 +2454,7 @@ namespace Emu.CPU.MC6x09
             this.regCC &= ~(int)F.OVERFLOW;
         }
 
-        private void stxd() // 0x9F: /* STX - direct */
+        private void STX_Direct() // 0x9F: /* STX - direct */
         {
             var usAddr = this.regDP * 256 + this.NextPCByte();
             this.M6809WriteWord(usAddr, this.regX);
@@ -2462,49 +2462,49 @@ namespace Emu.CPU.MC6x09
             this.regCC &= ~(int)F.OVERFLOW;
         }
 
-        private void subax() // 0xA0: /* SUBA - indexed */
+        private void SUBA_Indexed() // 0xA0: /* SUBA - indexed */
         {
             var usAddr = this.M6809PostByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regA = this._sub(this.regA, ucTemp);
         }
 
-        private void cmpax() // 0xA1: /* CMPA - indexed */
+        private void CMPA_Indexed() // 0xA1: /* CMPA - indexed */
         {
             var usAddr = this.M6809PostByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this._cmp(this.regA, ucTemp);
         }
 
-        private void sbcax() // 0xA2: /* SBCA - indexed */
+        private void SBCA_Indexed() // 0xA2: /* SBCA - indexed */
         {
             var usAddr = this.M6809PostByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regA = this._sbc(this.regA, ucTemp);
         }
 
-        private void subdx() // 0xA3: /* SUBD - indexed */
+        private void SUBD_Indexed() // 0xA3: /* SUBD - indexed */
         {
             var usAddr = this.M6809PostByte();
             var usTemp = this.M6809ReadWord(usAddr);
             this.setRegD(this._sub16(this.getRegD(), usTemp));
         }
 
-        private void andax() // 0xA4: /* ANDA - indexed */
+        private void ANDA_Indexed() // 0xA4: /* ANDA - indexed */
         {
             var usAddr = this.M6809PostByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regA = this._and(this.regA, ucTemp);
         }
 
-        private void bitax() // 0xA5: /* BITA - indexed */
+        private void BITA_Indexed() // 0xA5: /* BITA - indexed */
         {
             var usAddr = this.M6809PostByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this._and(this.regA, ucTemp);
         }
 
-        private void ldax() // 0xA6: /* LDA - indexed */
+        private void LDA_Indexed() // 0xA6: /* LDA - indexed */
         {
             var usAddr = this.M6809PostByte();
             this.regA = this.M6809ReadByte(usAddr);
@@ -2512,7 +2512,7 @@ namespace Emu.CPU.MC6x09
             this._flagnz(this.regA);
         }
 
-        private void stax() // 0xA7: /* STA - indexed */
+        private void STA_Indexed() // 0xA7: /* STA - indexed */
         {
             var usAddr = this.M6809PostByte();
             this.M6809WriteByte(usAddr, this.regA);
@@ -2520,49 +2520,49 @@ namespace Emu.CPU.MC6x09
             this._flagnz(this.regA);
         }
 
-        private void eorax() // 0xA8: /* EORA - indexed */
+        private void EORA_Indexed() // 0xA8: /* EORA - indexed */
         {
             var usAddr = this.M6809PostByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regA = this._eor(this.regA, ucTemp);
         }
 
-        private void adcax() // 0xA9: /* ADCA - indexed */
+        private void ADCA_Indexed() // 0xA9: /* ADCA - indexed */
         {
             var usAddr = this.M6809PostByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regA = this._adc(this.regA, ucTemp);
         }
 
-        private void orax() // 0xAA: /* ORA - indexed */
+        private void ORA_Indexed() // 0xAA: /* ORA - indexed */
         {
             var usAddr = this.M6809PostByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regA = this._or(this.regA, ucTemp);
         }
 
-        private void addax() // 0xAB: /* ADDA - indexed */
+        private void ADDA_Indexed() // 0xAB: /* ADDA - indexed */
         {
             var usAddr = this.M6809PostByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regA = this._add(this.regA, ucTemp);
         }
 
-        private void cmpxx() // 0xAC: /* CMPX - indexed */
+        private void CMPX_Indexed() // 0xAC: /* CMPX - indexed */
         {
             var usAddr = this.M6809PostByte();
             var usTemp = this.M6809ReadWord(usAddr);
             this._cmp16(this.regX, usTemp);
         }
 
-        private void jsrx() // 0xAD: /* JSR - indexed */
+        private void JSR_Indexed() // 0xAD: /* JSR - indexed */
         {
             var usAddr = this.M6809PostByte();
             this.M6809PUSHW(this.regPC);
             this._goto(usAddr);
         }
 
-        private void ldxx() // 0xAE: /* LDX - indexed */
+        private void LDX_Indexed() // 0xAE: /* LDX - indexed */
         {
             var usAddr = this.M6809PostByte();
             this.regX = this.M6809ReadWord(usAddr);
@@ -2570,7 +2570,7 @@ namespace Emu.CPU.MC6x09
             this.regCC &= ~(int)F.OVERFLOW;
         }
 
-        private void stxx() // 0xAF: /* STX - indexed */
+        private void STX_Indexed() // 0xAF: /* STX - indexed */
         {
             var usAddr = this.M6809PostByte();
             this.M6809WriteWord(usAddr, this.regX);
@@ -2683,74 +2683,74 @@ namespace Emu.CPU.MC6x09
             this.regCC &= ~(int)F.OVERFLOW;
         }
 
-        private void subb() // 0xC0: /* SUBB - immediate */
+        private void SUBB_Immediate() // 0xC0: /* SUBB - immediate */
         {
             var ucTemp = this.NextPCByte();
             this.regB = this._sub(this.regB, ucTemp);
         }
 
-        private void cmpb() // 0xC1: /* CMPB - immediate */
+        private void CMPB_Immediate() // 0xC1: /* CMPB - immediate */
         {
             var ucTemp = this.NextPCByte();
             this._cmp(this.regB, ucTemp);
         }
 
-        private void sbcb() // 0xC2: /* SBCB - immediate */
+        private void SBCB_Immediate() // 0xC2: /* SBCB - immediate */
         {
             var ucTemp = this.NextPCByte();
             this.regB = this._sbc(this.regB, ucTemp);
         }
 
-        private void addd() // 0xC3: /* ADDD - immediate */
+        private void ADDD_Immediate() // 0xC3: /* ADDD - immediate */
         {
             var usTemp = this.NextPCWord();
             this.setRegD(this._add16(this.getRegD(), usTemp));
         }
 
-        private void andb() // 0xC4: /* ANDB - immediate */
+        private void ANDB_Immediate() // 0xC4: /* ANDB - immediate */
         {
             var ucTemp = this.NextPCByte();
             this.regB = this._and(this.regB, ucTemp);
         }
 
-        private void bitb() // 0xC5: /* BITB - immediate */
+        private void BITB_Immediate() // 0xC5: /* BITB - immediate */
         {
             var ucTemp = this.NextPCByte();
             this._and(this.regB, ucTemp);
         }
 
-        private void ldb() // 0xC6: /* LDB - immediate */
+        private void LDB_Immediate() // 0xC6: /* LDB - immediate */
         {
             this.regB = this.NextPCByte();
             this.regCC &= ~(int)(F.ZERO | F.NEGATIVE | F.OVERFLOW);
             this._flagnz(this.regB);
         }
 
-        private void eorb() // 0xC8: /* EORB - immediate */
+        private void EORB_Immediate() // 0xC8: /* EORB - immediate */
         {
             var ucTemp = this.NextPCByte();
             this.regB = this._eor(this.regB, ucTemp);
         }
 
-        private void adcb() // 0xC9: /* ADCB - immediate */
+        private void ADCB_Immediate() // 0xC9: /* ADCB - immediate */
         {
             var ucTemp = this.NextPCByte();
             this.regB = this._adc(this.regB, ucTemp);
         }
 
-        private void orb() // 0xCA: /* ORB - immediate */
+        private void ORB_Immediate() // 0xCA: /* ORB - immediate */
         {
             var ucTemp = this.NextPCByte();
             this.regB = this._or(this.regB, ucTemp);
         }
 
-        private void addb() // 0xCB: /* ADDB - immediate */
+        private void ADDB_Immediate() // 0xCB: /* ADDB - immediate */
         {
             var ucTemp = this.NextPCByte();
             this.regB = this._add(this.regB, ucTemp);
         }
 
-        private void ldd() // 0xCC: /* LDD - immediate */
+        private void LDD_Immediate() // 0xCC: /* LDD - immediate */
         {
             var d = this.NextPCWord();
             this.setRegD(d);
@@ -2758,7 +2758,7 @@ namespace Emu.CPU.MC6x09
             this.regCC &= ~(int)F.OVERFLOW;
         }
 
-        private void ldu() // 0xCE: /* LDU - immediate */
+        private void LDU_Immediate() // 0xCE: /* LDU - immediate */
         {
             this.regU = this.NextPCWord();
             this._flagnz16(this.regU);
@@ -2885,49 +2885,49 @@ namespace Emu.CPU.MC6x09
             this.regCC &= ~(int)F.OVERFLOW;
         }
 
-        private void subbx() // 0xE0: /* SUBB - indexed */ 
+        private void SUBB_Indexed() // 0xE0: /* SUBB - indexed */ 
         {
             var usAddr = this.M6809PostByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regB = this._sub(this.regB, ucTemp);
         }
 
-        private void cmpbx() // 0xE1: /* CMPB - indexed */ 
+        private void CMPB_Indexed() // 0xE1: /* CMPB - indexed */ 
         {
             var usAddr = this.M6809PostByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this._cmp(this.regB, ucTemp);
         }
 
-        private void sbcbx() // 0xE2: /* SBCB - indexed */ 
+        private void SBCD_Indexed() // 0xE2: /* SBCB - indexed */ 
         {
             var usAddr = this.M6809PostByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regB = this._sbc(this.regB, ucTemp);
         }
 
-        private void adddx() // 0xE3: /* ADDD - indexed */ 
+        private void ADDD_Indexed() // 0xE3: /* ADDD - indexed */ 
         {
             var usAddr = this.M6809PostByte();
             var usTemp = this.M6809ReadWord(usAddr);
             this.setRegD(this._add16(this.getRegD(), usTemp));
         }
 
-        private void andbx() // 0xE4: /* ANDB - indexed */ 
+        private void ANDB_Indexed() // 0xE4: /* ANDB - indexed */ 
         {
             var usAddr = this.M6809PostByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regB = this._and(this.regB, ucTemp);
         }
 
-        private void bitbx() // 0xE5: /* BITB - indexed */ 
+        private void BITB_Indexed() // 0xE5: /* BITB - indexed */ 
         {
             var usAddr = this.M6809PostByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this._and(this.regB, ucTemp);
         }
 
-        private void ldbx() // 0xE6: /* LDB - indexed */ 
+        private void LDB_Indexed() // 0xE6: /* LDB - indexed */ 
         {
             var usAddr = this.M6809PostByte();
             this.regB = this.M6809ReadByte(usAddr);
@@ -2935,7 +2935,7 @@ namespace Emu.CPU.MC6x09
             this._flagnz(this.regB);
         }
 
-        private void stbx() // 0xE7: /* STB - indexed */ 
+        private void STB_Indexed() // 0xE7: /* STB - indexed */ 
         {
             var usAddr = this.M6809PostByte();
             this.M6809WriteByte(usAddr, this.regB);
@@ -2943,35 +2943,35 @@ namespace Emu.CPU.MC6x09
             this._flagnz(this.regB);
         } 
 
-        private void eorbx() // 0xE8: /* EORB - indexed */ 
+        private void EORB_Indexed() // 0xE8: /* EORB - indexed */ 
         {
             var usAddr = this.M6809PostByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regB = this._eor(this.regB, ucTemp);
         }
 
-        private void adcbx() // 0xE9: /* ADCB - indexed */ 
+        private void ADCB_Indexed() // 0xE9: /* ADCB - indexed */ 
         {
             var usAddr = this.M6809PostByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regB = this._adc(this.regB, ucTemp);
         }
 
-        private void orbx() // 0xEA: /* ORB - indexed */ 
+        private void ORB_Indexed() // 0xEA: /* ORB - indexed */ 
         {
             var usAddr = this.M6809PostByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regB = this._or(this.regB, ucTemp);
         }
 
-        private void addbx() // 0xEB: /* ADDB - indexed */ 
+        private void ADDB_Indexed() // 0xEB: /* ADDB - indexed */ 
         {
             var usAddr = this.M6809PostByte();
             var ucTemp = this.M6809ReadByte(usAddr);
             this.regB = this._add(this.regB, ucTemp);
         }
 
-        private void lddx() // 0xEC: /* LDD - indexed */ 
+        private void LDD_Indexed() // 0xEC: /* LDD - indexed */ 
         {
             var usAddr = this.M6809PostByte();
             var d = this.M6809ReadWord(usAddr);
@@ -2980,7 +2980,7 @@ namespace Emu.CPU.MC6x09
             this.regCC &= ~(int)F.OVERFLOW;
         }
 
-        private void stdx() // 0xED: /* STD - indexed */ 
+        private void STD_Indexed() // 0xED: /* STD - indexed */ 
         {
             var usAddr = this.M6809PostByte();
             var d = this.getRegD();
@@ -2989,7 +2989,7 @@ namespace Emu.CPU.MC6x09
             this.regCC &= ~(int)F.OVERFLOW;
         }
 
-        private void ldux() // 0xEE: /* LDU - indexed */ 
+        private void LDU_Indexed() // 0xEE: /* LDU - indexed */ 
         {
             var usAddr = this.M6809PostByte();
             this.regU = this.M6809ReadWord(usAddr);
@@ -2997,7 +2997,7 @@ namespace Emu.CPU.MC6x09
             this.regCC &= ~(int)F.OVERFLOW;
         }
 
-        private void stux() // 0xEF: /* STU - indexed */ 
+        private void STU_Indexed() // 0xEF: /* STU - indexed */ 
         {
             var usAddr = this.M6809PostByte();
             this.M6809WriteWord(usAddr, this.regU);
@@ -3141,7 +3141,7 @@ namespace Emu.CPU.MC6x09
         {
             var op = this.NextPCByte(); /* Second half of opcode */
             this.iClocks -= _mc6809Cycles2[op]; /* Subtract execution time */
-            if (this.debug)
+            if (this._debug)
                 Console.WriteLine((this.regPC - 1).ToString("X4") + ": " + this._mnemonics10[op]);
             var instruction = this._instructions10[op];
             if (instruction == null)
@@ -3159,7 +3159,7 @@ namespace Emu.CPU.MC6x09
         {
             var op = this.NextPCByte(); /* Second half of opcode */
             this.iClocks -= _mc6809Cycles2[op]; /* Subtract execution time */
-            if (this.debug)
+            if (this._debug)
                 Console.WriteLine((this.regPC - 1).ToString("X4") + ": " + this._mnemonics11[op]);
             var instruction = this._instructions11[op];
             if (instruction == null)
@@ -3299,14 +3299,14 @@ namespace Emu.CPU.MC6x09
             _instructions[0x6E] = new InstrDelegate(this.JMP_Indexed);
             _instructions[0x6F] = new InstrDelegate(this.CLR_Indexed);
 
-            _instructions[0x70] = new InstrDelegate(this.nege);
+            _instructions[0x70] = new InstrDelegate(this.NEG_Extended);
             _instructions[0x71] = new InstrDelegate(this.Illegal);
             _instructions[0x72] = new InstrDelegate(this.Illegal);
-            _instructions[0x73] = new InstrDelegate(this.come);
-            _instructions[0x74] = new InstrDelegate(this.lsre);
+            _instructions[0x73] = new InstrDelegate(this.COM_Extended);
+            _instructions[0x74] = new InstrDelegate(this.LSR_Extended);
             _instructions[0x75] = new InstrDelegate(this.Illegal);
-            _instructions[0x76] = new InstrDelegate(this.rore);
-            _instructions[0x77] = new InstrDelegate(this.asre);
+            _instructions[0x76] = new InstrDelegate(this.ROR_Extended);
+            _instructions[0x77] = new InstrDelegate(this.ASR_Extended);
             _instructions[0x78] = new InstrDelegate(this.asle);
             _instructions[0x79] = new InstrDelegate(this.role);
             _instructions[0x7A] = new InstrDelegate(this.dece);
@@ -3316,56 +3316,56 @@ namespace Emu.CPU.MC6x09
             _instructions[0x7E] = new InstrDelegate(this.jmpe);
             _instructions[0x7F] = new InstrDelegate(this.clre);
 
-            _instructions[0x80] = new InstrDelegate(this.suba);
-            _instructions[0x81] = new InstrDelegate(this.cmpa);
-            _instructions[0x82] = new InstrDelegate(this.sbca);
-            _instructions[0x83] = new InstrDelegate(this.subd);
-            _instructions[0x84] = new InstrDelegate(this.anda);
-            _instructions[0x85] = new InstrDelegate(this.bita);
-            _instructions[0x86] = new InstrDelegate(this.lda);
+            _instructions[0x80] = new InstrDelegate(this.SUBA_Immediate);
+            _instructions[0x81] = new InstrDelegate(this.CMPA_Immediate);
+            _instructions[0x82] = new InstrDelegate(this.SBCA_Immediate);
+            _instructions[0x83] = new InstrDelegate(this.SUBD_Immediate);
+            _instructions[0x84] = new InstrDelegate(this.ANDA_Immediate);
+            _instructions[0x85] = new InstrDelegate(this.BITA_Immediate);
+            _instructions[0x86] = new InstrDelegate(this.LDA_Immediate);
             _instructions[0x87] = new InstrDelegate(this.Illegal);
-            _instructions[0x88] = new InstrDelegate(this.eora);
-            _instructions[0x89] = new InstrDelegate(this.adca);
-            _instructions[0x8A] = new InstrDelegate(this.ora);
-            _instructions[0x8B] = new InstrDelegate(this.adda);
-            _instructions[0x8C] = new InstrDelegate(this.cmpx);
+            _instructions[0x88] = new InstrDelegate(this.EORA_Immediate);
+            _instructions[0x89] = new InstrDelegate(this.ADCA_Immediate);
+            _instructions[0x8A] = new InstrDelegate(this.ORA_Immediate);
+            _instructions[0x8B] = new InstrDelegate(this.ADDA_Immediate);
+            _instructions[0x8C] = new InstrDelegate(this.CMPX_Immediate);
             _instructions[0x8D] = new InstrDelegate(this.bsr);
-            _instructions[0x8E] = new InstrDelegate(this.ldx);
+            _instructions[0x8E] = new InstrDelegate(this.LDX_Immediate);
             _instructions[0x8F] = new InstrDelegate(this.Illegal);
 
-            _instructions[0x90] = new InstrDelegate(this.subad);
-            _instructions[0x91] = new InstrDelegate(this.cmpad);
-            _instructions[0x92] = new InstrDelegate(this.sbcad);
-            _instructions[0x93] = new InstrDelegate(this.subdd);
-            _instructions[0x94] = new InstrDelegate(this.andad);
-            _instructions[0x95] = new InstrDelegate(this.bitad);
-            _instructions[0x96] = new InstrDelegate(this.ldad);
-            _instructions[0x97] = new InstrDelegate(this.stad);
-            _instructions[0x98] = new InstrDelegate(this.eorad);
-            _instructions[0x99] = new InstrDelegate(this.adcad);
-            _instructions[0x9A] = new InstrDelegate(this.orad);
-            _instructions[0x9B] = new InstrDelegate(this.addad);
-            _instructions[0x9C] = new InstrDelegate(this.cmpxd);
-            _instructions[0x9D] = new InstrDelegate(this.jsrd);
-            _instructions[0x9E] = new InstrDelegate(this.ldxd);
-            _instructions[0x9F] = new InstrDelegate(this.stxd);
+            _instructions[0x90] = new InstrDelegate(this.SUBA_Direct);
+            _instructions[0x91] = new InstrDelegate(this.CMPA_Direct);
+            _instructions[0x92] = new InstrDelegate(this.SBCA_Direct);
+            _instructions[0x93] = new InstrDelegate(this.SUBD_Direct);
+            _instructions[0x94] = new InstrDelegate(this.ANDA_Direct);
+            _instructions[0x95] = new InstrDelegate(this.BITA_Direct);
+            _instructions[0x96] = new InstrDelegate(this.LDA_Direct);
+            _instructions[0x97] = new InstrDelegate(this.STA_Direct);
+            _instructions[0x98] = new InstrDelegate(this.EORA_Direct);
+            _instructions[0x99] = new InstrDelegate(this.ADCA_Direct);
+            _instructions[0x9A] = new InstrDelegate(this.ORA_Direct);
+            _instructions[0x9B] = new InstrDelegate(this.ADDA_Direct);
+            _instructions[0x9C] = new InstrDelegate(this.CMPX_Direct);
+            _instructions[0x9D] = new InstrDelegate(this.JSR_Direct);
+            _instructions[0x9E] = new InstrDelegate(this.LDX_Direct);
+            _instructions[0x9F] = new InstrDelegate(this.STX_Direct);
 
-            _instructions[0xA0] = new InstrDelegate(this.subax);
-            _instructions[0xA1] = new InstrDelegate(this.cmpax);
-            _instructions[0xA2] = new InstrDelegate(this.sbcax);
-            _instructions[0xA3] = new InstrDelegate(this.subdx);
-            _instructions[0xA4] = new InstrDelegate(this.andax);
-            _instructions[0xA5] = new InstrDelegate(this.bitax);
-            _instructions[0xA6] = new InstrDelegate(this.ldax);
-            _instructions[0xA7] = new InstrDelegate(this.stax);
-            _instructions[0xA8] = new InstrDelegate(this.eorax);
-            _instructions[0xA9] = new InstrDelegate(this.adcax);
-            _instructions[0xAA] = new InstrDelegate(this.orax);
-            _instructions[0xAB] = new InstrDelegate(this.addax);
-            _instructions[0xAC] = new InstrDelegate(this.cmpxx);
-            _instructions[0xAD] = new InstrDelegate(this.jsrx);
-            _instructions[0xAE] = new InstrDelegate(this.ldxx);
-            _instructions[0xAF] = new InstrDelegate(this.stxx);
+            _instructions[0xA0] = new InstrDelegate(this.SUBA_Indexed);
+            _instructions[0xA1] = new InstrDelegate(this.CMPA_Indexed);
+            _instructions[0xA2] = new InstrDelegate(this.SBCA_Indexed);
+            _instructions[0xA3] = new InstrDelegate(this.SUBD_Indexed);
+            _instructions[0xA4] = new InstrDelegate(this.ANDA_Indexed);
+            _instructions[0xA5] = new InstrDelegate(this.BITA_Indexed);
+            _instructions[0xA6] = new InstrDelegate(this.LDA_Indexed);
+            _instructions[0xA7] = new InstrDelegate(this.STA_Indexed);
+            _instructions[0xA8] = new InstrDelegate(this.EORA_Indexed);
+            _instructions[0xA9] = new InstrDelegate(this.ADCA_Indexed);
+            _instructions[0xAA] = new InstrDelegate(this.ORA_Indexed);
+            _instructions[0xAB] = new InstrDelegate(this.ADDA_Indexed);
+            _instructions[0xAC] = new InstrDelegate(this.CMPX_Indexed);
+            _instructions[0xAD] = new InstrDelegate(this.JSR_Indexed);
+            _instructions[0xAE] = new InstrDelegate(this.LDX_Indexed);
+            _instructions[0xAF] = new InstrDelegate(this.STX_Indexed);
 
             _instructions[0xB0] = new InstrDelegate(this.SUBA_Extended);
             _instructions[0xB1] = new InstrDelegate(this.CMPA_Extended);
@@ -3384,21 +3384,21 @@ namespace Emu.CPU.MC6x09
             _instructions[0xBE] = new InstrDelegate(this.LDX_Extended);
             _instructions[0xBF] = new InstrDelegate(this.STX_Extended);
 
-            _instructions[0xC0] = new InstrDelegate(this.subb);
-            _instructions[0xC1] = new InstrDelegate(this.cmpb);
-            _instructions[0xC2] = new InstrDelegate(this.sbcb);
-            _instructions[0xC3] = new InstrDelegate(this.addd);
-            _instructions[0xC4] = new InstrDelegate(this.andb);
-            _instructions[0xC5] = new InstrDelegate(this.bitb);
-            _instructions[0xC6] = new InstrDelegate(this.ldb);
-            _instructions[0xC7] = new InstrDelegate(this.eorb);
-            _instructions[0xC8] = new InstrDelegate(this.eorb);
-            _instructions[0xC9] = new InstrDelegate(this.adcb);
-            _instructions[0xCA] = new InstrDelegate(this.orb);
-            _instructions[0xCB] = new InstrDelegate(this.addb);
-            _instructions[0xCC] = new InstrDelegate(this.ldd);
+            _instructions[0xC0] = new InstrDelegate(this.SUBB_Immediate);
+            _instructions[0xC1] = new InstrDelegate(this.CMPB_Immediate);
+            _instructions[0xC2] = new InstrDelegate(this.SBCB_Immediate);
+            _instructions[0xC3] = new InstrDelegate(this.ADDD_Immediate);
+            _instructions[0xC4] = new InstrDelegate(this.ANDB_Immediate);
+            _instructions[0xC5] = new InstrDelegate(this.BITB_Immediate);
+            _instructions[0xC6] = new InstrDelegate(this.LDB_Immediate);
+            _instructions[0xC7] = new InstrDelegate(this.EORB_Immediate);
+            _instructions[0xC8] = new InstrDelegate(this.EORB_Immediate);
+            _instructions[0xC9] = new InstrDelegate(this.ADCB_Immediate);
+            _instructions[0xCA] = new InstrDelegate(this.ORB_Immediate);
+            _instructions[0xCB] = new InstrDelegate(this.ADDB_Immediate);
+            _instructions[0xCC] = new InstrDelegate(this.LDD_Immediate);
             _instructions[0xCD] = new InstrDelegate(this.Illegal);
-            _instructions[0xCE] = new InstrDelegate(this.ldu);
+            _instructions[0xCE] = new InstrDelegate(this.LDU_Immediate);
             _instructions[0xCF] = new InstrDelegate(this.Illegal);
 
             _instructions[0xD0] = new InstrDelegate(this.SUBB_Direct);
@@ -3418,22 +3418,22 @@ namespace Emu.CPU.MC6x09
             _instructions[0xDE] = new InstrDelegate(this.LDU_Direct);
             _instructions[0xDF] = new InstrDelegate(this.STU_Direct);
 
-            _instructions[0xE0] = new InstrDelegate(this.subbx);
-            _instructions[0xE1] = new InstrDelegate(this.cmpbx);
-            _instructions[0xE2] = new InstrDelegate(this.sbcbx);
-            _instructions[0xE3] = new InstrDelegate(this.adddx);
-            _instructions[0xE4] = new InstrDelegate(this.andbx);
-            _instructions[0xE5] = new InstrDelegate(this.bitbx);
-            _instructions[0xE6] = new InstrDelegate(this.ldbx);
-            _instructions[0xE7] = new InstrDelegate(this.stbx);
-            _instructions[0xE8] = new InstrDelegate(this.eorbx);
-            _instructions[0xE9] = new InstrDelegate(this.adcbx);
-            _instructions[0xEA] = new InstrDelegate(this.orbx);
-            _instructions[0xEB] = new InstrDelegate(this.addbx);
-            _instructions[0xEC] = new InstrDelegate(this.lddx);
-            _instructions[0xED] = new InstrDelegate(this.stdx);
-            _instructions[0xEE] = new InstrDelegate(this.ldux);
-            _instructions[0xEF] = new InstrDelegate(this.stux);
+            _instructions[0xE0] = new InstrDelegate(this.SUBB_Indexed);
+            _instructions[0xE1] = new InstrDelegate(this.CMPB_Indexed);
+            _instructions[0xE2] = new InstrDelegate(this.SBCD_Indexed);
+            _instructions[0xE3] = new InstrDelegate(this.ADDD_Indexed);
+            _instructions[0xE4] = new InstrDelegate(this.ANDB_Indexed);
+            _instructions[0xE5] = new InstrDelegate(this.BITB_Indexed);
+            _instructions[0xE6] = new InstrDelegate(this.LDB_Indexed);
+            _instructions[0xE7] = new InstrDelegate(this.STB_Indexed);
+            _instructions[0xE8] = new InstrDelegate(this.EORB_Indexed);
+            _instructions[0xE9] = new InstrDelegate(this.ADCB_Indexed);
+            _instructions[0xEA] = new InstrDelegate(this.ORB_Indexed);
+            _instructions[0xEB] = new InstrDelegate(this.ADDB_Indexed);
+            _instructions[0xEC] = new InstrDelegate(this.LDD_Indexed);
+            _instructions[0xED] = new InstrDelegate(this.STD_Indexed);
+            _instructions[0xEE] = new InstrDelegate(this.LDU_Indexed);
+            _instructions[0xEF] = new InstrDelegate(this.STU_Indexed);
 
             _instructions[0xF0] = new InstrDelegate(this.SUBB_Extended);
             _instructions[0xF1] = new InstrDelegate(this.CMPB_Extended);
@@ -3490,21 +3490,21 @@ namespace Emu.CPU.MC6x09
             _instructions10[0x1F] = new InstrDelegate(this.Illegal10);
 
             _instructions10[0x20] = new InstrDelegate(this.Illegal10);
-            _instructions10[0x21] = new InstrDelegate(this.lbrn);
-            _instructions10[0x22] = new InstrDelegate(this.lbhi);
-            _instructions10[0x23] = new InstrDelegate(this.lbls);
-            _instructions10[0x24] = new InstrDelegate(this.lbcc);
-            _instructions10[0x25] = new InstrDelegate(this.lbcs);
-            _instructions10[0x26] = new InstrDelegate(this.lbne);
-            _instructions10[0x27] = new InstrDelegate(this.lbeq);
-            _instructions10[0x28] = new InstrDelegate(this.lbvc);
-            _instructions10[0x29] = new InstrDelegate(this.lbvs);
-            _instructions10[0x2A] = new InstrDelegate(this.lbpl);
-            _instructions10[0x2B] = new InstrDelegate(this.lbmi);
-            _instructions10[0x2C] = new InstrDelegate(this.lbge);
-            _instructions10[0x2D] = new InstrDelegate(this.lblt);
-            _instructions10[0x2E] = new InstrDelegate(this.lbgt);
-            _instructions10[0x2F] = new InstrDelegate(this.lble);
+            _instructions10[0x21] = new InstrDelegate(this.LBRN_Relative);
+            _instructions10[0x22] = new InstrDelegate(this.LBHI_Relative);
+            _instructions10[0x23] = new InstrDelegate(this.LBLS_Relative);
+            _instructions10[0x24] = new InstrDelegate(this.LBCC_Relative);
+            _instructions10[0x25] = new InstrDelegate(this.LBCS_Relative);
+            _instructions10[0x26] = new InstrDelegate(this.LBNE_Relative);
+            _instructions10[0x27] = new InstrDelegate(this.LBEQ_Relative);
+            _instructions10[0x28] = new InstrDelegate(this.LBVC_Relative);
+            _instructions10[0x29] = new InstrDelegate(this.LBVS_Relative);
+            _instructions10[0x2A] = new InstrDelegate(this.LBPL_Relative);
+            _instructions10[0x2B] = new InstrDelegate(this.LBMI_Relative);
+            _instructions10[0x2C] = new InstrDelegate(this.LBGE_Relative);
+            _instructions10[0x2D] = new InstrDelegate(this.LBLT_Relative);
+            _instructions10[0x2E] = new InstrDelegate(this.LBGT_Relative);
+            _instructions10[0x2F] = new InstrDelegate(this.LBLE_Relative);
 
             _instructions10[0x30] = new InstrDelegate(this.Illegal10);
             _instructions10[0x31] = new InstrDelegate(this.Illegal10);
@@ -3521,7 +3521,7 @@ namespace Emu.CPU.MC6x09
             _instructions10[0x3C] = new InstrDelegate(this.Illegal10);
             _instructions10[0x3D] = new InstrDelegate(this.Illegal10);
             _instructions10[0x3E] = new InstrDelegate(this.Illegal10);
-            _instructions10[0x3F] = new InstrDelegate(this.swi2);
+            _instructions10[0x3F] = new InstrDelegate(this.SWI2_Inherent);
 
             _instructions10[0x40] = new InstrDelegate(this.Illegal10);
             _instructions10[0x41] = new InstrDelegate(this.Illegal10);
@@ -3594,7 +3594,7 @@ namespace Emu.CPU.MC6x09
             _instructions10[0x80] = new InstrDelegate(this.Illegal10);
             _instructions10[0x81] = new InstrDelegate(this.Illegal10);
             _instructions10[0x82] = new InstrDelegate(this.Illegal10);
-            _instructions10[0x83] = new InstrDelegate(this.cmpd);
+            _instructions10[0x83] = new InstrDelegate(this.Cmpd);
             _instructions10[0x84] = new InstrDelegate(this.Illegal10);
             _instructions10[0x85] = new InstrDelegate(this.Illegal10);
             _instructions10[0x86] = new InstrDelegate(this.Illegal10);
@@ -3742,7 +3742,7 @@ namespace Emu.CPU.MC6x09
                 this._mnemonics11[i] = "     ";
             }
 
-            this.Add11(0x3F, "swi3", new InstrDelegate(this.swi3));
+            this.Add11(0x3F, "swi3", new InstrDelegate(this.SWI3_Inherent));
             this.Add11(0x83, "cmpu", new InstrDelegate(this.CMPU_Immediate));
             this.Add11(0x8C, "cmps", new InstrDelegate(this.CMPS_Immediate));
             this.Add11(0x93, "cmpu", new InstrDelegate(this.CMPU_Direct));

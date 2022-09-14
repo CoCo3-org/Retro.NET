@@ -6,6 +6,11 @@ namespace CPU
 {
 	public class CodeBlock : CodeLine
 	{
+		public CodeBlock(Module module)
+			: base(module)
+		{
+		}
+
 		public LinkedList<CodeLine> Lines = new LinkedList<CodeLine>();
 
 		public void AddLine(CodeLine line) { this.Lines.AddLast(line); }

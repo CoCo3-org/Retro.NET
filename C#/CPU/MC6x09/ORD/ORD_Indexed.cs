@@ -6,6 +6,11 @@ namespace CPU.MC6x09
 {
 	public class ORD_Indexed : ORD_Instruction, IIndexed 
 	{
+		public ORD_Indexed(CodeBlock codeBlock)
+			: base(codeBlock)
+		{
+		}
+
 		public override byte? PreByte { get { return 0x10; } }
 		public override byte OpCode { get { return 0xAA; } }
 	}

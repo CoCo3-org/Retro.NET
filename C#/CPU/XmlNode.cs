@@ -19,7 +19,7 @@ namespace CPU
 
 		// =========== Constructor ============================================
 
-		public XmlNode(XmlNode parent = null) 
+		public XmlNode(XmlNode parent) 
 		{
 			this.Parent = parent;
 		}
