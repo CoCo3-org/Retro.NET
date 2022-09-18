@@ -12,7 +12,10 @@ namespace UnitTests.CPU
 		[Test]
 		public void Constructor_Defaults()
 		{
-			Assert.IsTrue(false);
+			var module = new global::CPU.Module();
+			var codeBlock = new global::CPU.CodeBlock(module);
+
+			Assert.That(codeBlock.Lines.Count, Is.EqualTo(0));
 		}
 	}
 }

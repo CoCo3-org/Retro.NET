@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Emu\Emu.csproj" />
     <ProjectReference Include="..\MSIL\MSIL.csproj" />
     <ProjectReference Include="..\CPU\CPU.csproj" />
   </ItemGroup>

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Emu.CPU.MC6x09
 {
-    public class MC6809 
+    public class MC6809 : Cpu
     {
         enum F
         {

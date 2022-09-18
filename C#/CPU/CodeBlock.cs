@@ -6,7 +6,7 @@ namespace CPU
 {
 	public class CodeBlock : CodeLine
 	{
-		public CodeBlock(Module module)
+		public CodeBlock(Module module) 
 			: base(module)
 		{
 		}

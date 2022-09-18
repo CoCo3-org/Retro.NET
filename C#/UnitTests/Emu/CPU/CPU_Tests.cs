@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 using NUnit.Framework;
 
-namespace UnitTests.Emu.CPU.MC680x
+namespace UnitTests.Emu.CPU
 {
 	[TestFixture]
-	public class NOP_Tests
+	public class CPU_Tests
 	{
 		[Test]
 		public void Constructor_Defaults()
 		{
-			Assert.IsTrue(false);
+			var cpu = new global::Emu.CPU.Cpu();
+
+			Assert.IsNotNull(cpu.BusManager);
+
 		}
 	}
 }

@@ -15,8 +15,6 @@ namespace CPU
 		public Instruction(CodeBlock codeBlock)
 			: base(codeBlock)
 		{
-
 		}
-
 	}
 }

@@ -12,7 +12,9 @@ namespace UnitTests.CPU
 		[Test]
 		public void Constructor_Defaults()
 		{
-			Assert.IsTrue(false);
+			var module = new global::CPU.Module();
+
+			Assert.That(module.XmlTag, Is.EqualTo("Module"));
 		}
 	}
 }
