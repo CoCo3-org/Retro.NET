@@ -19,8 +19,8 @@ namespace MSIL
 
 		public int BranchMethodOffset { get; private set; }
 
-		public IL_brfalse_s(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
-			: base(parentMethod ,cecilInstruction)
+		public IL_brfalse_s(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction = null) 
+			: base(parentMethod, cecilInstruction)
 		{
 			Cecil.Cil.Instruction instruction = (Cecil.Cil.Instruction)cecilInstruction.Operand;
 			this.BranchMethodOffset = instruction.Offset;

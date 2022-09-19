@@ -25,7 +25,7 @@ namespace UnitTests.Emu.CPU
 		}
 
 		[Test]
-		public void Match_and_No_Match()
+		public void Match_and_No_Match() 
 		{
 			var busDevice1 = new global::Emu.CPU.BusDevice(0xFF00);
 
@@ -34,7 +34,7 @@ namespace UnitTests.Emu.CPU
 		}
 
 		[Test]
-		public void In_Range_and_Out_of_Range()
+		public void In_Range_and_Out_of_Range() 
 		{
 			var busDevice1 = new global::Emu.CPU.BusDevice(0xC000, 0xDFFF);
 

@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Multiply unsigned integer values. Unsigned result shall fit in same size"; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_mul_ovf_un(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
-			: base(parentMethod ,cecilInstruction)
+		public IL_mul_ovf_un(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction = null) 
+			: base(parentMethod, cecilInstruction)
 		{
 		}
 

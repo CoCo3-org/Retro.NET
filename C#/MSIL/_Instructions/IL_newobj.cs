@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Allocate an uninitialized object or value type and call ctor."; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_newobj(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
-			: base(parentMethod ,cecilInstruction)
+		public IL_newobj(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction = null) 
+			: base(parentMethod, cecilInstruction)
 		{
 		}
 

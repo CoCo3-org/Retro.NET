@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Rethrow the current exception."; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_rethrow(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
-			: base(parentMethod ,cecilInstruction)
+		public IL_rethrow(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction = null) 
+			: base(parentMethod, cecilInstruction)
 		{
 		}
 

@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Test if obj is an instance of class, returning null or an instance of that class or interface."; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_isinst(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
-			: base(parentMethod ,cecilInstruction)
+		public IL_isinst(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction = null) 
+			: base(parentMethod, cecilInstruction)
 		{
 		}
 

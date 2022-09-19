@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Load the element with type unsigned int32 at index onto the top of the stack as an int32."; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_ldelem_u4(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
-			: base(parentMethod ,cecilInstruction)
+		public IL_ldelem_u4(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction = null) 
+			: base(parentMethod, cecilInstruction)
 		{
 		}
 

@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "The specified fault check(s) normally performed as part of the execution of the subsequent instruction can/shall be skipped."; } }
 		public override string Category { get { return "Prefix to instruction"; } }
 
-		public IL_no_(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
-			: base(parentMethod ,cecilInstruction)
+		public IL_no_(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction = null) 
+			: base(parentMethod, cecilInstruction)
 		{
 		}
 

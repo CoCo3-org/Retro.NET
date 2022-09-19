@@ -32,7 +32,7 @@ namespace MSIL
 
 		public MethodDefinition MainMethod { get; set; }
 
-		public ModuleDefinition(string assemblyFilePath) 
+		public ModuleDefinition(string assemblyFilePath = null) 
 		{
 			this.AssemblyFilePath = assemblyFilePath;
 			//if (!File.Exists(this.AssemblyFilePath))
@@ -41,12 +41,15 @@ namespace MSIL
 
 		public void Initialize() 
 		{
-			if (!File.Exists(this.AssemblyFilePath))
-				throw new Exception($"Assembly {this.AssemblyFilePath} does not exist!");
-		
-			this.LoadCecilModule();
-			this.LoadCecilTypeDefinitions();
-			this.LoadRunTimeTypeDefinitions();
+			if (this.AssemblyFilePath != null)
+			{
+				if (!File.Exists(this.AssemblyFilePath))
+					throw new Exception($"Assembly {this.AssemblyFilePath} does not exist!");
+
+				this.LoadCecilModule();
+				this.LoadCecilTypeDefinitions();
+				this.LoadRunTimeTypeDefinitions();
+			}
 		}
 
 		public void LoadCecilModule() 

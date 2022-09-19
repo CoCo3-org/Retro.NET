@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Bitwise complement (logical not)."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_not(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
-			: base(parentMethod ,cecilInstruction)
+		public IL_not(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction = null) 
+			: base(parentMethod, cecilInstruction)
 		{
 		}
 

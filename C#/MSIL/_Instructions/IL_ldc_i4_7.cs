@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Push 7 onto the stack as int32."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_ldc_i4_7(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
-			: base(parentMethod ,cecilInstruction)
+		public IL_ldc_i4_7(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction = null) 
+			: base(parentMethod, cecilInstruction)
 		{
 		}
 

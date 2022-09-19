@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Emu.CPU.MC680x
 {
@@ -90,13 +88,13 @@ namespace Emu.CPU.MC680x
 		// ------------------------------------------------------------------
 		//
 		// ------------------------------------------------------------------
-		public void NOP()
+		public void NOP() 
 		{
 			this.REG_PC++;
 			this.REG_PC &= 0xFFFF;
 		}
 
-		public void RTS()
+		public void RTS() 
 		{
 			this.REG_PC = this.PopStack16();
 		}

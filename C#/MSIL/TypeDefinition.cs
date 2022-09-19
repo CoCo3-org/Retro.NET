@@ -23,13 +23,13 @@ namespace MSIL
 		public List<MethodDefinition> MethodDefinitions { get; } = new List<MethodDefinition>();
 		public Dictionary<string, MethodDefinition> MethodDefinitionDict { get; } = new Dictionary<string, MethodDefinition>();
 
-		public TypeDefinition(ModuleDefinition parentModule, Cecil.TypeDefinition cecilType) 
+		public TypeDefinition(ModuleDefinition parentModule, Cecil.TypeDefinition cecilType = null) 
 		{
 			this.CecilType = cecilType;
 			this.ParentModule = parentModule;
 		}
 
-		public void Initialize()
+		public void Initialize() 
 		{
 			foreach (Cecil.MethodDefinition cecilMethodDefinition in this.CecilType.Methods)
 			{
@@ -80,7 +80,7 @@ namespace MSIL
 				methoDefinition.MC6x09_MethodDefinition(sb);
         }
 
-		public void Z80_TypeDefinition(StringBuilder sb)
+		public void Z80_TypeDefinition(StringBuilder sb) 
 		{
 			sb.AppendLine("* =============================================================================");
 			sb.AppendLine($"* TypeDefinition: [{this.CecilType.Name}][{this.CecilType.FullName}][{this.CecilType.GetType()}]");
@@ -90,7 +90,7 @@ namespace MSIL
 				methoDefinition.Z80_MethodDefinition(sb);
 		}
 
-		public void MC6502_TypeDefinition(StringBuilder sb)
+		public void MC6502_TypeDefinition(StringBuilder sb) 
 		{
 			sb.AppendLine("* =============================================================================");
 			sb.AppendLine($"* TypeDefinition: [{this.CecilType.Name}][{this.CecilType.FullName}][{this.CecilType.GetType()}]");
@@ -100,7 +100,7 @@ namespace MSIL
 				methoDefinition.MOS6502_MethodDefinition(sb);
 		}
 
-		public void MC68000_TypeDefinition(StringBuilder sb)
+		public void MC68000_TypeDefinition(StringBuilder sb) 
 		{
 			sb.AppendLine("* =============================================================================");
 			sb.AppendLine($"* TypeDefinition: [{this.CecilType.Name}][{this.CecilType.FullName}][{this.CecilType.GetType()}]");
@@ -109,6 +109,5 @@ namespace MSIL
 			foreach (var methoDefinition in this.MethodDefinitions)
 				methoDefinition.MC68000_MethodDefinition(sb);
 		}
-
 	}
 }

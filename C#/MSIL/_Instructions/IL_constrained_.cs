@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Call a virtual method on a type constrained to be type T"; } }
 		public override string Category { get { return "Prefix to instruction"; } }
 
-		public IL_constrained_(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
-			: base(parentMethod ,cecilInstruction)
+		public IL_constrained_(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction = null) 
+			: base(parentMethod, cecilInstruction)
 		{
 		}
 

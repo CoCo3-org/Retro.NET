@@ -21,8 +21,8 @@ namespace MSIL
 		public string DeclaringType { get; private set; }
 		public string CallMethodFullName { get; private set; }
 
-		public IL_call(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
-			: base(parentMethod ,cecilInstruction)
+		public IL_call(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction = null) 
+			: base(parentMethod, cecilInstruction)
 		{
 			this.MethodReference = (Cecil.MethodReference)cecilInstruction.Operand;
 			this.DeclaringType = this.MethodReference.DeclaringType.ToString();

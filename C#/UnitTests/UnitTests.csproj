@@ -22,8 +22,4 @@
     <ProjectReference Include="..\CPU\CPU.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="MSIL\" />
-  </ItemGroup>
-
 </Project>

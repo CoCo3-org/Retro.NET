@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Throw ArithmeticException if value is not a finite number."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_ckfinite(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
-			: base(parentMethod ,cecilInstruction)
+		public IL_ckfinite(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction = null) 
+			: base(parentMethod, cecilInstruction)
 		{
 		}
 

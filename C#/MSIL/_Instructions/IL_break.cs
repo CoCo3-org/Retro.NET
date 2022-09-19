@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Inform a debugger that a breakpoint has been reached."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_break(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
-			: base(parentMethod ,cecilInstruction)
+		public IL_break(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction = null) 
+			: base(parentMethod, cecilInstruction)
 		{
 		}
 

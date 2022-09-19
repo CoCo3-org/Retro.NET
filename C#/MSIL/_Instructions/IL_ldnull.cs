@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Push a null reference on the stack."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_ldnull(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
-			: base(parentMethod ,cecilInstruction)
+		public IL_ldnull(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction = null) 
+			: base(parentMethod, cecilInstruction)
 		{
 		}
 

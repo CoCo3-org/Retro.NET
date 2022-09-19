@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Load the element at index onto the top of the stack as an O. The type of the O is the same as the element type of the array pushed on the CIL stack."; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_ldelem_ref(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
-			: base(parentMethod ,cecilInstruction)
+		public IL_ldelem_ref(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction = null) 
+			: base(parentMethod, cecilInstruction)
 		{
 		}
 

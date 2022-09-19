@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Convert to native unsigned int, pushing native int on stack."; } }
 		public override string Category { get { return "Base instruction"; } }
 
-		public IL_conv_u(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
-			: base(parentMethod ,cecilInstruction)
+		public IL_conv_u(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction = null) 
+			: base(parentMethod, cecilInstruction)
 		{
 		}
 

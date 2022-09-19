@@ -19,8 +19,8 @@ namespace MSIL
 
 		public int Number { get; private set; }
 
-		public IL_ldc_i4_s(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
-			: base(parentMethod ,cecilInstruction)
+		public IL_ldc_i4_s(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction = null) 
+			: base(parentMethod, cecilInstruction)
 		{
 			// Console.WriteLine("IL_ldc_i4_s: " + cecilInstruction.Operand.GetType());
 			this.Number = System.Convert.ToInt32(cecilInstruction.Operand);

@@ -20,7 +20,7 @@ namespace MSIL
 
 		public List<object> LocalVariables { get; } = new List<object>();
 
-		public MethodDefinition(TypeDefinition parentType, Cecil.MethodDefinition cecilMethodDefinition) 
+		public MethodDefinition(TypeDefinition parentType, Cecil.MethodDefinition cecilMethodDefinition = null) 
 		{
 			this.ParentType = parentType;
 

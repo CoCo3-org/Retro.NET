@@ -84,8 +84,7 @@ namespace Emu.CPU.MC680x
 			}
 		}
 
-
-		public byte[] ROM;
+		// public byte[] ROM;
 
 		public MC6803() 
 		{

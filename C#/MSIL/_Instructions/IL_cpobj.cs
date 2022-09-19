@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Copy a value type from src to dest."; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_cpobj(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
-			: base(parentMethod ,cecilInstruction)
+		public IL_cpobj(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction = null) 
+			: base(parentMethod, cecilInstruction)
 		{
 		}
 

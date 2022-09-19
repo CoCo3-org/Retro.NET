@@ -26,6 +26,8 @@ namespace UnitTests.Emu.CPU.MC6800
 			Assert.That(cpu.REG_PC, Is.EqualTo(0));
 			cpu.RTS();
 			// Test FLAGS before
+			// 
+
 			// Test Registers after
 			Assert.That(cpu.REG_SP, Is.EqualTo(2));
 			Assert.That(cpu.REG_PC, Is.EqualTo(0x1011));

@@ -17,8 +17,8 @@ namespace MSIL
 		public override string Description { get { return "Call a method associated with an object."; } }
 		public override string Category { get { return "Object model instruction"; } }
 
-		public IL_callvirt(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction) 
-			: base(parentMethod ,cecilInstruction)
+		public IL_callvirt(MethodDefinition parentMethod, Cecil.Cil.Instruction cecilInstruction = null) 
+			: base(parentMethod, cecilInstruction)
 		{
 		}
 
