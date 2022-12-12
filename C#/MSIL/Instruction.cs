@@ -26,10 +26,13 @@ namespace MSIL
 
 		public Instruction(MethodDefinition parentMethod, Cecil.Cil.Instruction instruction = null)
 		{
-			this.CecilInstruction = instruction;
-			this.ParentMethod = parentMethod;
+			if (instruction != null)
+			{
+				this.CecilInstruction = instruction;
+				this.Offset = instruction.Offset;
+			}
 
-			this.Offset = instruction.Offset;
+			this.ParentMethod = parentMethod;
 		}
 
 		public virtual void OutputDescCategoryLine(StringBuilder sb) 

@@ -10,6 +10,8 @@ namespace MSIL
 	{
 		public Cecil.TypeDefinition CecilType { get; private set; }
 
+		public string TypeName { get; set; }
+
 		public ModuleDefinition ParentModule { get; private set; }
 
 		// BaseType

@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\Unit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console", "Console\Console.csproj", "{6040E7F7-DDC0-484E-A93D-659E604FC816}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emu", "Emu\Emu.csproj", "{A58220F1-446B-45C8-8646-89035E4DE608}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Emu", "Emu\Emu.csproj", "{A58220F1-446B-45C8-8646-89035E4DE608}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{459BA479-17FA-4A01-90A6-331FA9181E23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{A58220F1-446B-45C8-8646-89035E4DE608}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A58220F1-446B-45C8-8646-89035E4DE608}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A58220F1-446B-45C8-8646-89035E4DE608}.Release|Any CPU.Build.0 = Release|Any CPU
+		{459BA479-17FA-4A01-90A6-331FA9181E23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{459BA479-17FA-4A01-90A6-331FA9181E23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{459BA479-17FA-4A01-90A6-331FA9181E23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{459BA479-17FA-4A01-90A6-331FA9181E23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

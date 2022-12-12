@@ -15,7 +15,12 @@ namespace UnitTests.MSIL
 			var module = new global::MSIL.ModuleDefinition();
 			var type = new global::MSIL.TypeDefinition(module);
 
-			Assert.IsTrue(false);
+			Assert.IsNull(type.CecilType);
+			Assert.IsNotNull(type.ParentModule);
+			Assert.That(module, Is.EqualTo(type.ParentModule));
+
+			Assert.That(type.MethodDefinitions.Count, Is.EqualTo(0));
+			Assert.That(type.MethodDefinitionDict.Count, Is.EqualTo(0));
 		}
 	}
 }

@@ -12,6 +12,8 @@ namespace MSIL
 	{
 		public string AssemblyFilePath { get; private set; }
 
+		public string AssemblyName { get; set; }
+
 		public string MC680xPath { get; set; }
 		public string MC6x09Path { get; set; }
 		public string Z80Path { get; set; }
