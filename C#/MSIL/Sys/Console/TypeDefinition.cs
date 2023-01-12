@@ -1,7 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿//
+// Copyright (c) 2023 James Ross
+//
+// Released under the GNU AFFERO GENERAL PUBLIC LICENSE Version 3
+// Please see README.md, LICENSE, agpl-3.0.txt in root folder
+//
 
 namespace MSIL.Sys.Console
 {
