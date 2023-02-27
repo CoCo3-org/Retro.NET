@@ -7,7 +7,7 @@
 
 ---
 
-~12/11/2022 9:55 PM - *Please see* [Retro.IDE](https://github.com/CoCo3-org/Retro.IDE) as all future development on this project will be done there!!~
+~12/11/2022 9:55 PM - *Please see* _Retro.IDE_ as all future development on this project will be done there!!~
 
 ---
 
