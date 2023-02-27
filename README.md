@@ -3,11 +3,11 @@
 
 ---
 
-2/27/2023 4:00 PM - *Change of plans again:* removed [Retro.IDE](https://github.com/CoCo3-org/Retro.IDE) and will concetrate solely on this project until I have version 0.1 at least!!
+2/27/2023 4:00 PM - *Change of plans again:* removed __Retro.IDE__ and will concetrate solely on this project until I have version 0.1 at least!!
 
 ---
 
-~12/11/2022 9:55 PM - *Please see* _Retro.IDE_ as all future development on this project will be done there!!~
+~12/11/2022 9:55 PM - *Please see* __Retro.IDE__ as all future development on this project will be done there!!~
 
 ---
 
