@@ -5,17 +5,9 @@
 // Please see README.md, LICENSE, agpl-3.0.txt in root folder
 //
 
-using NUnit.Framework;
-
-namespace IntegrationTests
+namespace CPU.M6502
 {
-    [TestFixture]
-    public class Do_Nothing_App
-	{
-		[Test]
-		public void Do_It()
-		{
-			Assert.IsTrue(false);
-		}
-	}
+    public interface IImplied
+    {
+    }
 }

@@ -40,7 +40,7 @@ namespace MSIL
 		{
 			foreach (Cecil.MethodDefinition cecilMethodDefinition in this.CecilType.Methods)
 			{
-				MethodDefinition methodDefinition = new MethodDefinition(this, cecilMethodDefinition);
+				MethodDefinition methodDefinition = new MethodDefinition(cecilMethodDefinition.Name, this, cecilMethodDefinition);
 				this.MethodDefinitions.Add(methodDefinition);
 				this.MethodDefinitionDict.Add(methodDefinition.CecilMethodDefinition.FullName, methodDefinition);
 			
@@ -97,7 +97,7 @@ namespace MSIL
 				methoDefinition.Z80_MethodDefinition(sb);
 		}
 
-		public void MC6502_TypeDefinition(StringBuilder sb) 
+		public void M6502_TypeDefinition(StringBuilder sb) 
 		{
 			sb.AppendLine("* =============================================================================");
 			sb.AppendLine($"* TypeDefinition: [{this.CecilType.Name}][{this.CecilType.FullName}][{this.CecilType.GetType()}]");
@@ -116,5 +116,25 @@ namespace MSIL
 			foreach (var methoDefinition in this.MethodDefinitions)
 				methoDefinition.MC68000_MethodDefinition(sb);
 		}
-	}
+
+        public void i86_TypeDefinition(StringBuilder sb) 
+        {
+            sb.AppendLine("; =============================================================================");
+            sb.AppendLine($"; TypeDefinition: [{this.CecilType.Name}][{this.CecilType.FullName}][{this.CecilType.GetType()}]");
+            sb.AppendLine("; =============================================================================");
+
+            foreach (var methoDefinition in this.MethodDefinitions)
+                methoDefinition.i86_MethodDefinition(sb);
+        }
+
+        public void ix86_TypeDefinition(StringBuilder sb) 
+        {
+            sb.AppendLine("; =============================================================================");
+            sb.AppendLine($"; TypeDefinition: [{this.CecilType.Name}][{this.CecilType.FullName}][{this.CecilType.GetType()}]");
+            sb.AppendLine("; =============================================================================");
+
+            foreach (var methoDefinition in this.MethodDefinitions)
+                methoDefinition.ix86_MethodDefinition(sb);
+        }
+    }
 }

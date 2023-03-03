@@ -117,36 +117,48 @@ namespace MSIL
 
 		// -----
 
-		public virtual void X86_UnOptimized_Code(StringBuilder sb) 
+		public virtual void i86_UnOptimized_Code(StringBuilder sb) 
 		{
 			this.OutputDescCategoryLine(sb);
 		}
 
-		public virtual void X86_Optimized_Code(StringBuilder sb) 
+		public virtual void i86_Optimized_Code(StringBuilder sb) 
+		{
+			this.OutputDescCategoryLine(sb);
+		}
+
+        // -----
+
+        public virtual void ix86_UnOptimized_Code(StringBuilder sb)
+        {
+            this.OutputDescCategoryLine(sb);
+        }
+
+        public virtual void ix86_Optimized_Code(StringBuilder sb)
+        {
+            this.OutputDescCategoryLine(sb);
+        }
+        
+		// -----
+
+        public virtual void AMD64_UnOptimized_Code(StringBuilder sb) 
+		{
+			this.OutputDescCategoryLine(sb);
+		}
+
+		public virtual void AMD64_Optimized_Code(StringBuilder sb) 
 		{
 			this.OutputDescCategoryLine(sb);
 		}
 
 		// -----
 
-		public virtual void X64_UnOptimized_Code(StringBuilder sb) 
+		public virtual void ARMx_UnOptimized_Code(StringBuilder sb) 
 		{
 			this.OutputDescCategoryLine(sb);
 		}
 
-		public virtual void X64_Optimized_Code(StringBuilder sb) 
-		{
-			this.OutputDescCategoryLine(sb);
-		}
-
-		// -----
-
-		public virtual void ARM_UnOptimized_Code(StringBuilder sb) 
-		{
-			this.OutputDescCategoryLine(sb);
-		}
-
-		public virtual void ARM_Optimized_Code(StringBuilder sb) 
+		public virtual void ARMx_Optimized_Code(StringBuilder sb) 
 		{
 			this.OutputDescCategoryLine(sb);
 		}

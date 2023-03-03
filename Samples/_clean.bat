@@ -1,3 +1,3 @@
 del *.exe
-del *.cil
+del *.il
 del *.res

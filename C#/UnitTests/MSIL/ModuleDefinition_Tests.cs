@@ -21,7 +21,7 @@ namespace UnitTests.MSIL
 			Assert.IsNull(module.MC680xPath);
 			Assert.IsNull(module.MC6x09Path);
 			Assert.IsNull(module.Z80Path);
-			Assert.IsNull(module.MOS6502Path);
+			Assert.IsNull(module.M6502Path);
 			Assert.IsNull(module.MC68000Path);
 			Assert.IsNull(module.CecilModule);
 
@@ -49,7 +49,7 @@ namespace UnitTests.MSIL
 			type.TypeName = "Sample_Program";
 
 			// static void Sample.Program_Main()
-			var method = new global::MSIL.MethodDefinition(type);
+			var method = new global::MSIL.MethodDefinition("TestMethod", type);
 			//
 
 			// void Sample.Program.ctor()
