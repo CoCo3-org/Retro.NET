@@ -3,7 +3,7 @@
 
 ---
 
-7/7/2023 12:15 AM - After a long hiatus – back to working on this project. Will likely be moving it to my personal GitHub account as it is not going to be CoCo specific.  I will surely move the website content for it to my new website [Retro-Tech.Xyz](https://retro-tech.xyz/)  First thing I need to do getting back into it is ramp up the unit-tests.  My mistake has been not to concentrate on Unit Tests and Integration Tests.!!
+7/7/2023 12:15 AM - After a long hiatus – back to working on this project. Will likely be moving it to my personal GitHub account as it is not going to be CoCo specific.  I will surely move the website content for it to my new website [Retro-Tech.Xyz](https://retro-tech.xyz/).  First thing I need to do getting back into it is ramp up the unit-tests. I need to make a list of Tests I need. I surely need hundreds if not thousands of them. The only way to make systematic progress on a project this big is through Unit & Integration tests. My mistake has been not to concentrate on Unit Tests and Integration Tests!!
 
 ---
 
