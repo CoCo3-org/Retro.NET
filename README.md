@@ -1,6 +1,10 @@
 # Retro.NET
 ### CIL (formerly MSIL) native Ahead-of-Time (AoT) compiler for 6x09 / 680x / 6502 / Z80 / 68k CPU's
 
+I only want CoCo related projects on CoCo3-org: and on this project the CoCo will be just one of several targets. Therefore this repo is archived and all develepment will take place here: 
+
+## Moved to [github.com/jross9/Retro.NET](https://github.com/jross9/Retro.NET)
+
 ---
 
 7/7/2023 12:15 AM - After a long hiatus – back to working on this project. Will likely be moving it to my personal GitHub account as it is not going to be CoCo specific.  I will surely move the website content for it to my new website [Retro-Tech.Xyz](https://retro-tech.xyz/).  First thing I need to do getting back into it is ramp up the unit-tests. I need to make a list of Tests I need. I surely need hundreds if not thousands of them. The only way to make systematic progress on a project this big is through Unit & Integration tests. My mistake has been not to concentrate on testing!!
