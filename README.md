@@ -3,6 +3,10 @@
 
 ---
 
+7/7/2023 12:15 AM - After a long hiatus – back to working on this project. Will likely be moving it to my personal GitHub account as it is not going to be CoCo specific.  I will surely move the website content for it to my new website [Retro-Tech.Xyz](https://retro-tech.xyz/)  First thing I need to do getting back into it is ramp up the unit-tests.  My mistake has been not to concentrate on Unit Tests and Integration Tests.!!
+
+---
+
 2/27/2023 4:00 PM - *Change of plans again:* removed __Retro.IDE__ and will concetrate solely on this project until I have version 0.1 at least!!
 
 ---
