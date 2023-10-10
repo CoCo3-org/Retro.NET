@@ -3,7 +3,7 @@
 
 ---
 
-10/10/2023 3:30 PM: Back at it again. 
+10/10/2023 3:30 AM: Back at it again. 
 
 Keep getting overwhelmed and I can’t get motivated! Try and try again! Failure is NOT an option!
 
