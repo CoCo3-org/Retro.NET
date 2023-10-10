@@ -1,21 +1,35 @@
 # Retro.NET
 ### CIL (formerly MSIL) native Ahead-of-Time (AoT) compiler for 6x09 / 680x / 6502 / Z80 / 68k CPU's
 
-I only want CoCo related projects on CoCo3-org: and on this project the CoCo will be just one of several targets. Therefore this repo is archived and all develepment will take place here: 
+---
 
-## Moved to [github.com/jross9/Retro.NET](https://github.com/jross9/Retro.NET)
+10/10/2023 3:30 PM: Back at it again. 
+
+Keep getting overwhelmed and I can’t get motivated! Try and try again! Failure is NOT an option!
+
+Move the project back to [github.com/CoCo3-org](https://github.com/CoCo3-org/Retro.NET) and [CoCo3.org](https://coco3.org/retro-net/). 
 
 ---
 
-7/7/2023 12:15 AM - After a long hiatus – back to working on this project. Will likely be moving it to my personal GitHub account as it is not going to be CoCo specific.  I will surely move the website content for it to my new website [Retro-Tech.Xyz](https://retro-tech.xyz/).  First thing I need to do getting back into it is ramp up the unit-tests. I need to make a list of Tests I need. I surely need hundreds if not thousands of them. The only way to make systematic progress on a project this big is through Unit & Integration tests. My mistake has been not to concentrate on testing!!
+8/6/2023 1:35 AM: I need a plan were I start off simple w/ a blank program – the “Do Nothing” program.  Then next I do a “HelloWorld”. 
+
+From there I keep adding C# language features keeping each sample with a new feature as simple as possible. This will lay the groundwork for more complex program examples up until I have covered all the C# language features and all CIL instructions. 
+
+Every step needs to be tested w/ TDD and using the TDD strategy of only adding the bare minimum amount of code for each test to pass.  
+
+At the program executable level I will run an Integration Tests. For the internal workings I will run Unit Tests. 
+
+At the same time I will create a GUI app that I will be able to visually see the operation of the internal CIL and each CPU instruction emulated, so we can follow along and make progress easier, and debug easier.  
+
+Between the Integration Tests and the Unit Tests and the GUI emulation layer I should not lose sight of where I am in the development process. Which is a problem.
 
 ---
 
-2/27/2023 4:00 PM - *Change of plans again:* removed __Retro.IDE__ and will concetrate solely on this project until I have version 0.1 at least!!
+7/20/2023 5:30 AM: - I will want to create a stand-alone `EmuLib` library.   
 
 ---
 
-~12/11/2022 9:55 PM - *Please see* __Retro.IDE__ as all future development on this project will be done there!!~
+7/7/2023 12:15 AM - After a long hiatus. I need to do getting back into it and ramp up the unit-tests. Make a list of Tests I need. My mistake has been not to concentrate on Unit Tests and Test Driven Development (TDD)!!
 
 ---
 
