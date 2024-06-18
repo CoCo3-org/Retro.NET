@@ -3,6 +3,12 @@
 
 ---
 
+6/17/2023 10:45 PM: And just like that -- 8 months go by w/o even looking at it!!
+
+Back to it, I need to make progress and see if a can generate 6809 code for the other I'm working on -- 6809 SBC & Breadboarding a CoCo1. 
+
+---
+
 10/10/2023 3:30 AM: Back at it again. 
 
 Keep getting overwhelmed and I can’t get motivated! Try and try again! Failure is NOT an option!
