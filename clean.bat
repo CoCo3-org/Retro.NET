@@ -6,6 +6,12 @@ REM ------------------------------
 RMDIR /Q /S C#\CPU\bin
 RMDIR /Q /S C#\CPU\obj
 REM ------------------------------
+RMDIR /Q /S C#\Emu\bin
+RMDIR /Q /S C#\Emu\obj
+REM ------------------------------
+RMDIR /Q /S C#\IntegrationTests\bin
+RMDIR /Q /S C#\IntegrationTests\obj
+REM ------------------------------
 RMDIR /Q /S C#\MSIL\bin
 RMDIR /Q /S C#\MSIL\obj
 REM ------------------------------
