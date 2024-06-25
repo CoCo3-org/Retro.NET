@@ -16,6 +16,7 @@
 bin
 obj
 *.suo
+C#/Retro.NET/Retro.NET.csproj.user
 
 # ---------------------------
 # count # executions to gage activity

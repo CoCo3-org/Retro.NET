@@ -17,7 +17,7 @@ Move the project back to [github.com/CoCo3-org](https://github.com/CoCo3-org/Ret
 
 ---
 
-8/6/2023 1:35 AM: I need a plan were I start off simple w/ a blank program – the “Do Nothing” program.  Then next I do a “HelloWorld”. 
+8/6/2023 1:35 AM: I need a plan were I start off simple w/ a blank program – the "Do Nothing" program.  Then next I do a "HelloWorld". 
 
 From there I keep adding C# language features keeping each sample with a new feature as simple as possible. This will lay the groundwork for more complex program examples up until I have covered all the C# language features and all CIL instructions. 
 
